@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-12-06T06:58:17.108Z</updated>
+  <updated>2016-12-06T07:00:16.212Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,11 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>使用-Github-Pages-和-Hexo-搭建个人独立博客（Win-10环境下）</title>
-    <link href="http://yoursite.com/2016/12/06/title-%20%E4%BD%BF%E7%94%A8-Github-Pages-%E5%92%8C-Hexo-%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%8B%AC%E7%AB%8B%E5%8D%9A%E5%AE%A2%EF%BC%88Win-10%E7%8E%AF%E5%A2%83%E4%B8%8B%EF%BC%89/"/>
-    <id>http://yoursite.com/2016/12/06/title- 使用-Github-Pages-和-Hexo-搭建个人独立博客（Win-10环境下）/</id>
-    <published>2016-12-06T06:58:14.372Z</published>
-    <updated>2016-12-06T06:58:17.108Z</updated>
+    <title>使用 Github Pages 和 Hexo 搭建个人独立博客（Win 10环境下）</title>
+    <link href="http://yoursite.com/2016/12/06/title-%20%E4%BD%BF%E7%94%A8%20Github%20Pages%20%E5%92%8C%20Hexo%20%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%8B%AC%E7%AB%8B%E5%8D%9A%E5%AE%A2%EF%BC%88Win%2010%E7%8E%AF%E5%A2%83%E4%B8%8B%EF%BC%89/"/>
+    <id>http://yoursite.com/2016/12/06/title- 使用 Github Pages 和 Hexo 搭建个人独立博客（Win 10环境下）/</id>
+    <published>2016-12-06T07:00:13.531Z</published>
+    <updated>2016-12-06T07:00:16.212Z</updated>
     
     <content type="html"><![CDATA[<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>这是一篇使用 Github Pages 和 Hexo 来搭建个人博客的笔记，记录了搭建博客的过程与其中遇到的问题。其中主要包括了以下几个部分：如何配置和使用 Hexo 框架，如何将配置好的 Hexo 部署到 Github项目中，如何绑定域名，以及 Hexo 简单优化和常用命令。</p>
 <hr>
