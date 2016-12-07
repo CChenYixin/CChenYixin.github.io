@@ -1,13 +1,125 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   
+  
     
     <entry>
       <title><![CDATA[使用 Github Pages 和 Hexo 搭建个人独立博客（Win 10环境下）]]></title>
-      <url>%2F2016%2F12%2F06%2Ftitle-%20%E4%BD%BF%E7%94%A8%20Github%20Pages%20%E5%92%8C%20Hexo%20%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%8B%AC%E7%AB%8B%E5%8D%9A%E5%AE%A2%EF%BC%88Win%2010%E7%8E%AF%E5%A2%83%E4%B8%8B%EF%BC%89%2F</url>
-      <content type="text"><![CDATA[摘要这是一篇使用 Github Pages 和 Hexo 来搭建个人博客的笔记，记录了搭建博客的过程与其中遇到的问题。其中主要包括了以下几个部分：如何配置和使用 Hexo 框架，如何将配置好的 Hexo 部署到 Github项目中，如何绑定域名，以及 Hexo 简单优化和常用命令。 正文一、Hexo 的配置和使用1、Hexo 是什么？Hexo 是一款简洁、快速且高效的博客框架，可以在很短的时间内利用主题生成静态网页。 2、Hexo 安装前提Hexo 的安装非常简单，在 Hexo 安装必须首先安装以下应用程序： Node.js 可以简单理解为一种 Javascript 的运行环境或者平台，可以用来做服务器，执行某些任务。 Git Git 是一种分布式版本控制工具，可以用来将远程代码仓库复制到本地，或者将本地仓库推送到远程仓库。 在相对应的网站主页下载应用程序，然后安装即可。Windows 系统安装相对应的版本。 Node.js 点我前往下载页面 Git 点我前往下载页面 下载完成后鼠标点击右键选择 Git Bash Here 就可以打开 Git 打开后如下图所示： 3、Hexo 的安装和配置桌面点击鼠标右键，选择 Git Bash Here，输入 npm 命令即可安装1$ npm install -g hexo-cli 注意，如果没有 VPN 的话可能下载的速度会很慢很慢，如果出现这种状况，可以选择淘宝的 npm 源：1npm install -g cnpm --registry=https://registry.npm.taobao.org 安装完成后，在任意自己喜欢的位置创建 Hexo 文件夹，比如我的是（G:\Blog\Hexo），然后鼠标右键，选择 Git Bash Here，进入 Git 的命令框，执行以下操作：12$ hexo init$ npm install 耐心等待后，可以看到该文件夹中已经安装了 Hexo 所需要的文件 继续执行下面的命令，即可在浏览器中登陆 localhost:4000 在本地查看效果：12$ hexo generate$ hexo server 至此， Hexo 的安装已经全部结束，但仅仅在本地查看博客显然不是我们的目的，为了让别人也可以看到我们的博客，相互交流，我们需要把它发布到服务器上。而 Github Pages 可以给我们提供这个免费的服务器，省去了自己搭建服务器和数据库的麻烦。 二、将博客部署到 Github Pages 上1、Github Pages是什么？Github Pages可以被认为是用户编写的、托管在github上的静态网页。可以绑定你的域名，Github Pages可以为你提供一个免费的服务器，你可以使用它来做博客。 2、创建假如你没有 Github 账号你需要登陆主页点击 Sign Up 注册自己的账号，随后在 Github中创建一个仓库，需要注意的是仓库是有规则的，其格式必须为：yourusername.github.io。比如我的用户名为：onepiece，那么这个仓库名（Repository name）必须为：onepiece.github.io。 然后需要配置 Github 的 SSH 密钥来让本地的项目与远程的 Github建立联系，我们在本地写好代码后，可以直接通过 Git操作实现本地代码库与 Github 代码库同步。因为我个人以前下载了 Github 客户端，使用客户端进行上传或者克隆到本地，所以本机已经有密钥存在，并不需要按照下面的教程配置SSH。所以配置SSH请参考：这篇文章中的配置SSH部分，以及这篇Github添加密钥。 3、将 Hexo 部署到 Github 登陆 Github 打开自己的项目 username.github.io 点击clone or download复制地址 打开你一开始创建的Hexo文件夹（如G:\Blog\Hexo），用记事本打开刚文件夹下的_config.yml（这个是Hexo 的配置文件，以后要经常用到）文件 找到如图所示的关键词deploy，然后做出相对应的修改 在 Hexo 文件夹下执行命令1$ hexo g -d 稍等片刻后（大概不到一分钟中），就已经成功将本地的博客部署到 Github Pages 中，现在在浏览器中输入对应的地址：username.github.io就可以看到我们的博客了。 三、优化我们的博客1、主题优化Hexo主题官网 提供了很多主题供我们使用，你依照个人的喜欢预览挑选主题。我个人使用的是比较常用的一款NexT.Mist，知乎上这个问题有哪些好看的 Hexo 主题？下有答主按照star数做了个排行，你可以在其中挑选一款主题供自己使用。 首先你要进入这个主题的 Github 地址，将这个地址复制下来，比如 1https://github.com/iissnan/hexo-theme-next 然后打开 Hexo 文件夹下的 themes目录 （G:\Blog\hexo\themes），右键 Git Bash，输入命令并执行 1git clone https://github.com/iissnan/hexo-theme-next(此处地址替换成你需要使用的主题的地址) 等待下载完成。 修改配置文件，注意是 Hexo 目录下的_config.yml配置文件修改参数theme: hexo-theme-next 在 Hexo 目录中右键 Git Bash输入命令并执行。 12hexo clean (必须要，不然有时因为缓存问题，服务器更新不了主题)hexo g -d 等待片刻，然后浏览主页便可以查看相对应的效果。 更多有个性的设定，例如 设置「RSS」 添加「标签」页面 添加「分类」页面 设置「字体」 设置「代码高亮主题」 侧边栏社交链接 开启打赏功能 设置友情链接 多说评论显示 UA 腾讯公益404页面 站点建立时间 订阅微信公众号 等功能，在相应了主题主页有详细的配置说明，你可以点击进入参考设置NexT的主题配置。 2、SEO优化请参考Hexo Seo优化 四、绑定自己的域名 购买域名，个人博客不需要很顶级的域名，阿里云有很多便宜的域名可以购买。比如我自己的域名：chenyixin.win两年十块钱，所以选择你的域名然后购买就可以了。 在\hexo\source文件夹下创建文件 CNAME，用记事本打开并且添加你的域名。 注意：CNAME的意义，简单说就是别名，即将一个域名射到另一个域名。CNAME是没有后缀的，你可以用记事本创建CNAME，创建完毕后请删除后缀.txt。 然后在 Hexo 文件夹提交 1$ hexo g -d 解析域名 你可以选择阿里云的解析。打开阿里云的个人中心，点击域名，有一步解析。我选择的是DNSPOD解析需要进行如下的设置。 首先打开阿里云的个人中心，点击域名，选择管理，随后点击DNS修改/创建，修改 DNS 为：12f1g1ns2.dnspod.net f1g1ns1.dnspod.net 然后打开DNSPOD点击添加域名，将你的域名添加进去后，按照如下配置添加记录。 A记录（A record):A记录在DNS中的意义就是，域名到ip地址的转换。所以，当我们在DNS服务器中添加一个A记录时，是告诉服务器，将某个特定的域名映射到一个ip地址。这个算是最简单直白的转换规则了。 主机记录就是域名前缀，常见用法有：www：解析后的域名为 www.chenyixin.win@：直接解析主域名 chenyixin.win：泛解析，匹配其他所有域名 .chenyixin.win 等待生效就可以了，最迟要等待72个小时，但一般不会那么久，随后我们就可以通过域名来访问我们的博客了，如果你通过username.github.io最终也将映射到我们的域名上。 总结此时，使用 Hexo 和 Github Pages 搭建博客就已经告一段落了。接下来，我们可以通过其他的配置来优化我们的博客，或者已经可以开始发布文章了。我在整个搭建博客的过程中，遇到的最大问题首先是下载，没挂VPN下载 Hexo极其的慢，一度然我怀疑人生。但其他的流程很胜利，庆幸没有遇到什么bug。第二个问题是域名解析，当时，心态太着急，基础知识也不够，按照教程绑定了 Github Pages 但就是无法解析成功，后来才发现是因为我的CNAME文件上传的时候带了后缀名。可见基础常识的重要性，如果不是计算机专业的，很可能会犯一些意想之外的问题。另外，简书和谷歌上有很多教程给我提供了很大的帮助，官方文档的阅读也很有用。如果文中有什么错误，烦请大家评论让我改正，有什么问题也可以留言。搭建博客不难，重要的是后面的原理，路漫漫其修远兮，还得继续努力。 参考文章 (按照参考频度排名) Github Pages和Hexo简明教程Hexo 文档NexT 主题配置从DNS到github pages自定义域名 hexo搭建的Github博客绑定域名]]></content>
+      <url>http://yoursite.com/2016/12/06/title-%20%E4%BD%BF%E7%94%A8%20Github%20Pages%20%E5%92%8C%20Hexo%20%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%8B%AC%E7%AB%8B%E5%8D%9A%E5%AE%A2%EF%BC%88Win%2010%E7%8E%AF%E5%A2%83%E4%B8%8B%EF%BC%89/</url>
+      <content type="html"><![CDATA[<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>这是一篇使用 Github Pages 和 Hexo 来搭建个人博客的笔记，记录了搭建博客的过程与其中遇到的问题。其中主要包括了以下几个部分：如何配置和使用 Hexo 框架，如何将配置好的 Hexo 部署到 Github项目中，如何绑定域名，以及 Hexo 简单优化和常用命令。</p>
+<hr>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="一、Hexo-的配置和使用"><a href="#一、Hexo-的配置和使用" class="headerlink" title="一、Hexo 的配置和使用"></a>一、Hexo 的配置和使用</h3><h4 id="1、Hexo-是什么？"><a href="#1、Hexo-是什么？" class="headerlink" title="1、Hexo 是什么？"></a>1、Hexo 是什么？</h4><p>Hexo 是一款简洁、快速且高效的博客框架，可以在很短的时间内利用主题生成静态网页。</p>
+<h4 id="2、Hexo-安装前提"><a href="#2、Hexo-安装前提" class="headerlink" title="2、Hexo 安装前提"></a>2、Hexo 安装前提</h4><p>Hexo 的安装非常简单，在 Hexo 安装必须首先安装以下应用程序：</p>
+<ul>
+<li>Node.js<br>  可以简单理解为一种 Javascript 的运行环境或者平台，可以用来做服务器，执行某些任务。</li>
+<li>Git<br>  Git 是一种分布式版本控制工具，可以用来将远程代码仓库复制到本地，或者将本地仓库推送到远程仓库。</li>
+</ul>
+<p>在相对应的网站主页下载应用程序，然后安装即可。Windows 系统安装相对应的版本。</p>
+<p>Node.js <a href="https://nodejs.org/zh-cn/" target="_blank" rel="external">点我前往下载页面</a></p>
+<p><img src="http://ohqryljkl.bkt.clouddn.com/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20161206102456.png" alt="Node.js"></p>
+<p>Git <a href="https://git-scm.com/" target="_blank" rel="external">点我前往下载页面</a></p>
+<p><img src="http://ohqryljkl.bkt.clouddn.com/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20161206102517.png" alt="Git"></p>
+<p>下载完成后鼠标点击右键选择 Git Bash Here 就可以打开 Git 打开后如下图所示：</p>
+<p><img src="http://ohqryljkl.bkt.clouddn.com/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20161206104023.png" alt=""></p>
+<h4 id="3、Hexo-的安装和配置"><a href="#3、Hexo-的安装和配置" class="headerlink" title="3、Hexo 的安装和配置"></a>3、Hexo 的安装和配置</h4><p>桌面点击鼠标右键，选择 Git Bash Here，输入 npm 命令即可安装<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install -g hexo-cli</div></pre></td></tr></table></figure></p>
+<p>注意，如果没有 VPN 的话可能下载的速度会很慢很慢，如果出现这种状况，可以选择淘宝的 npm 源：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g cnpm --registry=https://registry.npm.taobao.org</div></pre></td></tr></table></figure></p>
+<p>安装完成后，在任意自己喜欢的位置创建 Hexo 文件夹，比如我的是（G:\Blog\Hexo），然后鼠标右键，选择 Git Bash Here，进入 Git 的命令框，执行以下操作：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ hexo init</div><div class="line">$ npm install</div></pre></td></tr></table></figure></p>
+<p>耐心等待后，可以看到该文件夹中已经安装了 Hexo 所需要的文件</p>
+<p><img src="http://ohqryljkl.bkt.clouddn.com/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20161206110543.png" alt="文件目录"></p>
+<p>继续执行下面的命令，即可在浏览器中登陆 localhost:4000 在本地查看效果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div><div class="line">$ hexo server</div></pre></td></tr></table></figure></p>
+<p><img src="http://ohqryljkl.bkt.clouddn.com/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20161206111045.png" alt="图片"></p>
+<p>至此， Hexo 的安装已经全部结束，但仅仅在本地查看博客显然不是我们的目的，为了让别人也可以看到我们的博客，相互交流，我们需要把它发布到服务器上。而 Github Pages 可以给我们提供这个免费的服务器，省去了自己搭建服务器和数据库的麻烦。</p>
+<hr>
+<h3 id="二、将博客部署到-Github-Pages-上"><a href="#二、将博客部署到-Github-Pages-上" class="headerlink" title="二、将博客部署到 Github Pages 上"></a>二、将博客部署到 Github Pages 上</h3><h4 id="1、Github-Pages是什么？"><a href="#1、Github-Pages是什么？" class="headerlink" title="1、Github  Pages是什么？"></a>1、Github  Pages是什么？</h4><p>Github Pages可以被认为是用户编写的、托管在github上的静态网页。可以绑定你的域名，Github Pages可以为你提供一个免费的服务器，你可以使用它来做博客。</p>
+<h4 id="2、创建"><a href="#2、创建" class="headerlink" title="2、创建"></a>2、创建</h4><p>假如你没有 Github 账号你需要登陆主页点击 Sign Up 注册自己的账号，随后在 Github中创建一个仓库，<br>需要<strong>注意</strong>的是仓库是有规则的，其格式必须为：yourusername.github.io。比如我的用户名为：<code>onepiece</code>，那么这个仓库名（Repository name）必须为：<code>onepiece.github.io</code>。</p>
+<p><img src="http://ohqryljkl.bkt.clouddn.com/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20161206115947.png" alt="创建仓库"></p>
+<p>然后需要配置 Github 的 SSH 密钥来让本地的项目与远程的 Github建立联系，我们在本地写好代码后，可以直接通过 Git操作实现本地代码库与 Github 代码库同步。因为我个人以前下载了 Github 客户端，使用客户端进行上传或者克隆到本地，所以本机已经有密钥存在，并不需要按照下面的教程配置SSH。所以配置SSH请参考：这篇文章中的<a href="https://my.oschina.net/ryaneLee/blog/638440" target="_blank" rel="external">配置SSH</a>部分，以及这篇<a href="http://www.cnblogs.com/ayseeing/p/3572582.html" target="_blank" rel="external">Github添加密钥</a>。</p>
+<h4 id="3、将-Hexo-部署到-Github"><a href="#3、将-Hexo-部署到-Github" class="headerlink" title="3、将 Hexo 部署到 Github"></a>3、将 Hexo 部署到 Github</h4><ol>
+<li><p>登陆 Github 打开自己的项目 username.github.io</p>
+<p><img src="http://ohqryljkl.bkt.clouddn.com/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20161206125247.png" alt="打开项目"></p>
+</li>
+<li><p>点击<code>clone or download</code>复制地址</p>
+</li>
+</ol>
+<p><img src="http://ohqryljkl.bkt.clouddn.com/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20161206125247.png" alt="复制地址"></p>
+<ol>
+<li>打开你一开始创建的Hexo文件夹（如G:\Blog\Hexo），用记事本打开刚文件夹下的_config.yml（这个是Hexo 的配置文件，以后要经常用到）文件</li>
+</ol>
+<p><img src="http://ohqryljkl.bkt.clouddn.com/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20161206125712.png" alt="配置文件"></p>
+<ol>
+<li>找到如图所示的关键词<code>deploy</code>，然后做出相对应的修改</li>
+</ol>
+<p><img src="http://ohqryljkl.bkt.clouddn.com/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20161206125738.png" alt="修改"></p>
+<ol>
+<li>在 Hexo 文件夹下执行命令<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo g -d</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><img src="http://ohqryljkl.bkt.clouddn.com/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20161206130340.png" alt="部署成功"></p>
+<p>稍等片刻后（大概不到一分钟中），就已经成功将本地的博客部署到 Github Pages 中，现在在浏览器中输入对应的地址：<code>username.github.io</code>就可以看到我们的博客了。</p>
+<h3 id="三、优化我们的博客"><a href="#三、优化我们的博客" class="headerlink" title="三、优化我们的博客"></a>三、优化我们的博客</h3><h4 id="1、主题优化"><a href="#1、主题优化" class="headerlink" title="1、主题优化"></a>1、主题优化</h4><p><a href="https://hexo.io/themes/" target="_blank" rel="external">Hexo主题官网</a> 提供了很多主题供我们使用，你依照个人的喜欢预览挑选主题。我个人使用的是比较常用的一款NexT.Mist，知乎上这个问题<a href="https://www.zhihu.com/question/24422335" target="_blank" rel="external">有哪些好看的 Hexo 主题？</a>下有答主按照star数做了个排行，你可以在其中挑选一款主题供自己使用。</p>
+<ol>
+<li><p>首先你要进入这个主题的 Github 地址，将这个地址复制下来，比如</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">https://github.com/iissnan/hexo-theme-next</div></pre></td></tr></table></figure>
+</li>
+<li><p>然后打开 Hexo 文件夹下的 themes目录 （G:\Blog\hexo\themes），右键 Git Bash，输入命令并执行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git clone https://github.com/iissnan/hexo-theme-next(此处地址替换成你需要使用的主题的地址)</div></pre></td></tr></table></figure>
+</li>
+<li><p>等待下载完成。</p>
+</li>
+<li>修改配置文件，<strong>注意</strong>是 Hexo 目录下的_config.yml配置文件修改参数<code>theme: hexo-theme-next</code></li>
+<li><p>在 Hexo 目录中右键 Git Bash输入命令并执行。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo clean   (必须要，不然有时因为缓存问题，服务器更新不了主题)</div><div class="line">hexo g -d</div></pre></td></tr></table></figure>
+</li>
+<li><p>等待片刻，然后浏览主页便可以查看相对应的效果。</p>
+</li>
+</ol>
+<p>更多有个性的设定，例如</p>
+<ul>
+<li>设置「RSS」 </li>
+<li>添加「标签」页面 </li>
+<li>添加「分类」页面 </li>
+<li>设置「字体」 </li>
+<li>设置「代码高亮主题」 </li>
+<li>侧边栏社交链接 </li>
+<li>开启打赏功能 </li>
+<li>设置友情链接 </li>
+<li>多说评论显示 UA </li>
+<li>腾讯公益404页面 </li>
+<li>站点建立时间 </li>
+<li>订阅微信公众号</li>
+</ul>
+<p>等功能，在相应了主题主页有详细的配置说明，你可以点击进入参考设置<a href="http://theme-next.iissnan.com/theme-settings.html#duoshuo-ua" target="_blank" rel="external">NexT的主题配置</a>。</p>
+<h4 id="2、SEO优化"><a href="#2、SEO优化" class="headerlink" title="2、SEO优化"></a>2、SEO优化</h4><p>请参考<a href="http://www.jianshu.com/p/86557c34b671" target="_blank" rel="external">Hexo Seo优化</a></p>
+<h3 id="四、绑定自己的域名"><a href="#四、绑定自己的域名" class="headerlink" title="四、绑定自己的域名"></a>四、绑定自己的域名</h3><ol>
+<li>购买域名，个人博客不需要很顶级的域名，阿里云有很多便宜的域名可以购买。比如我自己的域名：<code>chenyixin.win</code>两年十块钱，所以选择你的域名然后购买就可以了。</li>
+<li>在\hexo\source文件夹下创建文件 CNAME，用记事本打开并且添加你的域名。</li>
+</ol>
+<p><strong>注意</strong>：CNAME的意义，简单说就是别名，即将一个域名射到另一个域名。CNAME是没有后缀的，你可以用记事本创建CNAME，创建完毕后请删除后缀<code>.txt</code>。</p>
+<ol>
+<li><p>然后在 Hexo 文件夹提交</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo g -d</div></pre></td></tr></table></figure>
+</li>
+<li><p>解析域名</p>
+</li>
+</ol>
+<p>你可以选择阿里云的解析。打开阿里云的个人中心，点击域名，有一步解析。我选择的是<a href="https://www.dnspod.cn/" target="_blank" rel="external">DNSPOD解析</a>需要进行如下的设置。</p>
+<p>首先打开阿里云的个人中心，点击<code>域名</code>，选择<code>管理</code>，随后点击<code>DNS修改/创建</code>，修改 DNS 为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">f1g1ns2.dnspod.net </div><div class="line">f1g1ns1.dnspod.net</div></pre></td></tr></table></figure></p>
+<p>然后打开<a href="https://www.dnspod.cn/" target="_blank" rel="external">DNSPOD</a>点击添加域名，将你的域名添加进去后，按照如下配置添加记录。</p>
+<p><img src="http://ohqryljkl.bkt.clouddn.com/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20161206140953.png" alt=""></p>
+<blockquote>
+<p>A记录（A record):<br>A记录在DNS中的意义就是，域名到ip地址的转换。<br>所以，当我们在DNS服务器中添加一个A记录时，是告诉服务器，将某个特定的域名映射到一个ip地址。这个算是最简单直白的转换规则了。</p>
+<p>主机记录就是域名前缀，常见用法有：<br>www：解析后的域名为 www.chenyixin.win<br>@：直接解析主域名 chenyixin.win<br><em>：泛解析，匹配其他所有域名 </em>.chenyixin.win</p>
+</blockquote>
+<ol>
+<li>等待生效就可以了，最迟要等待72个小时，但一般不会那么久，随后我们就可以通过域名来访问我们的博客了，如果你通过<code>username.github.io</code>最终也将映射到我们的域名上。</li>
+</ol>
+<hr>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>此时，使用 Hexo 和 Github Pages 搭建博客就已经告一段落了。接下来，我们可以通过其他的配置来优化我们的博客，或者已经可以开始发布文章了。我在整个搭建博客的过程中，遇到的最大问题首先是下载，没挂VPN下载 Hexo极其的慢，一度然我怀疑人生。但其他的流程很胜利，庆幸没有遇到什么bug。第二个问题是域名解析，当时，心态太着急，基础知识也不够，按照教程绑定了 Github Pages 但就是无法解析成功，后来才发现是因为我的CNAME文件上传的时候带了后缀名。可见基础常识的重要性，如果不是计算机专业的，很可能会犯一些意想之外的问题。另外，简书和谷歌上有很多教程给我提供了很大的帮助，官方文档的阅读也很有用。如果文中有什么错误，烦请大家评论让我改正，有什么问题也可以留言。搭建博客不难，重要的是后面的原理，路漫漫其修远兮，还得继续努力。</p>
+<h2 id="参考文章-按照参考频度排名"><a href="#参考文章-按照参考频度排名" class="headerlink" title="参考文章 (按照参考频度排名)"></a>参考文章 (按照参考频度排名)</h2><blockquote>
+<p><a href="https://my.oschina.net/ryaneLee/blog/638440" target="_blank" rel="external">Github Pages和Hexo简明教程</a><br><a href="https://hexo.io/zh-cn/docs/index.html" target="_blank" rel="external">Hexo 文档</a><br><a href="https://github.com/iissnan/hexo-theme-next/wiki/%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%E5%8F%82%E8%80%83" target="_blank" rel="external">NexT 主题配置</a><br><a href="http://winterttr.me/2015/10/23/from-dns-to-github-custom-domain/" target="_blank" rel="external">从DNS到github pages自定义域名 </a><br><a href="http://www.jianshu.com/p/cea41e5c9b2a/comments/5642824#comment-5642824" target="_blank" rel="external">hexo搭建的Github博客绑定域名</a></p>
+</blockquote>
+]]></content>
     </entry>
-
     
   
   

@@ -1591,14 +1591,6 @@ pre .javascript .function {
   margin-top: 0;
 }
 .site-author-image {
-  display: block;
-  margin: 0 auto;
-  padding: 2px;
-  max-width: 96px;
-  height: auto;
-  border: 2px solid #333;
-}
-.site-author-image {
   border-radius: 50%;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
@@ -1690,7 +1682,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #c75541;
+  background: #b6fe0e;
 }
 .links-of-blogroll {
   font-size: 13px;
