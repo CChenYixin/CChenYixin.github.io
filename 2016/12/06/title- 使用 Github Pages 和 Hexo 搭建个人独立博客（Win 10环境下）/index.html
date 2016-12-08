@@ -75,8 +75,6 @@
 
 
 
-  
-
 
   <link rel="alternate" href="/atom.xml" title="速去逮一只猫" type="application/atom+xml" />
 
@@ -112,7 +110,7 @@
 <meta property="og:image" content="http://ohqryljkl.bkt.clouddn.com/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20161206125738.png">
 <meta property="og:image" content="http://ohqryljkl.bkt.clouddn.com/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20161206130340.png">
 <meta property="og:image" content="http://ohqryljkl.bkt.clouddn.com/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20161206140953.png">
-<meta property="og:updated_time" content="2016-12-06T07:00:16.212Z">
+<meta property="og:updated_time" content="2016-12-08T13:28:06.119Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用 Github Pages 和 Hexo 搭建个人独立博客（Win 10环境下）">
 <meta name="twitter:description" content="摘要这是一篇使用 Github Pages 和 Hexo 来搭建个人博客的笔记，记录了搭建博客的过程与其中遇到的问题。其中主要包括了以下几个部分：如何配置和使用 Hexo 框架，如何将配置好的 Hexo 部署到 Github项目中，如何绑定域名，以及 Hexo 简单优化和常用命令。
@@ -423,17 +421,17 @@
 </ol>
 <p>更多有个性的设定，例如</p>
 <ul>
-<li>设置「RSS」 </li>
-<li>添加「标签」页面 </li>
-<li>添加「分类」页面 </li>
-<li>设置「字体」 </li>
-<li>设置「代码高亮主题」 </li>
-<li>侧边栏社交链接 </li>
-<li>开启打赏功能 </li>
-<li>设置友情链接 </li>
-<li>多说评论显示 UA </li>
-<li>腾讯公益404页面 </li>
-<li>站点建立时间 </li>
+<li>设置「RSS」</li>
+<li>添加「标签」页面</li>
+<li>添加「分类」页面</li>
+<li>设置「字体」</li>
+<li>设置「代码高亮主题」</li>
+<li>侧边栏社交链接</li>
+<li>开启打赏功能</li>
+<li>设置友情链接</li>
+<li>多说评论显示 UA</li>
+<li>腾讯公益404页面</li>
+<li>站点建立时间</li>
 <li>订阅微信公众号</li>
 </ul>
 <p>等功能，在相应了主题主页有详细的配置说明，你可以点击进入参考设置<a href="http://theme-next.iissnan.com/theme-settings.html#duoshuo-ua" target="_blank" rel="external">NexT的主题配置</a>。</p>
@@ -451,7 +449,7 @@
 </li>
 </ol>
 <p>你可以选择阿里云的解析。打开阿里云的个人中心，点击域名，有一步解析。我选择的是<a href="https://www.dnspod.cn/" target="_blank" rel="external">DNSPOD解析</a>需要进行如下的设置。</p>
-<p>首先打开阿里云的个人中心，点击<code>域名</code>，选择<code>管理</code>，随后点击<code>DNS修改/创建</code>，修改 DNS 为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">f1g1ns2.dnspod.net </div><div class="line">f1g1ns1.dnspod.net</div></pre></td></tr></table></figure></p>
+<p>首先打开阿里云的个人中心，点击<code>域名</code>，选择<code>管理</code>，随后点击<code>DNS修改/创建</code>，修改 DNS 为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">f1g1ns2.dnspod.net</div><div class="line">f1g1ns1.dnspod.net</div></pre></td></tr></table></figure></p>
 <p>然后打开<a href="https://www.dnspod.cn/" target="_blank" rel="external">DNSPOD</a>点击添加域名，将你的域名添加进去后，按照如下配置添加记录。</p>
 <p><img src="http://ohqryljkl.bkt.clouddn.com/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20161206140953.png" alt=""></p>
 <blockquote>
@@ -462,7 +460,7 @@
 <li>等待生效就可以了，最迟要等待72个小时，但一般不会那么久，随后我们就可以通过域名来访问我们的博客了，如果你通过<code>username.github.io</code>最终也将映射到我们的域名上。</li>
 </ol>
 <hr>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>此时，使用 Hexo 和 Github Pages 搭建博客就已经告一段落了。接下来，我们可以通过其他的配置来优化我们的博客，或者已经可以开始发布文章了。我在整个搭建博客的过程中，遇到的最大问题首先是下载，没挂VPN下载 Hexo极其的慢，一度然我怀疑人生。但其他的流程很胜利，庆幸没有遇到什么bug。第二个问题是域名解析，当时，心态太着急，基础知识也不够，按照教程绑定了 Github Pages 但就是无法解析成功，后来才发现是因为我的CNAME文件上传的时候带了后缀名。可见基础常识的重要性，如果不是计算机专业的，很可能会犯一些意想之外的问题。另外，简书和谷歌上有很多教程给我提供了很大的帮助，官方文档的阅读也很有用。如果文中有什么错误，烦请大家评论让我改正，有什么问题也可以留言。搭建博客不难，重要的是后面的原理，路漫漫其修远兮，还得继续努力。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>此时，使用 Hexo 和 Github Pages 搭建博客就已经告一段落了。接下来，我们可以通过其他的配置来优化我们的博客，或者已经可以开始发布文章了。我在整个搭建博客的过程中，遇到的最大问题首先是下载，没挂VPN下载 Hexo极其的慢，一度然我怀疑人生。但其他的流程很胜利，庆幸没有遇到什么bug。第二个问题是域名解析，当时，心态太着急，基础知识也不够，按照教程绑定了 Github Pages 但就是无法解析成功，后来才发现是因为我的CNAME文件上传的时候带了后缀名。可见基础常识的重要性，如果不是计算机专业的，很可能会犯一些意想之外的问题。另外，简书和谷歌上有很多教程给我提供了很大的帮助，官方文档的阅读也很有用。如果文中有什么错误，烦请大家评论让我改正，有什么问题也可以留言。</p>
 <h2 id="参考文章-按照参考频度排名"><a href="#参考文章-按照参考频度排名" class="headerlink" title="参考文章 (按照参考频度排名)"></a>参考文章 (按照参考频度排名)</h2><blockquote>
 <p><a href="https://my.oschina.net/ryaneLee/blog/638440" target="_blank" rel="external">Github Pages和Hexo简明教程</a><br><a href="https://hexo.io/zh-cn/docs/index.html" target="_blank" rel="external">Hexo 文档</a><br><a href="https://github.com/iissnan/hexo-theme-next/wiki/%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%E5%8F%82%E8%80%83" target="_blank" rel="external">NexT 主题配置</a><br><a href="http://winterttr.me/2015/10/23/from-dns-to-github-custom-domain/" target="_blank" rel="external">从DNS到github pages自定义域名 </a><br><a href="http://www.jianshu.com/p/cea41e5c9b2a/comments/5642824#comment-5642824" target="_blank" rel="external">hexo搭建的Github博客绑定域名</a></p>
 </blockquote>
@@ -503,6 +501,20 @@
     <footer class="post-footer">
       
 
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/12/08/title- 关于 Atom 的插件和主题无法安装的问题/" rel="prev" title="关于 Atom 的插件和主题无法安装的问题">
+                关于 Atom 的插件和主题无法安装的问题 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
       
 
       
@@ -571,7 +583,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">1</span>
+              <span class="site-state-item-count">2</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

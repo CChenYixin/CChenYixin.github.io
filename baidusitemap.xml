@@ -4,8 +4,23 @@
 
     
   <url>
+    <loc>http://yoursite.com/2016/12/08/title-%20%E5%85%B3%E4%BA%8E%20Atom%20%E7%9A%84%E6%8F%92%E4%BB%B6%E5%92%8C%E4%B8%BB%E9%A2%98%E6%97%A0%E6%B3%95%E5%AE%89%E8%A3%85%E7%9A%84%E9%97%AE%E9%A2%98/</loc>
+    <lastmod>2016-12-08T14:00:02.540Z</lastmod>
+    <data>
+        <display>
+        <title>关于 Atom 的插件和主题无法安装的问题</title>
+        <pubTime>2016-12-08T13:59:43.365Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2016/12/06/title-%20%E4%BD%BF%E7%94%A8%20Github%20Pages%20%E5%92%8C%20Hexo%20%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%8B%AC%E7%AB%8B%E5%8D%9A%E5%AE%A2%EF%BC%88Win%2010%E7%8E%AF%E5%A2%83%E4%B8%8B%EF%BC%89/</loc>
-    <lastmod>2016-12-06T07:00:16.212Z</lastmod>
+    <lastmod>2016-12-08T13:28:06.119Z</lastmod>
     <data>
         <display>
         <title>使用 Github Pages 和 Hexo 搭建个人独立博客（Win 10环境下）</title>

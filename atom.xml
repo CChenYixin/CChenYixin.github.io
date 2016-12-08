@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-12-06T07:00:16.212Z</updated>
+  <updated>2016-12-08T14:00:02.540Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,11 +16,51 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>关于 Atom 的插件和主题无法安装的问题</title>
+    <link href="http://yoursite.com/2016/12/08/title-%20%E5%85%B3%E4%BA%8E%20Atom%20%E7%9A%84%E6%8F%92%E4%BB%B6%E5%92%8C%E4%B8%BB%E9%A2%98%E6%97%A0%E6%B3%95%E5%AE%89%E8%A3%85%E7%9A%84%E9%97%AE%E9%A2%98/"/>
+    <id>http://yoursite.com/2016/12/08/title- 关于 Atom 的插件和主题无法安装的问题/</id>
+    <published>2016-12-08T13:59:43.365Z</published>
+    <updated>2016-12-08T14:00:02.540Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>关于Atom 的插件和主题安装无法在设置中下载和安装的解决办法。</p>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>今天折腾了一下 Atom ，这个 Github 官方出品的编辑器的发展势头相当迅猛。不过在安装使用过程中却遇到了很多问题。Atom的安装比较简单，默认一键安装在 C 盘。官方有修改安装路径的教程，不过我并没有使用。在Atom的主题和插件安装上遇到了麻烦，就是在 Setting 中无法安装这个问题。</p>
+<p>Atom 中文社区给出了以下<a href="http://atom-china.org/t/atom/797/2" target="_blank" rel="external">解决方案</a>：</p>
+<ul>
+<li>给 apm 绑代理，可以直接使用 socks 代理</li>
+<li>使用 proxychains-ng445 绑 socks 代理，然后 用 apm 命令安装 atom 插件</li>
+<li>或者试试国内 npm 源</li>
+<li>使用 VPN</li>
+</ul>
+<p>不管可能是由于我个人原因或网路问题。即无法通过  apm 下载插件，也没办法在设置中下载，即使是在挂了 VPN 或使用了sock代理的情况下也无法安装和下载。只能退而求其次手动下载，多次的安装是相当的麻烦。</p>
+<p>下面给出手动下载的解决办法：</p>
+<ol>
+<li>找到 Atom 的 package 文件夹，这个是放置 Atom 插件和主题的地方，可以直接在 C 盘中寻找，一般在<code>C:\Users\XXXX\.atom\packages</code>这个路径之下，或者在 Atom 的 setting 页面中点击 open config folder 进入到 Atom 的配置项目，然后我们转到该项目下的 Windows 窗口进入 package 文件夹。</li>
+<li>在 Atom 的官方<a href="https://atom.io/packages" target="_blank" rel="external">插件主题网站</a>中浏览或者查找自己所需要的插件和主题。</li>
+<li>找到插件的 Github 地址，并复制备用。</li>
+<li><p>在 packages 文件夹中运行 Git Bash，并依次输入以下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git clone https://github.com/emmetio/emmet-atom （以emmet-atom为例，将插件的源代码克隆到文件夹中）</div><div class="line">cd emmet-atom （进入插件包文件夹）</div><div class="line">npm install （生成插件）</div></pre></td></tr></table></figure>
+</li>
+<li><p>重启 Atom，安装完成。</p>
+</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;摘要&quot;&gt;&lt;a href=&quot;#摘要&quot; class=&quot;headerlink&quot; title=&quot;摘要&quot;&gt;&lt;/a&gt;摘要&lt;/h2&gt;&lt;p&gt;关于Atom 的插件和主题安装无法在设置中下载和安装的解决办法。&lt;/p&gt;
+&lt;h2 id=&quot;正文&quot;&gt;&lt;a href=&quot;#正文&quot; class=&quot;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>使用 Github Pages 和 Hexo 搭建个人独立博客（Win 10环境下）</title>
     <link href="http://yoursite.com/2016/12/06/title-%20%E4%BD%BF%E7%94%A8%20Github%20Pages%20%E5%92%8C%20Hexo%20%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%8B%AC%E7%AB%8B%E5%8D%9A%E5%AE%A2%EF%BC%88Win%2010%E7%8E%AF%E5%A2%83%E4%B8%8B%EF%BC%89/"/>
     <id>http://yoursite.com/2016/12/06/title- 使用 Github Pages 和 Hexo 搭建个人独立博客（Win 10环境下）/</id>
     <published>2016-12-06T07:00:13.531Z</published>
-    <updated>2016-12-06T07:00:16.212Z</updated>
+    <updated>2016-12-08T13:28:06.119Z</updated>
     
     <content type="html"><![CDATA[<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>这是一篇使用 Github Pages 和 Hexo 来搭建个人博客的笔记，记录了搭建博客的过程与其中遇到的问题。其中主要包括了以下几个部分：如何配置和使用 Hexo 框架，如何将配置好的 Hexo 部署到 Github项目中，如何绑定域名，以及 Hexo 简单优化和常用命令。</p>
 <hr>
@@ -91,17 +131,17 @@
 </ol>
 <p>更多有个性的设定，例如</p>
 <ul>
-<li>设置「RSS」 </li>
-<li>添加「标签」页面 </li>
-<li>添加「分类」页面 </li>
-<li>设置「字体」 </li>
-<li>设置「代码高亮主题」 </li>
-<li>侧边栏社交链接 </li>
-<li>开启打赏功能 </li>
-<li>设置友情链接 </li>
-<li>多说评论显示 UA </li>
-<li>腾讯公益404页面 </li>
-<li>站点建立时间 </li>
+<li>设置「RSS」</li>
+<li>添加「标签」页面</li>
+<li>添加「分类」页面</li>
+<li>设置「字体」</li>
+<li>设置「代码高亮主题」</li>
+<li>侧边栏社交链接</li>
+<li>开启打赏功能</li>
+<li>设置友情链接</li>
+<li>多说评论显示 UA</li>
+<li>腾讯公益404页面</li>
+<li>站点建立时间</li>
 <li>订阅微信公众号</li>
 </ul>
 <p>等功能，在相应了主题主页有详细的配置说明，你可以点击进入参考设置<a href="http://theme-next.iissnan.com/theme-settings.html#duoshuo-ua" target="_blank" rel="external">NexT的主题配置</a>。</p>
@@ -119,7 +159,7 @@
 </li>
 </ol>
 <p>你可以选择阿里云的解析。打开阿里云的个人中心，点击域名，有一步解析。我选择的是<a href="https://www.dnspod.cn/" target="_blank" rel="external">DNSPOD解析</a>需要进行如下的设置。</p>
-<p>首先打开阿里云的个人中心，点击<code>域名</code>，选择<code>管理</code>，随后点击<code>DNS修改/创建</code>，修改 DNS 为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">f1g1ns2.dnspod.net </div><div class="line">f1g1ns1.dnspod.net</div></pre></td></tr></table></figure></p>
+<p>首先打开阿里云的个人中心，点击<code>域名</code>，选择<code>管理</code>，随后点击<code>DNS修改/创建</code>，修改 DNS 为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">f1g1ns2.dnspod.net</div><div class="line">f1g1ns1.dnspod.net</div></pre></td></tr></table></figure></p>
 <p>然后打开<a href="https://www.dnspod.cn/" target="_blank" rel="external">DNSPOD</a>点击添加域名，将你的域名添加进去后，按照如下配置添加记录。</p>
 <p><img src="http://ohqryljkl.bkt.clouddn.com/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20161206140953.png" alt=""></p>
 <blockquote>
@@ -130,7 +170,7 @@
 <li>等待生效就可以了，最迟要等待72个小时，但一般不会那么久，随后我们就可以通过域名来访问我们的博客了，如果你通过<code>username.github.io</code>最终也将映射到我们的域名上。</li>
 </ol>
 <hr>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>此时，使用 Hexo 和 Github Pages 搭建博客就已经告一段落了。接下来，我们可以通过其他的配置来优化我们的博客，或者已经可以开始发布文章了。我在整个搭建博客的过程中，遇到的最大问题首先是下载，没挂VPN下载 Hexo极其的慢，一度然我怀疑人生。但其他的流程很胜利，庆幸没有遇到什么bug。第二个问题是域名解析，当时，心态太着急，基础知识也不够，按照教程绑定了 Github Pages 但就是无法解析成功，后来才发现是因为我的CNAME文件上传的时候带了后缀名。可见基础常识的重要性，如果不是计算机专业的，很可能会犯一些意想之外的问题。另外，简书和谷歌上有很多教程给我提供了很大的帮助，官方文档的阅读也很有用。如果文中有什么错误，烦请大家评论让我改正，有什么问题也可以留言。搭建博客不难，重要的是后面的原理，路漫漫其修远兮，还得继续努力。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>此时，使用 Hexo 和 Github Pages 搭建博客就已经告一段落了。接下来，我们可以通过其他的配置来优化我们的博客，或者已经可以开始发布文章了。我在整个搭建博客的过程中，遇到的最大问题首先是下载，没挂VPN下载 Hexo极其的慢，一度然我怀疑人生。但其他的流程很胜利，庆幸没有遇到什么bug。第二个问题是域名解析，当时，心态太着急，基础知识也不够，按照教程绑定了 Github Pages 但就是无法解析成功，后来才发现是因为我的CNAME文件上传的时候带了后缀名。可见基础常识的重要性，如果不是计算机专业的，很可能会犯一些意想之外的问题。另外，简书和谷歌上有很多教程给我提供了很大的帮助，官方文档的阅读也很有用。如果文中有什么错误，烦请大家评论让我改正，有什么问题也可以留言。</p>
 <h2 id="参考文章-按照参考频度排名"><a href="#参考文章-按照参考频度排名" class="headerlink" title="参考文章 (按照参考频度排名)"></a>参考文章 (按照参考频度排名)</h2><blockquote>
 <p><a href="https://my.oschina.net/ryaneLee/blog/638440" target="_blank" rel="external">Github Pages和Hexo简明教程</a><br><a href="https://hexo.io/zh-cn/docs/index.html" target="_blank" rel="external">Hexo 文档</a><br><a href="https://github.com/iissnan/hexo-theme-next/wiki/%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%E5%8F%82%E8%80%83" target="_blank" rel="external">NexT 主题配置</a><br><a href="http://winterttr.me/2015/10/23/from-dns-to-github-custom-domain/" target="_blank" rel="external">从DNS到github pages自定义域名 </a><br><a href="http://www.jianshu.com/p/cea41e5c9b2a/comments/5642824#comment-5642824" target="_blank" rel="external">hexo搭建的Github博客绑定域名</a></p>
 </blockquote>
