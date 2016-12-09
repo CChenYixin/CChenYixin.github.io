@@ -1290,8 +1290,14 @@ pre .javascript .function {
 .posts-expand .post-meta .post-category-list-link {
   color: #999;
 }
+.posts-expand .post-meta .post-description {
+  font-size: 14px;
+  margin-top: 2px;
+}
+.post-meta-divider {
+  margin: 0 0.5em;
+}
 .post-meta-item-icon {
-  display: none;
   margin-right: 3px;
 }
 @media (min-width: 768px) and (max-width: 991px) {
@@ -1691,7 +1697,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #39b120;
+  background: #b3f408;
 }
 .links-of-blogroll {
   font-size: 13px;
