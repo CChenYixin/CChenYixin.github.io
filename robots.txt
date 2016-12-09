@@ -10,5 +10,5 @@ Disallow: /fonts/
 Disallow: /vendors/
 Disallow: /fancybox/
 
-Sitemap: http://cchenyixin.github.io/sitemap.xml
-Sitemap: http://cchenyixin.github.io/baidusitemap.xml
+Sitemap: http://chenyixin.win/sitemap.xml
+Sitemap: http://chenyixin.win/baidusitemap.xml
