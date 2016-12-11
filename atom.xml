@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://chenyixin.win/"/>
-  <updated>2016-12-11T13:40:58.425Z</updated>
+  <updated>2016-12-11T13:51:52.842Z</updated>
   <id>http://chenyixin.win/</id>
   
   <author>
@@ -20,11 +20,11 @@
     <link href="http://chenyixin.win/2016/12/11/title-%20%E8%A1%A8%E5%8D%95%E5%AF%B9%E9%BD%90%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F/"/>
     <id>http://chenyixin.win/2016/12/11/title- 表单对齐的两种方式/</id>
     <published>2016-12-11T13:08:53.346Z</published>
-    <updated>2016-12-11T13:40:58.425Z</updated>
+    <updated>2016-12-11T13:51:52.842Z</updated>
     
     <content type="html"><![CDATA[<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>文章探讨了两种简单的表单对齐方式，一种是在有固定宽度的情况下，另一种是 width 为 100% 的情况下，核心都是通过给 label 元素设定宽度，再利用 text-align 来达到对齐效果，需要注意的是 input 输入框下的说明文字与 input 框的对齐。</p>
 <h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="固定宽度的表单"><a href="#固定宽度的表单" class="headerlink" title="固定宽度的表单"></a>固定宽度的表单</h3><p>首先我们利用表单元素来写一个简易的表单，代码如下：</p>
-<pre><code class="html">    &lt;form action=&quot;&quot; method=&quot;&quot;&gt;
+<pre><code>    &lt;form action=&quot;&quot; method=&quot;&quot;&gt;
         &lt;div&gt;
             &lt;label for=&quot;name&quot;&gt;Name:&lt;/label&gt;
             &lt;input type=&quot;text&quot; id=&quot;name&quot; /&gt;
@@ -43,9 +43,8 @@
             &lt;button type=&quot;submit&quot;&gt;Send your message&lt;/button&gt;
         &lt;/div&gt;
     &lt;/form&gt;
-</code></pre>
-<p>然后在给其添加 CSS ：</p>
-<pre><code class="css">        form {
+</code></pre><p>然后在给其添加 CSS ：</p>
+<pre><code>        form {
             margin: 0 auto;
             width: 400px;
             padding: 1em;
@@ -106,8 +105,7 @@
             /* 这个额外的外边距大致充当了label和对应文本框间的间距 */
             margin-left: .5em;
         }
-</code></pre>
-<p>效果如图所示：</p>
+</code></pre><p>效果如图所示：</p>
 <p><img src="http://ohqryljkl.bkt.clouddn.com/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20161211203847.png" alt=""></p>
 <h3 id="width-为-100-的表单"><a href="#width-为-100-的表单" class="headerlink" title="width 为 100% 的表单"></a>width 为 100% 的表单</h3><p>首先我们利用表单元素来写一个简易的表单，代码如下：</p>
 <pre><code class="html">&lt;form&gt;
