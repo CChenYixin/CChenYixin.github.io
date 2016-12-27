@@ -84,21 +84,19 @@
 
 
 
-<meta name="description" content="摘要文章为百度前端技术学院2016年任务 8-12 的笔记，CSS 部分基本结束。本文大概记述了后半部分任务中的栅格化布局与 Flexfox 布局的一些笔记和需要注意的地方。
-正文栅格化布局栅格化布局的核心是预设好的列宽和媒体查询。具体来说， 首先，我们可以根据需要创建一系列预设好宽度的列，其次，通过设置不同的类名引用它们，最后通过媒体查询来判断具体情况下需要引用哪种样式布局，最终实现不同终端下都">
+<meta name="description" content="摘要大概记述了初次接触移动 Web 页面布局实践中遇到的一些问题和值得注意的地方。具体包括了移动前端开发基本的概念，移动页面开发相关的一些meta标签，相对单位 rem ，与响应式图片的一些总结。
+正文移动前端开发的大体印象移动前端开发是一个很大的概念，除了基本的前端知识外，还需要掌握一些PPI，像素，DPI等知识，对自己这种小白来说，学习过程中的一大体验就是概念多，还没有有个全局的印象首先被基础">
 <meta property="og:type" content="article">
-<meta property="og:title" content="IFE task 8-12 笔记">
-<meta property="og:url" content="http://chenyixin.win/2016/12/26/title- IFE task 8-12 笔记/index.html">
+<meta property="og:title" content="移动 Web 开发小记">
+<meta property="og:url" content="http://chenyixin.win/2016/12/27/title- 移动 Web 开发小记 /index.html">
 <meta property="og:site_name" content="速去逮一只猫">
-<meta property="og:description" content="摘要文章为百度前端技术学院2016年任务 8-12 的笔记，CSS 部分基本结束。本文大概记述了后半部分任务中的栅格化布局与 Flexfox 布局的一些笔记和需要注意的地方。
-正文栅格化布局栅格化布局的核心是预设好的列宽和媒体查询。具体来说， 首先，我们可以根据需要创建一系列预设好宽度的列，其次，通过设置不同的类名引用它们，最后通过媒体查询来判断具体情况下需要引用哪种样式布局，最终实现不同终端下都">
-<meta property="og:image" content="http://ohqryljkl.bkt.clouddn.com/1.gif">
-<meta property="og:updated_time" content="2016-12-26T14:11:47.244Z">
+<meta property="og:description" content="摘要大概记述了初次接触移动 Web 页面布局实践中遇到的一些问题和值得注意的地方。具体包括了移动前端开发基本的概念，移动页面开发相关的一些meta标签，相对单位 rem ，与响应式图片的一些总结。
+正文移动前端开发的大体印象移动前端开发是一个很大的概念，除了基本的前端知识外，还需要掌握一些PPI，像素，DPI等知识，对自己这种小白来说，学习过程中的一大体验就是概念多，还没有有个全局的印象首先被基础">
+<meta property="og:updated_time" content="2016-12-27T14:25:33.698Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="IFE task 8-12 笔记">
-<meta name="twitter:description" content="摘要文章为百度前端技术学院2016年任务 8-12 的笔记，CSS 部分基本结束。本文大概记述了后半部分任务中的栅格化布局与 Flexfox 布局的一些笔记和需要注意的地方。
-正文栅格化布局栅格化布局的核心是预设好的列宽和媒体查询。具体来说， 首先，我们可以根据需要创建一系列预设好宽度的列，其次，通过设置不同的类名引用它们，最后通过媒体查询来判断具体情况下需要引用哪种样式布局，最终实现不同终端下都">
-<meta name="twitter:image" content="http://ohqryljkl.bkt.clouddn.com/1.gif">
+<meta name="twitter:title" content="移动 Web 开发小记">
+<meta name="twitter:description" content="摘要大概记述了初次接触移动 Web 页面布局实践中遇到的一些问题和值得注意的地方。具体包括了移动前端开发基本的概念，移动页面开发相关的一些meta标签，相对单位 rem ，与响应式图片的一些总结。
+正文移动前端开发的大体印象移动前端开发是一个很大的概念，除了基本的前端知识外，还需要掌握一些PPI，像素，DPI等知识，对自己这种小白来说，学习过程中的一大体验就是概念多，还没有有个全局的印象首先被基础">
 
 
 
@@ -126,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://chenyixin.win/2016/12/26/title- IFE task 8-12 笔记/"/>
+  <link rel="canonical" href="http://chenyixin.win/2016/12/27/title- 移动 Web 开发小记 /"/>
 
 
 
 
 
-  <title> IFE task 8-12 笔记 | 速去逮一只猫 </title>
+  <title> 移动 Web 开发小记 | 速去逮一只猫 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -281,7 +279,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://chenyixin.win/2016/12/26/title- IFE task 8-12 笔记/">
+  <link itemprop="mainEntityOfPage" href="http://chenyixin.win/2016/12/27/title- 移动 Web 开发小记 /">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Chen Yixin">
@@ -305,7 +303,7 @@
             
             
               
-                IFE task 8-12 笔记
+                移动 Web 开发小记
               
             
           </h1>
@@ -318,8 +316,8 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              <time title="post.created" itemprop="dateCreated datePublished" datetime="2016-12-26T22:07:05+08:00">
-                2016-12-26
+              <time title="post.created" itemprop="dateCreated datePublished" datetime="2016-12-27T22:25:33+08:00">
+                2016-12-27
               </time>
             
 
@@ -334,8 +332,8 @@
             
               <span class="post-comments-count">
                 <span class="post-meta-divider">|</span>
-                <a href="/2016/12/26/title- IFE task 8-12 笔记/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/26/title- IFE task 8-12 笔记/" itemprop="commentCount"></span>
+                <a href="/2016/12/27/title- 移动 Web 开发小记 /#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/27/title- 移动 Web 开发小记 /" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -345,7 +343,7 @@
 
           
           
-             <span id="/2016/12/26/title- IFE task 8-12 笔记/" class="leancloud_visitors" data-flag-title="IFE task 8-12 笔记">
+             <span id="/2016/12/27/title- 移动 Web 开发小记 /" class="leancloud_visitors" data-flag-title="移动 Web 开发小记">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -370,79 +368,51 @@
       
 
       
-        <h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>文章为百度前端技术学院2016年任务 8-12 的笔记，CSS 部分基本结束。本文大概记述了后半部分任务中的栅格化布局与 Flexfox 布局的一些笔记和需要注意的地方。</p>
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="栅格化布局"><a href="#栅格化布局" class="headerlink" title="栅格化布局"></a>栅格化布局</h3><p>栅格化布局的核心是预设好的列宽和媒体查询。具体来说， 首先，我们可以根据需要创建一系列预设好宽度的列，其次，通过设置不同的类名引用它们，最后通过媒体查询来判断具体情况下需要引用哪种样式布局，最终实现不同终端下都能让布局完美展示的响应式设计。比较流行  <a href="http://v3.bootcss.com/css/#forms" target="_blank" rel="external">Bootstrap</a> 就是基于这种简单又实用的设计方式，通过 link 引入的方式可以快速的开发适用于不同设备的响应式 WEB 项目。这里以任务 8 为例结合这篇文章 <a href="http://j4n.co/blog/Creating-your-own-css-grid-system" target="_blank" rel="external">Creating Your Own CSS Grid System</a> 简单的回顾一下栅格化布局需要注意的部分。</p>
-<p>一个简单的栅格化布局包括以下部分：</p>
-<ol>
-<li>容器 - container</li>
-<li>行 - rows</li>
-<li>列 - columns</li>
-<li>间隙 - 列之间的空隙（gutters）</li>
-</ol>
-<h4 id="容器-container"><a href="#容器-container" class="headerlink" title="容器 - container"></a>容器 - container</h4><p>首先，栅格化布局的页面被包含在一个 .container 容器中，通常情况下宽度为100%，我们也可以通过 <code>max-width</code> 来设置最大的宽度。</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.container</span> &#123;</div><div class="line">     <span class="attribute">width </span>: <span class="number">100%</span>;</div><div class="line">     <span class="attribute">max-width </span>: <span class="number">1200px</span>;</div><div class="line"> &#125;</div></pre></td></tr></table></figure>
-<h4 id="行-rows"><a href="#行-rows" class="headerlink" title="行 - rows"></a>行 - rows</h4><blockquote>
-<p>行设置的目的是保证列们在它的包裹中而不是溢出到其他行中去。为了达到这个目的，我们需要使用清除浮动的技巧来保证子列们仍旧在这一行中。</p>
+        <h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>大概记述了初次接触移动 Web 页面布局实践中遇到的一些问题和值得注意的地方。具体包括了移动前端开发基本的概念，移动页面开发相关的一些<code>meta</code>标签，相对单位 rem ，与响应式图片的一些总结。</p>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="移动前端开发的大体印象"><a href="#移动前端开发的大体印象" class="headerlink" title="移动前端开发的大体印象"></a>移动前端开发的大体印象</h3><p>移动前端开发是一个很大的概念，除了基本的前端知识外，还需要掌握一些PPI，像素，DPI等知识，对自己这种小白来说，学习过程中的一大体验就是概念多，还没有有个全局的印象首先被基础概念淹没了。所以个人感觉首先要对移动前端开发有个大体的印象。具体来说的移动前端开发包括了以下几种类型：</p>
+<ul>
+<li>Native App（ 原生APP ）：完全使用移动设备系统语言写成的客户端。iPhone、iPad 就是纯Object-C，安卓就是纯JAVA, 具有极强的交互性。一般静态资源都是在本地的。浏览使用方便，体验度高。</li>
+<li>Web App：在移动设备的浏览器中的应用，不再是操作系统。说白了就是一个触屏版的网页，只能在浏览器中打开。资源一般都在网络上，IOS支持可以在桌面创建访问的快捷方式。</li>
+<li>Hybrid App：用原生系统语言写了个容器，然后在里面运行 web 页面，资源一般在本地或者网络都可以。</li>
+</ul>
+<h3 id="移动前端开发中的-meta-元素"><a href="#移动前端开发中的-meta-元素" class="headerlink" title="移动前端开发中的 meta 元素"></a>移动前端开发中的 meta 元素</h3><h4 id="meta-元素"><a href="#meta-元素" class="headerlink" title="meta 元素"></a>meta 元素</h4><blockquote>
+<p>标签提供关于HTML文档的元数据。元数据不会显示在页面上，但是对于机器是可读的。它可用于浏览器（如何显示内容或重新加载页面），搜索引擎（关键词），或其他 web 服务。 —— W3School</p>
 </blockquote>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.row</span><span class="selector-pseudo">:before</span>,</div><div class="line"><span class="selector-class">.row</span><span class="selector-pseudo">:after</span>&#123;</div><div class="line"> <span class="attribute">content</span>: <span class="string">""</span>;</div><div class="line"> <span class="attribute">display</span>: table;</div><div class="line"> <span class="attribute">clear</span>: both;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h4 id="列-columns"><a href="#列-columns" class="headerlink" title="列 - columns"></a>列 - columns</h4><p>列的设置是栅格化布局中最核心的部分之一。首先要将宽度划分为等分的列，可以根据需要设置不同的宽度，在 Bootstrap 框架中预设的列数为12等分。</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.col-1</span> &#123;<span class="attribute">width</span>: <span class="number">8.33%</span>;&#125;</div><div class="line"><span class="selector-class">.col-2</span> &#123;<span class="attribute">width</span>: <span class="number">16.66%</span>;&#125;</div><div class="line"><span class="selector-class">.col-3</span> &#123;<span class="attribute">width</span>: <span class="number">25%</span>;&#125;</div><div class="line"><span class="selector-class">.col-4</span> &#123;<span class="attribute">width</span>: <span class="number">33.33%</span>&#125;</div><div class="line"><span class="selector-class">.col-5</span> &#123;<span class="attribute">width</span>: <span class="number">41.66%</span>;&#125;</div><div class="line"><span class="selector-class">.col-6</span> &#123;<span class="attribute">width</span>: <span class="number">50%</span>&#125;</div><div class="line"><span class="selector-class">.col-7</span> &#123;<span class="attribute">width</span>: <span class="number">58.33%</span>;&#125;</div><div class="line"><span class="selector-class">.col-8</span> &#123;<span class="attribute">width</span>: <span class="number">66.66%</span>;&#125;</div><div class="line"><span class="selector-class">.col-9</span> &#123;<span class="attribute">width</span>: <span class="number">75%</span>;&#125;</div><div class="line"><span class="selector-class">.col-10</span> &#123;<span class="attribute">width</span>: <span class="number">83.33%</span>&#125;</div><div class="line"><span class="selector-class">.col-11</span> &#123;<span class="attribute">width</span>: <span class="number">91.66%</span>&#125;</div><div class="line"><span class="selector-class">.col-12</span> &#123;<span class="attribute">width</span>: <span class="number">100%</span>&#125;</div></pre></td></tr></table></figure>
-<p>设置好列的宽度后，利用 float 浮动的方式进行布局，如果我们不设置列的高度，那么这些浮动的列将会互相堆叠在前者的上面。为了避免出现这样的情况，我们需要在浮动列的同时给他们一个最小高度1px。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-attr">[class*='col-']</span>&#123;</div><div class="line"> <span class="attribute">float</span>: left;</div><div class="line"> <span class="attribute">min-height</span>: <span class="number">1px</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>接下来我们已经可以引用并进行布局了。</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"row"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-6"</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">span</span>&gt;</span>两栏<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-6"</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">span</span>&gt;</span>两栏<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
-<h4 id="列之间的空隙（gutters）"><a href="#列之间的空隙（gutters）" class="headerlink" title="列之间的空隙（gutters）"></a>列之间的空隙（gutters）</h4><p>在一般的盒模型下，如果我们设置一个宽度为200px，而实际呈现的盒子的宽度可能会大于200px(除非没有左右边框和左右补白)。但是当我们使用了 <code>box-sizing:border-box</code>属性后，假如我们要设置一个宽度为200px的盒子，那么只需要直接设置宽度为200px，当再设置它的左右边框和左右补白后，它的内容区会自动调整。</p>
-<p>这就使得我们可以借助border-box模型，轻松设置列之间的空隙。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*-- setting border box on all elements inside the grid --*/</span></div><div class="line"><span class="selector-class">.grid-container</span> *&#123;</div><div class="line"> <span class="attribute">box-sizing</span>: border-box;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-attr">[class*='col-']</span>&#123;</div><div class="line"> <span class="attribute">float</span>: left;</div><div class="line"> <span class="attribute">min-height</span>: <span class="number">1px</span>;</div><div class="line"> <span class="attribute">width</span>: <span class="number">16.66%</span>;</div><div class="line"> <span class="comment">/*-- our gutter --*/</span></div><div class="line"> <span class="attribute">padding</span>: <span class="number">12px</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h4 id="media媒体查询"><a href="#media媒体查询" class="headerlink" title="@media媒体查询"></a>@media媒体查询</h4><p>至此我们便可以通过媒体查询来设置不同设备或屏幕大小下的布局效果了。以任务 8 为例子：<br><img src="http://ohqryljkl.bkt.clouddn.com/1.gif" alt="图片"></p>
-<h3 id="Flexbox布局"><a href="#Flexbox布局" class="headerlink" title="Flexbox布局"></a>Flexbox布局</h3><p>不同于栅格化布局利用 CSS 属性实现响应式开发，Flexbox 布局本身是一个布局模块，它包含着父元素 flex container 和子元素 flex items 属性。优点是尤其适合移动端 WEB 网页开发，缺点是在PC端的兼容性上暂时不完全，而且由于本身是一个布局模块所以不需要额外书写CSS样式，相比栅格式布局需要额外书写样式可能带来的渲染时间延长的缺点，Flexbox 十分适合响应式开发。</p>
-<p>根据我个人的理解把 Flexbox布局分为两部分理解：轴相关和项目相关。</p>
-<h4 id="轴相关"><a href="#轴相关" class="headerlink" title="轴相关"></a>轴相关</h4><ol>
-<li><p>使用Flexbox 布局</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">section</span>&#123;</div><div class="line">    <span class="attribute">display</span>:flex;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-<li><p>轴方向 flex-direction<br>设定伸缩容器的主轴的方向，默认 row。</p>
-</li>
-</ol>
+<h4 id="移动设备"><a href="#移动设备" class="headerlink" title="移动设备"></a>移动设备</h4><p><code>viewport</code>可以让布局在移动浏览器上显示的更好，之所有会有要用到 viewport，原因是在移动浏览器中，通常会以一个比屏幕更宽的虚拟的窗口中渲染，从而无需将页面的所有部分压缩到屏幕中（这样会把很多没有针对移动端进行优化的站点打乱）。用户可以通过平移和缩放来浏览页面的不同区域。<br><figure class="highlight nix"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;meta <span class="attr">name="viewport"</span> <span class="attr">content="width=device-width,</span> <span class="attr">initial-scale=1.0,maximum-scale=1.0,</span> <span class="attr">user-scalable=no"/&gt;</span></div></pre></td></tr></table></figure></p>
+<p>其中：</p>
 <ul>
-<li>row(默认值)：在“ltr”排版方式下从左向右排列；在“rtl”排版方式下从右向左排列。</li>
-<li>row-reverse：与row排列方向相反，在“ltr”排版方式下从右向左排列；在“rtl”排版方式下从左向右排列.</li>
-<li>column：类似 于row，不过是从上到下排列.</li>
-<li>column-reverse：类似于row-reverse，不过是从下到上排列。</li>
+<li>content 是 meta 元素中的必要属性，定义与http-equiv或name属性相关的元信息</li>
+<li>name 把 content 属性关联到一个名称</li>
+<li>initial-scale 为初始的缩放比例，范围从&gt;0 到10</li>
+<li>minimum-scale 允许用户缩放到的最小比例</li>
+<li>maximum-scale 允许用户缩放到的最大比例</li>
+<li>user-scalable 用户是否可以手动缩 (no,yes)</li>
 </ul>
-<ol>
-<li>换行 flex-wrap</li>
-</ol>
+<h3 id="相对单位-rem"><a href="#相对单位-rem" class="headerlink" title="相对单位 rem"></a>相对单位 rem</h3><p>rem（font size of the root element）是指相对于根元素的字体大小的单位。通过设置html的字体大小就可以控制rem的大小。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">html</span> &#123;</div><div class="line">    <span class="attribute">font-size</span>: <span class="number">62.5%</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-tag">body</span> &#123;</div><div class="line">    <span class="attribute">font-size</span>: <span class="number">1.4rem</span>; <span class="comment">/* 14px */</span></div><div class="line">&#125;</div><div class="line"><span class="selector-tag">h1</span> &#123;</div><div class="line">    <span class="attribute">font-size</span>: <span class="number">2.4rem</span>; <span class="comment">/* 24px */</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>对于移动前端开发来说，我们在页面布局中有可能采用宽度百分比，高度用px固定的方式，但在某些屏幕下页面元素可能被拉长导致宽度百分比但高度没变就使得视觉上显示的不协调。要么采用响应式，但这种方式工作大，维护性难。要么采用 viewport 缩放的方式，但也有可能造成在缩放中页面糊掉的情况。这时候我们就可以采用 rem 的方式开适配。 rem不仅仅用于字体，同样也可以应用于宽高，边距等等，这样我们就可以通过设置html的字体大小就可以控制rem的大小。具体的来说，我们可以通过 JS 计算的方式去设置 font-size，因为暂时没有学习 JS ，暂时不做叙述。再者就是采用 media query 的方式来实现适配。例如：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">html</span> &#123;</div><div class="line">    <span class="attribute">font-size </span>: <span class="number">20px</span>;</div><div class="line">&#125;</div><div class="line">@<span class="keyword">media</span> only screen and (min-width: <span class="number">401px</span>)&#123;</div><div class="line">    <span class="selector-tag">html</span> &#123;</div><div class="line">        <span class="attribute">font-size</span>: <span class="number">25px</span> <span class="meta">!important</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">@<span class="keyword">media</span> only screen and (min-width: <span class="number">428px</span>)&#123;</div><div class="line">    <span class="selector-tag">html</span> &#123;</div><div class="line">        <span class="attribute">font-size</span>: <span class="number">26.75px</span> <span class="meta">!important</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">@<span class="keyword">media</span> only screen and (min-width: <span class="number">481px</span>)&#123;</div><div class="line">    <span class="selector-tag">html</span> &#123;</div><div class="line">        <span class="attribute">font-size</span>: <span class="number">30px</span> <span class="meta">!important</span>;</div><div class="line">    &#125;</div><div class="line">&#125;让</div><div class="line">@<span class="keyword">media</span> only screen and (min-width: <span class="number">569px</span>)&#123;</div><div class="line">    <span class="selector-tag">html</span> &#123;</div><div class="line">        <span class="attribute">font-size</span>: <span class="number">35px</span> <span class="meta">!important</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">@<span class="keyword">media</span> only screen and (min-width: <span class="number">641px</span>)&#123;</div><div class="line">    <span class="selector-tag">html</span> &#123;</div><div class="line">        <span class="attribute">font-size</span>: <span class="number">40px</span> <span class="meta">!important</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="弹性图片"><a href="#弹性图片" class="headerlink" title="弹性图片"></a>弹性图片</h3><h4 id="max-width方式"><a href="#max-width方式" class="headerlink" title="max-width方式"></a>max-width方式</h4><p>响应式 web 设计意味着，不仅我们的布局能基于设备特征变化，内容也能。对于图片来说，对于不同的设备，需要拉伸或者收缩图片。这时候我们可以在其中加上如下 CSS 样式：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">img</span>&#123;</div><div class="line">    <span class="attribute">max-width</span>:<span class="number">100%</span>;</div><div class="line">    <span class="attribute">height</span>:auto;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <ul>
-<li>nowrap:flex-wrap的默认值，表示的是伸缩容器为单行。侧轴起点方向等同于当前书写模式的起点或前/头在侧轴的那一边，而侧轴终点方向是侧轴起点的相反方向。</li>
-<li>wrap：表示的是伸缩容器为多行。侧轴起点方向等同于当前书写模式的起眯或前/头在侧轴的那一边，而侧轴终点方向是侧轴起点的相反方向。</li>
-<li>wrap-reverse：除了侧轴起点与侧轴终点方向交换以外同wrap所起作用相同。</li>
+<li>max-width:100%的设置，以确保图像永远不会超越其父容器的宽度。如果父容器的宽度收缩小于图像的宽度，图像将随之缩小。</li>
+<li>height:auto的设置可以确保当有这种情况发生时，图像将以自身的宽高比保留。</li>
 </ul>
-<ol>
-<li><p>主轴 justify-content<br>设置伸缩项目沿主轴的对齐方式，从而调整伸缩项目之间的间距。比较常用的 center 和 space-between。当我们需要让多个块元素在同一水平线上居中的时候，我们就可以用Flexbox 布局迅速让其居中:</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.flex-center</span> &#123;</div><div class="line">  <span class="attribute">display</span>: flex;</div><div class="line">  <span class="attribute">justify-content</span>: center;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-<li><p>侧轴 align-items<br>类似与主轴，设置伸缩项目沿侧轴的对齐方式，比如当我们需要让元素水平垂直局居中时，就可以使用 Flexbox 布局：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.parent</span> &#123;</div><div class="line">  <span class="attribute">display</span>: flex;</div><div class="line">  <span class="attribute">justify-content</span>: center;</div><div class="line">  <span class="attribute">align-items</span>: center;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<h4 id="项目相关"><a href="#项目相关" class="headerlink" title="项目相关"></a>项目相关</h4><ol>
-<li><p>项目顺序 order<br>默认情况之下，所有的伸缩项目的顺序组都是“0”。我们可以很容易的给每个伸缩项目设置不同的顺序值。更高的值会排在后面，而原来的HTML结构并不会有任何变化。比如我们可以通过以下代码让 .first 排在第一位：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.first</span> &#123;</div><div class="line">  <span class="attribute">order</span>: -<span class="number">1</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-<li><p>项目的弹性 flex</p>
-</li>
-</ol>
+<h4 id="picture方式"><a href="#picture方式" class="headerlink" title="picture方式"></a>picture方式</h4><p><picture>是HTML5一个新的元素。它可以通过使用 media 属性的方式来让浏览器根据当前的页面选择加载最合适的图片大小。</picture></p>
+<blockquote>
+<p>HTML <picture> 元素是一个容器，用来为其内部特定的 <img> 元素提供多样的 <source> 元素。浏览器会根据当前页面（即图片所在的盒子的容器）的布局以及当前浏览的设备（比如普通的屏幕和高清屏幕）去从中选择最合适的资源。</picture></p>
+</blockquote>
+<p>文章<a href="http://www.w3cplus.com/html5/quick-tip-how-to-use-html5-picture-for-responsive-images.html" target="_blank" rel="external">如何使用 HTML5 的picture元素处理响应式图片</a>对此有详细的论述，以下内容皆引用自原文：</p>
+<p><picture>基本工作步骤如下：</picture></p>
 <ul>
-<li>flex-grow 定义伸缩项目的扩展能力。比如我们给伸缩项目设置<code>flex-grow：1;</code>那么每个伸缩项目将设置为一个大小相等的剩余空间，相当于等比的方式分配空间。</li>
-<li>flex-shrink：定义伸缩项目收缩的能力。<strong>注意</strong>：负值同样生效。</li>
-<li>flex-basis: 设置伸缩基准值，剩余的空间按比率进行伸缩。</li>
+<li>创建<picture></picture>标签。</li>
+<li>在这些标签内创建一个你想用来执行任何一个特性的<source>元素。</li>
+<li>添加一个media属性，用来包含你想要的特性，如视口的当前高度(viewport height)，宽度(width)，方向(orientation)等。</li>
+<li>添加一个srcset属性与相应的图像文件名相匹配，进行加载。如果你想提供不同的像素密度，例如Retina显示屏，你可以添加额外的文件名到你的srcset属性中，</li>
+<li>添加一个回退的元素。</li>
+<li>可以看个简单的例子，用来检查视口是否小于768px，如果小于就加载一个较小的图像：<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">picture</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">source</span> <span class="attr">srcset</span>=<span class="string">"person_small.jpg"</span> <span class="attr">media</span>=<span class="string">"(max-width: 768px)"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">source</span> <span class="attr">srcset</span>=<span class="string">"person_default.jpg"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">srcset</span>=<span class="string">"person_default.jpg"</span> <span class="attr">alt</span>=<span class="string">"This is King"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">picture</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
 </ul>
-<p>这三个属性可以用<code>flex</code>简写，默认值为“0 1 auto”。</p>
-<h2 id="相关参考"><a href="#相关参考" class="headerlink" title="相关参考"></a>相关参考</h2><ul>
-<li><a href="http://j4n.co/blog/Creating-your-own-css-grid-system" target="_blank" rel="external">Creating Your Own CSS Grid System</a></li>
-<li><a href="https://segmentfault.com/a/1190000002910324" target="_blank" rel="external">Flexbox详解</a></li>
-<li><a href="http://www.w3cplus.com/css3/flexbox-basics.html" target="_blank" rel="external">Flexbox——快速布局神器</a></li>
-<li><a href="http://v3.bootcss.com/css/" target="_blank" rel="external">Bootstrap 全局 CSS 样式</a></li>
-</ul>
+<p>可以看到在屏幕&lt;=768px的时候加载的是person_small.jpg<br>当屏幕&gt;768px的时候，加载的是person_default.jpg</p>
+<p>不过这是一个实验中的功能，Chrome，Firefox和Opera浏览器都已经实现了对<picture>元素的支持。在不久的将来，在其他浏览器也将得到广泛的支持。</picture></p>
+<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><p><a href="https://segmentfault.com/a/1190000002407912" target="_blank" rel="external">常用meta整理</a><br><a href="http://www.css88.com/archives/5480" target="_blank" rel="external">移动前端不得不了解的html5 head 头标签</a><br><a href="https://developer.mozilla.org/zh-CN/docs/Mobile/Viewport_meta_tag" target="_blank" rel="external">在移动浏览器中使用viewport元标签控制布局</a><br><a href="http://www.w3cplus.com/html5/quick-tip-how-to-use-html5-picture-for-responsive-images.html" target="_blank" rel="external">如何使用 HTML5 的picture元素处理响应式图片</a><br><a href="https://www.zhihu.com/question/20269059" target="_blank" rel="external">移动前端开发和 Web 前端开发的区别是什么？</a><br><a href="http://alloyteam.github.io/Spirit/modules/Standard/" target="_blank" rel="external">移动开发规范概述</a><br><a href="http://www.alloyteam.com/2016/03/mobile-web-adaptation-tool-rem/" target="_blank" rel="external">移动适配利器 rem</a><br><a href="https://isux.tencent.com/web-app-rem.html" target="_blank" rel="external">web app变革之rem</a></p>
 
       
     </div>
@@ -485,8 +455,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/12/16/title- IFE task 1-7 笔记/" rel="next" title="IFE task 1-7 笔记">
-                <i class="fa fa-chevron-left"></i> IFE task 1-7 笔记
+              <a href="/2016/12/26/title- IFE task 8-12 笔记/" rel="next" title="IFE task 8-12 笔记">
+                <i class="fa fa-chevron-left"></i> IFE task 8-12 笔记
               </a>
             
           </div>
@@ -494,10 +464,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/12/27/title- 移动 Web 开发小记 /" rel="prev" title="移动 Web 开发小记">
-                移动 Web 开发小记 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -522,8 +488,8 @@
  
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/12/26/title- IFE task 8-12 笔记/"
-           data-title="IFE task 8-12 笔记" data-url="http://chenyixin.win/2016/12/26/title- IFE task 8-12 笔记/">
+      <div class="ds-thread" data-thread-key="2016/12/27/title- 移动 Web 开发小记 /"
+           data-title="移动 Web 开发小记" data-url="http://chenyixin.win/2016/12/27/title- 移动 Web 开发小记 /">
       </div>
     
   </div>
@@ -641,7 +607,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#摘要"><span class="nav-number">1.</span> <span class="nav-text">摘要</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正文"><span class="nav-number">2.</span> <span class="nav-text">正文</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#栅格化布局"><span class="nav-number">2.1.</span> <span class="nav-text">栅格化布局</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#容器-container"><span class="nav-number">2.1.1.</span> <span class="nav-text">容器 - container</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#行-rows"><span class="nav-number">2.1.2.</span> <span class="nav-text">行 - rows</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#列-columns"><span class="nav-number">2.1.3.</span> <span class="nav-text">列 - columns</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#列之间的空隙（gutters）"><span class="nav-number">2.1.4.</span> <span class="nav-text">列之间的空隙（gutters）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#media媒体查询"><span class="nav-number">2.1.5.</span> <span class="nav-text">@media媒体查询</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Flexbox布局"><span class="nav-number">2.2.</span> <span class="nav-text">Flexbox布局</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#轴相关"><span class="nav-number">2.2.1.</span> <span class="nav-text">轴相关</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#项目相关"><span class="nav-number">2.2.2.</span> <span class="nav-text">项目相关</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相关参考"><span class="nav-number">3.</span> <span class="nav-text">相关参考</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#摘要"><span class="nav-number">1.</span> <span class="nav-text">摘要</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正文"><span class="nav-number">2.</span> <span class="nav-text">正文</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#移动前端开发的大体印象"><span class="nav-number">2.1.</span> <span class="nav-text">移动前端开发的大体印象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#移动前端开发中的-meta-元素"><span class="nav-number">2.2.</span> <span class="nav-text">移动前端开发中的 meta 元素</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#meta-元素"><span class="nav-number">2.2.1.</span> <span class="nav-text">meta 元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#移动设备"><span class="nav-number">2.2.2.</span> <span class="nav-text">移动设备</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#相对单位-rem"><span class="nav-number">2.3.</span> <span class="nav-text">相对单位 rem</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#弹性图片"><span class="nav-number">2.4.</span> <span class="nav-text">弹性图片</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#max-width方式"><span class="nav-number">2.4.1.</span> <span class="nav-text">max-width方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#picture方式"><span class="nav-number">2.4.2.</span> <span class="nav-text">picture方式</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考文章"><span class="nav-number">3.</span> <span class="nav-text">参考文章</span></a></li></ol></div>
             
           </div>
         </section>
