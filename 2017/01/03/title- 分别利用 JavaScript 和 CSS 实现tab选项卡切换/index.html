@@ -71,8 +71,6 @@
 
 
 
-  
-
 
   <link rel="alternate" href="/atom.xml" title="速去逮一只猫" type="application/atom+xml" />
 
@@ -94,7 +92,7 @@
 <meta property="og:description" content="摘要大概是一次概念整理，原本这个是慕课进阶后面的编程练习，通过这个选项卡切换的小实例理清了原本对 JavaScript 概念的一些错误认识，顺便复习了一下利用 CSS 制作tab选项卡的过程，所以大概整理了一下写成文章。另外尽管如此，这个练习后还是存在一个问题：就是关于JavaScript中的 this 的使用问题，尽管了解了关键字 this 总是指向调用该方法的对象，但是这较为抽象的概念在实际运">
 <meta property="og:image" content="http://ohqryljkl.bkt.clouddn.com/tab.gif">
 <meta property="og:image" content="http://ohqryljkl.bkt.clouddn.com/tab.gif">
-<meta property="og:updated_time" content="2017-01-03T13:34:41.540Z">
+<meta property="og:updated_time" content="2017-01-18T11:04:08.584Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="分别利用 JavaScript 和 CSS 实现tab选项卡切换">
 <meta name="twitter:description" content="摘要大概是一次概念整理，原本这个是慕课进阶后面的编程练习，通过这个选项卡切换的小实例理清了原本对 JavaScript 概念的一些错误认识，顺便复习了一下利用 CSS 制作tab选项卡的过程，所以大概整理了一下写成文章。另外尽管如此，这个练习后还是存在一个问题：就是关于JavaScript中的 this 的使用问题，尽管了解了关键字 this 总是指向调用该方法的对象，但是这较为抽象的概念在实际运">
@@ -370,7 +368,7 @@
       
 
       
-        <h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>大概是一次概念整理，原本这个是慕课进阶后面的编程练习，通过这个选项卡切换的小实例理清了原本对 JavaScript 概念的一些错误认识，顺便复习了一下利用 CSS 制作tab选项卡的过程，所以大概整理了一下写成文章。另外尽管如此，这个练习后还是存在一个问题：就是关于JavaScript中的 <code>this</code> 的使用问题，尽管了解了关键字 this 总是指向调用该方法的对象，但是这较为抽象的概念在实际运用和理解中还是有点问题，暂时还没有解决，特此记录下。可以这个需要大量的练习才可能摸清<code>this</code>的真正概念和使用方法吧。</p>
+        <h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>大概是一次概念整理，原本这个是慕课进阶后面的编程练习，通过这个选项卡切换的小实例理清了原本对 JavaScript 概念的一些错误认识，顺便复习了一下利用 CSS 制作tab选项卡的过程，所以大概整理了一下写成文章。另外尽管如此，这个练习后还是存在一个问题：就是关于JavaScript中的 <code>this</code> 的使用问题，尽管了解了关键字 this 总是指向调用该方法的对象，但是这较为抽象的概念在实际运用和理解中还是有点问题，暂时还没有解决，特此记录下。可以这个需要大量的练习才可能摸清<code>this</code>的真正概念和使用方法吧。<strong>17年1月18号更新：文章写于刚开始学习JS时，文中方法二 Javascript 与 CSS 耦合是一种并不合适的写法。</strong></p>
 <h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="CSS-实现tab选项卡切换"><a href="#CSS-实现tab选项卡切换" class="headerlink" title="CSS 实现tab选项卡切换"></a>CSS 实现tab选项卡切换</h3><p>效果如下：</p>
 <p><img src="http://ohqryljkl.bkt.clouddn.com/tab.gif" alt="效果如下"></p>
 <p>HTML部分：<br><figure class="highlight stata"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">div id=<span class="string">"tabs"</span>&gt;</div><div class="line">    &lt;ul&gt;</div><div class="line">        &lt;<span class="keyword">li</span>&gt;</div><div class="line">            &lt;<span class="keyword">input</span> <span class="keyword">type</span>=<span class="string">"radio"</span> name=<span class="string">"nav"</span> id=<span class="string">"nav1"</span> checked&gt; <span class="comment">/*核心代码*/</span></div><div class="line">            &lt;<span class="keyword">label</span> <span class="keyword">for</span>=<span class="string">"nav1"</span>&gt;房产&lt;/<span class="keyword">label</span>&gt;</div><div class="line">            &lt;div <span class="keyword">class</span>=<span class="string">"tab tab1"</span>&gt;</div><div class="line">                275万购昌平邻铁三居 总价20万买一居&lt;<span class="keyword">br</span>/&gt;200万内购五环三居 140万安家东三环&lt;<span class="keyword">br</span>/&gt;北京首现零首付楼盘 53万购东5环50平&lt;<span class="keyword">br</span>/&gt;京楼盘直降5000 中信府 公园楼王现房</div><div class="line">            &lt;/div&gt;</div><div class="line">        &lt;/<span class="keyword">li</span>&gt;</div><div class="line">        &lt;<span class="keyword">li</span>&gt;</div><div class="line">            &lt;<span class="keyword">input</span> <span class="keyword">type</span>=<span class="string">"radio"</span> name=<span class="string">"nav"</span> id=<span class="string">"nav2"</span>&gt;</div><div class="line">            &lt;<span class="keyword">label</span> <span class="keyword">for</span>=<span class="string">"nav2"</span>&gt;家具&lt;/<span class="keyword">label</span>&gt;</div><div class="line">            &lt;div <span class="keyword">class</span>=<span class="string">"tab tab2"</span>&gt;</div><div class="line">                40平出租屋大改造 美少女的混搭小窝&lt;<span class="keyword">br</span>/&gt;经典清新简欧爱家 90平老房焕发新生&lt;<span class="keyword">br</span>/&gt;新中式的酷色温情 66平撞色活泼家居&lt;<span class="keyword">br</span>/&gt;瓷砖就像选好老婆 卫生间烟道的设计</div><div class="line">            &lt;/div&gt;</div><div class="line">        &lt;/<span class="keyword">li</span>&gt;</div><div class="line">        &lt;<span class="keyword">li</span>&gt;</div><div class="line">            &lt;<span class="keyword">input</span> <span class="keyword">type</span>=<span class="string">"radio"</span> name=<span class="string">"nav"</span> id=<span class="string">"nav3"</span>&gt;</div><div class="line">            &lt;<span class="keyword">label</span> <span class="keyword">for</span>=<span class="string">"nav3"</span>&gt;二手房&lt;/<span class="keyword">label</span>&gt;</div><div class="line">            &lt;div <span class="keyword">class</span>=<span class="string">"tab tab3"</span>&gt;</div><div class="line">                通州豪华3居260万 二环稀缺2居250w甩&lt;<span class="keyword">br</span>/&gt;西3环通透2居290万 130万2居限量抢购&lt;<span class="keyword">br</span>/&gt;黄城根小学学区仅260万 121平70万抛!&lt;<span class="keyword">br</span>/&gt;独家别墅280万 苏州桥2居优惠价248万</div><div class="line">            &lt;/div&gt;</div><div class="line">        &lt;/<span class="keyword">li</span>&gt;</div><div class="line">    &lt;/ul&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure></p>
@@ -449,6 +447,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2017/01/18/title- 立即执行函数 IIFE /" rel="prev" title="立即执行函数表达式 IIFE">
+                立即执行函数表达式 IIFE <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -517,7 +519,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">8</span>
+              <span class="site-state-item-count">9</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
