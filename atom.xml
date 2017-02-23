@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://chenyixin.win/"/>
-  <updated>2017-01-18T13:47:53.110Z</updated>
+  <updated>2017-02-23T10:13:30.968Z</updated>
   <id>http://chenyixin.win/</id>
   
   <author>
@@ -14,6 +14,71 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>利用 jQuery 实现一个清单列表小应用</title>
+    <link href="http://chenyixin.win/2017/02/23/title-%20%E4%BD%BF%E7%94%A8%20jQuery%20%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E4%BB%BB%E5%8A%A1%E6%B8%85%E5%8D%95%E5%B0%8F%E5%BA%94%E7%94%A8%20/"/>
+    <id>http://chenyixin.win/2017/02/23/title- 使用 jQuery 实现一个任务清单小应用 /</id>
+    <published>2017-02-23T10:13:30.967Z</published>
+    <updated>2017-02-23T10:13:30.968Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>利用 jQuery 做了一个任务清单的网页小应用，实现了其中的一些基本功能。进一步熟悉了 jQuery 的一些基本的操作和方法。第一次使用了 local storage，不过使用了相关的库Store.js。对本地存储的数据保存方式以及JSON还得再抽个时间学一下，算是知其然不知其所以然。遇到了不小的困难，主要存在于下面两个方面：数据的存储和基本概念的理解。意外的收获是学会了利用console.log的检查代码bug。这篇文章主要记述过程和思路，以及一些写代码过程中的反思。</p>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p><img src="http://ohqryljkl.bkt.clouddn.com/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20170223144241.png" alt="脑图"></p>
+<h3 id="困难与反思"><a href="#困难与反思" class="headerlink" title="困难与反思"></a>困难与反思</h3><p>假如我在写这篇文章之前先画出一个脑图整理思路的话 (上面这个图是后面整理的 )，我想遇到的问题可能会少很多。假如一上来对要实现的功能的逻辑没有清晰的思路，我发现时间大多数都用来修复函数调用等等所出现的 bug 上面了。而且，假如逻辑清晰，思路很明了的话修复bug的也会变的很快。我想下次再写，一定先要把逻辑搞清楚。比如要实现其中的提交Task功能。</p>
+<ul>
+<li>首先我们需要监听提交按钮，是否输入了内容</li>
+<li>假如没有或为空则返回，否则</li>
+<li>将输入的值推入 Task 列表</li>
+<li>然后更新数据</li>
+<li>渲染 Task 列表</li>
+<li>在渲染的过程中用循环去遍历每个Task</li>
+<li>判断单个Task是否已经完成</li>
+<li>已完成的渲染已完成的CSS样式</li>
+<li>未完成的渲染未完成的结构和样式</li>
+<li>监听其他操作</li>
+</ul>
+<p>有个清晰的逻辑我们就可以利用Jquery来去实现这个功能了。</p>
+<ul>
+<li>我们需要监听提交按钮，我们可以用jquery 的<code>.on()</code>来添加点击事件，将点击触发的函数可以单独来写</li>
+<li>我们可以利用<code>.find()</code>来查找input按钮，将val()得到的值复制给变量</li>
+<li>将新得到的Task利用<code>.push()</code>给需要渲染的任务列表</li>
+<li>写一个刷新数据的函数，将Task列表传入随后再调用我们的渲染函数</li>
+<li>渲染函数中我们利用<code>for</code>循环来首先判断每个Task的状态分别来渲染</li>
+<li>将渲染好的内容利用<code>prepend</code>或者<code>append</code>结构中区</li>
+<li>监听其他事件</li>
+</ul>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//部分代码，点击 [TODO](https://github.com/CChenYixin/JavaScript_demo/tree/master/demo_MY%20TODO) 访问完整代码。</span></div><div class="line"></div><div class="line"></div><div class="line">$form_add_task.on(<span class="string">'submit'</span>,on_add_task_form_submit);</div><div class="line"></div><div class="line"><span class="comment">//监听提交按钮并添加事件</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">on_add_task_form_submit</span><span class="params">(e)</span></span>&#123;</div><div class="line">    <span class="keyword">var</span> new_task=&#123;&#125;,$input;</div><div class="line">    <span class="comment">//禁用默认行为</span></div><div class="line">    e.preventDefault();</div><div class="line">    <span class="comment">//获取新task的值</span></div><div class="line">    $input = $(this).find(<span class="string">'input[name=content]'</span>);</div><div class="line">    new_task.content =  $input.val();</div><div class="line">    <span class="comment">//如果新task的值为空则返回，否则继续执行</span></div><div class="line">    <span class="keyword">if</span>(!new_task.content) <span class="keyword">return</span>;</div><div class="line">    <span class="comment">// 存入新task</span></div><div class="line">    task_list.push(new_task);</div><div class="line">    <span class="keyword">if</span>(add_task(new_task))&#123;</div><div class="line">        <span class="comment">// render_task_list();</span></div><div class="line">        $input.val(<span class="keyword">null</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//添加task</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">add_task</span><span class="params">(new_task)</span></span>&#123;</div><div class="line">    <span class="comment">//更新localstrage</span></div><div class="line">    refresh_task_list();</div><div class="line">    <span class="comment">// console.log('task_list',task_list);</span></div><div class="line">    <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//更新localstroage并刷新</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">refresh_task_list</span> <span class="params">()</span> </span>&#123;</div><div class="line">      store.set(<span class="string">'task_list'</span>, task_list);</div><div class="line">      render_task_list();</div><div class="line">  &#125;</div><div class="line"></div><div class="line"><span class="comment">//渲染task列表</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">render_task_list</span><span class="params">()</span></span>&#123;</div><div class="line">  <span class="comment">// console.log('1',1);</span></div><div class="line">  <span class="comment">// console.log('task_list',task_list);</span></div><div class="line">  <span class="keyword">var</span> $task_list=$(<span class="string">'.task-list'</span>);</div><div class="line">  $task_list.html(<span class="string">''</span>);</div><div class="line">  <span class="keyword">var</span> complete_items =[];</div><div class="line"></div><div class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>;i&lt;task_list.length;i++)&#123;</div><div class="line">      <span class="keyword">var</span> item = task_list[i];</div><div class="line">      <span class="keyword">if</span>(item &amp;&amp; item.complete)&#123;</div><div class="line">          complete_items.push(item);</div><div class="line">          <span class="keyword">var</span> $complete_task = render_task_item(item,i);</div><div class="line">          <span class="keyword">if</span>(!$complete_task) <span class="keyword">continue</span>;</div><div class="line">          $complete_task.addClass(<span class="string">"completed"</span>);</div><div class="line">          $task_list.append($complete_task);</div><div class="line">      &#125;<span class="keyword">else</span>&#123;</div><div class="line">          $task = render_task_item(item,i);</div><div class="line">          $task_list.prepend($task);</div><div class="line">      &#125;</div><div class="line">  &#125;</div><div class="line">  $task_delete_trigger = $(<span class="string">'.action.delete'</span>);</div><div class="line">  $task_detail_trigger= $(<span class="string">'.action.detail'</span>);</div><div class="line">  $checkbox_complete = $(<span class="string">'.complete'</span>);</div><div class="line">  listen_task_delete();</div><div class="line">  listen_task_detail();</div><div class="line">  listen_checkbox_complete();</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">function</span> <span class="title">render_task_item</span><span class="params">(data,index)</span></span>&#123;</div><div class="line">      <span class="keyword">if</span>(!data||!index) <span class="keyword">return</span>;</div><div class="line">      <span class="keyword">var</span> list_item_item = <span class="string">'&lt;div class="task-item" data-index="'</span>+ index +<span class="string">'"&gt;'</span>+</div><div class="line">              <span class="string">'&lt;span&gt;&lt;input class="complete"'</span> + ( data.complete ? <span class="string">'checked'</span>:<span class="string">''</span>) +<span class="string">' type="checkbox"&gt;&lt;/span&gt;'</span>+</div><div class="line">              <span class="string">'&lt;span class="text-content"&gt;'</span>+ data.content + <span class="string">'&lt;/span&gt;'</span>+</div><div class="line">              <span class="string">'&lt;span class="action delete"&gt;删除&lt;/span&gt;'</span>+</div><div class="line">              <span class="string">'&lt;span class="action detail"&gt;详细&lt;/span&gt;'</span>+</div><div class="line">          <span class="string">'&lt;/div&gt;'</span>;</div><div class="line">      <span class="keyword">return</span> $(list_item_item);</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+<h3 id="bug-和反思"><a href="#bug-和反思" class="headerlink" title="bug 和反思"></a>bug 和反思</h3><p>逻辑清晰的找bug也会快一点。尤其是可以利用<code>console.log()</code>的方式。除去那些依靠JShint就可以排查的bug，首先我们可以先确定bug产生的大体范围，根据逻辑顺序，来打印<code>console.log()</code>;一步步的来测试就可以精准的确定bug产生的原因。不过暂时不知道那些动辄上万行代码是如何debug的，查找资料的时候发现chrome自带断点测试，也要抽时间来学习一下。</p>
+<h3 id="npm的使用"><a href="#npm的使用" class="headerlink" title="npm的使用"></a>npm的使用</h3><p>npm 是 Node 的模块管理器，功能极其强大。我们根据一行命令，就能安装别人写好的模块。</p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$ </span>npm install &lt;packageName&gt;</div><div class="line"><span class="regexp">//</span>卸载</div><div class="line"><span class="variable">$ </span>npm uninstall express</div></pre></td></tr></table></figure>
+<p>模块的安装过程如下：</p>
+<ul>
+<li>发出npm install命令</li>
+<li>npm 向 registry 查询模块压缩包的网址</li>
+<li>下载压缩包，存放在~/.npm目录</li>
+<li>解压压缩包到当前项目的node_modules目录</li>
+</ul>
+<p>我们可以在安装的时候加上<code>--save-dev</code>：</p>
+<blockquote>
+<p>当你为你的模块安装一个依赖模块时，正常情况下你得先安装他们（在模块根目录下npm install module-name），然后连同版本号手动将他们添加到模块配置文件package.json中的依赖里（dependencies）。<br>-save和save-dev可以省掉你手动修改package.json文件的步骤。<br>spm install module-name -save 自动把模块和版本号添加到dependencies部分<br>spm install module-name -save-dve 自动把模块和版本号添加到devdependencies部分</p>
+</blockquote>
+<p>在使用npm感觉很方便，另外想到的还是必须要学习git，虽然再学习初期为了节省时间用了github的客户端来上传代码，但是最终用的还是git，而且用git会更加节省时间。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
+<li>写代码前有一个清晰的逻辑。</li>
+<li>基础概念的掌握和理解是最重要的没有之一。</li>
+<li>要抽时间深度掌握 git,JSON,以及是改学学后端的一些知识了，至少要熟悉借口之类的。</li>
+</ul>
+<p>感觉最近的学习有点懈怠了，要加油。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;摘要&quot;&gt;&lt;a href=&quot;#摘要&quot; class=&quot;headerlink&quot; title=&quot;摘要&quot;&gt;&lt;/a&gt;摘要&lt;/h2&gt;&lt;p&gt;利用 jQuery 做了一个任务清单的网页小应用，实现了其中的一些基本功能。进一步熟悉了 jQuery 的一些基本的操作和方法。第一次使用了
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>立即执行函数表达式 IIFE</title>

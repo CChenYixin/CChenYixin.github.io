@@ -71,6 +71,8 @@
 
 
 
+  
+
 
   <link rel="alternate" href="/atom.xml" title="速去逮一只猫" type="application/atom+xml" />
 
@@ -84,19 +86,18 @@
 
 
 
-<meta name="description" content="摘要大概记述了初次接触移动 Web 页面布局实践中遇到的一些问题和值得注意的地方。具体包括了移动前端开发基本的概念，移动页面开发相关的一些meta标签，相对单位 rem ，与响应式图片的一些总结。
-正文移动前端开发的大体印象移动前端开发是一个很大的概念，除了基本的前端知识外，还需要掌握一些PPI，像素，DPI等知识，对自己这种小白来说，学习过程中的一大体验就是概念多，还没有有个全局的印象首先被基础">
+<meta name="description" content="摘要利用 jQuery 做了一个任务清单的网页小应用，实现了其中的一些基本功能。进一步熟悉了 jQuery 的一些基本的操作和方法。第一次使用了 local storage，不过使用了相关的库Store.js。对本地存储的数据保存方式以及JSON还得再抽个时间学一下，算是知其然不知其所以然。遇到了不小的困难，主要存在于下面两个方面：数据的存储和基本概念的理解。意外的收获是学会了利用console.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="移动 Web 开发小记">
-<meta property="og:url" content="http://chenyixin.win/2016/12/27/title- 移动 Web 开发小记 /index.html">
+<meta property="og:title" content="利用 jQuery 实现一个清单列表小应用">
+<meta property="og:url" content="http://chenyixin.win/2017/02/23/title- 使用 jQuery 实现一个任务清单小应用 /index.html">
 <meta property="og:site_name" content="速去逮一只猫">
-<meta property="og:description" content="摘要大概记述了初次接触移动 Web 页面布局实践中遇到的一些问题和值得注意的地方。具体包括了移动前端开发基本的概念，移动页面开发相关的一些meta标签，相对单位 rem ，与响应式图片的一些总结。
-正文移动前端开发的大体印象移动前端开发是一个很大的概念，除了基本的前端知识外，还需要掌握一些PPI，像素，DPI等知识，对自己这种小白来说，学习过程中的一大体验就是概念多，还没有有个全局的印象首先被基础">
-<meta property="og:updated_time" content="2016-12-27T14:25:33.698Z">
+<meta property="og:description" content="摘要利用 jQuery 做了一个任务清单的网页小应用，实现了其中的一些基本功能。进一步熟悉了 jQuery 的一些基本的操作和方法。第一次使用了 local storage，不过使用了相关的库Store.js。对本地存储的数据保存方式以及JSON还得再抽个时间学一下，算是知其然不知其所以然。遇到了不小的困难，主要存在于下面两个方面：数据的存储和基本概念的理解。意外的收获是学会了利用console.">
+<meta property="og:image" content="http://ohqryljkl.bkt.clouddn.com/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20170223144241.png">
+<meta property="og:updated_time" content="2017-02-23T10:13:30.968Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="移动 Web 开发小记">
-<meta name="twitter:description" content="摘要大概记述了初次接触移动 Web 页面布局实践中遇到的一些问题和值得注意的地方。具体包括了移动前端开发基本的概念，移动页面开发相关的一些meta标签，相对单位 rem ，与响应式图片的一些总结。
-正文移动前端开发的大体印象移动前端开发是一个很大的概念，除了基本的前端知识外，还需要掌握一些PPI，像素，DPI等知识，对自己这种小白来说，学习过程中的一大体验就是概念多，还没有有个全局的印象首先被基础">
+<meta name="twitter:title" content="利用 jQuery 实现一个清单列表小应用">
+<meta name="twitter:description" content="摘要利用 jQuery 做了一个任务清单的网页小应用，实现了其中的一些基本功能。进一步熟悉了 jQuery 的一些基本的操作和方法。第一次使用了 local storage，不过使用了相关的库Store.js。对本地存储的数据保存方式以及JSON还得再抽个时间学一下，算是知其然不知其所以然。遇到了不小的困难，主要存在于下面两个方面：数据的存储和基本概念的理解。意外的收获是学会了利用console.">
+<meta name="twitter:image" content="http://ohqryljkl.bkt.clouddn.com/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20170223144241.png">
 
 
 
@@ -124,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="http://chenyixin.win/2016/12/27/title- 移动 Web 开发小记 /"/>
+  <link rel="canonical" href="http://chenyixin.win/2017/02/23/title- 使用 jQuery 实现一个任务清单小应用 /"/>
 
 
 
 
 
-  <title> 移动 Web 开发小记 | 速去逮一只猫 </title>
+  <title> 利用 jQuery 实现一个清单列表小应用 | 速去逮一只猫 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -279,7 +280,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://chenyixin.win/2016/12/27/title- 移动 Web 开发小记 /">
+  <link itemprop="mainEntityOfPage" href="http://chenyixin.win/2017/02/23/title- 使用 jQuery 实现一个任务清单小应用 /">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Chen Yixin">
@@ -303,7 +304,7 @@
             
             
               
-                移动 Web 开发小记
+                利用 jQuery 实现一个清单列表小应用
               
             
           </h1>
@@ -316,8 +317,8 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              <time title="post.created" itemprop="dateCreated datePublished" datetime="2016-12-27T22:25:33+08:00">
-                2016-12-27
+              <time title="post.created" itemprop="dateCreated datePublished" datetime="2017-02-23T18:13:30+08:00">
+                2017-02-23
               </time>
             
 
@@ -332,8 +333,8 @@
             
               <span class="post-comments-count">
                 <span class="post-meta-divider">|</span>
-                <a href="/2016/12/27/title- 移动 Web 开发小记 /#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/27/title- 移动 Web 开发小记 /" itemprop="commentCount"></span>
+                <a href="/2017/02/23/title- 使用 jQuery 实现一个任务清单小应用 /#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/23/title- 使用 jQuery 实现一个任务清单小应用 /" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -343,7 +344,7 @@
 
           
           
-             <span id="/2016/12/27/title- 移动 Web 开发小记 /" class="leancloud_visitors" data-flag-title="移动 Web 开发小记">
+             <span id="/2017/02/23/title- 使用 jQuery 实现一个任务清单小应用 /" class="leancloud_visitors" data-flag-title="利用 jQuery 实现一个清单列表小应用">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -368,51 +369,53 @@
       
 
       
-        <h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>大概记述了初次接触移动 Web 页面布局实践中遇到的一些问题和值得注意的地方。具体包括了移动前端开发基本的概念，移动页面开发相关的一些<code>meta</code>标签，相对单位 rem ，与响应式图片的一些总结。</p>
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="移动前端开发的大体印象"><a href="#移动前端开发的大体印象" class="headerlink" title="移动前端开发的大体印象"></a>移动前端开发的大体印象</h3><p>移动前端开发是一个很大的概念，除了基本的前端知识外，还需要掌握一些PPI，像素，DPI等知识，对自己这种小白来说，学习过程中的一大体验就是概念多，还没有有个全局的印象首先被基础概念淹没了。所以个人感觉首先要对移动前端开发有个大体的印象。具体来说的移动前端开发包括了以下几种类型：</p>
+        <h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>利用 jQuery 做了一个任务清单的网页小应用，实现了其中的一些基本功能。进一步熟悉了 jQuery 的一些基本的操作和方法。第一次使用了 local storage，不过使用了相关的库Store.js。对本地存储的数据保存方式以及JSON还得再抽个时间学一下，算是知其然不知其所以然。遇到了不小的困难，主要存在于下面两个方面：数据的存储和基本概念的理解。意外的收获是学会了利用console.log的检查代码bug。这篇文章主要记述过程和思路，以及一些写代码过程中的反思。</p>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p><img src="http://ohqryljkl.bkt.clouddn.com/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20170223144241.png" alt="脑图"></p>
+<h3 id="困难与反思"><a href="#困难与反思" class="headerlink" title="困难与反思"></a>困难与反思</h3><p>假如我在写这篇文章之前先画出一个脑图整理思路的话 (上面这个图是后面整理的 )，我想遇到的问题可能会少很多。假如一上来对要实现的功能的逻辑没有清晰的思路，我发现时间大多数都用来修复函数调用等等所出现的 bug 上面了。而且，假如逻辑清晰，思路很明了的话修复bug的也会变的很快。我想下次再写，一定先要把逻辑搞清楚。比如要实现其中的提交Task功能。</p>
 <ul>
-<li>Native App（ 原生APP ）：完全使用移动设备系统语言写成的客户端。iPhone、iPad 就是纯Object-C，安卓就是纯JAVA, 具有极强的交互性。一般静态资源都是在本地的。浏览使用方便，体验度高。</li>
-<li>Web App：在移动设备的浏览器中的应用，不再是操作系统。说白了就是一个触屏版的网页，只能在浏览器中打开。资源一般都在网络上，IOS支持可以在桌面创建访问的快捷方式。</li>
-<li>Hybrid App：用原生系统语言写了个容器，然后在里面运行 web 页面，资源一般在本地或者网络都可以。</li>
+<li>首先我们需要监听提交按钮，是否输入了内容</li>
+<li>假如没有或为空则返回，否则</li>
+<li>将输入的值推入 Task 列表</li>
+<li>然后更新数据</li>
+<li>渲染 Task 列表</li>
+<li>在渲染的过程中用循环去遍历每个Task</li>
+<li>判断单个Task是否已经完成</li>
+<li>已完成的渲染已完成的CSS样式</li>
+<li>未完成的渲染未完成的结构和样式</li>
+<li>监听其他操作</li>
 </ul>
-<h3 id="移动前端开发中的-meta-元素"><a href="#移动前端开发中的-meta-元素" class="headerlink" title="移动前端开发中的 meta 元素"></a>移动前端开发中的 meta 元素</h3><h4 id="meta-元素"><a href="#meta-元素" class="headerlink" title="meta 元素"></a>meta 元素</h4><blockquote>
-<p>标签提供关于HTML文档的元数据。元数据不会显示在页面上，但是对于机器是可读的。它可用于浏览器（如何显示内容或重新加载页面），搜索引擎（关键词），或其他 web 服务。 —— W3School</p>
-</blockquote>
-<h4 id="移动设备"><a href="#移动设备" class="headerlink" title="移动设备"></a>移动设备</h4><p><code>viewport</code>可以让布局在移动浏览器上显示的更好，之所有会有要用到 viewport，原因是在移动浏览器中，通常会以一个比屏幕更宽的虚拟的窗口中渲染，从而无需将页面的所有部分压缩到屏幕中（这样会把很多没有针对移动端进行优化的站点打乱）。用户可以通过平移和缩放来浏览页面的不同区域。<br><figure class="highlight nix"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;meta <span class="attr">name="viewport"</span> <span class="attr">content="width=device-width,</span> <span class="attr">initial-scale=1.0,maximum-scale=1.0,</span> <span class="attr">user-scalable=no"/&gt;</span></div></pre></td></tr></table></figure></p>
-<p>其中：</p>
+<p>有个清晰的逻辑我们就可以利用Jquery来去实现这个功能了。</p>
 <ul>
-<li>content 是 meta 元素中的必要属性，定义与http-equiv或name属性相关的元信息</li>
-<li>name 把 content 属性关联到一个名称</li>
-<li>initial-scale 为初始的缩放比例，范围从&gt;0 到10</li>
-<li>minimum-scale 允许用户缩放到的最小比例</li>
-<li>maximum-scale 允许用户缩放到的最大比例</li>
-<li>user-scalable 用户是否可以手动缩 (no,yes)</li>
+<li>我们需要监听提交按钮，我们可以用jquery 的<code>.on()</code>来添加点击事件，将点击触发的函数可以单独来写</li>
+<li>我们可以利用<code>.find()</code>来查找input按钮，将val()得到的值复制给变量</li>
+<li>将新得到的Task利用<code>.push()</code>给需要渲染的任务列表</li>
+<li>写一个刷新数据的函数，将Task列表传入随后再调用我们的渲染函数</li>
+<li>渲染函数中我们利用<code>for</code>循环来首先判断每个Task的状态分别来渲染</li>
+<li>将渲染好的内容利用<code>prepend</code>或者<code>append</code>结构中区</li>
+<li>监听其他事件</li>
 </ul>
-<h3 id="相对单位-rem"><a href="#相对单位-rem" class="headerlink" title="相对单位 rem"></a>相对单位 rem</h3><p>rem（font size of the root element）是指相对于根元素的字体大小的单位。通过设置html的字体大小就可以控制rem的大小。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">html</span> &#123;</div><div class="line">    <span class="attribute">font-size</span>: <span class="number">62.5%</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-tag">body</span> &#123;</div><div class="line">    <span class="attribute">font-size</span>: <span class="number">1.4rem</span>; <span class="comment">/* 14px */</span></div><div class="line">&#125;</div><div class="line"><span class="selector-tag">h1</span> &#123;</div><div class="line">    <span class="attribute">font-size</span>: <span class="number">2.4rem</span>; <span class="comment">/* 24px */</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>对于移动前端开发来说，我们在页面布局中有可能采用宽度百分比，高度用px固定的方式，但在某些屏幕下页面元素可能被拉长导致宽度百分比但高度没变就使得视觉上显示的不协调。要么采用响应式，但这种方式工作大，维护性难。要么采用 viewport 缩放的方式，但也有可能造成在缩放中页面糊掉的情况。这时候我们就可以采用 rem 的方式开适配。 rem不仅仅用于字体，同样也可以应用于宽高，边距等等，这样我们就可以通过设置html的字体大小就可以控制rem的大小。具体的来说，我们可以通过 JS 计算的方式去设置 font-size，因为暂时没有学习 JS ，暂时不做叙述。再者就是采用 media query 的方式来实现适配。例如：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">html</span> &#123;</div><div class="line">    <span class="attribute">font-size </span>: <span class="number">20px</span>;</div><div class="line">&#125;</div><div class="line">@<span class="keyword">media</span> only screen and (min-width: <span class="number">401px</span>)&#123;</div><div class="line">    <span class="selector-tag">html</span> &#123;</div><div class="line">        <span class="attribute">font-size</span>: <span class="number">25px</span> <span class="meta">!important</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">@<span class="keyword">media</span> only screen and (min-width: <span class="number">428px</span>)&#123;</div><div class="line">    <span class="selector-tag">html</span> &#123;</div><div class="line">        <span class="attribute">font-size</span>: <span class="number">26.75px</span> <span class="meta">!important</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">@<span class="keyword">media</span> only screen and (min-width: <span class="number">481px</span>)&#123;</div><div class="line">    <span class="selector-tag">html</span> &#123;</div><div class="line">        <span class="attribute">font-size</span>: <span class="number">30px</span> <span class="meta">!important</span>;</div><div class="line">    &#125;</div><div class="line">&#125;让</div><div class="line">@<span class="keyword">media</span> only screen and (min-width: <span class="number">569px</span>)&#123;</div><div class="line">    <span class="selector-tag">html</span> &#123;</div><div class="line">        <span class="attribute">font-size</span>: <span class="number">35px</span> <span class="meta">!important</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">@<span class="keyword">media</span> only screen and (min-width: <span class="number">641px</span>)&#123;</div><div class="line">    <span class="selector-tag">html</span> &#123;</div><div class="line">        <span class="attribute">font-size</span>: <span class="number">40px</span> <span class="meta">!important</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h3 id="弹性图片"><a href="#弹性图片" class="headerlink" title="弹性图片"></a>弹性图片</h3><h4 id="max-width方式"><a href="#max-width方式" class="headerlink" title="max-width方式"></a>max-width方式</h4><p>响应式 web 设计意味着，不仅我们的布局能基于设备特征变化，内容也能。对于图片来说，对于不同的设备，需要拉伸或者收缩图片。这时候我们可以在其中加上如下 CSS 样式：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">img</span>&#123;</div><div class="line">    <span class="attribute">max-width</span>:<span class="number">100%</span>;</div><div class="line">    <span class="attribute">height</span>:auto;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//部分代码，点击 [TODO](https://github.com/CChenYixin/JavaScript_demo/tree/master/demo_MY%20TODO) 访问完整代码。</span></div><div class="line"></div><div class="line"></div><div class="line">$form_add_task.on(<span class="string">'submit'</span>,on_add_task_form_submit);</div><div class="line"></div><div class="line"><span class="comment">//监听提交按钮并添加事件</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">on_add_task_form_submit</span><span class="params">(e)</span></span>&#123;</div><div class="line">    <span class="keyword">var</span> new_task=&#123;&#125;,$input;</div><div class="line">    <span class="comment">//禁用默认行为</span></div><div class="line">    e.preventDefault();</div><div class="line">    <span class="comment">//获取新task的值</span></div><div class="line">    $input = $(this).find(<span class="string">'input[name=content]'</span>);</div><div class="line">    new_task.content =  $input.val();</div><div class="line">    <span class="comment">//如果新task的值为空则返回，否则继续执行</span></div><div class="line">    <span class="keyword">if</span>(!new_task.content) <span class="keyword">return</span>;</div><div class="line">    <span class="comment">// 存入新task</span></div><div class="line">    task_list.push(new_task);</div><div class="line">    <span class="keyword">if</span>(add_task(new_task))&#123;</div><div class="line">        <span class="comment">// render_task_list();</span></div><div class="line">        $input.val(<span class="keyword">null</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//添加task</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">add_task</span><span class="params">(new_task)</span></span>&#123;</div><div class="line">    <span class="comment">//更新localstrage</span></div><div class="line">    refresh_task_list();</div><div class="line">    <span class="comment">// console.log('task_list',task_list);</span></div><div class="line">    <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//更新localstroage并刷新</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">refresh_task_list</span> <span class="params">()</span> </span>&#123;</div><div class="line">      store.set(<span class="string">'task_list'</span>, task_list);</div><div class="line">      render_task_list();</div><div class="line">  &#125;</div><div class="line"></div><div class="line"><span class="comment">//渲染task列表</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">render_task_list</span><span class="params">()</span></span>&#123;</div><div class="line">  <span class="comment">// console.log('1',1);</span></div><div class="line">  <span class="comment">// console.log('task_list',task_list);</span></div><div class="line">  <span class="keyword">var</span> $task_list=$(<span class="string">'.task-list'</span>);</div><div class="line">  $task_list.html(<span class="string">''</span>);</div><div class="line">  <span class="keyword">var</span> complete_items =[];</div><div class="line"></div><div class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>;i&lt;task_list.length;i++)&#123;</div><div class="line">      <span class="keyword">var</span> item = task_list[i];</div><div class="line">      <span class="keyword">if</span>(item &amp;&amp; item.complete)&#123;</div><div class="line">          complete_items.push(item);</div><div class="line">          <span class="keyword">var</span> $complete_task = render_task_item(item,i);</div><div class="line">          <span class="keyword">if</span>(!$complete_task) <span class="keyword">continue</span>;</div><div class="line">          $complete_task.addClass(<span class="string">"completed"</span>);</div><div class="line">          $task_list.append($complete_task);</div><div class="line">      &#125;<span class="keyword">else</span>&#123;</div><div class="line">          $task = render_task_item(item,i);</div><div class="line">          $task_list.prepend($task);</div><div class="line">      &#125;</div><div class="line">  &#125;</div><div class="line">  $task_delete_trigger = $(<span class="string">'.action.delete'</span>);</div><div class="line">  $task_detail_trigger= $(<span class="string">'.action.detail'</span>);</div><div class="line">  $checkbox_complete = $(<span class="string">'.complete'</span>);</div><div class="line">  listen_task_delete();</div><div class="line">  listen_task_detail();</div><div class="line">  listen_checkbox_complete();</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">function</span> <span class="title">render_task_item</span><span class="params">(data,index)</span></span>&#123;</div><div class="line">      <span class="keyword">if</span>(!data||!index) <span class="keyword">return</span>;</div><div class="line">      <span class="keyword">var</span> list_item_item = <span class="string">'&lt;div class="task-item" data-index="'</span>+ index +<span class="string">'"&gt;'</span>+</div><div class="line">              <span class="string">'&lt;span&gt;&lt;input class="complete"'</span> + ( data.complete ? <span class="string">'checked'</span>:<span class="string">''</span>) +<span class="string">' type="checkbox"&gt;&lt;/span&gt;'</span>+</div><div class="line">              <span class="string">'&lt;span class="text-content"&gt;'</span>+ data.content + <span class="string">'&lt;/span&gt;'</span>+</div><div class="line">              <span class="string">'&lt;span class="action delete"&gt;删除&lt;/span&gt;'</span>+</div><div class="line">              <span class="string">'&lt;span class="action detail"&gt;详细&lt;/span&gt;'</span>+</div><div class="line">          <span class="string">'&lt;/div&gt;'</span>;</div><div class="line">      <span class="keyword">return</span> $(list_item_item);</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+<h3 id="bug-和反思"><a href="#bug-和反思" class="headerlink" title="bug 和反思"></a>bug 和反思</h3><p>逻辑清晰的找bug也会快一点。尤其是可以利用<code>console.log()</code>的方式。除去那些依靠JShint就可以排查的bug，首先我们可以先确定bug产生的大体范围，根据逻辑顺序，来打印<code>console.log()</code>;一步步的来测试就可以精准的确定bug产生的原因。不过暂时不知道那些动辄上万行代码是如何debug的，查找资料的时候发现chrome自带断点测试，也要抽时间来学习一下。</p>
+<h3 id="npm的使用"><a href="#npm的使用" class="headerlink" title="npm的使用"></a>npm的使用</h3><p>npm 是 Node 的模块管理器，功能极其强大。我们根据一行命令，就能安装别人写好的模块。</p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$ </span>npm install &lt;packageName&gt;</div><div class="line"><span class="regexp">//</span>卸载</div><div class="line"><span class="variable">$ </span>npm uninstall express</div></pre></td></tr></table></figure>
+<p>模块的安装过程如下：</p>
 <ul>
-<li>max-width:100%的设置，以确保图像永远不会超越其父容器的宽度。如果父容器的宽度收缩小于图像的宽度，图像将随之缩小。</li>
-<li>height:auto的设置可以确保当有这种情况发生时，图像将以自身的宽高比保留。</li>
+<li>发出npm install命令</li>
+<li>npm 向 registry 查询模块压缩包的网址</li>
+<li>下载压缩包，存放在~/.npm目录</li>
+<li>解压压缩包到当前项目的node_modules目录</li>
 </ul>
-<h4 id="picture方式"><a href="#picture方式" class="headerlink" title="picture方式"></a>picture方式</h4><p><picture>是HTML5一个新的元素。它可以通过使用 media 属性的方式来让浏览器根据当前的页面选择加载最合适的图片大小。</picture></p>
+<p>我们可以在安装的时候加上<code>--save-dev</code>：</p>
 <blockquote>
-<p>HTML <picture> 元素是一个容器，用来为其内部特定的 <img> 元素提供多样的 <source> 元素。浏览器会根据当前页面（即图片所在的盒子的容器）的布局以及当前浏览的设备（比如普通的屏幕和高清屏幕）去从中选择最合适的资源。</picture></p>
+<p>当你为你的模块安装一个依赖模块时，正常情况下你得先安装他们（在模块根目录下npm install module-name），然后连同版本号手动将他们添加到模块配置文件package.json中的依赖里（dependencies）。<br>-save和save-dev可以省掉你手动修改package.json文件的步骤。<br>spm install module-name -save 自动把模块和版本号添加到dependencies部分<br>spm install module-name -save-dve 自动把模块和版本号添加到devdependencies部分</p>
 </blockquote>
-<p>文章<a href="http://www.w3cplus.com/html5/quick-tip-how-to-use-html5-picture-for-responsive-images.html" target="_blank" rel="external">如何使用 HTML5 的picture元素处理响应式图片</a>对此有详细的论述，以下内容皆引用自原文：</p>
-<p><picture>基本工作步骤如下：</picture></p>
-<ul>
-<li>创建<picture></picture>标签。</li>
-<li>在这些标签内创建一个你想用来执行任何一个特性的<source>元素。</li>
-<li>添加一个media属性，用来包含你想要的特性，如视口的当前高度(viewport height)，宽度(width)，方向(orientation)等。</li>
-<li>添加一个srcset属性与相应的图像文件名相匹配，进行加载。如果你想提供不同的像素密度，例如Retina显示屏，你可以添加额外的文件名到你的srcset属性中，</li>
-<li>添加一个回退的元素。</li>
-<li>可以看个简单的例子，用来检查视口是否小于768px，如果小于就加载一个较小的图像：<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">picture</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">source</span> <span class="attr">srcset</span>=<span class="string">"person_small.jpg"</span> <span class="attr">media</span>=<span class="string">"(max-width: 768px)"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">source</span> <span class="attr">srcset</span>=<span class="string">"person_default.jpg"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">srcset</span>=<span class="string">"person_default.jpg"</span> <span class="attr">alt</span>=<span class="string">"This is King"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">picture</span>&gt;</span></div></pre></td></tr></table></figure>
-</li>
+<p>在使用npm感觉很方便，另外想到的还是必须要学习git，虽然再学习初期为了节省时间用了github的客户端来上传代码，但是最终用的还是git，而且用git会更加节省时间。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
+<li>写代码前有一个清晰的逻辑。</li>
+<li>基础概念的掌握和理解是最重要的没有之一。</li>
+<li>要抽时间深度掌握 git,JSON,以及是改学学后端的一些知识了，至少要熟悉借口之类的。</li>
 </ul>
-<p>可以看到在屏幕&lt;=768px的时候加载的是person_small.jpg<br>当屏幕&gt;768px的时候，加载的是person_default.jpg</p>
-<p>不过这是一个实验中的功能，Chrome，Firefox和Opera浏览器都已经实现了对<picture>元素的支持。在不久的将来，在其他浏览器也将得到广泛的支持。</picture></p>
-<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><p><a href="https://segmentfault.com/a/1190000002407912" target="_blank" rel="external">常用meta整理</a><br><a href="http://www.css88.com/archives/5480" target="_blank" rel="external">移动前端不得不了解的html5 head 头标签</a><br><a href="https://developer.mozilla.org/zh-CN/docs/Mobile/Viewport_meta_tag" target="_blank" rel="external">在移动浏览器中使用viewport元标签控制布局</a><br><a href="http://www.w3cplus.com/html5/quick-tip-how-to-use-html5-picture-for-responsive-images.html" target="_blank" rel="external">如何使用 HTML5 的picture元素处理响应式图片</a><br><a href="https://www.zhihu.com/question/20269059" target="_blank" rel="external">移动前端开发和 Web 前端开发的区别是什么？</a><br><a href="http://alloyteam.github.io/Spirit/modules/Standard/" target="_blank" rel="external">移动开发规范概述</a><br><a href="http://www.alloyteam.com/2016/03/mobile-web-adaptation-tool-rem/" target="_blank" rel="external">移动适配利器 rem</a><br><a href="https://isux.tencent.com/web-app-rem.html" target="_blank" rel="external">web app变革之rem</a></p>
+<p>感觉最近的学习有点懈怠了，要加油。</p>
 
       
     </div>
@@ -455,8 +458,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/12/26/title- IFE task 8-12 笔记/" rel="next" title="IFE task 8-12 笔记">
-                <i class="fa fa-chevron-left"></i> IFE task 8-12 笔记
+              <a href="/2017/01/18/title- 立即执行函数 IIFE /" rel="next" title="立即执行函数表达式 IIFE">
+                <i class="fa fa-chevron-left"></i> 立即执行函数表达式 IIFE
               </a>
             
           </div>
@@ -464,10 +467,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/01/03/title- 分别利用 JavaScript 和 CSS 实现tab选项卡切换/" rel="prev" title="分别利用 JavaScript 和 CSS 实现tab选项卡切换">
-                分别利用 JavaScript 和 CSS 实现tab选项卡切换 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -492,8 +491,8 @@
  
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/12/27/title- 移动 Web 开发小记 /"
-           data-title="移动 Web 开发小记" data-url="http://chenyixin.win/2016/12/27/title- 移动 Web 开发小记 /">
+      <div class="ds-thread" data-thread-key="2017/02/23/title- 使用 jQuery 实现一个任务清单小应用 /"
+           data-title="利用 jQuery 实现一个清单列表小应用" data-url="http://chenyixin.win/2017/02/23/title- 使用 jQuery 实现一个任务清单小应用 /">
       </div>
     
   </div>
@@ -611,7 +610,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#摘要"><span class="nav-number">1.</span> <span class="nav-text">摘要</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正文"><span class="nav-number">2.</span> <span class="nav-text">正文</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#移动前端开发的大体印象"><span class="nav-number">2.1.</span> <span class="nav-text">移动前端开发的大体印象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#移动前端开发中的-meta-元素"><span class="nav-number">2.2.</span> <span class="nav-text">移动前端开发中的 meta 元素</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#meta-元素"><span class="nav-number">2.2.1.</span> <span class="nav-text">meta 元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#移动设备"><span class="nav-number">2.2.2.</span> <span class="nav-text">移动设备</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#相对单位-rem"><span class="nav-number">2.3.</span> <span class="nav-text">相对单位 rem</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#弹性图片"><span class="nav-number">2.4.</span> <span class="nav-text">弹性图片</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#max-width方式"><span class="nav-number">2.4.1.</span> <span class="nav-text">max-width方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#picture方式"><span class="nav-number">2.4.2.</span> <span class="nav-text">picture方式</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考文章"><span class="nav-number">3.</span> <span class="nav-text">参考文章</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#摘要"><span class="nav-number">1.</span> <span class="nav-text">摘要</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正文"><span class="nav-number">2.</span> <span class="nav-text">正文</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#困难与反思"><span class="nav-number">2.1.</span> <span class="nav-text">困难与反思</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#bug-和反思"><span class="nav-number">2.2.</span> <span class="nav-text">bug 和反思</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#npm的使用"><span class="nav-number">2.3.</span> <span class="nav-text">npm的使用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
           </div>
         </section>
