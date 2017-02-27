@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://chenyixin.win/"/>
-  <updated>2017-02-26T15:57:09.767Z</updated>
+  <updated>2017-02-27T03:28:06.364Z</updated>
   <id>http://chenyixin.win/</id>
   
   <author>
@@ -16,13 +16,13 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
+    <title>IFE task 13-25 笔记</title>
     <link href="http://chenyixin.win/2017/02/26/title-%20IFE%20task%2013-25%20%E7%AC%94%E8%AE%B0/"/>
     <id>http://chenyixin.win/2017/02/26/title- IFE task 13-25 笔记/</id>
     <published>2017-02-26T08:13:39.646Z</published>
-    <updated>2017-02-26T15:57:09.767Z</updated>
+    <updated>2017-02-27T03:28:06.364Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="title-IFE-task-13-25-笔记"><a href="#title-IFE-task-13-25-笔记" class="headerlink" title="title:IFE task 13-25 笔记"></a>title:IFE task 13-25 笔记</h2><h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>文章为百度前端技术学院2016年任务 13-25 的笔记，大概是 Jvascript 基础部分。总结了一些收获，记述了其中遇到的问题和困难，以及一点感想。因为内容稍微多一点，文章的结构就按照各个任务来划分。</p>
+    <content type="html"><![CDATA[<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>文章为百度前端技术学院2016年任务 13-25 的笔记，大概是 Jvascript 基础部分。总结了一些收获，记述了其中遇到的问题和困难，以及一点感想。因为内容稍微多一点，文章的结构就按照各个任务来划分。</p>
 <h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="任务-13"><a href="#任务-13" class="headerlink" title="任务 13"></a>任务 13</h3><p>假设我们要获取某个输入域中的数值，我们可能需要<code>value</code>属性和’parseInt()’。首先，我们需要注意在HTML中<code>value</code>是<code>input</code>的设定值，对于不同的输入类型，<code>value</code>属性的用法也有区别：</p>
 <blockquote>
 <p>type=”button”, “reset”, “submit” - 定义按钮上的显示的文本<br>type=”text”, “password”, “hidden” - 定义输入字段的初始值<br>type=”checkbox”, “radio”, “image” - 定义与输入相关联的值</p>
@@ -108,7 +108,7 @@
     
     <summary type="html">
     
-      &lt;h2 id=&quot;title-IFE-task-13-25-笔记&quot;&gt;&lt;a href=&quot;#title-IFE-task-13-25-笔记&quot; class=&quot;headerlink&quot; title=&quot;title:IFE task 13-25 笔记&quot;&gt;&lt;/a&gt;title:IFE task 13
+      &lt;h2 id=&quot;摘要&quot;&gt;&lt;a href=&quot;#摘要&quot; class=&quot;headerlink&quot; title=&quot;摘要&quot;&gt;&lt;/a&gt;摘要&lt;/h2&gt;&lt;p&gt;文章为百度前端技术学院2016年任务 13-25 的笔记，大概是 Jvascript 基础部分。总结了一些收获，记述了其中遇到的问题和困难，
     
     </summary>
     
