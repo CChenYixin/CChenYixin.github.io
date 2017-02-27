@@ -71,6 +71,8 @@
 
 
 
+  
+
 
   <link rel="alternate" href="/atom.xml" title="速去逮一只猫" type="application/atom+xml" />
 
@@ -92,7 +94,7 @@
 <meta property="og:site_name" content="速去逮一只猫">
 <meta property="og:description" content="摘要百度 IFE 任务22到24的相关笔记，主要关于树的概念，遍历。
 正文树与二叉树树形结构是一种重要的数据结构，我们常常用树来组织信息，描述遍历的行为过程。首先是树的概念：树是一个有 n 个结点的有限集。在任意一个非空的树中有且仅有一个特定的结点称为根，当结点大于1时，各个结点可以分为互不相交的有限集合，每个集合本身又是一棵树，称为根的子树。树是具有层次结构的，我们把根结点所在层称为第一层，其孩">
-<meta property="og:updated_time" content="2017-02-27T07:49:17.580Z">
+<meta property="og:updated_time" content="2017-02-27T07:53:31.768Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Javascript 和树">
 <meta name="twitter:description" content="摘要百度 IFE 任务22到24的相关笔记，主要关于树的概念，遍历。
@@ -382,13 +384,29 @@
 <p>深度优先遍历，从初始访问结点出发，我们知道初始访问结点可能有多个邻接结点，深度优先遍历的策略就是首先访问第一个邻接结点，然后再以这个被访问的邻接结点作为初始结点，访问它的第一个邻接结点。总结起来可以这样说：每次都在访问完当前结点后首先访问当前结点的第一个邻接结点。</p>
 </blockquote>
 <p>具体算法表述如下：</p>
-<p>1.访问初始结点v，并标记结点v为已访问。<br>2.查找结点v的第一个邻接结点w。<br>3.若w存在，则继续执行4，否则算法结束。<br>4.若w未被访问，对w进行深度优先遍历递归（即把w当做另一个v，然后进行步骤123）。<br>5.查找结点v的w邻接结点的下一个邻接结点，转到步骤3。</p>
+<ol>
+<li>访问初始结点v，并标记结点v为已访问。</li>
+<li>查找结点v的第一个邻接结点w。</li>
+<li>若w存在，则继续执行4，否则算法结束。</li>
+<li>若w未被访问，对w进行深度优先遍历递归（即把w当做另一个v，然后进行步骤123）。</li>
+<li>查找结点v的w邻接结点的下一个邻接结点，转到步骤3。</li>
+</ol>
 <figure class="highlight crmsh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">function traverseDF(<span class="keyword">node</span><span class="title">,nodeList</span>)&#123;</div><div class="line">    if(<span class="keyword">node</span><span class="title">)&#123;</span></div><div class="line">        nodeList.push(<span class="keyword">node</span><span class="title">);</span></div><div class="line">        for(var i= <span class="number">0</span>;i<span class="tag">&lt;node.children.length;i++)&#123;</span></div><div class="line">            traverseDF(node.children[i],nodeList);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h4 id="广度优先遍历"><a href="#广度优先遍历" class="headerlink" title="广度优先遍历"></a>广度优先遍历</h4><blockquote>
 <p>类似于一个分层搜索的过程，广度优先遍历需要使用一个队列以保持访问过的结点的顺序，以便按这个顺序来访问这些结点的邻接结点。</p>
 </blockquote>
 <p>具体算法表述如下：</p>
-<p>1.访问初始结点v并标记结点v为已访问。<br>2.结点v入队列<br>3.当队列非空时，继续执行，否则算法结束。<br>4.出队列，取得队头结点u。<br>5.查找结点u的第一个邻接结点w。<br>6.若结点u的邻接结点w不存在，则转到步骤3；否则循环执行以下三个步骤：<br>    1). 若结点w尚未被访问，则访问结点w并标记为已访问。<br>    2). 结点w入队列<br>    3). 查找结点u的继w邻接结点后的下一个邻接结点w，转到步骤6。</p>
+<ol>
+<li>访问初始结点v并标记结点v为已访问。</li>
+<li>结点v入队列</li>
+<li>当队列非空时，继续执行，否则算法结束。</li>
+<li>出队列，取得队头结点u。</li>
+<li>查找结点u的第一个邻接结点w。</li>
+<li>若结点u的邻接结点w不存在，则转到步骤3；否则循环执行以下三个步骤：<blockquote>
+<p>1). 若结点w尚未被访问，则访问结点w并标记为已访问。<br>2). 结点w入队列<br>3). 查找结点u的继w邻接结点后的下一个邻接结点w，转到步骤6。</p>
+</blockquote>
+</li>
+</ol>
 <figure class="highlight crmsh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">function traverseBF(<span class="keyword">node</span><span class="title">, nodeList</span>) &#123;</div><div class="line">    if (<span class="keyword">node</span><span class="title">) &#123;</span></div><div class="line">        nodeList.push(<span class="keyword">node</span><span class="title">);</span></div><div class="line">        //nextElementSibling 返回当前元素在其父元素的子元素节点中的后一个元素节点,如果该元素已经是最后一个元素节点,则返回null,该属性是只读的.</div><div class="line">        traverseBF(<span class="keyword">node</span>.<span class="title">nextElementSibling</span>, nodeList);//回传 <span class="keyword">node</span><span class="title">的下一个元素对象</span></div><div class="line">        node = nodeList[BFindex++];</div><div class="line">        //ParentNode.firstElement 是一个只读属性，返回当前元素的第一个子元素节点，如果没有子元素节点，则返回null。</div><div class="line">        traverseBF(<span class="keyword">node</span>.<span class="title">firstElementChild</span>, nodeList);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这部分的IFE任务大部分都参考了别人的代码，感觉这方面有待加强，感觉除过 Javascript 的相关内容，如果对计算机的一些基本的基础的概念有个良好的把握的话对这些会更有帮助，理解起来可能更好理解。</p>
 <h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><p><a href="https://segmentfault.com/a/1190000002685939" target="_blank" rel="external">图的理解：深度优先和广度优先遍历</a><br><a href="https://segmentfault.com/a/1190000000740261#articleHeader11" target="_blank" rel="external">js数据结构和算法（三）二叉树</a><br><a href="http://www.cnblogs.com/webFrontDev/p/3865719.html" target="_blank" rel="external">javascript实现数据结构： 树和二叉树,二叉树的遍历和基本操作</a></p>
