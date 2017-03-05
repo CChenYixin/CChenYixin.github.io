@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://chenyixin.win/"/>
-  <updated>2017-02-27T07:53:31.768Z</updated>
+  <updated>2017-03-05T16:25:23.641Z</updated>
   <id>http://chenyixin.win/</id>
   
   <author>
@@ -14,6 +14,70 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>「专注概念</title>
+    <link href="http://chenyixin.win/2017/03/05/title-%20%E3%80%8C%E4%B8%93%E6%B3%A8%E6%A6%82%E5%BF%B5%20#1%E3%80%8DJavaScript%20%E8%AF%AD%E6%B3%95/"/>
+    <id>http://chenyixin.win/2017/03/05/title- 「专注概念 #1」JavaScript 语法/</id>
+    <published>2017-03-05T15:29:39.860Z</published>
+    <updated>2017-03-05T16:25:23.641Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><blockquote>
+<p>“Focus on concepts, not syntax”<br>“把注意力放在对概念的理解，而不是语法上”</p>
+</blockquote>
+<p>这是在某个网站上看到的一句话，也这是记述这个系列的笔记的原因。</p>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h3><ul>
+<li><p>变量是对“值”的引用，使用变量等同于引用一个值，每一个变量都有一个变量名，变量可以用来保存任何值。在 JavaScript 中没有块作用域，只存在全局作用域和函数作用域。当在函数中使用<code>var</code>定义一个变量，那么这个变量就是局部变量，在函数退出后就会被销毁。</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="keyword">var</span> message = <span class="string">'hi'</span>;</div><div class="line">&#125;</div><div class="line">test();</div><div class="line">alert(message);<span class="comment">//错误</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>在同一个作用域中，一个变量只能保存一个值，如果使用<code>var</code>第二次生命且赋值，会覆盖掉前面的值。</p>
+</li>
+<li>JavaScript引擎的工作方式是，首先解析代码，获取所有被声明的变量，然后在一行行的执行，所以所有的变量声明语句，都会被提到代码的头部，这就叫做“变量提升”。<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(a);</div><div class="line"><span class="keyword">var</span> a = <span class="number">1</span>;<span class="comment">//undefined</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>JavaScript 是一行行的运行代码，按理第一行代码后应该抛出错误，但是实际上由于变量提升的原因，浏览器并不会报错，而会显示<code>undefined</code>，表示 a 已经声明但未赋值。</p>
+<ul>
+<li>标识符就是用来识别一个具体对象的名称，变量名就是一种标识符。</li>
+<li>我们可以使用switch语句来代替多个if…else的情况，基本结构如下：<figure class="highlight ceylon"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">switch</span> ( expression)&#123;</div><div class="line">    <span class="keyword">case</span> <span class="keyword">value</span>: statement</div><div class="line">    <span class="keyword">break</span>;</div><div class="line">    <span class="keyword">case</span> <span class="keyword">value</span>: statement</div><div class="line">    <span class="keyword">break</span>;</div><div class="line">    <span class="keyword">case</span> <span class="keyword">value</span>: statement</div><div class="line">    <span class="keyword">break</span>;</div><div class="line">    ...</div><div class="line">    <span class="keyword">default</span>:statement</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>语句中的每一个情形 case ，其基本含义如果表达式等于语句中的这个值 value，则执行后面的语句 statement。break 表示提出switch结构，而default表示，当每一种case都不符合时，执行其后面的语句。</p>
+<ul>
+<li>三元运算符，假如语句中condition为true则，返回expr1的值，负责返回expr2的值。<br><code>(condition) ? expr1 : expr2</code></li>
+<li>javascript中可以再代码中添加标签，以便将来使用。通常用来和 break 和 continue 配合使用来跳出循环。break会立即退出循环强制执行循环后面的语句，而continue虽然也是立即退出循环，但会重循环的顶层继续执行。</li>
+</ul>
+<h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><ul>
+<li>JavaScript（ES5） 中有六种数据类型。<blockquote>
+<p>数值（number）：整数和小数（比如1和3.14）<br>字符串（string）：字符组成的文本（比如”Hello World”）<br>布尔值（boolean）：true（真）和false（假）两个特定值<br>undefined：表示“未定义”或不存在，即此处目前没有任何值<br>null：表示空缺，即此处应该有一个值，但目前为空<br>对象（object）：各种值组成的集合</p>
+</blockquote>
+</li>
+</ul>
+<p>在这其中，数值、字符串、布尔值被称为原始类型的值，undefined 和 null 被看作是两个特殊值。而对象是JavaScript中比较复杂的值。广义的对象包括数组、函数、甚至连原始类型的值都可以包装为对象来使用。</p>
+<ul>
+<li>我们通常用以下三种方法来确定一个值的类型。<blockquote>
+<p>typeof运算符<br>instance of运算符<br>Object.prototype.tostring()方法</p>
+</blockquote>
+</li>
+</ul>
+<p>当我们调用<code>typeof</code>运算符时候，数值、字符串、布尔值分别返回<code>number</code> <code>string</code> <code>boolean</code> ,函数返回<code>function</code> ,undefined 返回<code>undefined</code>,其他的诸如对象，数组，null都返回<code>object</code>。<br>假如我们要具体判断是否是数组或对象，我们可以使用<code>instance of</code>。</p>
+<ul>
+<li>如果JavaScript预期某个位置应该是布尔值，会将该位置上现有的值自动转为布尔值。转换规则是除了下面六个值被转为false，其他值都视为true。<blockquote>
+<p>undefined<br>null<br>false<br>0<br>NaN<br>“”或’’（空字符串）</p>
+</blockquote>
+</li>
+</ul>
+<p>(未完待续)</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;摘要&quot;&gt;&lt;a href=&quot;#摘要&quot; class=&quot;headerlink&quot; title=&quot;摘要&quot;&gt;&lt;/a&gt;摘要&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;“Focus on concepts, not syntax”&lt;br&gt;“把注意力放在对概念的理解，而不是语法上”&lt;
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Javascript 和树</title>
