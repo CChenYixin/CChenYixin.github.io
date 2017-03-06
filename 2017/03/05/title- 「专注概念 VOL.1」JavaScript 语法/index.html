@@ -102,7 +102,7 @@
 这是在某个网站上看到的一句话，也这是记述这个系列的笔记的原因。
 正文基本语法
 变量是对“值”的引用，使用变量等同于引用一个值，每一个变量都有一个变量名，变量可以用来保存任何值。在 JavaScript 中没有块作用域，只存在全局作用域和函数作用域。当在函数中使用var定义一个变量，那么">
-<meta property="og:updated_time" content="2017-03-05T16:29:32.728Z">
+<meta property="og:updated_time" content="2017-03-06T04:14:13.561Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="「专注概念 VOL.1」JavaScript 语法">
 <meta name="twitter:description" content="摘要
@@ -426,7 +426,50 @@
 </blockquote>
 </li>
 </ul>
-<p>(未完待续)</p>
+<h3 id="数值"><a href="#数值" class="headerlink" title="数值"></a>数值</h3><ul>
+<li><p>NaN是JavaScript的一种特殊值，表示非数字（NOT A NUMBER）,主要出现在将字符串解析成数字出错的场合。NaN不等于任何值，包括它本身。我们可以使用<code>isNaN</code>来判断一个值是否是NaN，但需要注意的在使用前，最好先判断该值是不是数值，因为 <strong>如果传入其他值，会被先转成数值。</strong></p>
+<figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">isNaN([<span class="number">123</span>]) <span class="comment">// false</span></div><div class="line"></div><div class="line"><span class="comment">//good</span></div><div class="line"><span class="function">function <span class="title">myIsNaN</span>(<span class="params"><span class="keyword">value</span></span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="keyword">typeof</span> <span class="keyword">value</span> === <span class="string">'number'</span> &amp;&amp; isNaN(<span class="keyword">value</span>);</div><div class="line">&#125;</div><div class="line"><span class="comment">//or</span></div><div class="line"><span class="function">function <span class="title">myIsNaN</span>(<span class="params"><span class="keyword">value</span></span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="keyword">value</span> !== <span class="keyword">value</span>;<span class="comment">//NaN不等于任何值</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>与数值有关的全局方法<code>parseInt()</code>和<code>parseFloat()</code>。<br>parseInt方法用于将字符串转换为整数。假如字符串的头部有空格，会被自动去除，假如要转换的不是字符串，会先转换为字符串在转换。字符串转换为整数的时候是 <strong>一个一个转换，如果遇到不能转换为数字的字符，就不再进行返回已经转好的部分</strong>，换句话说只转换字符串头部可以转换的部分。（正负号除外。）该方法接受参数，表示被转换值的进制，默认为十进制转十进制。</p>
+</li>
+<li><p>parseFloat方法用于将一个字符串转为浮点数。</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="title">parseInt</span><span class="params">(<span class="number">1.23</span>)</span></span> <span class="comment">// 1</span></div><div class="line"><span class="function"><span class="title">parseFloat</span><span class="params">(<span class="number">1.23</span>)</span></span> <span class="comment">// 1.23</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><ul>
+<li>字符串可以被视为字符数组，从来调用<code>[]</code>来返回某个位置的字符。但是字符串是只读的，无法运用数组的方法来改变字符串。字符串<code>length</code>属性返回字符串的长度。</li>
+<li><code>charAt()</code>方法可返回指定位置的字符。<code>charCodeAt()</code> 方法可返回指定位置的字符的 Unicode 编码。这个返回值是 0 - 65535 之间的整数。我们常常用到来验证表单输入<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> inputText = <span class="built_in">document</span>.getElementsByClassName(<span class="string">'inputtext'</span>)[<span class="number">0</span>];</div><div class="line"><span class="keyword">var</span> tip = <span class="built_in">document</span>.getElementById(<span class="string">'tip'</span>);</div><div class="line"><span class="keyword">var</span> button = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'input'</span>)[<span class="number">1</span>];</div><div class="line"></div><div class="line"><span class="comment">//字符长度</span></div><div class="line"><span class="keyword">var</span> strLength = <span class="function"><span class="keyword">function</span>(<span class="params">str</span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> len = <span class="number">0</span>;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;str.length;i++)&#123;</div><div class="line">        charCode =  str.charCodeAt(i);</div><div class="line">        <span class="keyword">if</span>(charCode &gt;= <span class="number">0</span> &amp;&amp; charCode &lt;= <span class="number">128</span>)&#123;</div><div class="line">            len +=<span class="number">1</span>;</div><div class="line">        &#125;<span class="keyword">else</span>&#123;</div><div class="line">            len +=<span class="number">2</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">       <span class="keyword">return</span> len;</div><div class="line">&#125;;</div><div class="line"><span class="comment">//验证</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">validate</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> content = inputText.value.trim();</div><div class="line">    <span class="keyword">if</span>(strLength(content) === <span class="number">0</span>)&#123;</div><div class="line">        tip.innerHTML = <span class="string">'名称不能为空！'</span>;</div><div class="line">        tip.className = <span class="string">'on'</span>;</div><div class="line">        inputText.className += <span class="string">' warn'</span>;</div><div class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>( strLength(content)&gt;=<span class="number">4</span> &amp;&amp; strLength(content)&lt;=<span class="number">16</span> )&#123;</div><div class="line">        tip.innerHTML = <span class="string">'格式正确'</span>;</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">        tip.innerHTML =<span class="string">'字符数应为4-16位'</span>;</div><div class="line">        tip.className = <span class="string">'on'</span>;</div><div class="line">        inputText.className=<span class="string">'warn'</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//绑定</span></div><div class="line">button.onclick =<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    validate();</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h3><ul>
+<li><p>对象，就是一种无序的数据集合，由若干和“键值对”构成，所有键名都是字符串。我们可以用下面三种方法来生成对象。</p>
+<blockquote>
+<p>var object1 = {};<br>var object2 = new Object();<br>var object3 = Object.create(Object.prototype);</p>
+</blockquote>
+</li>
+<li><p>对象的键名又称为属性，它的键值可以是任何值，如果一个属性的值为函数，那么这个属性称为方法，可以像函数一样调用。</p>
+</li>
+<li><p><strong>不同的变量名指向同一个对象，那么它们都是这个对象的引用，指向同一个内存地址，这意味着修改其中一个变量会影响到其他所有的变量</strong>，对于原始类型的值来说，是传值引用。因为是值的拷贝，所以当某个变量的值发生变化，另外一个不会受到影响，因为它们并不是指向同一个内存地址。</p>
+</li>
+<li><p>我们用<code>in</code>运算符来检查对象是否包含某个属性，用<code>for..in</code>来遍历对象的全部属性，因为可以遍历继承的属性，假如要只遍历对象本身的属性，需要用到<code>hasOwnPrototype</code></p>
+<figure class="highlight maxima"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> (<span class="built_in">var</span> <span class="built_in">key</span> <span class="keyword">in</span> person) &#123;</div><div class="line">  <span class="keyword">if</span> (person.hasOwnProperty(<span class="built_in">key</span>)) &#123;</div><div class="line">    console.<span class="built_in">log</span>(<span class="built_in">key</span>);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><ul>
+<li><p>数组，按次序排列的一组值。数组本身一种特殊的对象，比如<code>in</code>和<code>for...in</code>都可以被数组使用。我们也可以使用对象的方法<code>Object.keys</code>来返回数组的键名：</p>
+<figure class="highlight prolog"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var arr = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>];</div><div class="line"></div><div class="line"><span class="symbol">Object</span>.keys(arr)</div><div class="line">// [<span class="string">"0"</span>, <span class="string">"1"</span>, <span class="string">"2"</span>]</div></pre></td></tr></table></figure>
+</li>
+<li><p>数组的length属性返回数组的成员数量。<strong>注意<code>length</code>是一个可写的属性</strong>，这意味着如果人为设置一个小于当前成员个数的值，该数组的成员会自动减少到length设置的值。将数组清空的一个有效方法，就是将length属性设为0。</p>
+</li>
+</ul>
+<h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><p>(另写文章总结)</p>
+<h3 id="语法错误"><a href="#语法错误" class="headerlink" title="语法错误"></a>语法错误</h3><ul>
+<li>了解基本的错误类型：<blockquote>
+<p>SyntaxError是解析代码时发生的语法错误<br>ReferenceError是引用一个不存在的变量时发生的错误<br>RangeError是当一个值超出有效范围时发生的错误<br>TypeError是变量或参数不是预期类型时发生的错误</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><p><a href="http://javascript.ruanyifeng.com/" target="_blank" rel="external">JavaScript 标准参考教程</a><br><a href="http://baike.baidu.com/item/JavaScript%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1?fr=aladdin" target="_blank" rel="external">JavaScript高级程序设计</a></p>
 
       
     </div>
@@ -621,7 +664,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#摘要"><span class="nav-number">1.</span> <span class="nav-text">摘要</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正文"><span class="nav-number">2.</span> <span class="nav-text">正文</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本语法"><span class="nav-number">2.1.</span> <span class="nav-text">基本语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据类型"><span class="nav-number">2.2.</span> <span class="nav-text">数据类型</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#摘要"><span class="nav-number">1.</span> <span class="nav-text">摘要</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正文"><span class="nav-number">2.</span> <span class="nav-text">正文</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本语法"><span class="nav-number">2.1.</span> <span class="nav-text">基本语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据类型"><span class="nav-number">2.2.</span> <span class="nav-text">数据类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数值"><span class="nav-number">2.3.</span> <span class="nav-text">数值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串"><span class="nav-number">2.4.</span> <span class="nav-text">字符串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对象"><span class="nav-number">2.5.</span> <span class="nav-text">对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数组"><span class="nav-number">2.6.</span> <span class="nav-text">数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数"><span class="nav-number">2.7.</span> <span class="nav-text">函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#语法错误"><span class="nav-number">2.8.</span> <span class="nav-text">语法错误</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考文章"><span class="nav-number">3.</span> <span class="nav-text">参考文章</span></a></li></ol></div>
             
           </div>
         </section>
