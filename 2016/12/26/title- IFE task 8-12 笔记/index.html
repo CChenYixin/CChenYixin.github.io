@@ -111,7 +111,7 @@
     fancybox: true,
     motion: true,
     duoshuo: {
-      userId: '0',
+      userId: 'undefined',
       author: '博主'
     },
     algolia: {
@@ -335,7 +335,7 @@
               <span class="post-comments-count">
                 <span class="post-meta-divider">|</span>
                 <a href="/2016/12/26/title- IFE task 8-12 笔记/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/26/title- IFE task 8-12 笔记/" itemprop="commentCount"></span>
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/12/26/title- IFE task 8-12 笔记/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -380,24 +380,24 @@
 <li>间隙 - 列之间的空隙（gutters）</li>
 </ol>
 <h4 id="容器-container"><a href="#容器-container" class="headerlink" title="容器 - container"></a>容器 - container</h4><p>首先，栅格化布局的页面被包含在一个 .container 容器中，通常情况下宽度为100%，我们也可以通过 <code>max-width</code> 来设置最大的宽度。</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.container</span> &#123;</div><div class="line">     <span class="attribute">width </span>: <span class="number">100%</span>;</div><div class="line">     <span class="attribute">max-width </span>: <span class="number">1200px</span>;</div><div class="line"> &#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">.container &#123;</div><div class="line">     width : 100%;</div><div class="line">     max-width : 1200px;</div><div class="line"> &#125;</div></pre></td></tr></table></figure>
 <h4 id="行-rows"><a href="#行-rows" class="headerlink" title="行 - rows"></a>行 - rows</h4><blockquote>
 <p>行设置的目的是保证列们在它的包裹中而不是溢出到其他行中去。为了达到这个目的，我们需要使用清除浮动的技巧来保证子列们仍旧在这一行中。</p>
 </blockquote>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.row</span><span class="selector-pseudo">:before</span>,</div><div class="line"><span class="selector-class">.row</span><span class="selector-pseudo">:after</span>&#123;</div><div class="line"> <span class="attribute">content</span>: <span class="string">""</span>;</div><div class="line"> <span class="attribute">display</span>: table;</div><div class="line"> <span class="attribute">clear</span>: both;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">.row:before,</div><div class="line">.row:after&#123;</div><div class="line"> content: &quot;&quot;;</div><div class="line"> display: table;</div><div class="line"> clear: both;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h4 id="列-columns"><a href="#列-columns" class="headerlink" title="列 - columns"></a>列 - columns</h4><p>列的设置是栅格化布局中最核心的部分之一。首先要将宽度划分为等分的列，可以根据需要设置不同的宽度，在 Bootstrap 框架中预设的列数为12等分。</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.col-1</span> &#123;<span class="attribute">width</span>: <span class="number">8.33%</span>;&#125;</div><div class="line"><span class="selector-class">.col-2</span> &#123;<span class="attribute">width</span>: <span class="number">16.66%</span>;&#125;</div><div class="line"><span class="selector-class">.col-3</span> &#123;<span class="attribute">width</span>: <span class="number">25%</span>;&#125;</div><div class="line"><span class="selector-class">.col-4</span> &#123;<span class="attribute">width</span>: <span class="number">33.33%</span>&#125;</div><div class="line"><span class="selector-class">.col-5</span> &#123;<span class="attribute">width</span>: <span class="number">41.66%</span>;&#125;</div><div class="line"><span class="selector-class">.col-6</span> &#123;<span class="attribute">width</span>: <span class="number">50%</span>&#125;</div><div class="line"><span class="selector-class">.col-7</span> &#123;<span class="attribute">width</span>: <span class="number">58.33%</span>;&#125;</div><div class="line"><span class="selector-class">.col-8</span> &#123;<span class="attribute">width</span>: <span class="number">66.66%</span>;&#125;</div><div class="line"><span class="selector-class">.col-9</span> &#123;<span class="attribute">width</span>: <span class="number">75%</span>;&#125;</div><div class="line"><span class="selector-class">.col-10</span> &#123;<span class="attribute">width</span>: <span class="number">83.33%</span>&#125;</div><div class="line"><span class="selector-class">.col-11</span> &#123;<span class="attribute">width</span>: <span class="number">91.66%</span>&#125;</div><div class="line"><span class="selector-class">.col-12</span> &#123;<span class="attribute">width</span>: <span class="number">100%</span>&#125;</div></pre></td></tr></table></figure>
-<p>设置好列的宽度后，利用 float 浮动的方式进行布局，如果我们不设置列的高度，那么这些浮动的列将会互相堆叠在前者的上面。为了避免出现这样的情况，我们需要在浮动列的同时给他们一个最小高度1px。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-attr">[class*='col-']</span>&#123;</div><div class="line"> <span class="attribute">float</span>: left;</div><div class="line"> <span class="attribute">min-height</span>: <span class="number">1px</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">.col-1 &#123;width: 8.33%;&#125;</div><div class="line">.col-2 &#123;width: 16.66%;&#125;</div><div class="line">.col-3 &#123;width: 25%;&#125;</div><div class="line">.col-4 &#123;width: 33.33%&#125;</div><div class="line">.col-5 &#123;width: 41.66%;&#125;</div><div class="line">.col-6 &#123;width: 50%&#125;</div><div class="line">.col-7 &#123;width: 58.33%;&#125;</div><div class="line">.col-8 &#123;width: 66.66%;&#125;</div><div class="line">.col-9 &#123;width: 75%;&#125;</div><div class="line">.col-10 &#123;width: 83.33%&#125;</div><div class="line">.col-11 &#123;width: 91.66%&#125;</div><div class="line">.col-12 &#123;width: 100%&#125;</div></pre></td></tr></table></figure>
+<p>设置好列的宽度后，利用 float 浮动的方式进行布局，如果我们不设置列的高度，那么这些浮动的列将会互相堆叠在前者的上面。为了避免出现这样的情况，我们需要在浮动列的同时给他们一个最小高度1px。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">[class*=&apos;col-&apos;]&#123;</div><div class="line"> float: left;</div><div class="line"> min-height: 1px;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>接下来我们已经可以引用并进行布局了。</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"row"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-6"</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">span</span>&gt;</span>两栏<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-6"</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">span</span>&gt;</span>两栏<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;row&quot;&gt;</div><div class="line">    &lt;div class=&quot;col-6&quot;&gt;</div><div class="line">            &lt;span&gt;两栏&lt;/span&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">    &lt;div class=&quot;col-6&quot;&gt;</div><div class="line">            &lt;span&gt;两栏&lt;/span&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
 <h4 id="列之间的空隙（gutters）"><a href="#列之间的空隙（gutters）" class="headerlink" title="列之间的空隙（gutters）"></a>列之间的空隙（gutters）</h4><p>在一般的盒模型下，如果我们设置一个宽度为200px，而实际呈现的盒子的宽度可能会大于200px(除非没有左右边框和左右补白)。但是当我们使用了 <code>box-sizing:border-box</code>属性后，假如我们要设置一个宽度为200px的盒子，那么只需要直接设置宽度为200px，当再设置它的左右边框和左右补白后，它的内容区会自动调整。</p>
-<p>这就使得我们可以借助border-box模型，轻松设置列之间的空隙。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*-- setting border box on all elements inside the grid --*/</span></div><div class="line"><span class="selector-class">.grid-container</span> *&#123;</div><div class="line"> <span class="attribute">box-sizing</span>: border-box;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-attr">[class*='col-']</span>&#123;</div><div class="line"> <span class="attribute">float</span>: left;</div><div class="line"> <span class="attribute">min-height</span>: <span class="number">1px</span>;</div><div class="line"> <span class="attribute">width</span>: <span class="number">16.66%</span>;</div><div class="line"> <span class="comment">/*-- our gutter --*/</span></div><div class="line"> <span class="attribute">padding</span>: <span class="number">12px</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>这就使得我们可以借助border-box模型，轻松设置列之间的空隙。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">/*-- setting border box on all elements inside the grid --*/</div><div class="line">.grid-container *&#123;</div><div class="line"> box-sizing: border-box;</div><div class="line">&#125;</div><div class="line"></div><div class="line">[class*=&apos;col-&apos;]&#123;</div><div class="line"> float: left;</div><div class="line"> min-height: 1px;</div><div class="line"> width: 16.66%;</div><div class="line"> /*-- our gutter --*/</div><div class="line"> padding: 12px;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <h4 id="media媒体查询"><a href="#media媒体查询" class="headerlink" title="@media媒体查询"></a>@media媒体查询</h4><p>至此我们便可以通过媒体查询来设置不同设备或屏幕大小下的布局效果了。以任务 8 为例子：<br><img src="http://ohqryljkl.bkt.clouddn.com/1.gif" alt="图片"></p>
 <h3 id="Flexbox布局"><a href="#Flexbox布局" class="headerlink" title="Flexbox布局"></a>Flexbox布局</h3><p>不同于栅格化布局利用 CSS 属性实现响应式开发，Flexbox 布局本身是一个布局模块，它包含着父元素 flex container 和子元素 flex items 属性。优点是尤其适合移动端 WEB 网页开发，缺点是在PC端的兼容性上暂时不完全，而且由于本身是一个布局模块所以不需要额外书写CSS样式，相比栅格式布局需要额外书写样式可能带来的渲染时间延长的缺点，Flexbox 十分适合响应式开发。</p>
 <p>根据我个人的理解把 Flexbox布局分为两部分理解：轴相关和项目相关。</p>
 <h4 id="轴相关"><a href="#轴相关" class="headerlink" title="轴相关"></a>轴相关</h4><ol>
 <li><p>使用Flexbox 布局</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">section</span>&#123;</div><div class="line">    <span class="attribute">display</span>:flex;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">section&#123;</div><div class="line">    display:flex;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 <li><p>轴方向 flex-direction<br>设定伸缩容器的主轴的方向，默认 row。</p>
 </li>
@@ -418,15 +418,15 @@
 </ul>
 <ol>
 <li><p>主轴 justify-content<br>设置伸缩项目沿主轴的对齐方式，从而调整伸缩项目之间的间距。比较常用的 center 和 space-between。当我们需要让多个块元素在同一水平线上居中的时候，我们就可以用Flexbox 布局迅速让其居中:</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.flex-center</span> &#123;</div><div class="line">  <span class="attribute">display</span>: flex;</div><div class="line">  <span class="attribute">justify-content</span>: center;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">.flex-center &#123;</div><div class="line">  display: flex;</div><div class="line">  justify-content: center;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 <li><p>侧轴 align-items<br>类似与主轴，设置伸缩项目沿侧轴的对齐方式，比如当我们需要让元素水平垂直局居中时，就可以使用 Flexbox 布局：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.parent</span> &#123;</div><div class="line">  <span class="attribute">display</span>: flex;</div><div class="line">  <span class="attribute">justify-content</span>: center;</div><div class="line">  <span class="attribute">align-items</span>: center;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">.parent &#123;</div><div class="line">  display: flex;</div><div class="line">  justify-content: center;</div><div class="line">  align-items: center;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 </ol>
 <h4 id="项目相关"><a href="#项目相关" class="headerlink" title="项目相关"></a>项目相关</h4><ol>
 <li><p>项目顺序 order<br>默认情况之下，所有的伸缩项目的顺序组都是“0”。我们可以很容易的给每个伸缩项目设置不同的顺序值。更高的值会排在后面，而原来的HTML结构并不会有任何变化。比如我们可以通过以下代码让 .first 排在第一位：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.first</span> &#123;</div><div class="line">  <span class="attribute">order</span>: -<span class="number">1</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.first &#123;</div><div class="line">  order: -1;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 <li><p>项目的弹性 flex</p>
 </li>
@@ -522,8 +522,11 @@
  
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/12/26/title- IFE task 8-12 笔记/"
-           data-title="IFE task 8-12 笔记" data-url="http://chenyixin.win/2016/12/26/title- IFE task 8-12 笔记/">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
       </div>
     
   </div>
@@ -744,29 +747,32 @@
  
 
   
-    
+
+    <script type="text/javascript">
+      var disqus_shortname = 'onepiececee';
+      var disqus_identifier = '2016/12/26/title- IFE task 8-12 笔记/';
+      var disqus_title = "IFE task 8-12 笔记";
+      var disqus_url = 'http://chenyixin.win/2016/12/26/title- IFE task 8-12 笔记/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+    </script>
   
-
-  <script type="text/javascript">
-    var duoshuoQuery = {short_name:"chenyixin"};
-    (function() {
-      var ds = document.createElement('script');
-      ds.type = 'text/javascript';ds.async = true;
-      ds.id = 'duoshuo-script';
-      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-      ds.charset = 'UTF-8';
-      (document.getElementsByTagName('head')[0]
-      || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-  </script>
-
-  
-    
-    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
-    <script src="/js/src/hook-duoshuo.js"></script>
-  
-
-
 
 
 

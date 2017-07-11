@@ -123,7 +123,7 @@
     fancybox: true,
     motion: true,
     duoshuo: {
-      userId: '0',
+      userId: 'undefined',
       author: '博主'
     },
     algolia: {
@@ -347,7 +347,7 @@
               <span class="post-comments-count">
                 <span class="post-meta-divider">|</span>
                 <a href="/2017/03/05/title- 「专注概念 VOL.1」JavaScript 语法/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/05/title- 「专注概念 VOL.1」JavaScript 语法/" itemprop="commentCount"></span>
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/03/05/title- 「专注概念 VOL.1」JavaScript 语法/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -388,17 +388,17 @@
 <p>这是在某个网站上看到的一句话，也这是记述这个系列的笔记的原因。</p>
 <h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h3><ul>
 <li><p>变量是对“值”的引用，使用变量等同于引用一个值，每一个变量都有一个变量名，变量可以用来保存任何值。在 JavaScript 中没有块作用域，只存在全局作用域和函数作用域。当在函数中使用<code>var</code>定义一个变量，那么这个变量就是局部变量，在函数退出后就会被销毁。</p>
-<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="keyword">var</span> message = <span class="string">'hi'</span>;</div><div class="line">&#125;</div><div class="line">test();</div><div class="line">alert(message);<span class="comment">//错误</span></div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">function test()&#123;</div><div class="line">    var message = &apos;hi&apos;;</div><div class="line">&#125;</div><div class="line">test();</div><div class="line">alert(message);//错误</div></pre></td></tr></table></figure>
 </li>
 <li><p>在同一个作用域中，一个变量只能保存一个值，如果使用<code>var</code>第二次生命且赋值，会覆盖掉前面的值。</p>
 </li>
-<li>JavaScript引擎的工作方式是，首先解析代码，获取所有被声明的变量，然后在一行行的执行，所以所有的变量声明语句，都会被提到代码的头部，这就叫做“变量提升”。<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(a);</div><div class="line"><span class="keyword">var</span> a = <span class="number">1</span>;<span class="comment">//undefined</span></div></pre></td></tr></table></figure>
+<li>JavaScript引擎的工作方式是，首先解析代码，获取所有被声明的变量，然后在一行行的执行，所以所有的变量声明语句，都会被提到代码的头部，这就叫做“变量提升”。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">console.log(a);</div><div class="line">var a = 1;//undefined</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <p>JavaScript 是一行行的运行代码，按理第一行代码后应该抛出错误，但是实际上由于变量提升的原因，浏览器并不会报错，而会显示<code>undefined</code>，表示 a 已经声明但未赋值。</p>
 <ul>
 <li>标识符就是用来识别一个具体对象的名称，变量名就是一种标识符。</li>
-<li>我们可以使用switch语句来代替多个if…else的情况，基本结构如下：<figure class="highlight ceylon"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">switch</span> ( expression)&#123;</div><div class="line">    <span class="keyword">case</span> <span class="keyword">value</span>: statement</div><div class="line">    <span class="keyword">break</span>;</div><div class="line">    <span class="keyword">case</span> <span class="keyword">value</span>: statement</div><div class="line">    <span class="keyword">break</span>;</div><div class="line">    <span class="keyword">case</span> <span class="keyword">value</span>: statement</div><div class="line">    <span class="keyword">break</span>;</div><div class="line">    ...</div><div class="line">    <span class="keyword">default</span>:statement</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<li>我们可以使用switch语句来代替多个if…else的情况，基本结构如下：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">switch ( expression)&#123;</div><div class="line">    case value: statement</div><div class="line">    break;</div><div class="line">    case value: statement</div><div class="line">    break;</div><div class="line">    case value: statement</div><div class="line">    break;</div><div class="line">    ...</div><div class="line">    default:statement</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <p>语句中的每一个情形 case ，其基本含义如果表达式等于语句中的这个值 value，则执行后面的语句 statement。break 表示提出switch结构，而default表示，当每一种case都不符合时，执行其后面的语句。</p>
@@ -428,17 +428,17 @@
 </ul>
 <h3 id="数值"><a href="#数值" class="headerlink" title="数值"></a>数值</h3><ul>
 <li><p>NaN是JavaScript的一种特殊值，表示非数字（NOT A NUMBER）,主要出现在将字符串解析成数字出错的场合。NaN不等于任何值，包括它本身。我们可以使用<code>isNaN</code>来判断一个值是否是NaN，但需要注意的在使用前，最好先判断该值是不是数值，因为 <strong>如果传入其他值，会被先转成数值。</strong></p>
-<figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">isNaN([<span class="number">123</span>]) <span class="comment">// false</span></div><div class="line"></div><div class="line"><span class="comment">//good</span></div><div class="line"><span class="function">function <span class="title">myIsNaN</span>(<span class="params"><span class="keyword">value</span></span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="keyword">typeof</span> <span class="keyword">value</span> === <span class="string">'number'</span> &amp;&amp; isNaN(<span class="keyword">value</span>);</div><div class="line">&#125;</div><div class="line"><span class="comment">//or</span></div><div class="line"><span class="function">function <span class="title">myIsNaN</span>(<span class="params"><span class="keyword">value</span></span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="keyword">value</span> !== <span class="keyword">value</span>;<span class="comment">//NaN不等于任何值</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">isNaN([123]) // false</div><div class="line"></div><div class="line">//good</div><div class="line">function myIsNaN(value) &#123;</div><div class="line">  return typeof value === &apos;number&apos; &amp;&amp; isNaN(value);</div><div class="line">&#125;</div><div class="line">//or</div><div class="line">function myIsNaN(value) &#123;</div><div class="line">  return value !== value;//NaN不等于任何值</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 <li><p>与数值有关的全局方法<code>parseInt()</code>和<code>parseFloat()</code>。<br>parseInt方法用于将字符串转换为整数。假如字符串的头部有空格，会被自动去除，假如要转换的不是字符串，会先转换为字符串在转换。字符串转换为整数的时候是 <strong>一个一个转换，如果遇到不能转换为数字的字符，就不再进行返回已经转好的部分</strong>，换句话说只转换字符串头部可以转换的部分。（正负号除外。）该方法接受参数，表示被转换值的进制，默认为十进制转十进制。</p>
 </li>
 <li><p>parseFloat方法用于将一个字符串转为浮点数。</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="title">parseInt</span><span class="params">(<span class="number">1.23</span>)</span></span> <span class="comment">// 1</span></div><div class="line"><span class="function"><span class="title">parseFloat</span><span class="params">(<span class="number">1.23</span>)</span></span> <span class="comment">// 1.23</span></div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">parseInt(1.23) // 1</div><div class="line">parseFloat(1.23) // 1.23</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><ul>
 <li>字符串可以被视为字符数组，从来调用<code>[]</code>来返回某个位置的字符。但是字符串是只读的，无法运用数组的方法来改变字符串。字符串<code>length</code>属性返回字符串的长度。</li>
-<li><code>charAt()</code>方法可返回指定位置的字符。<code>charCodeAt()</code> 方法可返回指定位置的字符的 Unicode 编码。这个返回值是 0 - 65535 之间的整数。我们常常用到来验证表单输入<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> inputText = <span class="built_in">document</span>.getElementsByClassName(<span class="string">'inputtext'</span>)[<span class="number">0</span>];</div><div class="line"><span class="keyword">var</span> tip = <span class="built_in">document</span>.getElementById(<span class="string">'tip'</span>);</div><div class="line"><span class="keyword">var</span> button = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'input'</span>)[<span class="number">1</span>];</div><div class="line"></div><div class="line"><span class="comment">//字符长度</span></div><div class="line"><span class="keyword">var</span> strLength = <span class="function"><span class="keyword">function</span>(<span class="params">str</span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> len = <span class="number">0</span>;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;str.length;i++)&#123;</div><div class="line">        charCode =  str.charCodeAt(i);</div><div class="line">        <span class="keyword">if</span>(charCode &gt;= <span class="number">0</span> &amp;&amp; charCode &lt;= <span class="number">128</span>)&#123;</div><div class="line">            len +=<span class="number">1</span>;</div><div class="line">        &#125;<span class="keyword">else</span>&#123;</div><div class="line">            len +=<span class="number">2</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">       <span class="keyword">return</span> len;</div><div class="line">&#125;;</div><div class="line"><span class="comment">//验证</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">validate</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> content = inputText.value.trim();</div><div class="line">    <span class="keyword">if</span>(strLength(content) === <span class="number">0</span>)&#123;</div><div class="line">        tip.innerHTML = <span class="string">'名称不能为空！'</span>;</div><div class="line">        tip.className = <span class="string">'on'</span>;</div><div class="line">        inputText.className += <span class="string">' warn'</span>;</div><div class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>( strLength(content)&gt;=<span class="number">4</span> &amp;&amp; strLength(content)&lt;=<span class="number">16</span> )&#123;</div><div class="line">        tip.innerHTML = <span class="string">'格式正确'</span>;</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">        tip.innerHTML =<span class="string">'字符数应为4-16位'</span>;</div><div class="line">        tip.className = <span class="string">'on'</span>;</div><div class="line">        inputText.className=<span class="string">'warn'</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//绑定</span></div><div class="line">button.onclick =<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    validate();</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<li><code>charAt()</code>方法可返回指定位置的字符。<code>charCodeAt()</code> 方法可返回指定位置的字符的 Unicode 编码。这个返回值是 0 - 65535 之间的整数。我们常常用到来验证表单输入<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line">var inputText = document.getElementsByClassName(&apos;inputtext&apos;)[0];</div><div class="line">var tip = document.getElementById(&apos;tip&apos;);</div><div class="line">var button = document.getElementsByTagName(&apos;input&apos;)[1];</div><div class="line"></div><div class="line">//字符长度</div><div class="line">var strLength = function(str)&#123;</div><div class="line">    var len = 0;</div><div class="line">    for(var i=0;i&lt;str.length;i++)&#123;</div><div class="line">        charCode =  str.charCodeAt(i);</div><div class="line">        if(charCode &gt;= 0 &amp;&amp; charCode &lt;= 128)&#123;</div><div class="line">            len +=1;</div><div class="line">        &#125;else&#123;</div><div class="line">            len +=2;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">       return len;</div><div class="line">&#125;;</div><div class="line">//验证</div><div class="line">function validate()&#123;</div><div class="line">    var content = inputText.value.trim();</div><div class="line">    if(strLength(content) === 0)&#123;</div><div class="line">        tip.innerHTML = &apos;名称不能为空！&apos;;</div><div class="line">        tip.className = &apos;on&apos;;</div><div class="line">        inputText.className += &apos; warn&apos;;</div><div class="line">    &#125;else if( strLength(content)&gt;=4 &amp;&amp; strLength(content)&lt;=16 )&#123;</div><div class="line">        tip.innerHTML = &apos;格式正确&apos;;</div><div class="line">    &#125;else&#123;</div><div class="line">        tip.innerHTML =&apos;字符数应为4-16位&apos;;</div><div class="line">        tip.className = &apos;on&apos;;</div><div class="line">        inputText.className=&apos;warn&apos;;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">//绑定</div><div class="line">button.onclick =function()&#123;</div><div class="line">    validate();</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <h3 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h3><ul>
@@ -452,12 +452,12 @@
 <li><p><strong>不同的变量名指向同一个对象，那么它们都是这个对象的引用，指向同一个内存地址，这意味着修改其中一个变量会影响到其他所有的变量</strong>，对于原始类型的值来说，是传值引用。因为是值的拷贝，所以当某个变量的值发生变化，另外一个不会受到影响，因为它们并不是指向同一个内存地址。</p>
 </li>
 <li><p>我们用<code>in</code>运算符来检查对象是否包含某个属性，用<code>for..in</code>来遍历对象的全部属性，因为可以遍历继承的属性，假如要只遍历对象本身的属性，需要用到<code>hasOwnPrototype</code></p>
-<figure class="highlight maxima"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> (<span class="built_in">var</span> <span class="built_in">key</span> <span class="keyword">in</span> person) &#123;</div><div class="line">  <span class="keyword">if</span> (person.hasOwnProperty(<span class="built_in">key</span>)) &#123;</div><div class="line">    console.<span class="built_in">log</span>(<span class="built_in">key</span>);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">for (var key in person) &#123;</div><div class="line">  if (person.hasOwnProperty(key)) &#123;</div><div class="line">    console.log(key);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><ul>
 <li><p>数组，按次序排列的一组值。数组本身一种特殊的对象，比如<code>in</code>和<code>for...in</code>都可以被数组使用。我们也可以使用对象的方法<code>Object.keys</code>来返回数组的键名：</p>
-<figure class="highlight prolog"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var arr = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>];</div><div class="line"></div><div class="line"><span class="symbol">Object</span>.keys(arr)</div><div class="line">// [<span class="string">"0"</span>, <span class="string">"1"</span>, <span class="string">"2"</span>]</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var arr = [&apos;a&apos;, &apos;b&apos;, &apos;c&apos;];</div><div class="line"></div><div class="line">Object.keys(arr)</div><div class="line">// [&quot;0&quot;, &quot;1&quot;, &quot;2&quot;]</div></pre></td></tr></table></figure>
 </li>
 <li><p>数组的length属性返回数组的成员数量。<strong>注意<code>length</code>是一个可写的属性</strong>，这意味着如果人为设置一个小于当前成员个数的值，该数组的成员会自动减少到length设置的值。将数组清空的一个有效方法，就是将length属性设为0。</p>
 </li>
@@ -545,8 +545,11 @@
  
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2017/03/05/title- 「专注概念 VOL.1」JavaScript 语法/"
-           data-title="「专注概念 VOL.1」JavaScript 语法" data-url="http://chenyixin.win/2017/03/05/title- 「专注概念 VOL.1」JavaScript 语法/">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
       </div>
     
   </div>
@@ -767,29 +770,32 @@
  
 
   
-    
+
+    <script type="text/javascript">
+      var disqus_shortname = 'onepiececee';
+      var disqus_identifier = '2017/03/05/title- 「专注概念 VOL.1」JavaScript 语法/';
+      var disqus_title = "「专注概念 VOL.1」JavaScript 语法";
+      var disqus_url = 'http://chenyixin.win/2017/03/05/title- 「专注概念 VOL.1」JavaScript 语法/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+    </script>
   
-
-  <script type="text/javascript">
-    var duoshuoQuery = {short_name:"chenyixin"};
-    (function() {
-      var ds = document.createElement('script');
-      ds.type = 'text/javascript';ds.async = true;
-      ds.id = 'duoshuo-script';
-      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-      ds.charset = 'UTF-8';
-      (document.getElementsByTagName('head')[0]
-      || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-  </script>
-
-  
-    
-    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
-    <script src="/js/src/hook-duoshuo.js"></script>
-  
-
-
 
 
 

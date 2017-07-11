@@ -108,7 +108,7 @@
     fancybox: true,
     motion: true,
     duoshuo: {
-      userId: '0',
+      userId: 'undefined',
       author: '博主'
     },
     algolia: {
@@ -332,7 +332,7 @@
               <span class="post-comments-count">
                 <span class="post-meta-divider">|</span>
                 <a href="/2017/02/23/title- 使用 jQuery 实现一个任务清单小应用 /#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/23/title- 使用 jQuery 实现一个任务清单小应用 /" itemprop="commentCount"></span>
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/02/23/title- 使用 jQuery 实现一个任务清单小应用 /" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -392,10 +392,10 @@
 <li>将渲染好的内容利用<code>prepend</code>或者<code>append</code>结构中区</li>
 <li>监听其他事件</li>
 </ul>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//部分代码，点击 [TODO](https://github.com/CChenYixin/JavaScript_demo/tree/master/demo_MY%20TODO) 访问完整代码。</span></div><div class="line"></div><div class="line"></div><div class="line">$form_add_task.on(<span class="string">'submit'</span>,on_add_task_form_submit);</div><div class="line"></div><div class="line"><span class="comment">//监听提交按钮并添加事件</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">on_add_task_form_submit</span><span class="params">(e)</span></span>&#123;</div><div class="line">    <span class="keyword">var</span> new_task=&#123;&#125;,$input;</div><div class="line">    <span class="comment">//禁用默认行为</span></div><div class="line">    e.preventDefault();</div><div class="line">    <span class="comment">//获取新task的值</span></div><div class="line">    $input = $(this).find(<span class="string">'input[name=content]'</span>);</div><div class="line">    new_task.content =  $input.val();</div><div class="line">    <span class="comment">//如果新task的值为空则返回，否则继续执行</span></div><div class="line">    <span class="keyword">if</span>(!new_task.content) <span class="keyword">return</span>;</div><div class="line">    <span class="comment">// 存入新task</span></div><div class="line">    task_list.push(new_task);</div><div class="line">    <span class="keyword">if</span>(add_task(new_task))&#123;</div><div class="line">        <span class="comment">// render_task_list();</span></div><div class="line">        $input.val(<span class="keyword">null</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//添加task</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">add_task</span><span class="params">(new_task)</span></span>&#123;</div><div class="line">    <span class="comment">//更新localstrage</span></div><div class="line">    refresh_task_list();</div><div class="line">    <span class="comment">// console.log('task_list',task_list);</span></div><div class="line">    <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//更新localstroage并刷新</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">refresh_task_list</span> <span class="params">()</span> </span>&#123;</div><div class="line">      store.set(<span class="string">'task_list'</span>, task_list);</div><div class="line">      render_task_list();</div><div class="line">  &#125;</div><div class="line"></div><div class="line"><span class="comment">//渲染task列表</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">render_task_list</span><span class="params">()</span></span>&#123;</div><div class="line">  <span class="comment">// console.log('1',1);</span></div><div class="line">  <span class="comment">// console.log('task_list',task_list);</span></div><div class="line">  <span class="keyword">var</span> $task_list=$(<span class="string">'.task-list'</span>);</div><div class="line">  $task_list.html(<span class="string">''</span>);</div><div class="line">  <span class="keyword">var</span> complete_items =[];</div><div class="line"></div><div class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>;i&lt;task_list.length;i++)&#123;</div><div class="line">      <span class="keyword">var</span> item = task_list[i];</div><div class="line">      <span class="keyword">if</span>(item &amp;&amp; item.complete)&#123;</div><div class="line">          complete_items.push(item);</div><div class="line">          <span class="keyword">var</span> $complete_task = render_task_item(item,i);</div><div class="line">          <span class="keyword">if</span>(!$complete_task) <span class="keyword">continue</span>;</div><div class="line">          $complete_task.addClass(<span class="string">"completed"</span>);</div><div class="line">          $task_list.append($complete_task);</div><div class="line">      &#125;<span class="keyword">else</span>&#123;</div><div class="line">          $task = render_task_item(item,i);</div><div class="line">          $task_list.prepend($task);</div><div class="line">      &#125;</div><div class="line">  &#125;</div><div class="line">  $task_delete_trigger = $(<span class="string">'.action.delete'</span>);</div><div class="line">  $task_detail_trigger= $(<span class="string">'.action.detail'</span>);</div><div class="line">  $checkbox_complete = $(<span class="string">'.complete'</span>);</div><div class="line">  listen_task_delete();</div><div class="line">  listen_task_detail();</div><div class="line">  listen_checkbox_complete();</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">function</span> <span class="title">render_task_item</span><span class="params">(data,index)</span></span>&#123;</div><div class="line">      <span class="keyword">if</span>(!data||!index) <span class="keyword">return</span>;</div><div class="line">      <span class="keyword">var</span> list_item_item = <span class="string">'&lt;div class="task-item" data-index="'</span>+ index +<span class="string">'"&gt;'</span>+</div><div class="line">              <span class="string">'&lt;span&gt;&lt;input class="complete"'</span> + ( data.complete ? <span class="string">'checked'</span>:<span class="string">''</span>) +<span class="string">' type="checkbox"&gt;&lt;/span&gt;'</span>+</div><div class="line">              <span class="string">'&lt;span class="text-content"&gt;'</span>+ data.content + <span class="string">'&lt;/span&gt;'</span>+</div><div class="line">              <span class="string">'&lt;span class="action delete"&gt;删除&lt;/span&gt;'</span>+</div><div class="line">              <span class="string">'&lt;span class="action detail"&gt;详细&lt;/span&gt;'</span>+</div><div class="line">          <span class="string">'&lt;/div&gt;'</span>;</div><div class="line">      <span class="keyword">return</span> $(list_item_item);</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div></pre></td><td class="code"><pre><div class="line">//部分代码，点击 [TODO](https://github.com/CChenYixin/JavaScript_demo/tree/master/demo_MY%20TODO) 访问完整代码。</div><div class="line"></div><div class="line"></div><div class="line">$form_add_task.on(&apos;submit&apos;,on_add_task_form_submit);</div><div class="line"></div><div class="line">//监听提交按钮并添加事件</div><div class="line">function on_add_task_form_submit(e)&#123;</div><div class="line">    var new_task=&#123;&#125;,$input;</div><div class="line">    //禁用默认行为</div><div class="line">    e.preventDefault();</div><div class="line">    //获取新task的值</div><div class="line">    $input = $(this).find(&apos;input[name=content]&apos;);</div><div class="line">    new_task.content =  $input.val();</div><div class="line">    //如果新task的值为空则返回，否则继续执行</div><div class="line">    if(!new_task.content) return;</div><div class="line">    // 存入新task</div><div class="line">    task_list.push(new_task);</div><div class="line">    if(add_task(new_task))&#123;</div><div class="line">        // render_task_list();</div><div class="line">        $input.val(null);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">//添加task</div><div class="line">function add_task(new_task)&#123;</div><div class="line">    //更新localstrage</div><div class="line">    refresh_task_list();</div><div class="line">    // console.log(&apos;task_list&apos;,task_list);</div><div class="line">    return true;</div><div class="line">&#125;</div><div class="line"></div><div class="line">//更新localstroage并刷新</div><div class="line">function refresh_task_list () &#123;</div><div class="line">      store.set(&apos;task_list&apos;, task_list);</div><div class="line">      render_task_list();</div><div class="line">  &#125;</div><div class="line"></div><div class="line">//渲染task列表</div><div class="line">function render_task_list()&#123;</div><div class="line">  // console.log(&apos;1&apos;,1);</div><div class="line">  // console.log(&apos;task_list&apos;,task_list);</div><div class="line">  var $task_list=$(&apos;.task-list&apos;);</div><div class="line">  $task_list.html(&apos;&apos;);</div><div class="line">  var complete_items =[];</div><div class="line"></div><div class="line">  for(var i = 0;i&lt;task_list.length;i++)&#123;</div><div class="line">      var item = task_list[i];</div><div class="line">      if(item &amp;&amp; item.complete)&#123;</div><div class="line">          complete_items.push(item);</div><div class="line">          var $complete_task = render_task_item(item,i);</div><div class="line">          if(!$complete_task) continue;</div><div class="line">          $complete_task.addClass(&quot;completed&quot;);</div><div class="line">          $task_list.append($complete_task);</div><div class="line">      &#125;else&#123;</div><div class="line">          $task = render_task_item(item,i);</div><div class="line">          $task_list.prepend($task);</div><div class="line">      &#125;</div><div class="line">  &#125;</div><div class="line">  $task_delete_trigger = $(&apos;.action.delete&apos;);</div><div class="line">  $task_detail_trigger= $(&apos;.action.detail&apos;);</div><div class="line">  $checkbox_complete = $(&apos;.complete&apos;);</div><div class="line">  listen_task_delete();</div><div class="line">  listen_task_detail();</div><div class="line">  listen_checkbox_complete();</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">  function render_task_item(data,index)&#123;</div><div class="line">      if(!data||!index) return;</div><div class="line">      var list_item_item = &apos;&lt;div class=&quot;task-item&quot; data-index=&quot;&apos;+ index +&apos;&quot;&gt;&apos;+</div><div class="line">              &apos;&lt;span&gt;&lt;input class=&quot;complete&quot;&apos; + ( data.complete ? &apos;checked&apos;:&apos;&apos;) +&apos; type=&quot;checkbox&quot;&gt;&lt;/span&gt;&apos;+</div><div class="line">              &apos;&lt;span class=&quot;text-content&quot;&gt;&apos;+ data.content + &apos;&lt;/span&gt;&apos;+</div><div class="line">              &apos;&lt;span class=&quot;action delete&quot;&gt;删除&lt;/span&gt;&apos;+</div><div class="line">              &apos;&lt;span class=&quot;action detail&quot;&gt;详细&lt;/span&gt;&apos;+</div><div class="line">          &apos;&lt;/div&gt;&apos;;</div><div class="line">      return $(list_item_item);</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
 <h3 id="bug-和反思"><a href="#bug-和反思" class="headerlink" title="bug 和反思"></a>bug 和反思</h3><p>逻辑清晰的找bug也会快一点。尤其是可以利用<code>console.log()</code>的方式。除去那些依靠JShint就可以排查的bug，首先我们可以先确定bug产生的大体范围，根据逻辑顺序，来打印<code>console.log()</code>;一步步的来测试就可以精准的确定bug产生的原因。不过暂时不知道那些动辄上万行代码是如何debug的，查找资料的时候发现chrome自带断点测试，也要抽时间来学习一下。</p>
 <h3 id="npm的使用"><a href="#npm的使用" class="headerlink" title="npm的使用"></a>npm的使用</h3><p>npm 是 Node 的模块管理器，功能极其强大。我们根据一行命令，就能安装别人写好的模块。</p>
-<figure class="highlight elixir"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$ </span>npm install &lt;packageName&gt;</div><div class="line"><span class="regexp">//</span>卸载</div><div class="line"><span class="variable">$ </span>npm uninstall express</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ npm install &lt;packageName&gt;</div><div class="line">//卸载</div><div class="line">$ npm uninstall express</div></pre></td></tr></table></figure>
 <p>模块的安装过程如下：</p>
 <ul>
 <li>发出npm install命令</li>
@@ -493,8 +493,11 @@
  
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2017/02/23/title- 使用 jQuery 实现一个任务清单小应用 /"
-           data-title="利用 jQuery 实现一个清单列表小应用" data-url="http://chenyixin.win/2017/02/23/title- 使用 jQuery 实现一个任务清单小应用 /">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
       </div>
     
   </div>
@@ -715,29 +718,32 @@
  
 
   
-    
+
+    <script type="text/javascript">
+      var disqus_shortname = 'onepiececee';
+      var disqus_identifier = '2017/02/23/title- 使用 jQuery 实现一个任务清单小应用 /';
+      var disqus_title = "利用 jQuery 实现一个清单列表小应用";
+      var disqus_url = 'http://chenyixin.win/2017/02/23/title- 使用 jQuery 实现一个任务清单小应用 /';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+    </script>
   
-
-  <script type="text/javascript">
-    var duoshuoQuery = {short_name:"chenyixin"};
-    (function() {
-      var ds = document.createElement('script');
-      ds.type = 'text/javascript';ds.async = true;
-      ds.id = 'duoshuo-script';
-      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-      ds.charset = 'UTF-8';
-      (document.getElementsByTagName('head')[0]
-      || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-  </script>
-
-  
-    
-    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
-    <script src="/js/src/hook-duoshuo.js"></script>
-  
-
-
 
 
 
