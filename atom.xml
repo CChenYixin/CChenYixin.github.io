@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://chenyixin.win/"/>
-  <updated>2017-03-06T04:14:13.561Z</updated>
+  <updated>2017-07-17T12:01:35.899Z</updated>
   <id>http://chenyixin.win/</id>
   
   <author>
@@ -14,6 +14,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Linux 命令行和 Vim 使用的基础操作</title>
+    <link href="http://chenyixin.win/2017/07/17/title-%20Linux%20%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%92%8C%20vim%20%E4%BD%BF%E7%94%A8%E7%9A%84%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/"/>
+    <id>http://chenyixin.win/2017/07/17/title- Linux 命令行和 vim 使用的基础操作/</id>
+    <published>2017-07-17T12:00:40.668Z</published>
+    <updated>2017-07-17T12:01:35.899Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>一些 linux 命令行和 vim 编辑器的基础操作</p>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="linux命令行基础操作"><a href="#linux命令行基础操作" class="headerlink" title="linux命令行基础操作"></a>linux命令行基础操作</h3><p>与 Windows 中磁盘分区的概念不同, Linux 中并没有类似C盘这样的说法,而是都以文件名来表示,所有的文件和目录都挂载在根目录「/」下面<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">//linux命令行</div><div class="line">$ 命令 -选项缩写 --选项 参数</div><div class="line">结果</div></pre></td></tr></table></figure></p>
+<h4 id="目录相关操作"><a href="#目录相关操作" class="headerlink" title="目录相关操作"></a>目录相关操作</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">//创建目录</div><div class="line">mkdir 目录名</div><div class="line">mkdir  -p 目录路径</div><div class="line"></div><div class="line">//其中 . 代表当前目录 .. 代表上层目录 ~ 代表当前登录用户的宿主目录 - 代表前一目录,既进入当前目录之前操作的目录</div><div class="line">cd 进入目录</div><div class="line">pwd 显示当前目录</div></pre></td></tr></table></figure>
+<h4 id="文件相关操作"><a href="#文件相关操作" class="headerlink" title="文件相关操作"></a>文件相关操作</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">//创建文件</div><div class="line">touch 文件名</div><div class="line"></div><div class="line">//删除文件</div><div class="line">rm 文件</div><div class="line">rm -r 目录名</div><div class="line">rm -i 删除文件时是否确认</div><div class="line"></div><div class="line">//复制文件</div><div class="line">cp 源文件名 目标路径</div><div class="line">cp  -r 目录 目录</div><div class="line"></div><div class="line">//移动文件</div><div class="line">mv 要移动的文件 目标路径</div></pre></td></tr></table></figure>
+<h4 id="列出文件清单操作"><a href="#列出文件清单操作" class="headerlink" title="列出文件清单操作"></a>列出文件清单操作</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">ls 文件名或目录名</div><div class="line">ls -l 列出详细信息</div><div class="line">ls -a 列出所有文件包括隐藏文件</div><div class="line">ls -R 列出所有内容包括子目录</div></pre></td></tr></table></figure>
+<h3 id="vim-编辑器基础操作"><a href="#vim-编辑器基础操作" class="headerlink" title="vim 编辑器基础操作"></a>vim 编辑器基础操作</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">//进入vim编辑器</div><div class="line">vim</div><div class="line">//进入教程</div><div class="line">vimtutor</div><div class="line">//插入文本</div><div class="line">i</div><div class="line">//保存并推出</div><div class="line">:wq</div><div class="line">//直接退出</div><div class="line">:q</div></pre></td></tr></table></figure>
+<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><p><a href="http://blog.csdn.net/lykangjia/article/details/11655887" target="_blank" rel="external">linux基本命令</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;摘要&quot;&gt;&lt;a href=&quot;#摘要&quot; class=&quot;headerlink&quot; title=&quot;摘要&quot;&gt;&lt;/a&gt;摘要&lt;/h2&gt;&lt;p&gt;一些 linux 命令行和 vim 编辑器的基础操作&lt;/p&gt;
+&lt;h2 id=&quot;正文&quot;&gt;&lt;a href=&quot;#正文&quot; class=&quot;header
+    
+    </summary>
+    
+    
+      <category term="linux" scheme="http://chenyixin.win/tags/linux/"/>
+    
+      <category term="vim" scheme="http://chenyixin.win/tags/vim/"/>
+    
+  </entry>
   
   <entry>
     <title>「专注概念 VOL.1」JavaScript 语法</title>
