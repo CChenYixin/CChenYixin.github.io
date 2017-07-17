@@ -3,6 +3,243 @@
 
 
     
+  <url>
+    <loc>http://chenyixin.win/2017/02/27/title-%20JavaScript%20%E5%92%8C%20%E6%A0%91/</loc>
+    <lastmod>2017-07-17T12:23:24.233Z</lastmod>
+    <data>
+        <display>
+        <title>Javascript 和树</title>
+        <pubTime>2017-02-27T06:51:52.076Z</pubTime>
+        
+        <tag>JavaScript</tag>
+         
+        <tag>tree</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://chenyixin.win/2017/02/26/title-%20IFE%20task%2013-21%20%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2017-07-17T12:23:01.865Z</lastmod>
+    <data>
+        <display>
+        <title>IFE task 13-21 笔记</title>
+        <pubTime>2017-02-26T08:13:39.646Z</pubTime>
+        
+        <tag>JavaScript</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://chenyixin.win/2016/12/26/title-%20IFE%20task%208-12%20%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2017-07-17T12:22:47.319Z</lastmod>
+    <data>
+        <display>
+        <title>IFE task 8-12 笔记</title>
+        <pubTime>2016-12-26T14:07:05.029Z</pubTime>
+        
+        <tag>JavaScript</tag>
+         
+        <tag>HTML</tag>
+         
+        <tag>CSS</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://chenyixin.win/2016/12/16/title-%20IFE%20task%201-7%20%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2017-07-17T12:22:27.183Z</lastmod>
+    <data>
+        <display>
+        <title>IFE task 1-7 笔记</title>
+        <pubTime>2016-12-16T10:25:16.467Z</pubTime>
+        
+        <tag>JavaScript</tag>
+         
+        <tag>HTML</tag>
+         
+        <tag>CSS</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://chenyixin.win/2016/12/12/title-%20CSS%20%E5%B1%85%E4%B8%AD%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97%EF%BC%88%E7%BF%BB%E8%AF%91%EF%BC%89/</loc>
+    <lastmod>2017-07-17T12:21:54.592Z</lastmod>
+    <data>
+        <display>
+        <title>CSS 实现居中完全指南 （ 翻译 ）</title>
+        <pubTime>2016-12-12T13:27:48.623Z</pubTime>
+        
+        <tag>Centering in CSS</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://chenyixin.win/2016/12/27/title-%20%E7%A7%BB%E5%8A%A8%20Web%20%E5%BC%80%E5%8F%91%E5%B0%8F%E8%AE%B0%20/</loc>
+    <lastmod>2017-07-17T12:21:04.085Z</lastmod>
+    <data>
+        <display>
+        <title>移动 Web 开发小记</title>
+        <pubTime>2016-12-27T14:25:33.692Z</pubTime>
+        
+        <tag>Mobile Web</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://chenyixin.win/2016/12/06/title-%20%E4%BD%BF%E7%94%A8%20Github%20Pages%20%E5%92%8C%20Hexo%20%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%8B%AC%E7%AB%8B%E5%8D%9A%E5%AE%A2%EF%BC%88Win%2010%E7%8E%AF%E5%A2%83%E4%B8%8B%EF%BC%89/</loc>
+    <lastmod>2017-07-17T12:19:43.510Z</lastmod>
+    <data>
+        <display>
+        <title>使用 Github Pages 和 Hexo 搭建个人独立博客（Win 10环境下）</title>
+        <pubTime>2016-12-06T07:00:13.531Z</pubTime>
+        
+        <tag>Github</tag>
+         
+        <tag>Hexo</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://chenyixin.win/2017/02/23/title-%20%E4%BD%BF%E7%94%A8%20jQuery%20%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E4%BB%BB%E5%8A%A1%E6%B8%85%E5%8D%95%E5%B0%8F%E5%BA%94%E7%94%A8%20/</loc>
+    <lastmod>2017-07-17T12:19:30.770Z</lastmod>
+    <data>
+        <display>
+        <title>利用 jQuery 实现一个清单列表小应用</title>
+        <pubTime>2017-02-23T10:13:30.967Z</pubTime>
+        
+        <tag>jQuery</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://chenyixin.win/2017/01/18/title-%20%E7%AB%8B%E5%8D%B3%E6%89%A7%E8%A1%8C%E5%87%BD%E6%95%B0%20IIFE%20/</loc>
+    <lastmod>2017-07-17T12:18:43.264Z</lastmod>
+    <data>
+        <display>
+        <title>立即执行函数表达式 IIFE</title>
+        <pubTime>2017-01-18T12:23:09.015Z</pubTime>
+        
+        <tag>JavaScript</tag>
+         
+        <tag>IIFE</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://chenyixin.win/2016/12/08/title-%20%E5%85%B3%E4%BA%8E%20Atom%20%E7%9A%84%E6%8F%92%E4%BB%B6%E5%92%8C%E4%B8%BB%E9%A2%98%E6%97%A0%E6%B3%95%E5%AE%89%E8%A3%85%E7%9A%84%E9%97%AE%E9%A2%98/</loc>
+    <lastmod>2017-07-17T12:18:11.207Z</lastmod>
+    <data>
+        <display>
+        <title>关于 Atom 的插件和主题无法安装的问题</title>
+        <pubTime>2016-12-08T13:59:43.365Z</pubTime>
+        
+        <tag>Atom</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://chenyixin.win/2017/01/03/title-%20%E5%88%86%E5%88%AB%E5%88%A9%E7%94%A8%20JavaScript%20%E5%92%8C%20CSS%20%E5%AE%9E%E7%8E%B0tab%E9%80%89%E9%A1%B9%E5%8D%A1%E5%88%87%E6%8D%A2/</loc>
+    <lastmod>2017-07-17T12:17:43.830Z</lastmod>
+    <data>
+        <display>
+        <title>分别利用 JavaScript 和 CSS 实现tab选项卡切换</title>
+        <pubTime>2017-01-03T12:46:08.932Z</pubTime>
+        
+        <tag>JavaScript</tag>
+         
+        <tag>CSS</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://chenyixin.win/2016/12/11/title-%20%E8%A1%A8%E5%8D%95%E5%AF%B9%E9%BD%90%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F/</loc>
+    <lastmod>2017-07-17T12:17:06.301Z</lastmod>
+    <data>
+        <display>
+        <title>表单对齐的两种方式</title>
+        <pubTime>2016-12-11T13:08:53.346Z</pubTime>
+        
+        <tag>HTML</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://chenyixin.win/2017/03/05/title-%20%E3%80%8C%E4%B8%93%E6%B3%A8%E6%A6%82%E5%BF%B5%20VOL.1%E3%80%8DJavaScript%20%E8%AF%AD%E6%B3%95/</loc>
+    <lastmod>2017-07-17T12:16:48.965Z</lastmod>
+    <data>
+        <display>
+        <title>「专注概念 VOL.1」JavaScript 语法</title>
+        <pubTime>2017-03-05T15:29:39.860Z</pubTime>
+        
+        <tag>JavaScript</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
     
     
   <url>
@@ -17,201 +254,6 @@
          
         <tag>vim</tag>
          
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://chenyixin.win/2017/03/05/title-%20%E3%80%8C%E4%B8%93%E6%B3%A8%E6%A6%82%E5%BF%B5%20VOL.1%E3%80%8DJavaScript%20%E8%AF%AD%E6%B3%95/</loc>
-    <lastmod>2017-03-06T04:14:13.561Z</lastmod>
-    <data>
-        <display>
-        <title>「专注概念 VOL.1」JavaScript 语法</title>
-        <pubTime>2017-03-05T15:29:39.860Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://chenyixin.win/2017/02/27/title-%20JavaScript%20%E5%92%8C%20%E6%A0%91/</loc>
-    <lastmod>2017-02-27T07:53:31.768Z</lastmod>
-    <data>
-        <display>
-        <title>Javascript 和树</title>
-        <pubTime>2017-02-27T06:51:52.076Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://chenyixin.win/2017/02/26/title-%20IFE%20task%2013-21%20%E7%AC%94%E8%AE%B0/</loc>
-    <lastmod>2017-02-27T06:50:15.066Z</lastmod>
-    <data>
-        <display>
-        <title>IFE task 13-21 笔记</title>
-        <pubTime>2017-02-26T08:13:39.646Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://chenyixin.win/2017/02/23/title-%20%E4%BD%BF%E7%94%A8%20jQuery%20%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E4%BB%BB%E5%8A%A1%E6%B8%85%E5%8D%95%E5%B0%8F%E5%BA%94%E7%94%A8%20/</loc>
-    <lastmod>2017-02-23T10:13:30.968Z</lastmod>
-    <data>
-        <display>
-        <title>利用 jQuery 实现一个清单列表小应用</title>
-        <pubTime>2017-02-23T10:13:30.967Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://chenyixin.win/2017/01/18/title-%20%E7%AB%8B%E5%8D%B3%E6%89%A7%E8%A1%8C%E5%87%BD%E6%95%B0%20IIFE%20/</loc>
-    <lastmod>2017-01-18T13:47:53.110Z</lastmod>
-    <data>
-        <display>
-        <title>立即执行函数表达式 IIFE</title>
-        <pubTime>2017-01-18T12:23:09.015Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://chenyixin.win/2017/01/03/title-%20%E5%88%86%E5%88%AB%E5%88%A9%E7%94%A8%20JavaScript%20%E5%92%8C%20CSS%20%E5%AE%9E%E7%8E%B0tab%E9%80%89%E9%A1%B9%E5%8D%A1%E5%88%87%E6%8D%A2/</loc>
-    <lastmod>2017-01-18T11:04:08.584Z</lastmod>
-    <data>
-        <display>
-        <title>分别利用 JavaScript 和 CSS 实现tab选项卡切换</title>
-        <pubTime>2017-01-03T12:46:08.932Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://chenyixin.win/2016/12/27/title-%20%E7%A7%BB%E5%8A%A8%20Web%20%E5%BC%80%E5%8F%91%E5%B0%8F%E8%AE%B0%20/</loc>
-    <lastmod>2016-12-27T14:25:33.698Z</lastmod>
-    <data>
-        <display>
-        <title>移动 Web 开发小记</title>
-        <pubTime>2016-12-27T14:25:33.692Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://chenyixin.win/2016/12/26/title-%20IFE%20task%208-12%20%E7%AC%94%E8%AE%B0/</loc>
-    <lastmod>2016-12-26T14:11:47.244Z</lastmod>
-    <data>
-        <display>
-        <title>IFE task 8-12 笔记</title>
-        <pubTime>2016-12-26T14:07:05.029Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://chenyixin.win/2016/12/16/title-%20IFE%20task%201-7%20%E7%AC%94%E8%AE%B0/</loc>
-    <lastmod>2016-12-16T10:25:16.473Z</lastmod>
-    <data>
-        <display>
-        <title>IFE task 1-7 笔记</title>
-        <pubTime>2016-12-16T10:25:16.467Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://chenyixin.win/2016/12/12/title-%20CSS%20%E5%B1%85%E4%B8%AD%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97%EF%BC%88%E7%BF%BB%E8%AF%91%EF%BC%89/</loc>
-    <lastmod>2016-12-12T13:34:27.032Z</lastmod>
-    <data>
-        <display>
-        <title>CSS 实现居中完全指南 （ 翻译 ）</title>
-        <pubTime>2016-12-12T13:27:48.623Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://chenyixin.win/2016/12/11/title-%20%E8%A1%A8%E5%8D%95%E5%AF%B9%E9%BD%90%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F/</loc>
-    <lastmod>2016-12-11T13:51:52.842Z</lastmod>
-    <data>
-        <display>
-        <title>表单对齐的两种方式</title>
-        <pubTime>2016-12-11T13:08:53.346Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://chenyixin.win/2016/12/08/title-%20%E5%85%B3%E4%BA%8E%20Atom%20%E7%9A%84%E6%8F%92%E4%BB%B6%E5%92%8C%E4%B8%BB%E9%A2%98%E6%97%A0%E6%B3%95%E5%AE%89%E8%A3%85%E7%9A%84%E9%97%AE%E9%A2%98/</loc>
-    <lastmod>2016-12-08T14:00:02.540Z</lastmod>
-    <data>
-        <display>
-        <title>关于 Atom 的插件和主题无法安装的问题</title>
-        <pubTime>2016-12-08T13:59:43.365Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://chenyixin.win/2016/12/06/title-%20%E4%BD%BF%E7%94%A8%20Github%20Pages%20%E5%92%8C%20Hexo%20%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%8B%AC%E7%AB%8B%E5%8D%9A%E5%AE%A2%EF%BC%88Win%2010%E7%8E%AF%E5%A2%83%E4%B8%8B%EF%BC%89/</loc>
-    <lastmod>2016-12-08T13:28:06.119Z</lastmod>
-    <data>
-        <display>
-        <title>使用 Github Pages 和 Hexo 搭建个人独立博客（Win 10环境下）</title>
-        <pubTime>2016-12-06T07:00:13.531Z</pubTime>
-        
          
            
         </display>

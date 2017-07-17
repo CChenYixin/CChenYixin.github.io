@@ -50,7 +50,7 @@
     <link href="http://chenyixin.win/2017/03/05/title-%20%E3%80%8C%E4%B8%93%E6%B3%A8%E6%A6%82%E5%BF%B5%20VOL.1%E3%80%8DJavaScript%20%E8%AF%AD%E6%B3%95/"/>
     <id>http://chenyixin.win/2017/03/05/title- 「专注概念 VOL.1」JavaScript 语法/</id>
     <published>2017-03-05T15:29:39.860Z</published>
-    <updated>2017-03-06T04:14:13.561Z</updated>
+    <updated>2017-07-17T12:16:48.965Z</updated>
     
     <content type="html"><![CDATA[<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><blockquote>
 <p>“Focus on concepts, not syntax”<br>“把注意力放在对概念的理解，而不是语法上”</p>
@@ -150,6 +150,8 @@
     </summary>
     
     
+      <category term="JavaScript" scheme="http://chenyixin.win/tags/JavaScript/"/>
+    
   </entry>
   
   <entry>
@@ -157,7 +159,7 @@
     <link href="http://chenyixin.win/2017/02/27/title-%20JavaScript%20%E5%92%8C%20%E6%A0%91/"/>
     <id>http://chenyixin.win/2017/02/27/title- JavaScript 和 树/</id>
     <published>2017-02-27T06:51:52.076Z</published>
-    <updated>2017-02-27T07:53:31.768Z</updated>
+    <updated>2017-07-17T12:23:24.233Z</updated>
     
     <content type="html"><![CDATA[<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>百度 IFE 任务22到24的相关笔记，主要关于树的概念，遍历。</p>
 <h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="树与二叉树"><a href="#树与二叉树" class="headerlink" title="树与二叉树"></a>树与二叉树</h3><p>树形结构是一种重要的数据结构，我们常常用树来组织信息，描述遍历的行为过程。首先是树的概念：树是一个有 n 个结点的有限集。在任意一个非空的树中有且仅有一个特定的结点称为根，当结点大于1时，各个结点可以分为互不相交的有限集合，每个集合本身又是一棵树，称为根的子树。树是具有层次结构的，我们把根结点所在层称为第一层，其孩子为第二层，以此类推，树中结点的最大层次称为树的深度。</p>
@@ -209,6 +211,10 @@
     </summary>
     
     
+      <category term="JavaScript" scheme="http://chenyixin.win/tags/JavaScript/"/>
+    
+      <category term="tree" scheme="http://chenyixin.win/tags/tree/"/>
+    
   </entry>
   
   <entry>
@@ -216,7 +222,7 @@
     <link href="http://chenyixin.win/2017/02/26/title-%20IFE%20task%2013-21%20%E7%AC%94%E8%AE%B0/"/>
     <id>http://chenyixin.win/2017/02/26/title- IFE task 13-21 笔记/</id>
     <published>2017-02-26T08:13:39.646Z</published>
-    <updated>2017-02-27T06:50:15.066Z</updated>
+    <updated>2017-07-17T12:23:01.865Z</updated>
     
     <content type="html"><![CDATA[<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>文章为百度前端技术学院2016年任务 13-21 的笔记，大概是 Jvascript 基础部分。总结了一些收获，记述了其中遇到的问题和困难，以及一点感想。因为内容稍微多一点，文章的结构就按照各个任务来划分。</p>
 <h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="任务-13"><a href="#任务-13" class="headerlink" title="任务 13"></a>任务 13</h3><p>假设我们要获取某个输入域中的数值，我们可能需要<code>value</code>属性和’parseInt()’。首先，我们需要注意在HTML中<code>value</code>是<code>input</code>的设定值，对于不同的输入类型，<code>value</code>属性的用法也有区别：</p>
@@ -312,6 +318,8 @@
     </summary>
     
     
+      <category term="JavaScript" scheme="http://chenyixin.win/tags/JavaScript/"/>
+    
   </entry>
   
   <entry>
@@ -319,7 +327,7 @@
     <link href="http://chenyixin.win/2017/02/23/title-%20%E4%BD%BF%E7%94%A8%20jQuery%20%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E4%BB%BB%E5%8A%A1%E6%B8%85%E5%8D%95%E5%B0%8F%E5%BA%94%E7%94%A8%20/"/>
     <id>http://chenyixin.win/2017/02/23/title- 使用 jQuery 实现一个任务清单小应用 /</id>
     <published>2017-02-23T10:13:30.967Z</published>
-    <updated>2017-02-23T10:13:30.968Z</updated>
+    <updated>2017-07-17T12:19:30.770Z</updated>
     
     <content type="html"><![CDATA[<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>利用 jQuery 做了一个任务清单的网页小应用，实现了其中的一些基本功能。进一步熟悉了 jQuery 的一些基本的操作和方法。第一次使用了 local storage，不过使用了相关的库Store.js。对本地存储的数据保存方式以及JSON还得再抽个时间学一下，算是知其然不知其所以然。遇到了不小的困难，主要存在于下面两个方面：数据的存储和基本概念的理解。意外的收获是学会了利用console.log的检查代码bug。这篇文章主要记述过程和思路，以及一些写代码过程中的反思。</p>
 <h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p><img src="http://ohqryljkl.bkt.clouddn.com/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20170223144241.png" alt="脑图"></p>
@@ -377,6 +385,8 @@
     </summary>
     
     
+      <category term="jQuery" scheme="http://chenyixin.win/tags/jQuery/"/>
+    
   </entry>
   
   <entry>
@@ -384,7 +394,7 @@
     <link href="http://chenyixin.win/2017/01/18/title-%20%E7%AB%8B%E5%8D%B3%E6%89%A7%E8%A1%8C%E5%87%BD%E6%95%B0%20IIFE%20/"/>
     <id>http://chenyixin.win/2017/01/18/title- 立即执行函数 IIFE /</id>
     <published>2017-01-18T12:23:09.015Z</published>
-    <updated>2017-01-18T13:47:53.110Z</updated>
+    <updated>2017-07-17T12:18:43.264Z</updated>
     
     <content type="html"><![CDATA[<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>有半个月没有写文章，原因是作为一名前端新手 Javascript 中有太多太多的概念，最近大概开始对近段时间的学习一些知识的总结。本篇文章分为两个部分阐述常常会遇到和使用的立即执行函数 IIFE ，分别是立即执行函数是什么，以及为什么会使用这个函数。</p>
 <h2 id="立即执行函数-IIFE-是什么？"><a href="#立即执行函数-IIFE-是什么？" class="headerlink" title="立即执行函数 IIFE 是什么？"></a>立即执行函数 IIFE 是什么？</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>类似于下面这两种形式，当我们在定义了函数之后需要立即调用时，可以通过加 () 的方式来调用函数。但是，由于<code>function</code>这个关键字即可以被当做语句，也可以当做表达式。所以为了避免解析上的歧义，JavaScript引擎规定，如果function关键字出现在行首，一律解释成语句。所以我们不能在函数定义后直接加 () 来立即调用它，而最简单的办法就是将<code>function</code>放在一个()中让引擎将其理解成一个表达式。这种可以立即调用函数的方法被称作“立即调用的函数表达式”（Immediately-Invoked Function Expression），简称IIFE。</p>
@@ -421,6 +431,10 @@
     </summary>
     
     
+      <category term="JavaScript" scheme="http://chenyixin.win/tags/JavaScript/"/>
+    
+      <category term="IIFE" scheme="http://chenyixin.win/tags/IIFE/"/>
+    
   </entry>
   
   <entry>
@@ -428,7 +442,7 @@
     <link href="http://chenyixin.win/2017/01/03/title-%20%E5%88%86%E5%88%AB%E5%88%A9%E7%94%A8%20JavaScript%20%E5%92%8C%20CSS%20%E5%AE%9E%E7%8E%B0tab%E9%80%89%E9%A1%B9%E5%8D%A1%E5%88%87%E6%8D%A2/"/>
     <id>http://chenyixin.win/2017/01/03/title- 分别利用 JavaScript 和 CSS 实现tab选项卡切换/</id>
     <published>2017-01-03T12:46:08.932Z</published>
-    <updated>2017-01-18T11:04:08.584Z</updated>
+    <updated>2017-07-17T12:17:43.830Z</updated>
     
     <content type="html"><![CDATA[<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>大概是一次概念整理，原本这个是慕课进阶后面的编程练习，通过这个选项卡切换的小实例理清了原本对 JavaScript 概念的一些错误认识，顺便复习了一下利用 CSS 制作tab选项卡的过程，所以大概整理了一下写成文章。另外尽管如此，这个练习后还是存在一个问题：就是关于JavaScript中的 <code>this</code> 的使用问题，尽管了解了关键字 this 总是指向调用该方法的对象，但是这较为抽象的概念在实际运用和理解中还是有点问题，暂时还没有解决，特此记录下。可以这个需要大量的练习才可能摸清<code>this</code>的真正概念和使用方法吧。<strong>17年1月18号更新：文章写于刚开始学习JS时，文中方法二 Javascript 与 CSS 耦合是一种并不合适的写法。</strong></p>
 <h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="CSS-实现tab选项卡切换"><a href="#CSS-实现tab选项卡切换" class="headerlink" title="CSS 实现tab选项卡切换"></a>CSS 实现tab选项卡切换</h3><p>效果如下：</p>
@@ -466,6 +480,10 @@
     </summary>
     
     
+      <category term="JavaScript" scheme="http://chenyixin.win/tags/JavaScript/"/>
+    
+      <category term="CSS" scheme="http://chenyixin.win/tags/CSS/"/>
+    
   </entry>
   
   <entry>
@@ -473,7 +491,7 @@
     <link href="http://chenyixin.win/2016/12/27/title-%20%E7%A7%BB%E5%8A%A8%20Web%20%E5%BC%80%E5%8F%91%E5%B0%8F%E8%AE%B0%20/"/>
     <id>http://chenyixin.win/2016/12/27/title- 移动 Web 开发小记 /</id>
     <published>2016-12-27T14:25:33.692Z</published>
-    <updated>2016-12-27T14:25:33.698Z</updated>
+    <updated>2017-07-17T12:21:04.085Z</updated>
     
     <content type="html"><![CDATA[<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>大概记述了初次接触移动 Web 页面布局实践中遇到的一些问题和值得注意的地方。具体包括了移动前端开发基本的概念，移动页面开发相关的一些<code>meta</code>标签，相对单位 rem ，与响应式图片的一些总结。</p>
 <h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="移动前端开发的大体印象"><a href="#移动前端开发的大体印象" class="headerlink" title="移动前端开发的大体印象"></a>移动前端开发的大体印象</h3><p>移动前端开发是一个很大的概念，除了基本的前端知识外，还需要掌握一些PPI，像素，DPI等知识，对自己这种小白来说，学习过程中的一大体验就是概念多，还没有有个全局的印象首先被基础概念淹没了。所以个人感觉首先要对移动前端开发有个大体的印象。具体来说的移动前端开发包括了以下几种类型：</p>
@@ -529,6 +547,8 @@
     </summary>
     
     
+      <category term="Mobile Web" scheme="http://chenyixin.win/tags/Mobile-Web/"/>
+    
   </entry>
   
   <entry>
@@ -536,7 +556,7 @@
     <link href="http://chenyixin.win/2016/12/26/title-%20IFE%20task%208-12%20%E7%AC%94%E8%AE%B0/"/>
     <id>http://chenyixin.win/2016/12/26/title- IFE task 8-12 笔记/</id>
     <published>2016-12-26T14:07:05.029Z</published>
-    <updated>2016-12-26T14:11:47.244Z</updated>
+    <updated>2017-07-17T12:22:47.319Z</updated>
     
     <content type="html"><![CDATA[<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>文章为百度前端技术学院2016年任务 8-12 的笔记，CSS 部分基本结束。本文大概记述了后半部分任务中的栅格化布局与 Flexfox 布局的一些笔记和需要注意的地方。</p>
 <h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="栅格化布局"><a href="#栅格化布局" class="headerlink" title="栅格化布局"></a>栅格化布局</h3><p>栅格化布局的核心是预设好的列宽和媒体查询。具体来说， 首先，我们可以根据需要创建一系列预设好宽度的列，其次，通过设置不同的类名引用它们，最后通过媒体查询来判断具体情况下需要引用哪种样式布局，最终实现不同终端下都能让布局完美展示的响应式设计。比较流行  <a href="http://v3.bootcss.com/css/#forms" target="_blank" rel="external">Bootstrap</a> 就是基于这种简单又实用的设计方式，通过 link 引入的方式可以快速的开发适用于不同设备的响应式 WEB 项目。这里以任务 8 为例结合这篇文章 <a href="http://j4n.co/blog/Creating-your-own-css-grid-system" target="_blank" rel="external">Creating Your Own CSS Grid System</a> 简单的回顾一下栅格化布局需要注意的部分。</p>
@@ -620,6 +640,12 @@
     </summary>
     
     
+      <category term="JavaScript" scheme="http://chenyixin.win/tags/JavaScript/"/>
+    
+      <category term="HTML" scheme="http://chenyixin.win/tags/HTML/"/>
+    
+      <category term="CSS" scheme="http://chenyixin.win/tags/CSS/"/>
+    
   </entry>
   
   <entry>
@@ -627,7 +653,7 @@
     <link href="http://chenyixin.win/2016/12/16/title-%20IFE%20task%201-7%20%E7%AC%94%E8%AE%B0/"/>
     <id>http://chenyixin.win/2016/12/16/title- IFE task 1-7 笔记/</id>
     <published>2016-12-16T10:25:16.467Z</published>
-    <updated>2016-12-16T10:25:16.473Z</updated>
+    <updated>2017-07-17T12:22:27.183Z</updated>
     
     <content type="html"><![CDATA[<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>文章为百度前端技术学院2016年任务 1-7 的笔记，大概记述了学习和练习中需要注意的地方以及一点点笔记。大体上包括了以下几个方面：三栏布局、CSS 居中方式、CSS 选择器、<code>tansition</code>和CSS 伪类的应用、利用纯 CSS 实现 tab 的方法等等。 <strong>注意：</strong> 这篇文章写于学习前端不久，可能会出现错误或者概念理解不全面等等纰漏。</p>
 <h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="三栏布局"><a href="#三栏布局" class="headerlink" title="三栏布局"></a>三栏布局</h3><p>下面的三个布局都是在 <strong>具体的情况</strong> 下讨论的，具体对应的是任务三。</p>
@@ -707,6 +733,12 @@
     </summary>
     
     
+      <category term="JavaScript" scheme="http://chenyixin.win/tags/JavaScript/"/>
+    
+      <category term="HTML" scheme="http://chenyixin.win/tags/HTML/"/>
+    
+      <category term="CSS" scheme="http://chenyixin.win/tags/CSS/"/>
+    
   </entry>
   
   <entry>
@@ -714,7 +746,7 @@
     <link href="http://chenyixin.win/2016/12/12/title-%20CSS%20%E5%B1%85%E4%B8%AD%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97%EF%BC%88%E7%BF%BB%E8%AF%91%EF%BC%89/"/>
     <id>http://chenyixin.win/2016/12/12/title- CSS 居中完全指南（翻译）/</id>
     <published>2016-12-12T13:27:48.623Z</published>
-    <updated>2016-12-12T13:34:27.032Z</updated>
+    <updated>2017-07-17T12:21:54.592Z</updated>
     
     <content type="html"><![CDATA[<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>文章完整了讨论了 CSS 居中的各种情况。因为文章不是很难就做了一下翻译，由于自己英文水平并不在行，有可能出现错误，所以可以点击 <a href="https://css-tricks.com/centering-css-complete-guide/" target="_blank" rel="external">这条链接</a> 前往原文 Centering in CSS: A Complete Guide 。本文仅仅做了一些概念性的添加。</p>
 <h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="引"><a href="#引" class="headerlink" title="引"></a>引</h3><p>CSS 实现居中是个特别的让人头疼的问题，以至于让我们常问：为什么实现居中是如此困难？然而，事实上并非如此困难。只是在不同的情况下，我们需要依据不同的情境去解决问题，这让我们难以抉择。所以让我们来做一个决策树，让来选择变的更简单。</p>
@@ -766,6 +798,8 @@
     </summary>
     
     
+      <category term="Centering in CSS" scheme="http://chenyixin.win/tags/Centering-in-CSS/"/>
+    
   </entry>
   
   <entry>
@@ -773,7 +807,7 @@
     <link href="http://chenyixin.win/2016/12/11/title-%20%E8%A1%A8%E5%8D%95%E5%AF%B9%E9%BD%90%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F/"/>
     <id>http://chenyixin.win/2016/12/11/title- 表单对齐的两种方式/</id>
     <published>2016-12-11T13:08:53.346Z</published>
-    <updated>2016-12-11T13:51:52.842Z</updated>
+    <updated>2017-07-17T12:17:06.301Z</updated>
     
     <content type="html"><![CDATA[<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>文章探讨了两种简单的表单对齐方式，一种是在有固定宽度的情况下，另一种是 width 为 100% 的情况下，核心都是通过给 label 元素设定宽度，再利用 text-align 来达到对齐效果，需要注意的是 input 输入框下的说明文字与 input 框的对齐。</p>
 <h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="固定宽度的表单"><a href="#固定宽度的表单" class="headerlink" title="固定宽度的表单"></a>固定宽度的表单</h3><p>首先我们利用表单元素来写一个简易的表单，代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">&lt;form action=&quot;&quot; method=&quot;&quot;&gt;</div><div class="line">    &lt;div&gt;</div><div class="line">        &lt;label for=&quot;name&quot;&gt;Name:&lt;/label&gt;</div><div class="line">        &lt;input type=&quot;text&quot; id=&quot;name&quot; /&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">    &lt;div&gt;</div><div class="line">        &lt;label for=&quot;mail&quot;&gt;E-mail:&lt;/label&gt;</div><div class="line">        &lt;input type=&quot;email&quot; id=&quot;mail&quot; /&gt;</div><div class="line">        &lt;p class=&quot;tips&quot;&gt;填上你的邮箱地址&lt;/p&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">    &lt;div&gt;</div><div class="line">        &lt;label for=&quot;msg&quot;&gt;Message:&lt;/label&gt;</div><div class="line">        &lt;textarea id=&quot;msg&quot;&gt;&lt;/textarea&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line"></div><div class="line">    &lt;div class=&quot;button&quot;&gt;</div><div class="line">        &lt;button type=&quot;submit&quot;&gt;Send your message&lt;/button&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">&lt;/form&gt;</div></pre></td></tr></table></figure></p>
@@ -805,6 +839,8 @@
     </summary>
     
     
+      <category term="HTML" scheme="http://chenyixin.win/tags/HTML/"/>
+    
   </entry>
   
   <entry>
@@ -812,7 +848,7 @@
     <link href="http://chenyixin.win/2016/12/08/title-%20%E5%85%B3%E4%BA%8E%20Atom%20%E7%9A%84%E6%8F%92%E4%BB%B6%E5%92%8C%E4%B8%BB%E9%A2%98%E6%97%A0%E6%B3%95%E5%AE%89%E8%A3%85%E7%9A%84%E9%97%AE%E9%A2%98/"/>
     <id>http://chenyixin.win/2016/12/08/title- 关于 Atom 的插件和主题无法安装的问题/</id>
     <published>2016-12-08T13:59:43.365Z</published>
-    <updated>2016-12-08T14:00:02.540Z</updated>
+    <updated>2017-07-17T12:18:11.207Z</updated>
     
     <content type="html"><![CDATA[<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>关于Atom 的插件和主题安装无法在设置中下载和安装的解决办法。</p>
 <h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>今天折腾了一下 Atom ，这个 Github 官方出品的编辑器的发展势头相当迅猛。不过在安装使用过程中却遇到了很多问题。Atom的安装比较简单，默认一键安装在 C 盘。官方有修改安装路径的教程，不过我并没有使用。在Atom的主题和插件安装上遇到了麻烦，就是在 Setting 中无法安装这个问题。</p>
@@ -845,6 +881,8 @@
     </summary>
     
     
+      <category term="Atom" scheme="http://chenyixin.win/tags/Atom/"/>
+    
   </entry>
   
   <entry>
@@ -852,7 +890,7 @@
     <link href="http://chenyixin.win/2016/12/06/title-%20%E4%BD%BF%E7%94%A8%20Github%20Pages%20%E5%92%8C%20Hexo%20%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%8B%AC%E7%AB%8B%E5%8D%9A%E5%AE%A2%EF%BC%88Win%2010%E7%8E%AF%E5%A2%83%E4%B8%8B%EF%BC%89/"/>
     <id>http://chenyixin.win/2016/12/06/title- 使用 Github Pages 和 Hexo 搭建个人独立博客（Win 10环境下）/</id>
     <published>2016-12-06T07:00:13.531Z</published>
-    <updated>2016-12-08T13:28:06.119Z</updated>
+    <updated>2017-07-17T12:19:43.510Z</updated>
     
     <content type="html"><![CDATA[<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>这是一篇使用 Github Pages 和 Hexo 来搭建个人博客的笔记，记录了搭建博客的过程与其中遇到的问题。其中主要包括了以下几个部分：如何配置和使用 Hexo 框架，如何将配置好的 Hexo 部署到 Github项目中，如何绑定域名，以及 Hexo 简单优化和常用命令。</p>
 <hr>
@@ -974,6 +1012,10 @@
     
     </summary>
     
+    
+      <category term="Github" scheme="http://chenyixin.win/tags/Github/"/>
+    
+      <category term="Hexo" scheme="http://chenyixin.win/tags/Hexo/"/>
     
   </entry>
   
