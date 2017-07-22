@@ -96,15 +96,15 @@ Git 的工作流程如上图所示，首先是我们日常的 工作区，它实
 Git基本原理Git文件改动提交的基本原理Git 是一种分布式的版本控制工具。它的控制系统由两个部分组成:工作区（Working Directory） 和 版本库（Repository）。
 
 Git 的工作流程如上图所示，首先是我们日常的 工作区，它实际持有文件。其次是 版本库，即工作区隐藏文件。git，记录我们文件的变动和提交。在版本库中，最">
-<meta property="og:image" content="http://ww1。sinaimg。cn/mw690/75fcfef2ly1fhsxocsxz5j20cq06iaa8。jpg">
-<meta property="og:updated_time" content="2017-07-22T13:39:49.975Z">
+<meta property="og:image" content="http://ww1.sinaimg.cn/mw690/75fcfef2ly1fhsxocsxz5j20cq06iaa8.jpg">
+<meta property="og:updated_time" content="2017-07-22T13:46:14.137Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git 基本原理和常用命令">
 <meta name="twitter:description" content="摘要介绍 Git 的基本原理以及一些常用的操作命令。
 Git基本原理Git文件改动提交的基本原理Git 是一种分布式的版本控制工具。它的控制系统由两个部分组成:工作区（Working Directory） 和 版本库（Repository）。
 
 Git 的工作流程如上图所示，首先是我们日常的 工作区，它实际持有文件。其次是 版本库，即工作区隐藏文件。git，记录我们文件的变动和提交。在版本库中，最">
-<meta name="twitter:image" content="http://ww1。sinaimg。cn/mw690/75fcfef2ly1fhsxocsxz5j20cq06iaa8。jpg">
+<meta name="twitter:image" content="http://ww1.sinaimg.cn/mw690/75fcfef2ly1fhsxocsxz5j20cq06iaa8.jpg">
 
 
 
@@ -388,7 +388,7 @@ Git 的工作流程如上图所示，首先是我们日常的 工作区，它实
       
         <h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>介绍 Git 的基本原理以及一些常用的操作命令。</p>
 <h2 id="Git基本原理"><a href="#Git基本原理" class="headerlink" title="Git基本原理"></a>Git基本原理</h2><h3 id="Git文件改动提交的基本原理"><a href="#Git文件改动提交的基本原理" class="headerlink" title="Git文件改动提交的基本原理"></a>Git文件改动提交的基本原理</h3><p>Git 是一种分布式的版本控制工具。它的控制系统由两个部分组成:工作区（Working Directory） 和 版本库（Repository）。</p>
-<p><img src="http://ww1。sinaimg。cn/mw690/75fcfef2ly1fhsxocsxz5j20cq06iaa8。jpg" alt="git控制系统"></p>
+<p><img src="http://ww1.sinaimg.cn/mw690/75fcfef2ly1fhsxocsxz5j20cq06iaa8.jpg" alt="git控制系统"></p>
 <p>Git 的工作流程如上图所示，首先是我们日常的 <strong>工作区</strong>，它实际持有文件。其次是 <strong>版本库</strong>，即工作区隐藏文件<code>。git</code>，记录我们文件的变动和提交。在版本库中，最重要的内容是 <strong>缓存区*(Index/stage)</strong>，它就像一个缓存区域，用来临时保存你的文件变动。最后是 <strong>HEAD</strong>，它一般指向我们最后一次提交的结果。</p>
 <p>也就是说。当我们往 Git 版本库中添加文件的时候，会分成两个部分来执行，首先用<code>git add</code>把文件添加到缓存区，然后再用<code>git commit</code>提交更改，即把缓存区的文件提交到当前的分支上去。</p>
 <h3 id="Git版本控制的基本原理"><a href="#Git版本控制的基本原理" class="headerlink" title="Git版本控制的基本原理"></a>Git版本控制的基本原理</h3><p>Git会记录我们的每一次提交，这样我们对文件的改动就会像时间线一样被 Git 记录下来。而 <strong>HEAD</strong> 就指向这条时间线最后一次提交的结果。因此比如说我们要回退到上一个版本就可以用命令<code>git reset --hard HEAD^</code>，但如果我们要回退到某个版本，我们就必须要只要那个版本的版本号(commit id)， Git提供了命令<code>git log</code>来供我们查找历史纪录。</p>
