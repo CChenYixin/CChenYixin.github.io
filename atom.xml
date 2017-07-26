@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://chenyixin.win/"/>
-  <updated>2017-07-23T07:56:08.850Z</updated>
+  <updated>2017-07-26T12:54:48.969Z</updated>
   <id>http://chenyixin.win/</id>
   
   <author>
@@ -14,6 +14,52 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>「网页运行原理 VOL.1」域名解析</title>
+    <link href="http://chenyixin.win/2017/07/26/title-%20%E3%80%8C%E7%BD%91%E9%A1%B5%E8%BF%90%E8%A1%8C%E5%8E%9F%E7%90%86%20VOL.1%E3%80%8D%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/"/>
+    <id>http://chenyixin.win/2017/07/26/title- 「网页运行原理 VOL.1」域名解析/</id>
+    <published>2017-07-26T12:54:48.964Z</published>
+    <updated>2017-07-26T12:54:48.969Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>主要记述DNS的运行原理以及DNS的解析过程。</p>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="网页运行流程"><a href="#网页运行流程" class="headerlink" title="网页运行流程"></a>网页运行流程</h3><p>当我们在浏览器输入一个URL地址时:</p>
+<ol>
+<li>浏览器在域名系统服务器上找出存放网页的服务器的真实地址。</li>
+<li>浏览器发送 HTTP 请求信息到服务器拷贝一份网页到客户端。这条消息，包括其他所有在客户端和服务器之间传递的数据都是通过互联网TCP/IP协议传输的。</li>
+<li>服务器同意客户端的请求后，会返回一个“200 OK”信息，意味着你可以查看这个网页，然后开始将网页的文件以数据包的形式传输到浏览器。</li>
+<li>浏览器将数据包聚集成完整的网页，然后呈现给你。</li>
+</ol>
+<h3 id="为什么需要DNS解析"><a href="#为什么需要DNS解析" class="headerlink" title="为什么需要DNS解析"></a>为什么需要DNS解析</h3><p>当我们在输入URL访问网页，我们输入的域名比如<code>www.google.com</code>并不是真正的网址。在互联网中网路之间的通讯都是基于TCP/IP协议，而TCP/IP协议基于IP地址，所以真正的网址实际上是一串难以记忆的数字IP地址，比如<code>63.245.217.105</code>。但是我们并不能记住那么多的IP地址，所以我们访问网站时更多的是在地址栏中输入域名。</p>
+<p>但是对浏览器来说，并不知道域名是个什么东西，这时就需要DNS来把我们输入的域名翻译成浏览器可识别的相应的IP地址，然后再去向服务器发送请求调用网页。一言蔽之：DNS主要作用就是将主机域名转换为ip地址。</p>
+<blockquote>
+<p>网域名称系统（英文：Domain Name System，缩写：DNS）是互联网的一项服务。它作为将域名和IP地址相互映射的一个分布式数据库，能够使人更方便地访问互联网。</p>
+</blockquote>
+<h3 id="域名解析的相关概念"><a href="#域名解析的相关概念" class="headerlink" title="域名解析的相关概念"></a>域名解析的相关概念</h3><p>DNS 的核心是一个分层系统。在这个系统的顶部是“根服务器”，这些服务器处理有关顶级域名的信息请求。根服务器只有13个IP地址，但是我们可以在全球设立这些IP的镜像，当我们对某个根服务器发出请求时，请求会被路由到该根服务器离你最近的镜像服务器。根服务器下面一层是TLD（顶级域名）服务器，当我们想根服务器请求某个域名比如<code>www.google.com</code>，根服务器并不能找到与<code>www.google.com</code>匹配的记录，但它会找到<code>.com</code>的记录，并返回给请求者，再由请求者向负责顶级域名的服务器发送新的请求，同样的我们的顶级域名服务器并不能找到与<code>www.google.com</code>匹配的记录，但它可以找到<code>google.com</code>的记录，并返回给请求者。再向负责域名级别的名称服务器继续发送请求，此时名称服务器检查其区域文件，并发现它有与 “www.google.com” 相关联的区域文件。在此文件的内部，有一个 “www” 主机的记录。此记录说明此主机所在的 IP 地址，并向请求者返回最终答案。</p>
+<h3 id="域名解析的流程"><a href="#域名解析的流程" class="headerlink" title="域名解析的流程"></a>域名解析的流程</h3><p>具体的DNS解析流程如下：</p>
+<ol>
+<li>浏览器缓存 – 当用户通过浏览器访问某域名时，浏览器首先会在自己的缓存中查找是否有该域名对应的IP地址（若曾经访问过该域名且没有清空缓存便存在）；</li>
+<li>系统缓存 - 从 Hosts 文件查找是否有该域名和对应 IP。当我们访问某个域名时，操作系统会首先检查本地的host文件是否有这个网址的映射地址，如果有的话就调用完成域名解析。</li>
+<li>路由器缓存 – 当浏览器及系统缓存中均无域名对应IP则进入路由器缓存中检查，以上三步均为客服端的DNS缓存；</li>
+<li>ISP（互联网服务提供商） DNS 缓存 – 当在用户客服端查找不到域名对应IP地址，则将进入ISP DNS缓存中进行查询。比如你用的是电信的网络，则会进入电信的DNS缓存服务器中进行查找；</li>
+<li>如果都没有找到，则向根域名服务器查找域名对应 IP，根服务器不知道实际托管域名的位置。然而，他们会将请求引导到处理特定请求的顶级域名的名称服务器。顶级域名服务器收到请求后查看区域文件记录，它会负责找到域名级别名称服务器的IP地址，名称服务器检查其区域文件，查找相关的IP地址，并返回最终的IP地址。</li>
+</ol>
+<h2 id="摘要-1"><a href="#摘要-1" class="headerlink" title="摘要"></a>摘要</h2><p><a href="http://www.diantansuo.com/an-introduction-to-dns" target="_blank" rel="external">什么是 DNS</a><br><a href="http://www.diantansuo.com/how-dns-work-together" target="_blank" rel="external">DNS 如何工作</a><br><a href="https://yq.aliyun.com/articles/58967?spm=5176.100244.teamconlist.7.WOFDYX#" target="_blank" rel="external">域名解析篇</a><br><a href="https://developer.mozilla.org/zh-CN/docs/Learn/Getting_started_with_the_web/How_the_Web_works" target="_blank" rel="external">网络是如何工作的</a><br><a href="https://www.zhihu.com/question/23042131" target="_blank" rel="external">DNS解析的过程</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;摘要&quot;&gt;&lt;a href=&quot;#摘要&quot; class=&quot;headerlink&quot; title=&quot;摘要&quot;&gt;&lt;/a&gt;摘要&lt;/h2&gt;&lt;p&gt;主要记述DNS的运行原理以及DNS的解析过程。&lt;/p&gt;
+&lt;h2 id=&quot;正文&quot;&gt;&lt;a href=&quot;#正文&quot; class=&quot;headerlin
+    
+    </summary>
+    
+    
+      <category term="网页运行原理" scheme="http://chenyixin.win/tags/%E7%BD%91%E9%A1%B5%E8%BF%90%E8%A1%8C%E5%8E%9F%E7%90%86/"/>
+    
+      <category term="DNS" scheme="http://chenyixin.win/tags/DNS/"/>
+    
+  </entry>
   
   <entry>
     <title>Git 命令中的参数问题</title>
