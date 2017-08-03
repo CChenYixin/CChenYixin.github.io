@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://chenyixin.win/"/>
-  <updated>2017-08-03T14:43:06.762Z</updated>
+  <updated>2017-08-03T14:50:28.167Z</updated>
   <id>http://chenyixin.win/</id>
   
   <author>
@@ -20,29 +20,20 @@
     <link href="http://chenyixin.win/2017/08/03/title-%20HTML%20%E8%A1%A8%E5%8D%95%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E7%BB%86%E8%8A%82/"/>
     <id>http://chenyixin.win/2017/08/03/title- HTML 表单需要注意的细节/</id>
     <published>2017-08-03T14:10:01.929Z</published>
-    <updated>2017-08-03T14:43:06.762Z</updated>
+    <updated>2017-08-03T14:50:28.167Z</updated>
     
     <content type="html"><![CDATA[<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>关于 HTML 表单的一些细节和需要注意的点。</p>
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="name-属性"><a href="#name-属性" class="headerlink" title="name 属性"></a>name 属性</h3><ol>
-<li><input> 标签的 name 属性</li>
-</ol>
-<p><code>name</code> 属性规定 input 元素的名称。<strong>只有设置了 name 属性的表单元素才能在提交表单时传递它们的值。</strong> 可以说这是一个必须添加的属性，来用于对提交到服务器后的表单数据进行标识。</p>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="name-属性"><a href="#name-属性" class="headerlink" title="name 属性"></a>name 属性</h3><h4 id="input-标签的-name-属性"><a href="#input-标签的-name-属性" class="headerlink" title="input 标签的 name 属性"></a>input 标签的 name 属性</h4><p><code>name</code> 属性规定 input 元素的名称。<strong>只有设置了 name 属性的表单元素才能在提交表单时传递它们的值。</strong> 可以说这是一个必须添加的属性，来用于对提交到服务器后的表单数据进行标识。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">/*radio 使用 name 属性来分组的，所有 name属性相同的 radio 使用时其中只有一个会被选中。*/</div><div class="line">&lt;input type=&quot;radio&quot; name=&quot;sex&quot; id=&quot;male&quot;&gt;</div><div class="line">&lt;input type=&quot;radio&quot; name=&quot;sex&quot; id=&quot;female&quot;&gt;</div></pre></td></tr></table></figure>
-<ol>
-<li><form> 标签的 name 属性</form></li>
-</ol>
-<p><code>name</code> 属性规定表单的名称。</p>
-<ol>
-<li><button> 标签的 name 属性</button></li>
-</ol>
-<p><code>name</code> 属性为按钮规定名称。不同的 button 元素可以共享相同的名称。这就允许我们标记带有相同名称的若干按钮，以便在表单中使用时能够提交不同的值。</p>
+<h4 id="form-标签的-name-属性"><a href="#form-标签的-name-属性" class="headerlink" title="form 标签的 name 属性"></a>form 标签的 name 属性</h4><p><code>name</code> 属性规定表单的名称。</p>
+<h4 id="button-标签的-name-属性"><a href="#button-标签的-name-属性" class="headerlink" title="button 标签的 name 属性"></a>button 标签的 name 属性</h4><p><code>name</code> 属性为按钮规定名称。不同的 button 元素可以共享相同的名称。这就允许我们标记带有相同名称的若干按钮，以便在表单中使用时能够提交不同的值。</p>
 <h3 id="value-属性"><a href="#value-属性" class="headerlink" title="value 属性"></a>value 属性</h3><p><code>value</code> 属性为 input 元素设定值。这个相对 <code>name</code>比较复杂，对于不同的输入类型，value 属性的用法也不一样：</p>
 <ul>
 <li>type=”button”, “reset”, “submit” - 定义按钮上的显示的文本 一般来说是必要的。</li>
 <li>type=”text”, “password”, “hidden” - 定义输入字段的初始值</li>
 <li>type=”checkbox”, “radio”, “image” - 定义与输入相关联的值</li>
 </ul>
-<p><strong>value 属性对于 <input type="checkbox"> 和 <input type="radio"> 是必需的。</strong></p>
+<p><strong>value 属性对于 <code>&lt;input type=&quot;checkbox&quot;&gt;</code> 和 <code>&lt;input type=&quot;radio&quot;&gt;</code> 是必需的。</strong></p>
 <h3 id="form-标签中需要注意的标签"><a href="#form-标签中需要注意的标签" class="headerlink" title="form 标签中需要注意的标签"></a>form 标签中需要注意的标签</h3><ol>
 <li><code>action</code>属性的值是一个URL，规定当提交表单时向何处发送表单数据。</li>
 <li><p><code>autocomplete</code>属性规定是否启用表单的自动完成功能，这是一个HTML5新属性。当用户开始输入时，浏览器会根据过去的值进行预测，并显示供用户选择。</p>
@@ -66,7 +57,7 @@
 </li>
 <li><p>button[type=submit]<br>同样是定义按钮，但更加强大，我们可以放置内容，比如文本或图像。这是该元素与使用 input 元素创建的按钮之间的不同之处。</p>
 <blockquote>
-<p><button> 与 </button> 标签之间的所有内容都是按钮的内容，其中包括任何可接受的正文内容，比如文本或多媒体内容。例如，我们可以在按钮中包括一个图像和相关的文本，用它们在按钮中创建一个吸引人的标记图像。</p>
+<p>button标签之间的所有内容都是按钮的内容，其中包括任何可接受的正文内容，比如文本或多媒体内容。例如，我们可以在按钮中包括一个图像和相关的文本，用它们在按钮中创建一个吸引人的标记图像。</p>
 </blockquote>
 </li>
 </ol>
