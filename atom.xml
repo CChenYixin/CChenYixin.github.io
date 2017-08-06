@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://chenyixin.win/"/>
-  <updated>2017-08-03T14:50:28.167Z</updated>
+  <updated>2017-08-06T08:57:49.471Z</updated>
   <id>http://chenyixin.win/</id>
   
   <author>
@@ -14,6 +14,70 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>「专注概念 VOL.2」定位与浮动</title>
+    <link href="http://chenyixin.win/2017/08/06/title-%E3%80%8C%E4%B8%93%E6%B3%A8%E6%A6%82%E5%BF%B5%20VOL.2%E3%80%8D%E5%AE%9A%E4%BD%8D%E4%B8%8E%E6%B5%AE%E5%8A%A8/"/>
+    <id>http://chenyixin.win/2017/08/06/title-「专注概念 VOL.2」定位与浮动/</id>
+    <published>2017-08-06T05:40:07.138Z</published>
+    <updated>2017-08-06T08:57:49.471Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>文章第一部分关于浮动的概念、细节以及清楚浮动的方法，第二部分关于定位的概念、细节及相关的应用方式。</p>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="浮动"><a href="#浮动" class="headerlink" title="浮动"></a>浮动</h3><p>在 CSS 中我们用<code>float</code>属性来定义元素的浮动。浮动并不完全是定位的一种方式，但是它也不是正常流的布局，当元素设置为浮动后，会产生一些有意思的特征，可能会影响到布局。</p>
+<h4 id="浮动的特征"><a href="#浮动的特征" class="headerlink" title="浮动的特征"></a>浮动的特征</h4><h5 id="特征之一"><a href="#特征之一" class="headerlink" title="特征之一"></a>特征之一</h5><p>浮动的元素不在文档的普通流中，文档的普通流中的布局表现上就好比浮动框不存在一样。</p>
+<blockquote>
+<p>普通流：浏览器根据元素在代码中出现的位置读取，再依照元素的盒子模型来呈现，具体表现为块级元素从上至下、 行内元素在每行中按从左至右的挨次排放元素。每个元素都会在HTML中占据一个位置，占用的大小和位置由盒模型来决定。</p>
+</blockquote>
+<p><img src="http://ww1.sinaimg.cn/mw690/75fcfef2ly1fi9zh05fk1j20q00b0dfn.jpg" alt=""></p>
+<p>可以看到，当我们给第一个元素设置右浮动后，由于它从文档的普通流被删除了，它不会在占据空间，下面的块元素依次上移占据空白位置。它造成的一个常见的后果就是：<strong>其容器（父）元素将得不到脱离普通流的子元素高度；即当元素设置了浮动后，它的父元素的高度会塌陷。</strong></p>
+<h5 id="特征之二"><a href="#特征之二" class="headerlink" title="特征之二"></a>特征之二</h5><p>设置了浮动的元素，会向左或右浮动（没有纵向浮动）直到碰到包含框或者另一个包含框的边框为止。假如某一行没有足够的空间可供浮动元素，这个浮动元素会自动跳到下一行，直到有足够的空间为止。</p>
+<p><img src="http://ww1.sinaimg.cn/large/75fcfef2ly1fia0yu1t6nj210e0dm74a.jpg" alt=""></p>
+<p>可以看到，第一个例子中当我们给元素设置右浮动后，浮动元素向右移动直到其包含框的右边缘，第二个例子我们把四个盒子都设置为右浮动，直到碰到另一个浮动元素的边框为止。这个规则的意义在于：<strong>使得相同级别的浮动元素很安全，完全不用担心一个浮动元素与另一个元素相互重叠。而利用 position 定位的时候很容易出现元素相互覆盖的情况。</strong></p>
+<h4 id="特征之三"><a href="#特征之三" class="headerlink" title="特征之三"></a>特征之三</h4><p>设置了浮动的元素，会将元素的<code>display</code>属性设置为 block。宽度默认为auto，也就是说浮动非替换元素，假如不指明宽度，它的宽度会尽可能的小。注意图中的 width 变化以及 display 属性。原本是行内元素的 span 在设置了浮动后，display 属性变成了block：</p>
+<p><img src="http://ww1.sinaimg.cn/mw690/75fcfef2ly1fia18nvhikg20nu08ojs2.gif" alt=""></p>
+<h4 id="浮动的影响"><a href="#浮动的影响" class="headerlink" title="浮动的影响"></a>浮动的影响</h4><h5 id="对父元素的影响"><a href="#对父元素的影响" class="headerlink" title="对父元素的影响"></a>对父元素的影响</h5><p>元素浮动后它脱离当前正常的文档流，所以它也无法撑开其父元素，造成父元素的塌陷。</p>
+<h5 id="对子元素的影响"><a href="#对子元素的影响" class="headerlink" title="对子元素的影响"></a>对子元素的影响</h5><p>假如某个浮动元素没有设置高度和宽度，那么这个浮动元素的高度或宽度取决于子元素们的高度以及宽度的最大值（不管这个子元素浮动元素和非浮动元素都生效）。这与我们前面的特征三相一致。具体规则如图所示：</p>
+<p><img src="http://ww1.sinaimg.cn/mw690/75fcfef2ly1fia28kiq9xg20nc09e771.gif" alt=""></p>
+<p>这个例子恰好提供了一个解决父元素塌陷的方法，我们可以将父元素和子元素都设置为浮动，这样就可以把浮动元素包含在父元素之内，（实不实用另说）。</p>
+<h5 id="对兄弟元素的影响"><a href="#对兄弟元素的影响" class="headerlink" title="对兄弟元素的影响"></a>对兄弟元素的影响</h5><p>1、浮动兄弟元素的影响</p>
+<p>当一个浮动元素在浮动过程中碰到同一个方向的浮动元素时，它会紧跟在它们后面，当空间不够时会被挤下，与特征二相吻合。</p>
+<p>2、非浮动兄弟元素的影响</p>
+<p>如果如果兄弟元素为内联元素，则元素会环绕浮动元素排列。<br>如果兄弟元素为块级元素，该元素占据它的位置，并且元素会处在浮动元素的下层（并且无法通过z-index属性改变他们的层叠位置），但它的内部文字和其他行内元素都会环绕浮动元素。</p>
+<p><img src="http://ww1.sinaimg.cn/mw690/75fcfef2ly1fia2m1j0hmj20s709ygma.jpg" alt=""></p>
+<h4 id="清楚浮动的方法"><a href="#清楚浮动的方法" class="headerlink" title="清楚浮动的方法"></a>清楚浮动的方法</h4><p>只介绍两种：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">// 伪元素清除浮动法</div><div class="line">.float::after &#123;</div><div class="line">    content: &quot;&quot;;</div><div class="line">    display: table;</div><div class="line">    clear: both;</div><div class="line">&#125;</div><div class="line">//BFC清除浮动法</div><div class="line">.cleanfix &#123;</div><div class="line">    overflow: hidden;</div><div class="line">    zoom: 1;</div><div class="line">&#125;</div><div class="line">//以上两种方法都是给浮动元素的父容器使用</div></pre></td></tr></table></figure>
+<h3 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h3><h4 id="相对定位"><a href="#相对定位" class="headerlink" title="相对定位"></a>相对定位</h4><p>相对定位重点在于相对。使用相对定位的元素会导致元素相对它的起点进行移动，但是普通流中仍然保持着原有的默认空间，并没有脱离普通流，只是视觉上的偏移。移动元素会导致视觉上覆盖其它框。</p>
+<h4 id="绝对定位"><a href="#绝对定位" class="headerlink" title="绝对定位"></a>绝对定位</h4><p>绝对定位相对复杂。使用绝对定位的元素会相对于 <strong>最近的已定位祖先元素</strong> 去移动，如果没有已定位的祖先元素，那么它的位置相对于最初的包含块。与相对定位不同，设置为绝对定位的元素框从文档流完全删除，就好像该元素原来不存在一样，元素定位后生成一个块级框，而不论原来它在正常流中生成何种类型的框。</p>
+<p>绝对定位需要注意的细节：</p>
+<ol>
+<li>应用了position: absolute / relative之后，会覆盖其他非定位元素，我们可以z-index 属性来改变他们的上面层级；</li>
+<li>应用了position: absolute / relative之后，尽量使用自带的 top、bottom、left、right来定位，不要使用 margin；</li>
+</ol>
+<h3 id="定位与浮动"><a href="#定位与浮动" class="headerlink" title="定位与浮动"></a>定位与浮动</h3><p>尽量不要定位与浮动混合使用，因为这样的方式出了问题很难去调式，不过还是有几个规则可以借用。</p>
+<p>1、 规则一：相对定位和浮动可以共用，先浮动再相对定位</p>
+<p><img src="http://ww1.sinaimg.cn/mw690/75fcfef2ly1fia3p4z0g5j20sq0a6gm6.jpg" alt=""></p>
+<p>可以看到图中盒子1同时设定了浮动和相对定位，首先它浮动到右边的位置，再相对它原来的位置向左偏移。</p>
+<p>2、 规则二：绝对定位和浮动不可以共用，浮动会失去效果</p>
+<p><img src="http://ww1.sinaimg.cn/mw690/75fcfef2ly1fia3thutu1j20sm0a4q3h.jpg" alt=""></p>
+<p>可以看到图中盒子1同时设定了浮动和绝对定位，我们设置它左浮动，但没有效果，它相对于它的最近定位的祖先元素定位（例子中为body）。</p>
+<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><p><a href="https://book.douban.com/subject/2308234/" target="_blank" rel="external">CSS权威指南</a><br><a href="http://www.w3school.com.cn/css/css_positioning_absolute.asp" target="_blank" rel="external">w3school文档</a><br><a href="http://www.cnblogs.com/coffeedeveloper/p/3145790.html#float" target="_blank" rel="external">对CSS中的Position、Float属性的一些深入探讨</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;摘要&quot;&gt;&lt;a href=&quot;#摘要&quot; class=&quot;headerlink&quot; title=&quot;摘要&quot;&gt;&lt;/a&gt;摘要&lt;/h2&gt;&lt;p&gt;文章第一部分关于浮动的概念、细节以及清楚浮动的方法，第二部分关于定位的概念、细节及相关的应用方式。&lt;/p&gt;
+&lt;h2 id=&quot;正文&quot;&gt;&lt;a h
+    
+    </summary>
+    
+    
+      <category term="CSS" scheme="http://chenyixin.win/tags/CSS/"/>
+    
+      <category term="float" scheme="http://chenyixin.win/tags/float/"/>
+    
+      <category term="position" scheme="http://chenyixin.win/tags/position/"/>
+    
+  </entry>
   
   <entry>
     <title>HTML 表单需要注意的细节</title>
