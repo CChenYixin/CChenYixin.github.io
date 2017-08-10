@@ -66,7 +66,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Mobile Web," />
+  <meta name="keywords" content="浏览器兼容," />
 
 
 
@@ -84,19 +84,22 @@
 
 
 
-<meta name="description" content="摘要大概记述了初次接触移动 Web 页面布局实践中遇到的一些问题和值得注意的地方。具体包括了移动前端开发基本的概念，移动页面开发相关的一些meta标签，相对单位 rem ，与响应式图片的一些总结。
-正文移动前端开发的大体印象移动前端开发是一个很大的概念，除了基本的前端知识外，还需要掌握一些PPI，像素，DPI等知识，对自己这种小白来说，学习过程中的一大体验就是概念多，还没有有个全局的印象首先被基础">
+<meta name="description" content="摘要有关浏览器兼容的思路和一些常用的工具。
+正文不同的浏览器有不同的标准不同的实现方式，同一个浏览器也有不同的版本不同的功能，版本越老的浏览器bug越多，在这样的差异背景下就产生了浏览器的兼容问：怎么样让同一份代码在所有的浏览器下都显示正常。
+处理浏览器兼容的基本思路要不要实现从产品的角度。考虑网站的受众是什么，受众的浏览器是什么，我们可以通过查询浏览器市场份额查询所需要兼容的浏览器的份额，结合受">
 <meta property="og:type" content="article">
-<meta property="og:title" content="移动 Web 开发小记">
-<meta property="og:url" content="http://chenyixin.win/2016/12/27/title- 移动 Web 开发小记 /index.html">
+<meta property="og:title" content="浏览器兼容的基本方法和思路">
+<meta property="og:url" content="http://chenyixin.win/2017/08/10/title- 浏览器兼容思路/index.html">
 <meta property="og:site_name" content="速去逮一只猫">
-<meta property="og:description" content="摘要大概记述了初次接触移动 Web 页面布局实践中遇到的一些问题和值得注意的地方。具体包括了移动前端开发基本的概念，移动页面开发相关的一些meta标签，相对单位 rem ，与响应式图片的一些总结。
-正文移动前端开发的大体印象移动前端开发是一个很大的概念，除了基本的前端知识外，还需要掌握一些PPI，像素，DPI等知识，对自己这种小白来说，学习过程中的一大体验就是概念多，还没有有个全局的印象首先被基础">
-<meta property="og:updated_time" content="2017-07-17T12:21:04.086Z">
+<meta property="og:description" content="摘要有关浏览器兼容的思路和一些常用的工具。
+正文不同的浏览器有不同的标准不同的实现方式，同一个浏览器也有不同的版本不同的功能，版本越老的浏览器bug越多，在这样的差异背景下就产生了浏览器的兼容问：怎么样让同一份代码在所有的浏览器下都显示正常。
+处理浏览器兼容的基本思路要不要实现从产品的角度。考虑网站的受众是什么，受众的浏览器是什么，我们可以通过查询浏览器市场份额查询所需要兼容的浏览器的份额，结合受">
+<meta property="og:updated_time" content="2017-08-10T06:23:04.888Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="移动 Web 开发小记">
-<meta name="twitter:description" content="摘要大概记述了初次接触移动 Web 页面布局实践中遇到的一些问题和值得注意的地方。具体包括了移动前端开发基本的概念，移动页面开发相关的一些meta标签，相对单位 rem ，与响应式图片的一些总结。
-正文移动前端开发的大体印象移动前端开发是一个很大的概念，除了基本的前端知识外，还需要掌握一些PPI，像素，DPI等知识，对自己这种小白来说，学习过程中的一大体验就是概念多，还没有有个全局的印象首先被基础">
+<meta name="twitter:title" content="浏览器兼容的基本方法和思路">
+<meta name="twitter:description" content="摘要有关浏览器兼容的思路和一些常用的工具。
+正文不同的浏览器有不同的标准不同的实现方式，同一个浏览器也有不同的版本不同的功能，版本越老的浏览器bug越多，在这样的差异背景下就产生了浏览器的兼容问：怎么样让同一份代码在所有的浏览器下都显示正常。
+处理浏览器兼容的基本思路要不要实现从产品的角度。考虑网站的受众是什么，受众的浏览器是什么，我们可以通过查询浏览器市场份额查询所需要兼容的浏览器的份额，结合受">
 
 
 
@@ -124,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="http://chenyixin.win/2016/12/27/title- 移动 Web 开发小记 /"/>
+  <link rel="canonical" href="http://chenyixin.win/2017/08/10/title- 浏览器兼容思路/"/>
 
 
 
 
 
-  <title> 移动 Web 开发小记 | 速去逮一只猫 </title>
+  <title> 浏览器兼容的基本方法和思路 | 速去逮一只猫 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -289,7 +292,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://chenyixin.win/2016/12/27/title- 移动 Web 开发小记 /">
+  <link itemprop="mainEntityOfPage" href="http://chenyixin.win/2017/08/10/title- 浏览器兼容思路/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Chen Yixin">
@@ -313,7 +316,7 @@
             
             
               
-                移动 Web 开发小记
+                浏览器兼容的基本方法和思路
               
             
           </h1>
@@ -326,8 +329,8 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              <time title="post.created" itemprop="dateCreated datePublished" datetime="2016-12-27T22:25:33+08:00">
-                2016-12-27
+              <time title="post.created" itemprop="dateCreated datePublished" datetime="2017-08-10T11:40:18+08:00">
+                2017-08-10
               </time>
             
 
@@ -342,8 +345,8 @@
             
               <span class="post-comments-count">
                 <span class="post-meta-divider">|</span>
-                <a href="/2016/12/27/title- 移动 Web 开发小记 /#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/12/27/title- 移动 Web 开发小记 /" itemprop="commentCount"></span>
+                <a href="/2017/08/10/title- 浏览器兼容思路/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/08/10/title- 浏览器兼容思路/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -353,7 +356,7 @@
 
           
           
-             <span id="/2016/12/27/title- 移动 Web 开发小记 /" class="leancloud_visitors" data-flag-title="移动 Web 开发小记">
+             <span id="/2017/08/10/title- 浏览器兼容思路/" class="leancloud_visitors" data-flag-title="浏览器兼容的基本方法和思路">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -378,51 +381,56 @@
       
 
       
-        <h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>大概记述了初次接触移动 Web 页面布局实践中遇到的一些问题和值得注意的地方。具体包括了移动前端开发基本的概念，移动页面开发相关的一些<code>meta</code>标签，相对单位 rem ，与响应式图片的一些总结。</p>
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="移动前端开发的大体印象"><a href="#移动前端开发的大体印象" class="headerlink" title="移动前端开发的大体印象"></a>移动前端开发的大体印象</h3><p>移动前端开发是一个很大的概念，除了基本的前端知识外，还需要掌握一些PPI，像素，DPI等知识，对自己这种小白来说，学习过程中的一大体验就是概念多，还没有有个全局的印象首先被基础概念淹没了。所以个人感觉首先要对移动前端开发有个大体的印象。具体来说的移动前端开发包括了以下几种类型：</p>
+        <h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>有关浏览器兼容的思路和一些常用的工具。</p>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>不同的浏览器有不同的标准不同的实现方式，同一个浏览器也有不同的版本不同的功能，版本越老的浏览器bug越多，在这样的差异背景下就产生了浏览器的兼容问：怎么样让同一份代码在所有的浏览器下都显示正常。</p>
+<h3 id="处理浏览器兼容的基本思路"><a href="#处理浏览器兼容的基本思路" class="headerlink" title="处理浏览器兼容的基本思路"></a>处理浏览器兼容的基本思路</h3><h4 id="要不要实现"><a href="#要不要实现" class="headerlink" title="要不要实现"></a>要不要实现</h4><p>从产品的角度。考虑网站的受众是什么，受众的浏览器是什么，我们可以通过<a href="http://tongji.baidu.com/data/browser" target="_blank" rel="external">查询浏览器市场份额</a>查询所需要兼容的浏览器的份额，结合受众所使用浏览器的比例去考虑需要不要兼容。从成本的角度。某个效果的实际作用与需要实现其效果所花费的成本需要做个考量。</p>
+<h4 id="确认实现程度"><a href="#确认实现程度" class="headerlink" title="确认实现程度"></a>确认实现程度</h4><p>在确定需要做兼容后，再确认不同的浏览器需要实现到什么程度。</p>
+<h4 id="怎么实现"><a href="#怎么实现" class="headerlink" title="怎么实现"></a>怎么实现</h4><p>在确定实现到什么程度时，我们同时需要考虑用什么方式去实现，是渐进增强还是优雅降级。</p>
 <ul>
-<li>Native App（ 原生APP ）：完全使用移动设备系统语言写成的客户端。iPhone、iPad 就是纯Object-C，安卓就是纯JAVA, 具有极强的交互性。一般静态资源都是在本地的。浏览使用方便，体验度高。</li>
-<li>Web App：在移动设备的浏览器中的应用，不再是操作系统。说白了就是一个触屏版的网页，只能在浏览器中打开。资源一般都在网络上，IOS支持可以在桌面创建访问的快捷方式。</li>
-<li>Hybrid App：用原生系统语言写了个容器，然后在里面运行 web 页面，资源一般在本地或者网络都可以。</li>
+<li>渐进增强(progressive enhancement): 针对低版本浏览器进行构建页面，保证最基本的功能，然后再针对高级浏览器进行效果、交互等改进和追加功能达到更好的用户体验。</li>
+<li>优雅降级 (graceful degradation): 一开始就构建完整的功能，然后再针对低版本浏览器进行兼容。</li>
 </ul>
-<h3 id="移动前端开发中的-meta-元素"><a href="#移动前端开发中的-meta-元素" class="headerlink" title="移动前端开发中的 meta 元素"></a>移动前端开发中的 meta 元素</h3><h4 id="meta-元素"><a href="#meta-元素" class="headerlink" title="meta 元素"></a>meta 元素</h4><blockquote>
-<p>标签提供关于HTML文档的元数据。元数据不会显示在页面上，但是对于机器是可读的。它可用于浏览器（如何显示内容或重新加载页面），搜索引擎（关键词），或其他 web 服务。 —— W3School</p>
+<p>最后我们再去考虑处理兼容问题的具体手段。</p>
+<h3 id="处理兼容的具体手段"><a href="#处理兼容的具体手段" class="headerlink" title="处理兼容的具体手段"></a>处理兼容的具体手段</h3><h4 id="选对合适的框架"><a href="#选对合适的框架" class="headerlink" title="选对合适的框架"></a>选对合适的框架</h4><blockquote>
+<p>Bootstrap (&gt;=ie8)<br>jQuery 1.~ (&gt;=ie6), jQuery 2.~ (&gt;=ie9)<br>Vue.js (&gt;= ie9)<br>React.js (&gt;= ie8)<br>Angluar.js 1.2 (&gt;=ie8),  Angluar.js 1.3 (&gt;=ie9) Angluar.js 2(&gt;=ie10)</p>
+<h4 id="条件注释"><a href="#条件注释" class="headerlink" title="条件注释"></a>条件注释</h4><p>条件注释 (conditional comment) 是于HTML源码中被IE有条件解释的语句。条件注释可被用来向IE提供及隐藏代码。</p>
 </blockquote>
-<h4 id="移动设备"><a href="#移动设备" class="headerlink" title="移动设备"></a>移动设备</h4><p><code>viewport</code>可以让布局在移动浏览器上显示的更好，之所有会有要用到 viewport，原因是在移动浏览器中，通常会以一个比屏幕更宽的虚拟的窗口中渲染，从而无需将页面的所有部分压缩到屏幕中（这样会把很多没有针对移动端进行优化的站点打乱）。用户可以通过平移和缩放来浏览页面的不同区域。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no&quot;/&gt;</div></pre></td></tr></table></figure></p>
-<p>其中：</p>
-<ul>
-<li>content 是 meta 元素中的必要属性，定义与http-equiv或name属性相关的元信息</li>
-<li>name 把 content 属性关联到一个名称</li>
-<li>initial-scale 为初始的缩放比例，范围从&gt;0 到10</li>
-<li>minimum-scale 允许用户缩放到的最小比例</li>
-<li>maximum-scale 允许用户缩放到的最大比例</li>
-<li>user-scalable 用户是否可以手动缩 (no,yes)</li>
-</ul>
-<h3 id="相对单位-rem"><a href="#相对单位-rem" class="headerlink" title="相对单位 rem"></a>相对单位 rem</h3><p>rem（font size of the root element）是指相对于根元素的字体大小的单位。通过设置html的字体大小就可以控制rem的大小。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">html &#123;</div><div class="line">    font-size: 62.5%;</div><div class="line">&#125;</div><div class="line">body &#123;</div><div class="line">    font-size: 1.4rem; /* 14px */</div><div class="line">&#125;</div><div class="line">h1 &#123;</div><div class="line">    font-size: 2.4rem; /* 24px */</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>对于移动前端开发来说，我们在页面布局中有可能采用宽度百分比，高度用px固定的方式，但在某些屏幕下页面元素可能被拉长导致宽度百分比但高度没变就使得视觉上显示的不协调。要么采用响应式，但这种方式工作大，维护性难。要么采用 viewport 缩放的方式，但也有可能造成在缩放中页面糊掉的情况。这时候我们就可以采用 rem 的方式开适配。 rem不仅仅用于字体，同样也可以应用于宽高，边距等等，这样我们就可以通过设置html的字体大小就可以控制rem的大小。具体的来说，我们可以通过 JS 计算的方式去设置 font-size，因为暂时没有学习 JS ，暂时不做叙述。再者就是采用 media query 的方式来实现适配。例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">html &#123;</div><div class="line">    font-size : 20px;</div><div class="line">&#125;</div><div class="line">@media only screen and (min-width: 401px)&#123;</div><div class="line">    html &#123;</div><div class="line">        font-size: 25px !important;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">@media only screen and (min-width: 428px)&#123;</div><div class="line">    html &#123;</div><div class="line">        font-size: 26.75px !important;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">@media only screen and (min-width: 481px)&#123;</div><div class="line">    html &#123;</div><div class="line">        font-size: 30px !important;</div><div class="line">    &#125;</div><div class="line">&#125;让</div><div class="line">@media only screen and (min-width: 569px)&#123;</div><div class="line">    html &#123;</div><div class="line">        font-size: 35px !important;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">@media only screen and (min-width: 641px)&#123;</div><div class="line">    html &#123;</div><div class="line">        font-size: 40px !important;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h3 id="弹性图片"><a href="#弹性图片" class="headerlink" title="弹性图片"></a>弹性图片</h3><h4 id="max-width方式"><a href="#max-width方式" class="headerlink" title="max-width方式"></a>max-width方式</h4><p>响应式 web 设计意味着，不仅我们的布局能基于设备特征变化，内容也能。对于图片来说，对于不同的设备，需要拉伸或者收缩图片。这时候我们可以在其中加上如下 CSS 样式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">img&#123;</div><div class="line">    max-width:100%;</div><div class="line">    height:auto;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<ul>
-<li>max-width:100%的设置，以确保图像永远不会超越其父容器的宽度。如果父容器的宽度收缩小于图像的宽度，图像将随之缩小。</li>
-<li>height:auto的设置可以确保当有这种情况发生时，图像将以自身的宽高比保留。</li>
-</ul>
-<h4 id="picture方式"><a href="#picture方式" class="headerlink" title="picture方式"></a>picture方式</h4><p><picture>是HTML5一个新的元素。它可以通过使用 media 属性的方式来让浏览器根据当前的页面选择加载最合适的图片大小。</picture></p>
-<blockquote>
-<p>HTML <picture> 元素是一个容器，用来为其内部特定的 <img> 元素提供多样的 <source> 元素。浏览器会根据当前页面（即图片所在的盒子的容器）的布局以及当前浏览的设备（比如普通的屏幕和高清屏幕）去从中选择最合适的资源。</picture></p>
-</blockquote>
-<p>文章<a href="http://www.w3cplus.com/html5/quick-tip-how-to-use-html5-picture-for-responsive-images.html" target="_blank" rel="external">如何使用 HTML5 的picture元素处理响应式图片</a>对此有详细的论述，以下内容皆引用自原文：</p>
-<p><picture>基本工作步骤如下：</picture></p>
-<ul>
-<li>创建<picture></picture>标签。</li>
-<li>在这些标签内创建一个你想用来执行任何一个特性的<source>元素。</li>
-<li>添加一个media属性，用来包含你想要的特性，如视口的当前高度(viewport height)，宽度(width)，方向(orientation)等。</li>
-<li>添加一个srcset属性与相应的图像文件名相匹配，进行加载。如果你想提供不同的像素密度，例如Retina显示屏，你可以添加额外的文件名到你的srcset属性中，</li>
-<li>添加一个回退的元素。</li>
-<li>可以看个简单的例子，用来检查视口是否小于768px，如果小于就加载一个较小的图像：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;picture&gt;</div><div class="line">    &lt;source srcset=&quot;person_small.jpg&quot; media=&quot;(max-width: 768px)&quot;&gt;</div><div class="line">    &lt;source srcset=&quot;person_default.jpg&quot;&gt;</div><div class="line">    &lt;img srcset=&quot;person_default.jpg&quot; alt=&quot;This is King&quot;&gt;</div><div class="line">&lt;/picture&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;!--[if !IE]&gt;&lt;!--&gt; 除IE外都可识别 &lt;!--&lt;![endif]--&gt;</div><div class="line">&lt;!--[if IE]&gt; 所有的IE可识别 &lt;![endif]--&gt;</div><div class="line">&lt;!--[if IE 6]&gt; 仅IE6可识别 &lt;![endif]--&gt;</div><div class="line">&lt;!--[if lt IE 6]&gt; IE6以及IE6以下版本可识别 &lt;![endif]--&gt;</div><div class="line">&lt;!--[if gte IE 6]&gt; IE6以及IE6以上版本可识别 &lt;![endif]--&gt;</div><div class="line">&lt;!--[if IE 7]&gt; 仅IE7可识别 &lt;![endif]--&gt;</div><div class="line">&lt;!--[if lt IE 7]&gt; IE7以及IE7以下版本可识别 &lt;![endif]--&gt;</div><div class="line">&lt;!--[if gte IE 7]&gt; IE7以及IE7以上版本可识别 &lt;![endif]--&gt;</div><div class="line">&lt;!--[if IE 8]&gt; 仅IE8可识别 &lt;![endif]--&gt;</div><div class="line">&lt;!--[if IE 9]&gt; 仅IE9可识别 &lt;![endif]--&gt;</div></pre></td></tr></table></figure>
+<h4 id="CSS-hack"><a href="#CSS-hack" class="headerlink" title="CSS hack"></a>CSS hack</h4><p>由于不同厂商的浏览器或不同版本的浏览器对CSS的解析不经相同，导致页面的渲染效果不一样，这时就需要对不同的浏览器做针对性的代码编写让不同的浏览器都能得到我们想要的效果。CSS hack大致有三种形式。</p>
+<ol>
+<li><p>属性前缀法(即类内部Hack)。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">“-″减号是IE6专有的hack</div><div class="line">“\9″ IE6/IE7/IE8/IE9/IE10都生效</div><div class="line">“\0″ IE8/IE9/IE10都生效，是IE8/9/10的hack</div><div class="line">“\9\0″ 只对IE9/IE10生效，是IE9/10的hack</div><div class="line">firefox前述都不能认识</div></pre></td></tr></table></figure>
 </li>
-</ul>
-<p>可以看到在屏幕&lt;=768px的时候加载的是person_small.jpg<br>当屏幕&gt;768px的时候，加载的是person_default.jpg</p>
-<p>不过这是一个实验中的功能，Chrome，Firefox和Opera浏览器都已经实现了对<picture>元素的支持。在不久的将来，在其他浏览器也将得到广泛的支持。</picture></p>
-<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><p><a href="https://segmentfault.com/a/1190000002407912" target="_blank" rel="external">常用meta整理</a><br><a href="http://www.css88.com/archives/5480" target="_blank" rel="external">移动前端不得不了解的html5 head 头标签</a><br><a href="https://developer.mozilla.org/zh-CN/docs/Mobile/Viewport_meta_tag" target="_blank" rel="external">在移动浏览器中使用viewport元标签控制布局</a><br><a href="http://www.w3cplus.com/html5/quick-tip-how-to-use-html5-picture-for-responsive-images.html" target="_blank" rel="external">如何使用 HTML5 的picture元素处理响应式图片</a><br><a href="https://www.zhihu.com/question/20269059" target="_blank" rel="external">移动前端开发和 Web 前端开发的区别是什么？</a><br><a href="http://alloyteam.github.io/Spirit/modules/Standard/" target="_blank" rel="external">移动开发规范概述</a><br><a href="http://www.alloyteam.com/2016/03/mobile-web-adaptation-tool-rem/" target="_blank" rel="external">移动适配利器 rem</a><br><a href="https://isux.tencent.com/web-app-rem.html" target="_blank" rel="external">web app变革之rem</a></p>
+<li><p>选择器前缀法。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">*html *前缀只对IE6生效</div><div class="line">*+html *+前缀只对IE7生效</div><div class="line">@media screen\9&#123;...&#125;只对IE6/7生效</div><div class="line">@media \0screen &#123;body &#123; background: red; &#125;&#125;只对IE8有效</div><div class="line">@media \0screen\,screen\9&#123;body &#123; background: blue; &#125;&#125;只对IE6/7/8有效</div><div class="line">@media screen\0 &#123;body &#123; background: green; &#125;&#125; 只对IE8/9/10有效</div><div class="line">@media screen and (min-width:0\0) &#123;body &#123; background: gray; &#125;&#125; 只对IE9/10有效</div><div class="line">@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) &#123;body &#123; background: orange; &#125;&#125; 只对IE10有效</div></pre></td></tr></table></figure>
+</li>
+<li><p>IE条件注释法(即HTML条件注释Hack)。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries --&gt;</div><div class="line">&lt;!--[if lt IE 9]&gt;</div><div class="line">  &lt;script src=&quot;//cdn.bootcss.com/html5shiv/3.7.0/html5shiv.js&quot;&gt;&lt;/script&gt;</div><div class="line">  &lt;script src=&quot;//cdn.bootcss.com/respond.js/1.3.0/respond.min.js&quot;&gt;&lt;/script&gt;</div><div class="line">&lt;![endif]--&gt;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>我们可以通过以下网站查询CSS属性的兼容和 Hack 的写法<br><a href="http://caniuse.com/" target="_blank" rel="external">caniuse</a><br><a href="http://browserhacks.com/" target="_blank" rel="external">browserhacks</a></p>
+<h4 id="常见的兼容工具"><a href="#常见的兼容工具" class="headerlink" title="常见的兼容工具"></a>常见的兼容工具</h4><h5 id="html5shiv-js"><a href="#html5shiv-js" class="headerlink" title="html5shiv.js"></a>html5shiv.js</h5><p>HTML5已经成为主流，但是还是有很多人在使用IE6等版本，这些版本并不支持HTML5的标签，这时我们就可以使用html5shiv.js来让那些不认识HTML5标签的浏览器识别元素。html5shiv.js的基本原理是:使用createElement方法，这包含document.createElement和document.createDocumentFragment，对当前页面的HTML5元素进行动态的调整，并且为这些元素提供最基本的样式。而他的使用方法也很简单：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;!--[if lt IE 9]&gt;</div><div class="line">&lt;script src=&quot;html5shiv.min.js&quot;&gt;&lt;/script&gt;</div><div class="line">&lt;![endif]--&gt;</div><div class="line">//or</div><div class="line">&lt;!--[if lt IE 9]&gt;</div><div class="line">&lt;script src=&quot;https://cdn.bootcss.com/html5shiv/r29/html5.min.js&quot;&gt;&lt;/script&gt;</div><div class="line">&lt;![endif]--&gt;</div></pre></td></tr></table></figure></p>
+<h5 id="js能力检测"><a href="#js能力检测" class="headerlink" title="js能力检测"></a>js能力检测</h5><p>能力检测的目标不是识别特定的浏览器，而是识别浏览器的能力。采用这种方式不必顾及特定的浏览器如何如何，只要确定浏览器支持特定的能力，就可以给出解决方案。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">//通过能力检测获取元素首先检测document对象是否有getElementById方法</div><div class="line">function getElement(id)&#123;</div><div class="line">    if(document.getElementById)&#123;</div><div class="line">    return document.getElementById(id);</div><div class="line">&#125;</div><div class="line">//然后检测是否有all对象</div><div class="line">else if(document.all)&#123;</div><div class="line">    return document.all[id];</div><div class="line">&#125;</div><div class="line">//如果上述都没检测到则抛出错误</div><div class="line">else&#123;</div><div class="line">    throw new Error(&apos;No way to retieve element&apos;);</div><div class="line">&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h5 id="respond-js"><a href="#respond-js" class="headerlink" title="respond.js"></a>respond.js</h5><p>Respond.js让不支持css3 Media Query的浏览器包括IE6-IE8等其他浏览器支持查询。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries --&gt;</div><div class="line">&lt;!--[if lt IE 9]&gt;</div><div class="line">  &lt;script src=&quot;//cdn.bootcss.com/html5shiv/3.7.0/html5shiv.js&quot;&gt;&lt;/script&gt;</div><div class="line">  &lt;script src=&quot;//cdn.bootcss.com/respond.js/1.3.0/respond.min.js&quot;&gt;&lt;/script&gt;</div><div class="line">&lt;![endif]--&gt;</div></pre></td></tr></table></figure></p>
+<h5 id="Modernizr"><a href="#Modernizr" class="headerlink" title="Modernizr"></a>Modernizr</h5><p>Modernizr让我们更加方便解决兼容性问题。</p>
+<ol>
+<li><p>首先在head中引入。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;script src=&quot;https://cdn.bootcss.com/modernizr/2010.07.06dev/modernizr.min.js&quot;&gt;&lt;/script&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>向<html>元素添加“no-js”的类</html></p>
+<blockquote>
+<p>当Modernizr运行的时候，它会把这个“no-js”的类变为“js”来使你知道它已经运行。Modernizr并不仅仅只做这一件事情，它还会为 所有它检测过的特性添加class类，如果浏览器不支持某个特性，它就为该特性对应的类名加上“no-”的前缀。添加no-js class到html元素下，是告诉浏览器是否支持JavaScript，如果不支持就显示no-js，如果支持就把no-js删掉。</p>
+</blockquote>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">//在支持shadow阴影的浏览器显示shadow</div><div class="line">.boxshadow #MyContainer &#123;</div><div class="line">    border: none;</div><div class="line">    -webkit-box-shadow: #666 1px 1px 1px;</div><div class="line">    -moz-box-shadow: #666 1px 1px 1px;</div><div class="line">&#125;</div><div class="line">//不支持的浏览器显示标准的边框</div><div class="line">.no-boxshadow #MyContainer &#123;</div><div class="line">    border: 2px solid black;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h5 id="normalize-css-and-CSS-reset"><a href="#normalize-css-and-CSS-reset" class="headerlink" title="normalize.css and CSS reset"></a>normalize.css and CSS reset</h5><p>最初的CSS reset的核心作用就是清零，强制所有标签的样式进行重置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">:link,:visited &#123; text-decoration:none &#125;</div><div class="line">ul,ol &#123; list-style:none &#125;</div><div class="line">h1,h2,h3,h4,h5,h6,pre,code &#123; font-size:1em; &#125;</div><div class="line">ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,body,html,p,blockquote,</div><div class="line">fieldset,input&#123; margin:0; padding:0 &#125;</div><div class="line">a img,:link img,:visited img &#123; border:none &#125;</div><div class="line">address &#123; font-style:normal &#125;</div></pre></td></tr></table></figure></p>
+<p>后来Normalize.css取代了css reset，相比之下，Normalize.css保护有用的浏览器默认样式而不是完全去掉它们，但又为为大部分HTML元素提供一般性的样式病保证浏览器的一致性。</p>
+<blockquote>
+<p>Normalize.css 只是一个很小的CSS文件，但它在默认的HTML元素样式上提供了跨浏览器的高度一致性。相比于传统的CSS Reset，Normalize.css是一种现代的、为HTML5准备的优质替代方案。Normalize.css现在已经被用于Twitter Bootstrap、HTML5 Boilerplate、GOV.UK、Rdio、CSS Tricks 以及许许多多其他框架、工具和网站上。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;link href=&quot;https://cdn.bootcss.com/normalize/7.0.0/normalize.min.css&quot; rel=&quot;stylesheet&quot;&gt;</div></pre></td></tr></table></figure>
+<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><p><a href="https://segmentfault.com/a/1190000003021766" target="_blank" rel="external">关于CSS Reset 那些事</a><br><a href="https://segmentfault.com/a/1190000003820989" target="_blank" rel="external">前端的瑞士军刀Modernizr.js</a><br><a href="https://segmentfault.com/a/1190000003923461" target="_blank" rel="external">客户端能力检测</a></p>
 
       
     </div>
@@ -462,7 +470,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Mobile-Web/" rel="tag"># Mobile Web</a>
+            <a href="/tags/浏览器兼容/" rel="tag"># 浏览器兼容</a>
           
         </div>
       
@@ -471,8 +479,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/12/26/title- IFE task 8-12 笔记/" rel="next" title="IFE task 8-12 笔记">
-                <i class="fa fa-chevron-left"></i> IFE task 8-12 笔记
+              <a href="/2017/08/06/title-「专注概念 VOL.2」定位与浮动/" rel="next" title="「专注概念 VOL.2」定位与浮动">
+                <i class="fa fa-chevron-left"></i> 「专注概念 VOL.2」定位与浮动
               </a>
             
           </div>
@@ -480,10 +488,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/01/03/title- 分别利用 JavaScript 和 CSS 实现tab选项卡切换/" rel="prev" title="分别利用 JavaScript 和 CSS 实现tab选项卡切换">
-                分别利用 JavaScript 和 CSS 实现tab选项卡切换 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -637,7 +641,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#摘要"><span class="nav-number">1.</span> <span class="nav-text">摘要</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正文"><span class="nav-number">2.</span> <span class="nav-text">正文</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#移动前端开发的大体印象"><span class="nav-number">2.1.</span> <span class="nav-text">移动前端开发的大体印象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#移动前端开发中的-meta-元素"><span class="nav-number">2.2.</span> <span class="nav-text">移动前端开发中的 meta 元素</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#meta-元素"><span class="nav-number">2.2.1.</span> <span class="nav-text">meta 元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#移动设备"><span class="nav-number">2.2.2.</span> <span class="nav-text">移动设备</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#相对单位-rem"><span class="nav-number">2.3.</span> <span class="nav-text">相对单位 rem</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#弹性图片"><span class="nav-number">2.4.</span> <span class="nav-text">弹性图片</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#max-width方式"><span class="nav-number">2.4.1.</span> <span class="nav-text">max-width方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#picture方式"><span class="nav-number">2.4.2.</span> <span class="nav-text">picture方式</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考文章"><span class="nav-number">3.</span> <span class="nav-text">参考文章</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#摘要"><span class="nav-number">1.</span> <span class="nav-text">摘要</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正文"><span class="nav-number">2.</span> <span class="nav-text">正文</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#处理浏览器兼容的基本思路"><span class="nav-number">2.1.</span> <span class="nav-text">处理浏览器兼容的基本思路</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#要不要实现"><span class="nav-number">2.1.1.</span> <span class="nav-text">要不要实现</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#确认实现程度"><span class="nav-number">2.1.2.</span> <span class="nav-text">确认实现程度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#怎么实现"><span class="nav-number">2.1.3.</span> <span class="nav-text">怎么实现</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#处理兼容的具体手段"><span class="nav-number">2.2.</span> <span class="nav-text">处理兼容的具体手段</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#选对合适的框架"><span class="nav-number">2.2.1.</span> <span class="nav-text">选对合适的框架</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#条件注释"><span class="nav-number">2.2.2.</span> <span class="nav-text">条件注释</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CSS-hack"><span class="nav-number">2.2.3.</span> <span class="nav-text">CSS hack</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#常见的兼容工具"><span class="nav-number">2.2.4.</span> <span class="nav-text">常见的兼容工具</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#html5shiv-js"><span class="nav-number">2.2.4.1.</span> <span class="nav-text">html5shiv.js</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#js能力检测"><span class="nav-number">2.2.4.2.</span> <span class="nav-text">js能力检测</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#respond-js"><span class="nav-number">2.2.4.3.</span> <span class="nav-text">respond.js</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Modernizr"><span class="nav-number">2.2.4.4.</span> <span class="nav-text">Modernizr</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#normalize-css-and-CSS-reset"><span class="nav-number">2.2.4.5.</span> <span class="nav-text">normalize.css and CSS reset</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考文章"><span class="nav-number">3.</span> <span class="nav-text">参考文章</span></a></li></ol></div>
             
           </div>
         </section>
@@ -743,9 +747,9 @@
 
     <script type="text/javascript">
       var disqus_shortname = 'onepiececee';
-      var disqus_identifier = '2016/12/27/title- 移动 Web 开发小记 /';
-      var disqus_title = "移动 Web 开发小记";
-      var disqus_url = 'http://chenyixin.win/2016/12/27/title- 移动 Web 开发小记 /';
+      var disqus_identifier = '2017/08/10/title- 浏览器兼容思路/';
+      var disqus_title = "浏览器兼容的基本方法和思路";
+      var disqus_url = 'http://chenyixin.win/2017/08/10/title- 浏览器兼容思路/';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');
