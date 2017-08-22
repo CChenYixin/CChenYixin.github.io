@@ -66,7 +66,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Git," />
+  <meta name="keywords" content="JavaScript,重载,overload," />
 
 
 
@@ -84,27 +84,19 @@
 
 
 
-<meta name="description" content="摘要介绍 Git 的基本原理以及一些常用的操作命令。
-Git基本原理Git文件改动提交的基本原理Git 是一种分布式的版本控制工具。它的控制系统由两个部分组成:工作区（Working Directory） 和 版本库（Repository）。
-
-Git 的工作流程如上图所示，首先是我们日常的 工作区，它实际持有文件。其次是 版本库，即工作区隐藏文件.git，记录我们文件的变动和提交。在版本库中，最">
+<meta name="description" content="摘要文章主要讨论 JavaScript 中如何实现重载。
+正文重载的含义重载指的是不同的函数使用相同的函数名，但函数的参数个数或类型不同。调用的时候根据函数的参数来区别不同的函数。一个其他语言的重载例子：12345678910int sum(int num1, int num2)&amp;#123;  return num1 + num2;&amp;#125;float sum(float num1, float">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Git 基本原理和常用命令">
-<meta property="og:url" content="http://chenyixin.win/2017/07/22/title- Git 基本原理和常用命令/index.html">
+<meta property="og:title" content="JavaScript 如何实现重载">
+<meta property="og:url" content="http://chenyixin.win/2017/08/22/title- 如何实现 JavaScript 重载/index.html">
 <meta property="og:site_name" content="速去逮一只猫">
-<meta property="og:description" content="摘要介绍 Git 的基本原理以及一些常用的操作命令。
-Git基本原理Git文件改动提交的基本原理Git 是一种分布式的版本控制工具。它的控制系统由两个部分组成:工作区（Working Directory） 和 版本库（Repository）。
-
-Git 的工作流程如上图所示，首先是我们日常的 工作区，它实际持有文件。其次是 版本库，即工作区隐藏文件.git，记录我们文件的变动和提交。在版本库中，最">
-<meta property="og:image" content="http://ww1.sinaimg.cn/mw690/75fcfef2ly1fhsxocsxz5j20cq06iaa8.jpg">
-<meta property="og:updated_time" content="2017-07-23T07:56:29.772Z">
+<meta property="og:description" content="摘要文章主要讨论 JavaScript 中如何实现重载。
+正文重载的含义重载指的是不同的函数使用相同的函数名，但函数的参数个数或类型不同。调用的时候根据函数的参数来区别不同的函数。一个其他语言的重载例子：12345678910int sum(int num1, int num2)&amp;#123;  return num1 + num2;&amp;#125;float sum(float num1, float">
+<meta property="og:updated_time" content="2017-08-22T11:12:29.479Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Git 基本原理和常用命令">
-<meta name="twitter:description" content="摘要介绍 Git 的基本原理以及一些常用的操作命令。
-Git基本原理Git文件改动提交的基本原理Git 是一种分布式的版本控制工具。它的控制系统由两个部分组成:工作区（Working Directory） 和 版本库（Repository）。
-
-Git 的工作流程如上图所示，首先是我们日常的 工作区，它实际持有文件。其次是 版本库，即工作区隐藏文件.git，记录我们文件的变动和提交。在版本库中，最">
-<meta name="twitter:image" content="http://ww1.sinaimg.cn/mw690/75fcfef2ly1fhsxocsxz5j20cq06iaa8.jpg">
+<meta name="twitter:title" content="JavaScript 如何实现重载">
+<meta name="twitter:description" content="摘要文章主要讨论 JavaScript 中如何实现重载。
+正文重载的含义重载指的是不同的函数使用相同的函数名，但函数的参数个数或类型不同。调用的时候根据函数的参数来区别不同的函数。一个其他语言的重载例子：12345678910int sum(int num1, int num2)&amp;#123;  return num1 + num2;&amp;#125;float sum(float num1, float">
 
 
 
@@ -132,13 +124,13 @@ Git 的工作流程如上图所示，首先是我们日常的 工作区，它实
 
 
 
-  <link rel="canonical" href="http://chenyixin.win/2017/07/22/title- Git 基本原理和常用命令/"/>
+  <link rel="canonical" href="http://chenyixin.win/2017/08/22/title- 如何实现 JavaScript 重载/"/>
 
 
 
 
 
-  <title> Git 基本原理和常用命令 | 速去逮一只猫 </title>
+  <title> JavaScript 如何实现重载 | 速去逮一只猫 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -297,7 +289,7 @@ Git 的工作流程如上图所示，首先是我们日常的 工作区，它实
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://chenyixin.win/2017/07/22/title- Git 基本原理和常用命令/">
+  <link itemprop="mainEntityOfPage" href="http://chenyixin.win/2017/08/22/title- 如何实现 JavaScript 重载/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Chen Yixin">
@@ -321,7 +313,7 @@ Git 的工作流程如上图所示，首先是我们日常的 工作区，它实
             
             
               
-                Git 基本原理和常用命令
+                JavaScript 如何实现重载
               
             
           </h1>
@@ -334,8 +326,8 @@ Git 的工作流程如上图所示，首先是我们日常的 工作区，它实
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              <time title="post.created" itemprop="dateCreated datePublished" datetime="2017-07-22T21:36:11+08:00">
-                2017-07-22
+              <time title="post.created" itemprop="dateCreated datePublished" datetime="2017-08-22T19:12:29+08:00">
+                2017-08-22
               </time>
             
 
@@ -350,8 +342,8 @@ Git 的工作流程如上图所示，首先是我们日常的 工作区，它实
             
               <span class="post-comments-count">
                 <span class="post-meta-divider">|</span>
-                <a href="/2017/07/22/title- Git 基本原理和常用命令/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/07/22/title- Git 基本原理和常用命令/" itemprop="commentCount"></span>
+                <a href="/2017/08/22/title- 如何实现 JavaScript 重载/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/08/22/title- 如何实现 JavaScript 重载/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -361,7 +353,7 @@ Git 的工作流程如上图所示，首先是我们日常的 工作区，它实
 
           
           
-             <span id="/2017/07/22/title- Git 基本原理和常用命令/" class="leancloud_visitors" data-flag-title="Git 基本原理和常用命令">
+             <span id="/2017/08/22/title- 如何实现 JavaScript 重载/" class="leancloud_visitors" data-flag-title="JavaScript 如何实现重载">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -386,19 +378,16 @@ Git 的工作流程如上图所示，首先是我们日常的 工作区，它实
       
 
       
-        <h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>介绍 Git 的基本原理以及一些常用的操作命令。</p>
-<h2 id="Git基本原理"><a href="#Git基本原理" class="headerlink" title="Git基本原理"></a>Git基本原理</h2><h3 id="Git文件改动提交的基本原理"><a href="#Git文件改动提交的基本原理" class="headerlink" title="Git文件改动提交的基本原理"></a>Git文件改动提交的基本原理</h3><p>Git 是一种分布式的版本控制工具。它的控制系统由两个部分组成:工作区（Working Directory） 和 版本库（Repository）。</p>
-<p><img src="http://ww1.sinaimg.cn/mw690/75fcfef2ly1fhsxocsxz5j20cq06iaa8.jpg" alt="git控制系统"></p>
-<p>Git 的工作流程如上图所示，首先是我们日常的 <strong>工作区</strong>，它实际持有文件。其次是 <strong>版本库</strong>，即工作区隐藏文件<code>.git</code>，记录我们文件的变动和提交。在版本库中，最重要的内容是 <strong>缓存区*(Index/stage)</strong>，它就像一个缓存区域，用来临时保存你的文件变动。最后是 <strong>HEAD</strong>，它一般指向我们最后一次提交的结果。</p>
-<p>也就是说。当我们往 Git 版本库中添加文件的时候，会分成两个部分来执行，首先用<code>git add</code>把文件添加到缓存区，然后再用<code>git commit</code>提交更改，即把缓存区的文件提交到当前的分支上去。</p>
-<h3 id="Git版本控制的基本原理"><a href="#Git版本控制的基本原理" class="headerlink" title="Git版本控制的基本原理"></a>Git版本控制的基本原理</h3><p>Git会记录我们的每一次提交，这样我们对文件的改动就会像时间线一样被 Git 记录下来。而 <strong>HEAD</strong> 就指向这条时间线最后一次提交的结果。因此比如说我们要回退到上一个版本就可以用命令<code>git reset --hard HEAD^</code>，但如果我们要回退到某个版本，我们就必须要只要那个版本的版本号(commit id)， Git提供了命令<code>git log</code>来供我们查找历史纪录。</p>
-<p>这样我们通过<code>git log</code>来查询我们需要回退的版本号，然后利用命令<code>git reset --hard 版本号</code>来回退到我们需要的版本。</p>
-<h3 id="Git分支管理的基本原理"><a href="#Git分支管理的基本原理" class="headerlink" title="Git分支管理的基本原理"></a>Git分支管理的基本原理</h3><p>上面指出 <strong>HEAD</strong> 一般指向我们的最后次的结果。那么<code>HEAD</code>本身是什么呢?通俗的来说，<code>HEAD</code>是一个指针，一般来说指向分支的最顶端，也就是我们最后一次提交的结果，但实际上它可以指向任意一个节点， Git就是利用它来追踪位置。当我们初始化一个 Git 仓库时，默认指向我们的主分支<code>master</code>。假如我们创建新的分支时，我们就可以通过命令<code>git checkout 分支名</code>切换到新的分支，这时<code>HEAD</code>指向我们新建的分支，这时对工作区的修改和提交就是针对我们新建的这个分支了，而原来<code>master</code>不会变化。当我们在新建的分支上修改满意后，再切回到主分支，然后用命令<code>git merge</code>把刚刚修改的结果合并到主分支上。这样就完成了一次分支的操作。</p>
-<h2 id="常用-Git-命令"><a href="#常用-Git-命令" class="headerlink" title="常用 Git 命令"></a>常用 Git 命令</h2><h3 id="文件改动提交相关"><a href="#文件改动提交相关" class="headerlink" title="文件改动提交相关"></a>文件改动提交相关</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"># 添加指定文件或目录到缓存区</div><div class="line">$ git add file/dir</div><div class="line"></div><div class="line"># 添加加当前目录的所有文件到暂存区</div><div class="line">$ git add .     </div><div class="line"></div><div class="line"># 提交缓存区到仓库区</div><div class="line">$ git commit -m &quot;代码提交信息&quot;</div><div class="line"></div><div class="line"># 提交工作区自上次commit之后的变化，直接到仓库区</div><div class="line">$ git commit -a</div><div class="line"></div><div class="line"># 显示有变更的文件</div><div class="line">$ git status</div><div class="line"></div><div class="line"># 提交到远程的仓库</div><div class="line">git push origin master</div></pre></td></tr></table></figure>
-<h3 id="版本控制相关"><a href="#版本控制相关" class="headerlink" title="版本控制相关"></a>版本控制相关</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"># 显示当前分支的版本历史</div><div class="line">$ git log</div><div class="line">$ git log --pretty=oneline</div><div class="line"></div><div class="line"># 显示暂存区和工作区的差异</div><div class="line">$ git diff</div><div class="line"></div><div class="line"># 显示当前分支的最近几次提交</div><div class="line">$ git reflog</div><div class="line"></div><div class="line"># 重置当前分支的HEAD为指定commit，同时重置暂存区和工作区，与指定commit一致</div><div class="line">$ git reset --hard &quot;版本号&quot;</div></pre></td></tr></table></figure>
-<h3 id="分支管理相关"><a href="#分支管理相关" class="headerlink" title="分支管理相关"></a>分支管理相关</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"># 列出所有本地分支</div><div class="line">$ git branch</div><div class="line"></div><div class="line"># 新建一个分支，并切换到该分支</div><div class="line">$ git checkout -b &quot;分支名&quot;</div><div class="line"></div><div class="line"># 切换到指定分支，并更新工作区</div><div class="line">$ git checkout &quot;分支名&quot;</div><div class="line"></div><div class="line"># 合并指定分支到当前分支</div><div class="line">$ git merge &quot;指定分支&quot;</div><div class="line"></div><div class="line"># 删除分支</div><div class="line">$ git branch -d &quot;分支名&quot;</div><div class="line"></div><div class="line"># 提交到远程的仓库</div><div class="line">$ git push origin &quot;分支名&quot;</div><div class="line"></div><div class="line"># 要更新你的本地仓库至最新改动</div><div class="line">$ git pull</div></pre></td></tr></table></figure>
-<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># 显示当前的Git配置</div><div class="line">$ git config --list</div></pre></td></tr></table></figure>
-<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><p><a href="http://rogerdudler。github。io/git-guide/index。zh。html" target="_blank" rel="external">git - 简明指南</a><br><a href="http://www。ruanyifeng。com/blog/2015/12/git-cheat-sheet。html" target="_blank" rel="external">常用 Git 命令清单</a><br><a href="https://www。liaoxuefeng。com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="external">git教程 -廖雪峰</a></p>
+        <h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>文章主要讨论 JavaScript 中如何实现重载。</p>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="重载的含义"><a href="#重载的含义" class="headerlink" title="重载的含义"></a>重载的含义</h3><p>重载指的是不同的函数使用相同的函数名，但函数的参数个数或类型不同。调用的时候根据函数的参数来区别不同的函数。一个其他语言的重载例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">int sum(int num1, int num2)&#123;</div><div class="line">  return num1 + num2;</div><div class="line">&#125;</div><div class="line"></div><div class="line">float sum(float num1, float num2)&#123;</div><div class="line">  return num1 + num2;</div><div class="line">&#125;</div><div class="line"></div><div class="line">sum(1, 2);</div><div class="line">sum(1.5, 2.4);</div></pre></td></tr></table></figure></p>
+<h3 id="JavaScript-没有重载"><a href="#JavaScript-没有重载" class="headerlink" title="JavaScript 没有重载"></a>JavaScript 没有重载</h3><p>在 JavaScript 中函数是对象的一种，因此函数名实际上是一个指向函数对象的指针，不会与函数绑定，所以 JavaScript 中没有重载，同名函数会被覆盖重写。一个来自高程的例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">function addSomeNumber(num)&#123;</div><div class="line">    return num += 100;</div><div class="line">&#125;</div><div class="line">function addSomeNumber(num)&#123;</div><div class="line">    return num += 200;</div><div class="line">&#125;</div><div class="line"></div><div class="line">var result = addSomeNumber(100) // 300</div></pre></td></tr></table></figure></p>
+<h3 id="如何实现-JavaScript-重载"><a href="#如何实现-JavaScript-重载" class="headerlink" title="如何实现 JavaScript 重载"></a>如何实现 JavaScript 重载</h3><h4 id="switch语句"><a href="#switch语句" class="headerlink" title="switch语句"></a>switch语句</h4><p>通过对函数的 arguments对象的length值进行判断，来对不同的参数进行不同的操作</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">function overload(a,b)&#123;</div><div class="line">    switch(arguments.length)&#123;</div><div class="line">        case 0:</div><div class="line">        // do basic code</div><div class="line">        break;</div><div class="line">        case 1:</div><div class="line">        // do code with one</div><div class="line">        break;</div><div class="line">        case 2:</div><div class="line">        // do code with two</div><div class="line">        break;</div><div class="line">        default:</div><div class="line">        // do code with three</div><div class="line">        break;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="数组和对象"><a href="#数组和对象" class="headerlink" title="数组和对象"></a>数组和对象</h4><p>也可以使用数据和对象的方式，通过数组的索引来对不同的参数进行不同的操作，原理和上面利用 arguments的length值类似。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">fooArr = [</div><div class="line">    function()&#123;</div><div class="line">        // do basic code</div><div class="line">    &#125;,</div><div class="line">    function(a)&#123;</div><div class="line">        // do code with one</div><div class="line">    &#125;,</div><div class="line">    function(a,b)&#123;</div><div class="line">        // do code with two</div><div class="line">    &#125;</div><div class="line">]</div><div class="line"></div><div class="line">function foo(a,b)&#123;</div><div class="line">    return fooArr[arguments.length](a.b);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h4><p>来自 jQuery 之父 John Resig 的 JavaScript 函数重载方法。以下是一个完整示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">function addMethod(object, name, fn)&#123;</div><div class="line"> // 将前一个添加的方法保存在old中</div><div class="line"> var old = object[name];</div><div class="line"> // 重写object[name]方法</div><div class="line"> object[name] = function()&#123;</div><div class="line">     // 假如传入的参数和预期的一致，直接调用</div><div class="line">     if (fn.length == arguments.length)&#123;</div><div class="line">         return fn.apply(this, arguments);</div><div class="line">    //否则，判断old是否为函数，如果是就直接调用            </div><div class="line">     &#125; else if (typeof old == &apos;function&apos;)&#123;</div><div class="line">         return old.apply(this, arguments);             </div><div class="line">     &#125;</div><div class="line"> &#125;;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">/* 通过addMehod函数实现对find方法的重载 */</div><div class="line"></div><div class="line"></div><div class="line">// 不传参数时，返回所有name</div><div class="line">function find0()&#123;　　</div><div class="line"> return this.names;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">// 传一个参数时，返回firstName匹配的name</div><div class="line">function find1(firstName)&#123;　　</div><div class="line"> var result = [];　　</div><div class="line"> for (var i = 0; i &lt; this.names.length; i++)&#123;　　　　</div><div class="line">     if (this.names[i].indexOf(firstName) === 0)&#123;　　　　　　</div><div class="line">         result.push(this.names[i]);　　　　</div><div class="line">     &#125;　　</div><div class="line"> &#125;　　</div><div class="line"> return result;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">// 传两个参数时，返回firstName和lastName都匹配的name</div><div class="line">function find2(firstName, lastName)&#123;　</div><div class="line"> var result = [];　　</div><div class="line"> for (var i = 0; i &lt; this.names.length; i++)&#123;　　　　</div><div class="line">     if (this.names[i] === (firstName + &quot; &quot; + lastName))&#123;　　　　　　</div><div class="line">         result.push(this.names[i]);　　　　</div><div class="line">     &#125;　　</div><div class="line"> &#125;　　</div><div class="line"> return result;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">function Users()&#123;</div><div class="line"> addMethod(Users.prototype, &quot;find&quot;, find0);</div><div class="line"> addMethod(Users.prototype, &quot;find&quot;, find1);</div><div class="line"> addMethod(Users.prototype, &quot;find&quot;, find2);</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">var users = new Users();</div><div class="line">users.names = [&quot;John Resig&quot;, &quot;John Russell&quot;, &quot;Dean Tom&quot;];</div><div class="line"></div><div class="line">console.log(users.find());</div><div class="line">// 输出[ &apos;John Resig&apos;, &apos;John Russell&apos;, &apos;Dean Tom&apos; ]</div><div class="line">console.log(users.find(&quot;John&quot;));</div><div class="line">// 输出[ &apos;John Resig&apos;, &apos;John Russell&apos; ]</div><div class="line">console.log(users.find(&quot;John&quot;, &quot;Resig&quot;));</div><div class="line">// 输出[ &apos;John Resig&apos; ]</div><div class="line">console.log(users.find(&quot;John&quot;, &quot;E&quot;, &quot;Resig&quot;));</div></pre></td></tr></table></figure>
+<h2 id="文章参考"><a href="#文章参考" class="headerlink" title="文章参考"></a>文章参考</h2><p><a href="https://blog.fundebug.com/2017/07/24/javascript_metho_overloading/" target="_blank" rel="external">JavaScript函数重载</a><br><a href="https://stackoverflow.com/questions/10855908/how-to-overload-functions-in-javascript" target="_blank" rel="external">How to overload functions in javascript?</a></p>
 
       
     </div>
@@ -438,7 +427,11 @@ Git 的工作流程如上图所示，首先是我们日常的 工作区，它实
       
         <div class="post-tags">
           
-            <a href="/tags/Git/" rel="tag"># Git</a>
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          
+            <a href="/tags/重载/" rel="tag"># 重载</a>
+          
+            <a href="/tags/overload/" rel="tag"># overload</a>
           
         </div>
       
@@ -447,8 +440,8 @@ Git 的工作流程如上图所示，首先是我们日常的 工作区，它实
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/07/17/title- Linux 命令行和 vim 使用的基础操作/" rel="next" title="Linux 命令行和 Vim 使用的基础操作">
-                <i class="fa fa-chevron-left"></i> Linux 命令行和 Vim 使用的基础操作
+              <a href="/2017/08/10/title- 浏览器兼容思路/" rel="next" title="浏览器兼容的基本方法和思路">
+                <i class="fa fa-chevron-left"></i> 浏览器兼容的基本方法和思路
               </a>
             
           </div>
@@ -456,10 +449,6 @@ Git 的工作流程如上图所示，首先是我们日常的 工作区，它实
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/07/23/title- Git 命令中的参数问题/" rel="prev" title="Git 命令中的参数问题">
-                Git 命令中的参数问题 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -613,7 +602,7 @@ Git 的工作流程如上图所示，首先是我们日常的 工作区，它实
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#摘要"><span class="nav-number">1.</span> <span class="nav-text">摘要</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git基本原理"><span class="nav-number">2.</span> <span class="nav-text">Git基本原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Git文件改动提交的基本原理"><span class="nav-number">2.1.</span> <span class="nav-text">Git文件改动提交的基本原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Git版本控制的基本原理"><span class="nav-number">2.2.</span> <span class="nav-text">Git版本控制的基本原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Git分支管理的基本原理"><span class="nav-number">2.3.</span> <span class="nav-text">Git分支管理的基本原理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用-Git-命令"><span class="nav-number">3.</span> <span class="nav-text">常用 Git 命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#文件改动提交相关"><span class="nav-number">3.1.</span> <span class="nav-text">文件改动提交相关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#版本控制相关"><span class="nav-number">3.2.</span> <span class="nav-text">版本控制相关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分支管理相关"><span class="nav-number">3.3.</span> <span class="nav-text">分支管理相关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他"><span class="nav-number">3.4.</span> <span class="nav-text">其他</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考文章"><span class="nav-number">4.</span> <span class="nav-text">参考文章</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#摘要"><span class="nav-number">1.</span> <span class="nav-text">摘要</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正文"><span class="nav-number">2.</span> <span class="nav-text">正文</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#重载的含义"><span class="nav-number">2.1.</span> <span class="nav-text">重载的含义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JavaScript-没有重载"><span class="nav-number">2.2.</span> <span class="nav-text">JavaScript 没有重载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何实现-JavaScript-重载"><span class="nav-number">2.3.</span> <span class="nav-text">如何实现 JavaScript 重载</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#switch语句"><span class="nav-number">2.3.1.</span> <span class="nav-text">switch语句</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数组和对象"><span class="nav-number">2.3.2.</span> <span class="nav-text">数组和对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#闭包"><span class="nav-number">2.3.3.</span> <span class="nav-text">闭包</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文章参考"><span class="nav-number">3.</span> <span class="nav-text">文章参考</span></a></li></ol></div>
             
           </div>
         </section>
@@ -719,9 +708,9 @@ Git 的工作流程如上图所示，首先是我们日常的 工作区，它实
 
     <script type="text/javascript">
       var disqus_shortname = 'onepiececee';
-      var disqus_identifier = '2017/07/22/title- Git 基本原理和常用命令/';
-      var disqus_title = "Git 基本原理和常用命令";
-      var disqus_url = 'http://chenyixin.win/2017/07/22/title- Git 基本原理和常用命令/';
+      var disqus_identifier = '2017/08/22/title- 如何实现 JavaScript 重载/';
+      var disqus_title = "JavaScript 如何实现重载";
+      var disqus_url = 'http://chenyixin.win/2017/08/22/title- 如何实现 JavaScript 重载/';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');
