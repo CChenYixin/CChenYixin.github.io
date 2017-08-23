@@ -66,7 +66,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="chenyixin,速去逮一只猫,前端" />
+  <meta name="keywords" content="浅拷贝,深拷贝,JavaScript," />
 
 
 
@@ -84,15 +84,19 @@
 
 
 
-<meta name="description" content="互联网 | 前端 | 宅 | 动漫 | 健身">
-<meta property="og:type" content="website">
-<meta property="og:title" content="速去逮一只猫">
-<meta property="og:url" content="http://chenyixin.win/tags/网页运行原理/index.html">
+<meta name="description" content="摘要JavaScrip 中如何实现浅拷贝和深拷贝。
+正文在 JavaScript 中对象、数组、函数等都属于引用类型，引用类型指指的是那些保存在堆内存中的对象，变量中保存的实际上只是一个指针，这个指针执行内存中的另一个位置，由该位置保存对象。当我们拷贝引用类型的变量时，复制的其实只是一个指针，拷贝后的对象和原来的对象指向同一块内存地址，改变其中一个，另一个也会发生变化。这种拷贝原对象的引用，即为浅">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript如何实现浅拷贝和深拷贝">
+<meta property="og:url" content="http://chenyixin.win/2017/08/23/title- JavaScript 如何实现浅拷贝和深拷贝/index.html">
 <meta property="og:site_name" content="速去逮一只猫">
-<meta property="og:description" content="互联网 | 前端 | 宅 | 动漫 | 健身">
+<meta property="og:description" content="摘要JavaScrip 中如何实现浅拷贝和深拷贝。
+正文在 JavaScript 中对象、数组、函数等都属于引用类型，引用类型指指的是那些保存在堆内存中的对象，变量中保存的实际上只是一个指针，这个指针执行内存中的另一个位置，由该位置保存对象。当我们拷贝引用类型的变量时，复制的其实只是一个指针，拷贝后的对象和原来的对象指向同一块内存地址，改变其中一个，另一个也会发生变化。这种拷贝原对象的引用，即为浅">
+<meta property="og:updated_time" content="2017-08-23T13:40:26.449Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="速去逮一只猫">
-<meta name="twitter:description" content="互联网 | 前端 | 宅 | 动漫 | 健身">
+<meta name="twitter:title" content="JavaScript如何实现浅拷贝和深拷贝">
+<meta name="twitter:description" content="摘要JavaScrip 中如何实现浅拷贝和深拷贝。
+正文在 JavaScript 中对象、数组、函数等都属于引用类型，引用类型指指的是那些保存在堆内存中的对象，变量中保存的实际上只是一个指针，这个指针执行内存中的另一个位置，由该位置保存对象。当我们拷贝引用类型的变量时，复制的其实只是一个指针，拷贝后的对象和原来的对象指向同一块内存地址，改变其中一个，另一个也会发生变化。这种拷贝原对象的引用，即为浅">
 
 
 
@@ -120,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://chenyixin.win/tags/网页运行原理/"/>
+  <link rel="canonical" href="http://chenyixin.win/2017/08/23/title- JavaScript 如何实现浅拷贝和深拷贝/"/>
 
 
 
 
 
-  <title> 标签: 网页运行原理 | 速去逮一只猫 </title>
+  <title> JavaScript如何实现浅拷贝和深拷贝 | 速去逮一只猫 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -152,7 +156,7 @@
 
     
 
-  <div class="container one-collumn sidebar-position-left  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -275,52 +279,212 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h2 >
-        网页运行原理
-        <small>标签</small>
-      </h2>
-    </div>
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://chenyixin.win/2017/08/23/title- JavaScript 如何实现浅拷贝和深拷贝/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Chen Yixin">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="速去逮一只猫">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="速去逮一只猫" src="">
+    </span>
+  </span>
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                JavaScript如何实现浅拷贝和深拷贝
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="post.created" itemprop="dateCreated datePublished" datetime="2017-08-23T21:40:15+08:00">
+                2017-08-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <a href="/2017/08/23/title- JavaScript 如何实现浅拷贝和深拷贝/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/08/23/title- JavaScript 如何实现浅拷贝和深拷贝/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/08/23/title- JavaScript 如何实现浅拷贝和深拷贝/" class="leancloud_visitors" data-flag-title="JavaScript如何实现浅拷贝和深拷贝">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
       
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+      
+        <h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>JavaScrip 中如何实现浅拷贝和深拷贝。</p>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>在 JavaScript 中对象、数组、函数等都属于引用类型，引用类型指指的是那些保存在堆内存中的对象，变量中保存的实际上只是一个指针，这个指针执行内存中的另一个位置，由该位置保存对象。当我们拷贝引用类型的变量时，复制的其实只是一个指针，拷贝后的对象和原来的对象指向同一块内存地址，改变其中一个，另一个也会发生变化。这种拷贝原对象的引用，即为浅拷贝。而深拷贝，会开辟一块新的内存地址，拷贝后的新对象与原对象互不影响。</p>
+<h3 id="浅拷贝"><a href="#浅拷贝" class="headerlink" title="浅拷贝"></a>浅拷贝</h3><p>把对象赋值给新的变量即为最简单的一种浅拷贝</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> o1 = &#123;</div><div class="line">    <span class="attr">name</span>:<span class="string">'chen'</span></div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> o2 = o1;</div><div class="line"><span class="built_in">console</span>.log(o1 === o2);</div><div class="line"><span class="comment">// true</span></div><div class="line">o2.name = <span class="string">'yan'</span>;</div><div class="line"><span class="built_in">console</span>.log(o1.name);</div><div class="line"><span class="comment">// yan</span></div></pre></td></tr></table></figure>
+<p>在jQuery中我们可以调用 extend() 方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">jQuery.extend( target [, object1 ] [, objectN ] )</div></pre></td></tr></table></figure>
+<p>Object.assign() 方法用于将所有可枚举的属性的值从一个或多个源对象复制到目标对象。它将返回目标对象。</p>
+<blockquote>
+<p>语法：Object.assign (target目标对象。, …sources) 返回值为目标对象</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj = &#123; <span class="attr">a</span>: <span class="number">1</span> &#125;;</div><div class="line"><span class="keyword">var</span> copy = <span class="built_in">Object</span>.assign(&#123;&#125;, obj);</div><div class="line"><span class="built_in">console</span>.log(copy); <span class="comment">// &#123; a: 1 &#125;</span></div></pre></td></tr></table></figure>
+<h3 id="深拷贝"><a href="#深拷贝" class="headerlink" title="深拷贝"></a>深拷贝</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 1.</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">deepCopy</span>(<span class="params">obj</span>)</span>&#123;</div><div class="line">   <span class="keyword">var</span> newObject = <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(obj))</div><div class="line">   <span class="keyword">return</span> newObject;</div><div class="line">&#125;</div><div class="line"><span class="comment">// 2.</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">deepCopy</span>(<span class="params">obj</span>) </span>&#123;</div><div class="line">	<span class="keyword">var</span> newObj = &#123;&#125;;</div><div class="line"></div><div class="line">	<span class="keyword">for</span> (<span class="keyword">var</span> key <span class="keyword">in</span> obj) &#123;</div><div class="line">	<span class="keyword">if</span> (obj.hasOwnProperty(key)) &#123;</div><div class="line">		<span class="keyword">if</span> (<span class="keyword">typeof</span> obj[key] === <span class="string">'number'</span> || <span class="keyword">typeof</span> obj[key] === <span class="string">'string'</span> || <span class="keyword">typeof</span> obj[key] === <span class="string">'boolean'</span>||obj[key] === <span class="literal">undefined</span> ||obj[key] === <span class="literal">null</span> ) &#123;</div><div class="line">			newObj[key] = obj[key];</div><div class="line">		&#125;<span class="keyword">else</span> &#123;</div><div class="line">			 newObj[key] = deepCopy(obj[key]);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line"> &#125;</div><div class="line">	<span class="keyword">return</span> newObj;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><p><a href="https://github.com/wengjq/Blog/issues/3" target="_blank" rel="external">JavaScript中的浅拷贝和深拷贝</a><br><a href="https://segmentfault.com/a/1190000008637489" target="_blank" rel="external">JavaScript中的浅拷贝和深拷贝</a></p>
 
-      <h1 class="post-title">
+      
+    </div>
+
+    <div>
+      
         
-            <a class="post-title-link" href="/2017/07/26/title- 「网页运行原理 VOL.1」域名解析/" itemprop="url">
-              
-                <span itemprop="name">「网页运行原理 VOL.1」域名解析</span>
-              
-            </a>
+
+      
+    </div>
+
+    <div>
+      
         
-      </h1>
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/reward.png" alt="Chen Yixin WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+    </div>
+  </div>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-07-26T20:54:48+08:00"
-              content="2017-07-26" >
-          07-26
-        </time>
-      </div>
 
-    </header>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/浅拷贝/" rel="tag"># 浅拷贝</a>
+          
+            <a href="/tags/深拷贝/" rel="tag"># 深拷贝</a>
+          
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/08/22/title- 如何实现 JavaScript 重载/" rel="next" title="JavaScript 如何实现重载">
+                <i class="fa fa-chevron-left"></i> JavaScript 如何实现重载
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </article>
 
 
-    
-  </div>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
           
 
  
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
 
         </div>
          
@@ -339,8 +503,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -425,6 +598,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#摘要"><span class="nav-number">1.</span> <span class="nav-text">摘要</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正文"><span class="nav-number">2.</span> <span class="nav-text">正文</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#浅拷贝"><span class="nav-number">2.1.</span> <span class="nav-text">浅拷贝</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#深拷贝"><span class="nav-number">2.2.</span> <span class="nav-text">深拷贝</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考文章"><span class="nav-number">3.</span> <span class="nav-text">参考文章</span></a></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -512,7 +696,11 @@
 
   <script type="text/javascript" src="/js/src/custom/custom.js?v=5.0.2"></script>
 
-    
+   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+ 
 
 
   <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
@@ -523,9 +711,9 @@
 
     <script type="text/javascript">
       var disqus_shortname = 'onepiececee';
-      var disqus_identifier = 'tags/网页运行原理/index.html';
-      var disqus_title = "";
-      var disqus_url = '';
+      var disqus_identifier = '2017/08/23/title- JavaScript 如何实现浅拷贝和深拷贝/';
+      var disqus_title = "JavaScript如何实现浅拷贝和深拷贝";
+      var disqus_url = 'http://chenyixin.win/2017/08/23/title- JavaScript 如何实现浅拷贝和深拷贝/';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');
@@ -536,6 +724,13 @@
       }
 
       run_disqus_script('count.js');
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
       
     </script>
   
