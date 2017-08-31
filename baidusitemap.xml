@@ -4,59 +4,20 @@
 
     
   <url>
-    <loc>http://chenyixin.win/2017/08/23/title-%20JavaScript%20%E6%B5%85%E6%8B%B7%E8%B4%9D%E5%92%8C%E6%B7%B1%E6%8B%B7%E8%B4%9D/</loc>
-    <lastmod>2017-08-29T04:17:01.667Z</lastmod>
+    <loc>http://chenyixin.win/2017/07/22/title-%20Git%20%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86%E5%92%8C%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</loc>
+    <lastmod>2017-08-31T09:53:12.683Z</lastmod>
     <data>
         <display>
-        <title>JavaScrip 浅拷贝和深拷贝</title>
-        <pubTime>2017-08-23T13:40:15.873Z</pubTime>
+        <title>Git 基本原理和常用命令</title>
+        <pubTime>2017-07-22T13:36:11.091Z</pubTime>
         
-        <tag>JavaScript</tag>
-         
-        <tag>浅拷贝</tag>
-         
-        <tag>深拷贝</tag>
+        <tag>Git</tag>
          
          
            
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://chenyixin.win/2017/08/22/title-%20%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%20JavaScript%20%E9%87%8D%E8%BD%BD/</loc>
-    <lastmod>2017-08-23T05:31:32.014Z</lastmod>
-    <data>
-        <display>
-        <title>JavaScript 如何实现重载</title>
-        <pubTime>2017-08-22T11:12:29.460Z</pubTime>
-        
-        <tag>JavaScript</tag>
-         
-        <tag>重载</tag>
-         
-        <tag>overload</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://chenyixin.win/2017/08/10/title-%20%E6%B5%8F%E8%A7%88%E5%99%A8%E5%85%BC%E5%AE%B9%E6%80%9D%E8%B7%AF/</loc>
-    <lastmod>2017-08-10T06:23:04.888Z</lastmod>
-    <data>
-        <display>
-        <title>浏览器兼容的基本方法和思路</title>
-        <pubTime>2017-08-10T03:40:18.475Z</pubTime>
-        
-        <tag>浏览器兼容</tag>
-         
-         
-           
+             
+              <breadCrumb title="Git" url="http://chenyixin.win/categories/Git/"/>
+          
         </display>
     </data>
     </url>
@@ -64,7 +25,7 @@
     
   <url>
     <loc>http://chenyixin.win/2017/08/06/title-%E3%80%8C%E4%B8%93%E6%B3%A8%E6%A6%82%E5%BF%B5%20VOL.2%E3%80%8D%E5%AE%9A%E4%BD%8D%E4%B8%8E%E6%B5%AE%E5%8A%A8/</loc>
-    <lastmod>2017-08-08T12:58:17.659Z</lastmod>
+    <lastmod>2017-08-31T09:53:05.279Z</lastmod>
     <data>
         <display>
         <title>「专注概念 VOL.2」定位与浮动</title>
@@ -78,25 +39,31 @@
          
          
            
+             
+              <breadCrumb title="CSS" url="http://chenyixin.win/categories/CSS/"/>
+          
         </display>
     </data>
     </url>
 
     
   <url>
-    <loc>http://chenyixin.win/2017/08/03/title-%20HTML%20%E8%A1%A8%E5%8D%95%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E7%BB%86%E8%8A%82/</loc>
-    <lastmod>2017-08-03T14:50:28.167Z</lastmod>
+    <loc>http://chenyixin.win/2017/07/17/title-%20Linux%20%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%92%8C%20vim%20%E4%BD%BF%E7%94%A8%E7%9A%84%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/</loc>
+    <lastmod>2017-08-31T09:52:54.070Z</lastmod>
     <data>
         <display>
-        <title>HTML 表单需要注意的细节</title>
-        <pubTime>2017-08-03T14:10:01.929Z</pubTime>
+        <title>Linux 命令行和 Vim 使用的基础操作</title>
+        <pubTime>2017-07-17T12:00:40.668Z</pubTime>
         
-        <tag>form</tag>
+        <tag>linux</tag>
          
-        <tag>HTML</tag>
+        <tag>vim</tag>
          
          
            
+             
+              <breadCrumb title="Linux" url="http://chenyixin.win/categories/Linux/"/>
+          
         </display>
     </data>
     </url>
@@ -104,7 +71,7 @@
     
   <url>
     <loc>http://chenyixin.win/2016/12/16/title-%20IFE%20task%201-7%20%E7%AC%94%E8%AE%B0/</loc>
-    <lastmod>2017-08-03T14:00:59.576Z</lastmod>
+    <lastmod>2017-08-31T09:52:36.874Z</lastmod>
     <data>
         <display>
         <title>IFE task 1-7 笔记</title>
@@ -120,6 +87,77 @@
          
          
            
+             
+              <breadCrumb title="IFE task" url="http://chenyixin.win/categories/IFE-task/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://chenyixin.win/2017/08/23/title-%20JavaScript%20%E6%B5%85%E6%8B%B7%E8%B4%9D%E5%92%8C%E6%B7%B1%E6%8B%B7%E8%B4%9D/</loc>
+    <lastmod>2017-08-31T09:52:31.520Z</lastmod>
+    <data>
+        <display>
+        <title>JavaScrip 浅拷贝和深拷贝</title>
+        <pubTime>2017-08-23T13:40:15.873Z</pubTime>
+        
+        <tag>JavaScript</tag>
+         
+        <tag>浅拷贝</tag>
+         
+        <tag>深拷贝</tag>
+         
+         
+           
+             
+              <breadCrumb title="JavaScript" url="http://chenyixin.win/categories/JavaScript/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://chenyixin.win/2017/02/27/title-%20JavaScript%20%E5%92%8C%20%E6%A0%91/</loc>
+    <lastmod>2017-08-31T09:52:23.209Z</lastmod>
+    <data>
+        <display>
+        <title>Javascript 和树</title>
+        <pubTime>2017-02-27T06:51:52.077Z</pubTime>
+        
+        <tag>JavaScript</tag>
+         
+        <tag>tree</tag>
+         
+         
+           
+             
+              <breadCrumb title="JavaScript" url="http://chenyixin.win/categories/JavaScript/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://chenyixin.win/2017/02/26/title-%20IFE%20task%2013-21%20%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2017-08-31T09:52:15.501Z</lastmod>
+    <data>
+        <display>
+        <title>IFE task 13-21 笔记</title>
+        <pubTime>2017-02-26T08:13:39.646Z</pubTime>
+        
+        <tag>JavaScript</tag>
+         
+        <tag>IFE</tag>
+         
+         
+           
+             
+              <breadCrumb title="IFE task" url="http://chenyixin.win/categories/IFE-task/"/>
+          
         </display>
     </data>
     </url>
@@ -127,7 +165,7 @@
     
   <url>
     <loc>http://chenyixin.win/2016/12/26/title-%20IFE%20task%208-12%20%E7%AC%94%E8%AE%B0/</loc>
-    <lastmod>2017-08-03T14:00:57.399Z</lastmod>
+    <lastmod>2017-08-31T09:52:10.577Z</lastmod>
     <data>
         <display>
         <title>IFE task 8-12 笔记</title>
@@ -143,61 +181,31 @@
          
          
            
+             
+              <breadCrumb title="IFE task" url="http://chenyixin.win/categories/IFE-task/"/>
+          
         </display>
     </data>
     </url>
 
     
   <url>
-    <loc>http://chenyixin.win/2017/02/26/title-%20IFE%20task%2013-21%20%E7%AC%94%E8%AE%B0/</loc>
-    <lastmod>2017-08-03T14:00:54.875Z</lastmod>
+    <loc>http://chenyixin.win/2017/08/03/title-%20HTML%20%E8%A1%A8%E5%8D%95%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E7%BB%86%E8%8A%82/</loc>
+    <lastmod>2017-08-31T09:51:37.775Z</lastmod>
     <data>
         <display>
-        <title>IFE task 13-21 笔记</title>
-        <pubTime>2017-02-26T08:13:39.646Z</pubTime>
+        <title>HTML 表单需要注意的细节</title>
+        <pubTime>2017-08-03T14:10:01.929Z</pubTime>
         
-        <tag>JavaScript</tag>
+        <tag>form</tag>
          
-        <tag>IFE</tag>
+        <tag>HTML</tag>
          
          
            
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://chenyixin.win/2017/07/26/title-%20%E3%80%8C%E7%BD%91%E9%A1%B5%E8%BF%90%E8%A1%8C%E5%8E%9F%E7%90%86%20VOL.1%E3%80%8D%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/</loc>
-    <lastmod>2017-07-26T12:54:48.970Z</lastmod>
-    <data>
-        <display>
-        <title>「网页运行原理 VOL.1」域名解析</title>
-        <pubTime>2017-07-26T12:54:48.964Z</pubTime>
-        
-        <tag>网页运行原理</tag>
-         
-        <tag>DNS</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://chenyixin.win/2017/07/22/title-%20Git%20%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86%E5%92%8C%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</loc>
-    <lastmod>2017-07-23T07:56:29.772Z</lastmod>
-    <data>
-        <display>
-        <title>Git 基本原理和常用命令</title>
-        <pubTime>2017-07-22T13:36:11.091Z</pubTime>
-        
-        <tag>Git</tag>
-         
-         
-           
+             
+              <breadCrumb title="HTML" url="http://chenyixin.win/categories/HTML/"/>
+          
         </display>
     </data>
     </url>
@@ -205,7 +213,7 @@
     
   <url>
     <loc>http://chenyixin.win/2017/07/23/title-%20Git%20%E5%91%BD%E4%BB%A4%E4%B8%AD%E7%9A%84%E5%8F%82%E6%95%B0%E9%97%AE%E9%A2%98/</loc>
-    <lastmod>2017-07-23T07:56:08.850Z</lastmod>
+    <lastmod>2017-08-31T09:51:20.951Z</lastmod>
     <data>
         <display>
         <title>Git 命令中的参数问题</title>
@@ -215,25 +223,9 @@
          
          
            
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://chenyixin.win/2017/02/27/title-%20JavaScript%20%E5%92%8C%20%E6%A0%91/</loc>
-    <lastmod>2017-07-17T12:23:24.233Z</lastmod>
-    <data>
-        <display>
-        <title>Javascript 和树</title>
-        <pubTime>2017-02-27T06:51:52.077Z</pubTime>
-        
-        <tag>JavaScript</tag>
-         
-        <tag>tree</tag>
-         
-         
-           
+             
+              <breadCrumb title="Git" url="http://chenyixin.win/categories/Git/"/>
+          
         </display>
     </data>
     </url>
@@ -241,7 +233,7 @@
     
   <url>
     <loc>http://chenyixin.win/2016/12/12/title-%20CSS%20%E5%B1%85%E4%B8%AD%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97%EF%BC%88%E7%BF%BB%E8%AF%91%EF%BC%89/</loc>
-    <lastmod>2017-07-17T12:21:54.593Z</lastmod>
+    <lastmod>2017-08-31T09:50:51.617Z</lastmod>
     <data>
         <display>
         <title>CSS 实现居中完全指南 （ 翻译 ）</title>
@@ -251,6 +243,9 @@
          
          
            
+             
+              <breadCrumb title="CSS" url="http://chenyixin.win/categories/CSS/"/>
+          
         </display>
     </data>
     </url>
@@ -258,7 +253,7 @@
     
   <url>
     <loc>http://chenyixin.win/2016/12/27/title-%20%E7%A7%BB%E5%8A%A8%20Web%20%E5%BC%80%E5%8F%91%E5%B0%8F%E8%AE%B0%20/</loc>
-    <lastmod>2017-07-17T12:21:04.086Z</lastmod>
+    <lastmod>2017-08-31T09:50:23.748Z</lastmod>
     <data>
         <display>
         <title>移动 Web 开发小记</title>
@@ -268,6 +263,29 @@
          
          
            
+             
+              <breadCrumb title="Mobile Web" url="http://chenyixin.win/categories/Mobile-Web/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://chenyixin.win/2017/02/23/title-%20%E4%BD%BF%E7%94%A8%20jQuery%20%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E4%BB%BB%E5%8A%A1%E6%B8%85%E5%8D%95%E5%B0%8F%E5%BA%94%E7%94%A8%20/</loc>
+    <lastmod>2017-08-31T09:50:03.984Z</lastmod>
+    <data>
+        <display>
+        <title>利用 jQuery 实现一个清单列表小应用</title>
+        <pubTime>2017-02-23T10:13:30.967Z</pubTime>
+        
+        <tag>jQuery</tag>
+         
+         
+           
+             
+              <breadCrumb title="jQuery" url="http://chenyixin.win/categories/jQuery/"/>
+          
         </display>
     </data>
     </url>
@@ -275,7 +293,7 @@
     
   <url>
     <loc>http://chenyixin.win/2016/12/06/title-%20%E4%BD%BF%E7%94%A8%20Github%20Pages%20%E5%92%8C%20Hexo%20%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%8B%AC%E7%AB%8B%E5%8D%9A%E5%AE%A2%EF%BC%88Win%2010%E7%8E%AF%E5%A2%83%E4%B8%8B%EF%BC%89/</loc>
-    <lastmod>2017-07-17T12:19:43.511Z</lastmod>
+    <lastmod>2017-08-31T09:49:48.991Z</lastmod>
     <data>
         <display>
         <title>使用 Github Pages 和 Hexo 搭建个人独立博客（Win 10环境下）</title>
@@ -287,23 +305,53 @@
          
          
            
+             
+              <breadCrumb title="Hexo" url="http://chenyixin.win/categories/Hexo/"/>
+          
         </display>
     </data>
     </url>
 
     
   <url>
-    <loc>http://chenyixin.win/2017/02/23/title-%20%E4%BD%BF%E7%94%A8%20jQuery%20%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E4%BB%BB%E5%8A%A1%E6%B8%85%E5%8D%95%E5%B0%8F%E5%BA%94%E7%94%A8%20/</loc>
-    <lastmod>2017-07-17T12:19:30.770Z</lastmod>
+    <loc>http://chenyixin.win/2017/08/22/title-%20%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%20JavaScript%20%E9%87%8D%E8%BD%BD/</loc>
+    <lastmod>2017-08-31T09:49:29.327Z</lastmod>
     <data>
         <display>
-        <title>利用 jQuery 实现一个清单列表小应用</title>
-        <pubTime>2017-02-23T10:13:30.967Z</pubTime>
+        <title>JavaScript 如何实现重载</title>
+        <pubTime>2017-08-22T11:12:29.460Z</pubTime>
         
-        <tag>jQuery</tag>
+        <tag>JavaScript</tag>
+         
+        <tag>重载</tag>
+         
+        <tag>overload</tag>
          
          
            
+             
+              <breadCrumb title="JavaScript" url="http://chenyixin.win/categories/JavaScript/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://chenyixin.win/2017/08/10/title-%20%E6%B5%8F%E8%A7%88%E5%99%A8%E5%85%BC%E5%AE%B9%E6%80%9D%E8%B7%AF/</loc>
+    <lastmod>2017-08-31T09:49:07.458Z</lastmod>
+    <data>
+        <display>
+        <title>浏览器兼容的基本方法和思路</title>
+        <pubTime>2017-08-10T03:40:18.475Z</pubTime>
+        
+        <tag>浏览器兼容</tag>
+         
+         
+           
+             
+              <breadCrumb title="浏览器兼容" url="http://chenyixin.win/categories/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%85%BC%E5%AE%B9/"/>
+          
         </display>
     </data>
     </url>
@@ -311,7 +359,7 @@
     
   <url>
     <loc>http://chenyixin.win/2017/01/18/title-%20%E7%AB%8B%E5%8D%B3%E6%89%A7%E8%A1%8C%E5%87%BD%E6%95%B0%20IIFE%20/</loc>
-    <lastmod>2017-07-17T12:18:43.264Z</lastmod>
+    <lastmod>2017-08-31T09:48:16.555Z</lastmod>
     <data>
         <display>
         <title>立即执行函数表达式 IIFE</title>
@@ -323,6 +371,9 @@
          
          
            
+             
+              <breadCrumb title="JavaScript" url="http://chenyixin.win/categories/JavaScript/"/>
+          
         </display>
     </data>
     </url>
@@ -330,7 +381,7 @@
     
   <url>
     <loc>http://chenyixin.win/2016/12/08/title-%20%E5%85%B3%E4%BA%8E%20Atom%20%E7%9A%84%E6%8F%92%E4%BB%B6%E5%92%8C%E4%B8%BB%E9%A2%98%E6%97%A0%E6%B3%95%E5%AE%89%E8%A3%85%E7%9A%84%E9%97%AE%E9%A2%98/</loc>
-    <lastmod>2017-07-17T12:18:11.207Z</lastmod>
+    <lastmod>2017-08-31T09:47:57.267Z</lastmod>
     <data>
         <display>
         <title>关于 Atom 的插件和主题无法安装的问题</title>
@@ -340,6 +391,9 @@
          
          
            
+             
+              <breadCrumb title="Atom" url="http://chenyixin.win/categories/Atom/"/>
+          
         </display>
     </data>
     </url>
@@ -347,7 +401,7 @@
     
   <url>
     <loc>http://chenyixin.win/2017/01/03/title-%20%E5%88%86%E5%88%AB%E5%88%A9%E7%94%A8%20JavaScript%20%E5%92%8C%20CSS%20%E5%AE%9E%E7%8E%B0tab%E9%80%89%E9%A1%B9%E5%8D%A1%E5%88%87%E6%8D%A2/</loc>
-    <lastmod>2017-07-17T12:17:43.830Z</lastmod>
+    <lastmod>2017-08-31T09:47:23.372Z</lastmod>
     <data>
         <display>
         <title>分别利用 JavaScript 和 CSS 实现tab选项卡切换</title>
@@ -359,23 +413,34 @@
          
          
            
+             
+              <breadCrumb title="JavaScript" url="http://chenyixin.win/categories/JavaScript/"/>
+          
+             
+              <breadCrumb title="CSS" url="http://chenyixin.win/categories/JavaScript/CSS/"/>
+          
         </display>
     </data>
     </url>
 
     
   <url>
-    <loc>http://chenyixin.win/2016/12/11/title-%20%E8%A1%A8%E5%8D%95%E5%AF%B9%E9%BD%90%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F/</loc>
-    <lastmod>2017-07-17T12:17:06.301Z</lastmod>
+    <loc>http://chenyixin.win/2017/07/26/title-%20%E3%80%8C%E7%BD%91%E9%A1%B5%E8%BF%90%E8%A1%8C%E5%8E%9F%E7%90%86%20VOL.1%E3%80%8D%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/</loc>
+    <lastmod>2017-08-31T09:47:08.958Z</lastmod>
     <data>
         <display>
-        <title>表单对齐的两种方式</title>
-        <pubTime>2016-12-11T13:08:53.347Z</pubTime>
+        <title>「网页运行原理 VOL.1」域名解析</title>
+        <pubTime>2017-07-26T12:54:48.964Z</pubTime>
         
-        <tag>HTML</tag>
+        <tag>网页运行原理</tag>
+         
+        <tag>DNS</tag>
          
          
            
+             
+              <breadCrumb title="HTTP" url="http://chenyixin.win/categories/HTTP/"/>
+          
         </display>
     </data>
     </url>
@@ -383,7 +448,7 @@
     
   <url>
     <loc>http://chenyixin.win/2017/03/05/title-%20%E3%80%8C%E4%B8%93%E6%B3%A8%E6%A6%82%E5%BF%B5%20VOL.1%E3%80%8DJavaScript%20%E8%AF%AD%E6%B3%95/</loc>
-    <lastmod>2017-07-17T12:16:48.966Z</lastmod>
+    <lastmod>2017-08-31T09:47:05.173Z</lastmod>
     <data>
         <display>
         <title>「专注概念 VOL.1」JavaScript 语法</title>
@@ -393,29 +458,53 @@
          
          
            
+             
+              <breadCrumb title="JavaScript" url="http://chenyixin.win/categories/JavaScript/"/>
+          
         </display>
     </data>
     </url>
 
     
-    
-    
   <url>
-    <loc>http://chenyixin.win/2017/07/17/title-%20Linux%20%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%92%8C%20vim%20%E4%BD%BF%E7%94%A8%E7%9A%84%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/</loc>
-    <lastmod>2017-07-17T12:01:35.900Z</lastmod>
+    <loc>http://chenyixin.win/2017/08/31/title-%20%E3%80%8C%E4%B8%93%E6%B3%A8%E6%A6%82%E5%BF%B5%20VOL.3%E3%80%8D%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%8E%E6%95%B0%E7%BB%84%E6%96%B9%E6%B3%95/</loc>
+    <lastmod>2017-08-31T09:47:00.311Z</lastmod>
     <data>
         <display>
-        <title>Linux 命令行和 Vim 使用的基础操作</title>
-        <pubTime>2017-07-17T12:00:40.668Z</pubTime>
+        <title>「专注概念 VOL.3」字符串与数组方法</title>
+        <pubTime>2017-08-31T09:43:31.075Z</pubTime>
         
-        <tag>linux</tag>
-         
-        <tag>vim</tag>
+        <tag>JavaScript</tag>
          
          
            
+             
+              <breadCrumb title="JavaScript" url="http://chenyixin.win/categories/JavaScript/"/>
+          
         </display>
     </data>
     </url>
 
+    
+  <url>
+    <loc>http://chenyixin.win/2016/12/11/title-%20%E8%A1%A8%E5%8D%95%E5%AF%B9%E9%BD%90%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F/</loc>
+    <lastmod>2017-08-31T09:45:54.166Z</lastmod>
+    <data>
+        <display>
+        <title>表单对齐的两种方式</title>
+        <pubTime>2016-12-11T13:08:53.347Z</pubTime>
+        
+        <tag>HTML</tag>
+         
+         
+           
+             
+              <breadCrumb title="HTML" url="http://chenyixin.win/categories/HTML/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
 </urlset>

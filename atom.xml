@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://chenyixin.win/"/>
-  <updated>2017-08-29T04:17:01.667Z</updated>
+  <updated>2017-08-31T09:47:00.311Z</updated>
   <id>http://chenyixin.win/</id>
   
   <author>
@@ -16,11 +16,29 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>「专注概念 VOL.3」字符串与数组方法</title>
+    <link href="http://chenyixin.win/2017/08/31/title-%20%E3%80%8C%E4%B8%93%E6%B3%A8%E6%A6%82%E5%BF%B5%20VOL.3%E3%80%8D%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%8E%E6%95%B0%E7%BB%84%E6%96%B9%E6%B3%95/"/>
+    <id>http://chenyixin.win/2017/08/31/title- 「专注概念 VOL.3」字符串与数组方法/</id>
+    <published>2017-08-31T09:43:31.075Z</published>
+    <updated>2017-08-31T09:47:00.311Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="http://chenyixin.win/categories/JavaScript/"/>
+    
+    
+      <category term="JavaScript" scheme="http://chenyixin.win/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
     <title>JavaScrip 浅拷贝和深拷贝</title>
     <link href="http://chenyixin.win/2017/08/23/title-%20JavaScript%20%E6%B5%85%E6%8B%B7%E8%B4%9D%E5%92%8C%E6%B7%B1%E6%8B%B7%E8%B4%9D/"/>
     <id>http://chenyixin.win/2017/08/23/title- JavaScript 浅拷贝和深拷贝/</id>
     <published>2017-08-23T13:40:15.873Z</published>
-    <updated>2017-08-29T04:17:01.667Z</updated>
+    <updated>2017-08-31T09:52:31.520Z</updated>
     
     <content type="html"><![CDATA[<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>JavaScrip 中如何实现浅拷贝和深拷贝。</p>
 <h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>在 JavaScript 中对象、数组、函数等都属于引用类型，引用类型指指的是那些保存在堆内存中的对象，变量中保存的实际上只是一个指针，这个指针执行内存中的另一个位置，由该位置保存对象。当我们拷贝引用类型的变量时，复制的其实只是一个指针，拷贝后的对象和原来的对象指向同一块内存地址，改变其中一个，另一个也会发生变化。这种拷贝原对象的引用，即为浅拷贝。而深拷贝，会开辟一块新的内存地址，拷贝后的新对象与原对象互不影响。</p>
@@ -49,6 +67,8 @@
     
     </summary>
     
+      <category term="JavaScript" scheme="http://chenyixin.win/categories/JavaScript/"/>
+    
     
       <category term="JavaScript" scheme="http://chenyixin.win/tags/JavaScript/"/>
     
@@ -63,7 +83,7 @@
     <link href="http://chenyixin.win/2017/08/22/title-%20%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%20JavaScript%20%E9%87%8D%E8%BD%BD/"/>
     <id>http://chenyixin.win/2017/08/22/title- 如何实现 JavaScript 重载/</id>
     <published>2017-08-22T11:12:29.460Z</published>
-    <updated>2017-08-23T05:31:32.014Z</updated>
+    <updated>2017-08-31T09:49:29.327Z</updated>
     
     <content type="html"><![CDATA[<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>文章主要讨论 JavaScript 中如何实现重载。</p>
 <h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="重载的含义"><a href="#重载的含义" class="headerlink" title="重载的含义"></a>重载的含义</h3><p>重载指的是不同的函数使用相同的函数名，但函数的参数个数或类型不同。调用的时候根据函数的参数来区别不同的函数。一个其他语言的重载例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">int sum(int num1, int num2)&#123;</div><div class="line">  return num1 + num2;</div><div class="line">&#125;</div><div class="line"></div><div class="line">float sum(float num1, float num2)&#123;</div><div class="line">  return num1 + num2;</div><div class="line">&#125;</div><div class="line"></div><div class="line">sum(1, 2);</div><div class="line">sum(1.5, 2.4);</div></pre></td></tr></table></figure></p>
@@ -84,6 +104,8 @@
     
     </summary>
     
+      <category term="JavaScript" scheme="http://chenyixin.win/categories/JavaScript/"/>
+    
     
       <category term="JavaScript" scheme="http://chenyixin.win/tags/JavaScript/"/>
     
@@ -98,7 +120,7 @@
     <link href="http://chenyixin.win/2017/08/10/title-%20%E6%B5%8F%E8%A7%88%E5%99%A8%E5%85%BC%E5%AE%B9%E6%80%9D%E8%B7%AF/"/>
     <id>http://chenyixin.win/2017/08/10/title- 浏览器兼容思路/</id>
     <published>2017-08-10T03:40:18.475Z</published>
-    <updated>2017-08-10T06:23:04.888Z</updated>
+    <updated>2017-08-31T09:49:07.458Z</updated>
     
     <content type="html"><![CDATA[<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>有关浏览器兼容的思路和一些常用的工具。</p>
 <h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>不同的浏览器有不同的标准不同的实现方式，同一个浏览器也有不同的版本不同的功能，版本越老的浏览器bug越多，在这样的差异背景下就产生了浏览器的兼容问：怎么样让同一份代码在所有的浏览器下都显示正常。</p>
@@ -159,6 +181,8 @@
     
     </summary>
     
+      <category term="浏览器兼容" scheme="http://chenyixin.win/categories/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%85%BC%E5%AE%B9/"/>
+    
     
       <category term="浏览器兼容" scheme="http://chenyixin.win/tags/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%85%BC%E5%AE%B9/"/>
     
@@ -169,7 +193,7 @@
     <link href="http://chenyixin.win/2017/08/06/title-%E3%80%8C%E4%B8%93%E6%B3%A8%E6%A6%82%E5%BF%B5%20VOL.2%E3%80%8D%E5%AE%9A%E4%BD%8D%E4%B8%8E%E6%B5%AE%E5%8A%A8/"/>
     <id>http://chenyixin.win/2017/08/06/title-「专注概念 VOL.2」定位与浮动/</id>
     <published>2017-08-06T05:40:07.138Z</published>
-    <updated>2017-08-08T12:58:17.659Z</updated>
+    <updated>2017-08-31T09:53:05.279Z</updated>
     
     <content type="html"><![CDATA[<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>文章第一部分关于浮动的概念、细节以及清楚浮动的方法，第二部分关于定位的概念、细节及相关的应用方式。</p>
 <h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="浮动"><a href="#浮动" class="headerlink" title="浮动"></a>浮动</h3><p>在 CSS 中我们用<code>float</code>属性来定义元素的浮动。浮动并不完全是定位的一种方式，但是它也不是正常流的布局，当元素设置为浮动后，会产生一些有意思的特征，可能会影响到布局。</p>
@@ -219,6 +243,8 @@
     
     </summary>
     
+      <category term="CSS" scheme="http://chenyixin.win/categories/CSS/"/>
+    
     
       <category term="CSS" scheme="http://chenyixin.win/tags/CSS/"/>
     
@@ -233,7 +259,7 @@
     <link href="http://chenyixin.win/2017/08/03/title-%20HTML%20%E8%A1%A8%E5%8D%95%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E7%BB%86%E8%8A%82/"/>
     <id>http://chenyixin.win/2017/08/03/title- HTML 表单需要注意的细节/</id>
     <published>2017-08-03T14:10:01.929Z</published>
-    <updated>2017-08-03T14:50:28.167Z</updated>
+    <updated>2017-08-31T09:51:37.775Z</updated>
     
     <content type="html"><![CDATA[<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>关于 HTML 表单的一些细节和需要注意的点。</p>
 <h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="name-属性"><a href="#name-属性" class="headerlink" title="name 属性"></a>name 属性</h3><h4 id="input-标签的-name-属性"><a href="#input-标签的-name-属性" class="headerlink" title="input 标签的 name 属性"></a>input 标签的 name 属性</h4><p><code>name</code> 属性规定 input 元素的名称。<strong>只有设置了 name 属性的表单元素才能在提交表单时传递它们的值。</strong> 可以说这是一个必须添加的属性，来用于对提交到服务器后的表单数据进行标识。</p>
@@ -285,6 +311,8 @@
     
     </summary>
     
+      <category term="HTML" scheme="http://chenyixin.win/categories/HTML/"/>
+    
     
       <category term="form" scheme="http://chenyixin.win/tags/form/"/>
     
@@ -297,7 +325,7 @@
     <link href="http://chenyixin.win/2017/07/26/title-%20%E3%80%8C%E7%BD%91%E9%A1%B5%E8%BF%90%E8%A1%8C%E5%8E%9F%E7%90%86%20VOL.1%E3%80%8D%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/"/>
     <id>http://chenyixin.win/2017/07/26/title- 「网页运行原理 VOL.1」域名解析/</id>
     <published>2017-07-26T12:54:48.964Z</published>
-    <updated>2017-07-26T12:54:48.970Z</updated>
+    <updated>2017-08-31T09:47:08.958Z</updated>
     
     <content type="html"><![CDATA[<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>主要记述DNS的运行原理以及DNS的解析过程。</p>
 <h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="网页运行流程"><a href="#网页运行流程" class="headerlink" title="网页运行流程"></a>网页运行流程</h3><p>当我们在浏览器输入一个URL地址时:</p>
@@ -331,6 +359,8 @@
     
     </summary>
     
+      <category term="HTTP" scheme="http://chenyixin.win/categories/HTTP/"/>
+    
     
       <category term="网页运行原理" scheme="http://chenyixin.win/tags/%E7%BD%91%E9%A1%B5%E8%BF%90%E8%A1%8C%E5%8E%9F%E7%90%86/"/>
     
@@ -343,7 +373,7 @@
     <link href="http://chenyixin.win/2017/07/23/title-%20Git%20%E5%91%BD%E4%BB%A4%E4%B8%AD%E7%9A%84%E5%8F%82%E6%95%B0%E9%97%AE%E9%A2%98/"/>
     <id>http://chenyixin.win/2017/07/23/title- Git 命令中的参数问题/</id>
     <published>2017-07-23T07:56:08.843Z</published>
-    <updated>2017-07-23T07:56:08.850Z</updated>
+    <updated>2017-08-31T09:51:20.951Z</updated>
     
     <content type="html"><![CDATA[<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>有关<code>git reset</code>命令的参数以及<code>git commit -a</code>的解释</p>
 <h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="Git-reset-命令的参数"><a href="#Git-reset-命令的参数" class="headerlink" title="Git reset 命令的参数"></a>Git reset 命令的参数</h3><p><code>git reset</code>是 Git 最常用的命令之一,主要用于版本的回退重置.它的一般写法为:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git reset 参数[--soft | --mixed | --hard] 版本号[&lt;commit id&gt;]</div></pre></td></tr></table></figure></p>
@@ -395,6 +425,8 @@
     
     </summary>
     
+      <category term="Git" scheme="http://chenyixin.win/categories/Git/"/>
+    
     
       <category term="Git" scheme="http://chenyixin.win/tags/Git/"/>
     
@@ -405,7 +437,7 @@
     <link href="http://chenyixin.win/2017/07/22/title-%20Git%20%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86%E5%92%8C%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
     <id>http://chenyixin.win/2017/07/22/title- Git 基本原理和常用命令/</id>
     <published>2017-07-22T13:36:11.091Z</published>
-    <updated>2017-07-23T07:56:29.772Z</updated>
+    <updated>2017-08-31T09:53:12.683Z</updated>
     
     <content type="html"><![CDATA[<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>介绍 Git 的基本原理以及一些常用的操作命令。</p>
 <h2 id="Git基本原理"><a href="#Git基本原理" class="headerlink" title="Git基本原理"></a>Git基本原理</h2><h3 id="Git文件改动提交的基本原理"><a href="#Git文件改动提交的基本原理" class="headerlink" title="Git文件改动提交的基本原理"></a>Git文件改动提交的基本原理</h3><p>Git 是一种分布式的版本控制工具。它的控制系统由两个部分组成:工作区（Working Directory） 和 版本库（Repository）。</p>
@@ -429,6 +461,8 @@
     
     </summary>
     
+      <category term="Git" scheme="http://chenyixin.win/categories/Git/"/>
+    
     
       <category term="Git" scheme="http://chenyixin.win/tags/Git/"/>
     
@@ -439,7 +473,7 @@
     <link href="http://chenyixin.win/2017/07/17/title-%20Linux%20%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%92%8C%20vim%20%E4%BD%BF%E7%94%A8%E7%9A%84%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/"/>
     <id>http://chenyixin.win/2017/07/17/title- Linux 命令行和 vim 使用的基础操作/</id>
     <published>2017-07-17T12:00:40.668Z</published>
-    <updated>2017-07-17T12:01:35.900Z</updated>
+    <updated>2017-08-31T09:52:54.070Z</updated>
     
     <content type="html"><![CDATA[<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>一些 linux 命令行和 vim 编辑器的基础操作</p>
 <h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="linux命令行基础操作"><a href="#linux命令行基础操作" class="headerlink" title="linux命令行基础操作"></a>linux命令行基础操作</h3><p>与 Windows 中磁盘分区的概念不同, Linux 中并没有类似C盘这样的说法,而是都以文件名来表示,所有的文件和目录都挂载在根目录「/」下面<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">//linux命令行</div><div class="line">$ 命令 -选项缩写 --选项 参数</div><div class="line">结果</div></pre></td></tr></table></figure></p>
@@ -457,6 +491,8 @@
     
     </summary>
     
+      <category term="Linux" scheme="http://chenyixin.win/categories/Linux/"/>
+    
     
       <category term="linux" scheme="http://chenyixin.win/tags/linux/"/>
     
@@ -469,7 +505,7 @@
     <link href="http://chenyixin.win/2017/03/05/title-%20%E3%80%8C%E4%B8%93%E6%B3%A8%E6%A6%82%E5%BF%B5%20VOL.1%E3%80%8DJavaScript%20%E8%AF%AD%E6%B3%95/"/>
     <id>http://chenyixin.win/2017/03/05/title- 「专注概念 VOL.1」JavaScript 语法/</id>
     <published>2017-03-05T15:29:39.860Z</published>
-    <updated>2017-07-17T12:16:48.966Z</updated>
+    <updated>2017-08-31T09:47:05.173Z</updated>
     
     <content type="html"><![CDATA[<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><blockquote>
 <p>“Focus on concepts, not syntax”<br>“把注意力放在对概念的理解，而不是语法上”</p>
@@ -568,6 +604,8 @@
     
     </summary>
     
+      <category term="JavaScript" scheme="http://chenyixin.win/categories/JavaScript/"/>
+    
     
       <category term="JavaScript" scheme="http://chenyixin.win/tags/JavaScript/"/>
     
@@ -578,7 +616,7 @@
     <link href="http://chenyixin.win/2017/02/27/title-%20JavaScript%20%E5%92%8C%20%E6%A0%91/"/>
     <id>http://chenyixin.win/2017/02/27/title- JavaScript 和 树/</id>
     <published>2017-02-27T06:51:52.077Z</published>
-    <updated>2017-07-17T12:23:24.233Z</updated>
+    <updated>2017-08-31T09:52:23.209Z</updated>
     
     <content type="html"><![CDATA[<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>百度 IFE 任务22到24的相关笔记，主要关于树的概念，遍历。</p>
 <h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="树与二叉树"><a href="#树与二叉树" class="headerlink" title="树与二叉树"></a>树与二叉树</h3><p>树形结构是一种重要的数据结构，我们常常用树来组织信息，描述遍历的行为过程。首先是树的概念：树是一个有 n 个结点的有限集。在任意一个非空的树中有且仅有一个特定的结点称为根，当结点大于1时，各个结点可以分为互不相交的有限集合，每个集合本身又是一棵树，称为根的子树。树是具有层次结构的，我们把根结点所在层称为第一层，其孩子为第二层，以此类推，树中结点的最大层次称为树的深度。</p>
@@ -629,6 +667,8 @@
     
     </summary>
     
+      <category term="JavaScript" scheme="http://chenyixin.win/categories/JavaScript/"/>
+    
     
       <category term="JavaScript" scheme="http://chenyixin.win/tags/JavaScript/"/>
     
@@ -641,7 +681,7 @@
     <link href="http://chenyixin.win/2017/02/26/title-%20IFE%20task%2013-21%20%E7%AC%94%E8%AE%B0/"/>
     <id>http://chenyixin.win/2017/02/26/title- IFE task 13-21 笔记/</id>
     <published>2017-02-26T08:13:39.646Z</published>
-    <updated>2017-08-03T14:00:54.875Z</updated>
+    <updated>2017-08-31T09:52:15.501Z</updated>
     
     <content type="html"><![CDATA[<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>文章为百度前端技术学院2016年任务 13-21 的笔记，大概是 Jvascript 基础部分。总结了一些收获，记述了其中遇到的问题和困难，以及一点感想。因为内容稍微多一点，文章的结构就按照各个任务来划分。</p>
 <h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="任务-13"><a href="#任务-13" class="headerlink" title="任务 13"></a>任务 13</h3><p>假设我们要获取某个输入域中的数值，我们可能需要<code>value</code>属性和’parseInt()’。首先，我们需要注意在HTML中<code>value</code>是<code>input</code>的设定值，对于不同的输入类型，<code>value</code>属性的用法也有区别：</p>
@@ -736,6 +776,8 @@
     
     </summary>
     
+      <category term="IFE task" scheme="http://chenyixin.win/categories/IFE-task/"/>
+    
     
       <category term="JavaScript" scheme="http://chenyixin.win/tags/JavaScript/"/>
     
@@ -748,7 +790,7 @@
     <link href="http://chenyixin.win/2017/02/23/title-%20%E4%BD%BF%E7%94%A8%20jQuery%20%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E4%BB%BB%E5%8A%A1%E6%B8%85%E5%8D%95%E5%B0%8F%E5%BA%94%E7%94%A8%20/"/>
     <id>http://chenyixin.win/2017/02/23/title- 使用 jQuery 实现一个任务清单小应用 /</id>
     <published>2017-02-23T10:13:30.967Z</published>
-    <updated>2017-07-17T12:19:30.770Z</updated>
+    <updated>2017-08-31T09:50:03.984Z</updated>
     
     <content type="html"><![CDATA[<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>利用 jQuery 做了一个任务清单的网页小应用，实现了其中的一些基本功能。进一步熟悉了 jQuery 的一些基本的操作和方法。第一次使用了 local storage，不过使用了相关的库Store.js。对本地存储的数据保存方式以及JSON还得再抽个时间学一下，算是知其然不知其所以然。遇到了不小的困难，主要存在于下面两个方面：数据的存储和基本概念的理解。意外的收获是学会了利用console.log的检查代码bug。这篇文章主要记述过程和思路，以及一些写代码过程中的反思。</p>
 <h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p><img src="http://ohqryljkl.bkt.clouddn.com/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20170223144241.png" alt="脑图"></p>
@@ -805,6 +847,8 @@
     
     </summary>
     
+      <category term="jQuery" scheme="http://chenyixin.win/categories/jQuery/"/>
+    
     
       <category term="jQuery" scheme="http://chenyixin.win/tags/jQuery/"/>
     
@@ -815,7 +859,7 @@
     <link href="http://chenyixin.win/2017/01/18/title-%20%E7%AB%8B%E5%8D%B3%E6%89%A7%E8%A1%8C%E5%87%BD%E6%95%B0%20IIFE%20/"/>
     <id>http://chenyixin.win/2017/01/18/title- 立即执行函数 IIFE /</id>
     <published>2017-01-18T12:23:09.016Z</published>
-    <updated>2017-07-17T12:18:43.264Z</updated>
+    <updated>2017-08-31T09:48:16.555Z</updated>
     
     <content type="html"><![CDATA[<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>有半个月没有写文章，原因是作为一名前端新手 Javascript 中有太多太多的概念，最近大概开始对近段时间的学习一些知识的总结。本篇文章分为两个部分阐述常常会遇到和使用的立即执行函数 IIFE ，分别是立即执行函数是什么，以及为什么会使用这个函数。</p>
 <h2 id="立即执行函数-IIFE-是什么？"><a href="#立即执行函数-IIFE-是什么？" class="headerlink" title="立即执行函数 IIFE 是什么？"></a>立即执行函数 IIFE 是什么？</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>类似于下面这两种形式，当我们在定义了函数之后需要立即调用时，可以通过加 () 的方式来调用函数。但是，由于<code>function</code>这个关键字即可以被当做语句，也可以当做表达式。所以为了避免解析上的歧义，JavaScript引擎规定，如果function关键字出现在行首，一律解释成语句。所以我们不能在函数定义后直接加 () 来立即调用它，而最简单的办法就是将<code>function</code>放在一个()中让引擎将其理解成一个表达式。这种可以立即调用函数的方法被称作“立即调用的函数表达式”（Immediately-Invoked Function Expression），简称IIFE。</p>
@@ -851,6 +895,8 @@
     
     </summary>
     
+      <category term="JavaScript" scheme="http://chenyixin.win/categories/JavaScript/"/>
+    
     
       <category term="JavaScript" scheme="http://chenyixin.win/tags/JavaScript/"/>
     
@@ -863,7 +909,7 @@
     <link href="http://chenyixin.win/2017/01/03/title-%20%E5%88%86%E5%88%AB%E5%88%A9%E7%94%A8%20JavaScript%20%E5%92%8C%20CSS%20%E5%AE%9E%E7%8E%B0tab%E9%80%89%E9%A1%B9%E5%8D%A1%E5%88%87%E6%8D%A2/"/>
     <id>http://chenyixin.win/2017/01/03/title- 分别利用 JavaScript 和 CSS 实现tab选项卡切换/</id>
     <published>2017-01-03T12:46:08.933Z</published>
-    <updated>2017-07-17T12:17:43.830Z</updated>
+    <updated>2017-08-31T09:47:23.372Z</updated>
     
     <content type="html"><![CDATA[<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>大概是一次概念整理，原本这个是慕课进阶后面的编程练习，通过这个选项卡切换的小实例理清了原本对 JavaScript 概念的一些错误认识，顺便复习了一下利用 CSS 制作tab选项卡的过程，所以大概整理了一下写成文章。另外尽管如此，这个练习后还是存在一个问题：就是关于JavaScript中的 <code>this</code> 的使用问题，尽管了解了关键字 this 总是指向调用该方法的对象，但是这较为抽象的概念在实际运用和理解中还是有点问题，暂时还没有解决，特此记录下。可以这个需要大量的练习才可能摸清<code>this</code>的真正概念和使用方法吧。<strong>17年1月18号更新：文章写于刚开始学习JS时，文中方法二 Javascript 与 CSS 耦合是一种并不合适的写法。</strong></p>
 <h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="CSS-实现tab选项卡切换"><a href="#CSS-实现tab选项卡切换" class="headerlink" title="CSS 实现tab选项卡切换"></a>CSS 实现tab选项卡切换</h3><p>效果如下：</p>
@@ -900,6 +946,10 @@
     
     </summary>
     
+      <category term="JavaScript" scheme="http://chenyixin.win/categories/JavaScript/"/>
+    
+      <category term="CSS" scheme="http://chenyixin.win/categories/JavaScript/CSS/"/>
+    
     
       <category term="JavaScript" scheme="http://chenyixin.win/tags/JavaScript/"/>
     
@@ -912,7 +962,7 @@
     <link href="http://chenyixin.win/2016/12/27/title-%20%E7%A7%BB%E5%8A%A8%20Web%20%E5%BC%80%E5%8F%91%E5%B0%8F%E8%AE%B0%20/"/>
     <id>http://chenyixin.win/2016/12/27/title- 移动 Web 开发小记 /</id>
     <published>2016-12-27T14:25:33.692Z</published>
-    <updated>2017-07-17T12:21:04.086Z</updated>
+    <updated>2017-08-31T09:50:23.748Z</updated>
     
     <content type="html"><![CDATA[<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>大概记述了初次接触移动 Web 页面布局实践中遇到的一些问题和值得注意的地方。具体包括了移动前端开发基本的概念，移动页面开发相关的一些<code>meta</code>标签，相对单位 rem ，与响应式图片的一些总结。</p>
 <h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="移动前端开发的大体印象"><a href="#移动前端开发的大体印象" class="headerlink" title="移动前端开发的大体印象"></a>移动前端开发的大体印象</h3><p>移动前端开发是一个很大的概念，除了基本的前端知识外，还需要掌握一些PPI，像素，DPI等知识，对自己这种小白来说，学习过程中的一大体验就是概念多，还没有有个全局的印象首先被基础概念淹没了。所以个人感觉首先要对移动前端开发有个大体的印象。具体来说的移动前端开发包括了以下几种类型：</p>
@@ -967,6 +1017,8 @@
     
     </summary>
     
+      <category term="Mobile Web" scheme="http://chenyixin.win/categories/Mobile-Web/"/>
+    
     
       <category term="Mobile Web" scheme="http://chenyixin.win/tags/Mobile-Web/"/>
     
@@ -977,7 +1029,7 @@
     <link href="http://chenyixin.win/2016/12/26/title-%20IFE%20task%208-12%20%E7%AC%94%E8%AE%B0/"/>
     <id>http://chenyixin.win/2016/12/26/title- IFE task 8-12 笔记/</id>
     <published>2016-12-26T14:07:05.030Z</published>
-    <updated>2017-08-03T14:00:57.399Z</updated>
+    <updated>2017-08-31T09:52:10.577Z</updated>
     
     <content type="html"><![CDATA[<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>文章为百度前端技术学院2016年任务 8-12 的笔记，CSS 部分基本结束。本文大概记述了后半部分任务中的栅格化布局与 Flexfox 布局的一些笔记和需要注意的地方。</p>
 <h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="栅格化布局"><a href="#栅格化布局" class="headerlink" title="栅格化布局"></a>栅格化布局</h3><p>栅格化布局的核心是预设好的列宽和媒体查询。具体来说， 首先，我们可以根据需要创建一系列预设好宽度的列，其次，通过设置不同的类名引用它们，最后通过媒体查询来判断具体情况下需要引用哪种样式布局，最终实现不同终端下都能让布局完美展示的响应式设计。比较流行  <a href="http://v3.bootcss.com/css/#forms" target="_blank" rel="external">Bootstrap</a> 就是基于这种简单又实用的设计方式，通过 link 引入的方式可以快速的开发适用于不同设备的响应式 WEB 项目。这里以任务 8 为例结合这篇文章 <a href="http://j4n.co/blog/Creating-your-own-css-grid-system" target="_blank" rel="external">Creating Your Own CSS Grid System</a> 简单的回顾一下栅格化布局需要注意的部分。</p>
@@ -1060,6 +1112,8 @@
     
     </summary>
     
+      <category term="IFE task" scheme="http://chenyixin.win/categories/IFE-task/"/>
+    
     
       <category term="HTML" scheme="http://chenyixin.win/tags/HTML/"/>
     
@@ -1076,7 +1130,7 @@
     <link href="http://chenyixin.win/2016/12/16/title-%20IFE%20task%201-7%20%E7%AC%94%E8%AE%B0/"/>
     <id>http://chenyixin.win/2016/12/16/title- IFE task 1-7 笔记/</id>
     <published>2016-12-16T10:25:16.468Z</published>
-    <updated>2017-08-03T14:00:59.576Z</updated>
+    <updated>2017-08-31T09:52:36.874Z</updated>
     
     <content type="html"><![CDATA[<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>文章为百度前端技术学院2016年任务 1-7 的笔记，大概记述了学习和练习中需要注意的地方以及一点点笔记。大体上包括了以下几个方面：三栏布局、CSS 居中方式、CSS 选择器、<code>tansition</code>和CSS 伪类的应用、利用纯 CSS 实现 tab 的方法等等。 <strong>注意：</strong> 这篇文章写于学习前端不久，可能会出现错误或者概念理解不全面等等纰漏。</p>
 <h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="三栏布局"><a href="#三栏布局" class="headerlink" title="三栏布局"></a>三栏布局</h3><p>下面的三个布局都是在 <strong>具体的情况</strong> 下讨论的，具体对应的是任务三。</p>
@@ -1155,6 +1209,8 @@
     
     </summary>
     
+      <category term="IFE task" scheme="http://chenyixin.win/categories/IFE-task/"/>
+    
     
       <category term="HTML" scheme="http://chenyixin.win/tags/HTML/"/>
     
@@ -1171,7 +1227,7 @@
     <link href="http://chenyixin.win/2016/12/12/title-%20CSS%20%E5%B1%85%E4%B8%AD%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97%EF%BC%88%E7%BF%BB%E8%AF%91%EF%BC%89/"/>
     <id>http://chenyixin.win/2016/12/12/title- CSS 居中完全指南（翻译）/</id>
     <published>2016-12-12T13:27:48.624Z</published>
-    <updated>2017-07-17T12:21:54.593Z</updated>
+    <updated>2017-08-31T09:50:51.617Z</updated>
     
     <content type="html"><![CDATA[<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>文章完整了讨论了 CSS 居中的各种情况。因为文章不是很难就做了一下翻译，由于自己英文水平并不在行，有可能出现错误，所以可以点击 <a href="https://css-tricks.com/centering-css-complete-guide/" target="_blank" rel="external">这条链接</a> 前往原文 Centering in CSS: A Complete Guide 。本文仅仅做了一些概念性的添加。</p>
 <h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="引"><a href="#引" class="headerlink" title="引"></a>引</h3><p>CSS 实现居中是个特别的让人头疼的问题，以至于让我们常问：为什么实现居中是如此困难？然而，事实上并非如此困难。只是在不同的情况下，我们需要依据不同的情境去解决问题，这让我们难以抉择。所以让我们来做一个决策树，让来选择变的更简单。</p>
@@ -1222,49 +1278,10 @@
     
     </summary>
     
+      <category term="CSS" scheme="http://chenyixin.win/categories/CSS/"/>
+    
     
       <category term="Centering in CSS" scheme="http://chenyixin.win/tags/Centering-in-CSS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>表单对齐的两种方式</title>
-    <link href="http://chenyixin.win/2016/12/11/title-%20%E8%A1%A8%E5%8D%95%E5%AF%B9%E9%BD%90%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F/"/>
-    <id>http://chenyixin.win/2016/12/11/title- 表单对齐的两种方式/</id>
-    <published>2016-12-11T13:08:53.347Z</published>
-    <updated>2017-07-17T12:17:06.301Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>文章探讨了两种简单的表单对齐方式，一种是在有固定宽度的情况下，另一种是 width 为 100% 的情况下，核心都是通过给 label 元素设定宽度，再利用 text-align 来达到对齐效果，需要注意的是 input 输入框下的说明文字与 input 框的对齐。</p>
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="固定宽度的表单"><a href="#固定宽度的表单" class="headerlink" title="固定宽度的表单"></a>固定宽度的表单</h3><p>首先我们利用表单元素来写一个简易的表单，代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">&lt;form action=&quot;&quot; method=&quot;&quot;&gt;</div><div class="line">    &lt;div&gt;</div><div class="line">        &lt;label for=&quot;name&quot;&gt;Name:&lt;/label&gt;</div><div class="line">        &lt;input type=&quot;text&quot; id=&quot;name&quot; /&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">    &lt;div&gt;</div><div class="line">        &lt;label for=&quot;mail&quot;&gt;E-mail:&lt;/label&gt;</div><div class="line">        &lt;input type=&quot;email&quot; id=&quot;mail&quot; /&gt;</div><div class="line">        &lt;p class=&quot;tips&quot;&gt;填上你的邮箱地址&lt;/p&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">    &lt;div&gt;</div><div class="line">        &lt;label for=&quot;msg&quot;&gt;Message:&lt;/label&gt;</div><div class="line">        &lt;textarea id=&quot;msg&quot;&gt;&lt;/textarea&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line"></div><div class="line">    &lt;div class=&quot;button&quot;&gt;</div><div class="line">        &lt;button type=&quot;submit&quot;&gt;Send your message&lt;/button&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">&lt;/form&gt;</div></pre></td></tr></table></figure></p>
-<p>然后在给其添加 CSS ：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div></pre></td><td class="code"><pre><div class="line">form &#123;</div><div class="line">    margin: 0 auto;</div><div class="line">    width: 400px;</div><div class="line">    padding: 1em;</div><div class="line">    border: 1px solid #ccc;</div><div class="line">    border-radius: 1em;</div><div class="line">&#125;</div><div class="line"></div><div class="line">form div+div &#123;</div><div class="line">    margin-top: 1em;</div><div class="line">&#125;</div><div class="line"></div><div class="line">label &#123;</div><div class="line">    /* 重要代码 */</div><div class="line">    display: inline-block;</div><div class="line">    width: 90px;</div><div class="line">    text-align: right;</div><div class="line">&#125;</div><div class="line"></div><div class="line">form p &#123;</div><div class="line">    /* 这个额外的外边距大致充当了label和说明文字的间距 */</div><div class="line">    margin-left: .5em;</div><div class="line">&#125;</div><div class="line"></div><div class="line">form .tips &#123;</div><div class="line">    font-size: 12px;</div><div class="line">    color: #888;</div><div class="line">    /* 将说明文字置于和文本框相同的位置 */</div><div class="line">    padding-left: 90px;</div><div class="line">&#125;</div><div class="line"></div><div class="line">input,</div><div class="line">textarea &#123;</div><div class="line">    font: 1em sans-serif;</div><div class="line">    width: 300px;</div><div class="line">    -moz-box-sizing: border-box;</div><div class="line">    box-sizing: border-box;</div><div class="line">    border: 1px solid #999;</div><div class="line">&#125;</div><div class="line"></div><div class="line">input:focus,</div><div class="line">textarea:focus &#123;</div><div class="line">    border-color: #000;</div><div class="line">&#125;</div><div class="line"></div><div class="line">textarea &#123;</div><div class="line">    vertical-align: top;</div><div class="line">    height: 5em;</div><div class="line">    resize: vertical;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.button &#123;</div><div class="line">    /* 将按钮置于和文本框相同的位置 */</div><div class="line">    padding-left: 90px;</div><div class="line">    /* 和label元素一样大小 */</div><div class="line">&#125;</div><div class="line"></div><div class="line">button &#123;</div><div class="line">    /* 这个额外的外边距大致充当了label和对应文本框间的间距 */</div><div class="line">    margin-left: .5em;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>效果如图所示：</p>
-<p><img src="http://ohqryljkl.bkt.clouddn.com/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20161211203847.png" alt=""></p>
-<h3 id="width-为-100-的表单"><a href="#width-为-100-的表单" class="headerlink" title="width 为 100% 的表单"></a>width 为 100% 的表单</h3><p>首先我们利用表单元素来写一个简易的表单，代码如下：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">form</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">""</span>&gt;</span></div><div class="line">				<span class="tag">&lt;<span class="name">label</span> <span class="attr">class</span>=<span class="string">"tips"</span> <span class="attr">for</span>=<span class="string">"email"</span>&gt;</span>请输入这个邮箱地址：<span class="tag">&lt;/<span class="name">label</span>&gt;</span></div><div class="line">				<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"emailss"</span> <span class="attr">id</span>=<span class="string">"email"</span>&gt;</span></div><div class="line">				<span class="tag">&lt;<span class="name">p</span>&gt;</span>邮箱地址请按要求格式输入<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">			<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">		<span class="tag">&lt;/<span class="name">form</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">form</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">""</span>&gt;</span></div><div class="line">				<span class="tag">&lt;<span class="name">label</span> <span class="attr">class</span>=<span class="string">"tips"</span> <span class="attr">for</span>=<span class="string">"pw1"</span>&gt;</span>请输入密码：<span class="tag">&lt;/<span class="name">label</span>&gt;</span></div><div class="line">				<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"password"</span> <span class="attr">name</span>=<span class="string">"pwd1"</span>&gt;</span></div><div class="line">			<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">""</span>&gt;</span></div><div class="line">				<span class="tag">&lt;<span class="name">label</span> <span class="attr">class</span>=<span class="string">"tips"</span> <span class="attr">for</span>=<span class="string">"pw1"</span>&gt;</span>请重复输入密码：<span class="tag">&lt;/<span class="name">label</span>&gt;</span></div><div class="line">				<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"password"</span> <span class="attr">name</span>=<span class="string">"pwd1"</span>&gt;</span></div><div class="line">				<span class="tag">&lt;<span class="name">p</span>&gt;</span>密码请为6-16位英文数字<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">			<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">		<span class="tag">&lt;/<span class="name">form</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">""</span> <span class="attr">method</span>=<span class="string">"post"</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">""</span>&gt;</span></div><div class="line">				<span class="tag">&lt;<span class="name">label</span> <span class="attr">class</span>=<span class="string">"tips"</span>&gt;</span>性别：<span class="tag">&lt;/<span class="name">label</span>&gt;</span></div><div class="line">				<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">checked</span>=<span class="string">"checked"</span> <span class="attr">name</span>=<span class="string">"Sex"</span> <span class="attr">value</span>=<span class="string">"male"</span> /&gt;</span>男</div><div class="line">				<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"Sex"</span> <span class="attr">value</span>=<span class="string">"female"</span> /&gt;</span>女</div><div class="line">			<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">""</span>&gt;</span></div><div class="line">				<span class="tag">&lt;<span class="name">label</span> <span class="attr">class</span>=<span class="string">"tips"</span>&gt;</span>城市：<span class="tag">&lt;/<span class="name">label</span>&gt;</span></div><div class="line">				<span class="tag">&lt;<span class="name">select</span> <span class="attr">name</span>=<span class="string">""</span>&gt;</span></div><div class="line">					<span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"北京"</span> <span class="attr">selected</span>=<span class="string">"selected"</span>&gt;</span>北京<span class="tag">&lt;/<span class="name">option</span>&gt;</span></div><div class="line">					<span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"上海"</span>&gt;</span>上海<span class="tag">&lt;/<span class="name">option</span>&gt;</span></div><div class="line">					<span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"西安"</span>&gt;</span>西安<span class="tag">&lt;/<span class="name">option</span>&gt;</span></div><div class="line">			<span class="tag">&lt;/<span class="name">select</span>&gt;</span></div><div class="line">			<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">""</span>&gt;</span></div><div class="line">				<span class="tag">&lt;<span class="name">label</span> <span class="attr">class</span>=<span class="string">"tips"</span>&gt;</span>爱好：<span class="tag">&lt;/<span class="name">label</span>&gt;</span></div><div class="line">				<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span>=<span class="string">"checkbox1"</span> <span class="attr">value</span>=<span class="string">"checkbox"</span>&gt;</span>运动</div><div class="line">				<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span>=<span class="string">"checkbox2"</span> <span class="attr">value</span>=<span class="string">"checkbox"</span>&gt;</span>艺术</div><div class="line">				<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span>=<span class="string">"checkbox3"</span> <span class="attr">value</span>=<span class="string">"checkbox"</span>&gt;</span>科学</div><div class="line">			<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">""</span>&gt;</span></div><div class="line">				<span class="tag">&lt;<span class="name">label</span> <span class="attr">class</span>=<span class="string">"tips"</span>&gt;</span>个人描述：<span class="tag">&lt;/<span class="name">label</span>&gt;</span></div><div class="line">				<span class="tag">&lt;<span class="name">textarea</span> <span class="attr">name</span>=<span class="string">"des"</span> <span class="attr">cols</span>=<span class="string">"30"</span> <span class="attr">rows</span>=<span class="string">"2"</span>&gt;</span>这是一个多行输入框，输入你的个人描述<span class="tag">&lt;/<span class="name">textarea</span>&gt;</span></div><div class="line">				<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"submit"</span> <span class="attr">class</span>=<span class="string">"submitButton"</span> /&gt;</span></div><div class="line">			<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">		<span class="tag">&lt;/<span class="name">form</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<p>然后在给其添加 CSS ：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">aside</span> <span class="selector-tag">form</span> <span class="selector-tag">div</span> &#123;</div><div class="line">    <span class="attribute">font-size</span>: <span class="number">14px</span>;</div><div class="line">    <span class="attribute">margin</span>: <span class="number">15px</span> <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-tag">aside</span> <span class="selector-tag">form</span> <span class="selector-tag">div</span> <span class="selector-class">.tips</span> &#123;</div><div class="line">    <span class="comment">/* 设置label的宽度，让label浮动，右对齐，设置的padding-right的大小和下面提示文字的padding-left相等 */</span></div><div class="line">    <span class="attribute">float</span>: left;</div><div class="line">    <span class="attribute">text-align</span>: right;</div><div class="line">    <span class="attribute">width</span>: <span class="number">35%</span>;</div><div class="line">    <span class="attribute">padding-right</span>: <span class="number">15px</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-tag">aside</span> <span class="selector-tag">form</span> <span class="selector-tag">div</span> <span class="selector-tag">p</span> &#123;</div><div class="line">    <span class="comment">/* margin-left与label标签的宽度一样，设置的padding-left的大小和上面label的padding-right相等 */</span></div><div class="line">    <span class="attribute">margin-left</span>: <span class="number">35%</span>;</div><div class="line">    <span class="attribute">padding-left</span>: <span class="number">15px</span>;</div><div class="line">    <span class="attribute">font-size</span>: <span class="number">12px</span>;</div><div class="line">    <span class="attribute">color</span>: <span class="number">#aaa</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-tag">aside</span> <span class="selector-tag">textarea</span> &#123;</div><div class="line">    <span class="attribute">width</span>: <span class="number">50%</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">100px</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-tag">aside</span> <span class="selector-class">.submitButton</span> &#123;</div><div class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">40px</span>;</div><div class="line">    <span class="attribute">border</span>: none;</div><div class="line">    <span class="attribute">border-radius</span>: <span class="number">10px</span>;</div><div class="line">    <span class="attribute">color</span>: white;</div><div class="line">    <span class="attribute">background-color</span>: <span class="number">#128fdc</span>;</div><div class="line">    <span class="attribute">font-size</span>: <span class="number">20px</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-tag">aside</span> <span class="selector-class">.submitButton</span><span class="selector-pseudo">:hover</span> &#123;</div><div class="line">    <span class="attribute">background</span>: <span class="number">#0063dc</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>效果如图所示：</p>
-<p><img src="http://ohqryljkl.bkt.clouddn.com/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20161211203905.png" alt=""></p>
-<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><ol>
-<li>HTML 表单支持不少伪类，用以表现各元素的状态。比如，我们可以在组件被激活时作突出显示，这样可以方便用户知道表单填到哪一。</li>
-<li>HTML5 拥有多个新的表单输入类型。这些新特性提供了更好的输入控制和验证。比如 placeholder 属性。placeholder 属性提供一种提示（hint），描述输入域所期待的值。</li>
-</ol>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
-<li>首先是要让 label 对齐。方法一种使用 display 让 label 变成行内块级元素，设置宽度后，利用 text-align 右对齐；方法二使用 float 让 label 浮动 再设置宽度，然后右对齐。</li>
-<li>其次需要注意的 input 下的说明文字需要和输入框对齐。都是利用 label 的宽度 和 padding 、margin值来得出说明文字 P 的 margin-left 和 padiing-left。</li>
-</ul>
-<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><ul>
-<li><a href="http://www.w3school.com.cn/html/html_forms.asp" target="_blank" rel="external">HTML 表单</a></li>
-<li><a href="https://segmentfault.com/a/1190000005367699" target="_blank" rel="external">HTML表单指南—第一个HTML表单</a></li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;摘要&quot;&gt;&lt;a href=&quot;#摘要&quot; class=&quot;headerlink&quot; title=&quot;摘要&quot;&gt;&lt;/a&gt;摘要&lt;/h2&gt;&lt;p&gt;文章探讨了两种简单的表单对齐方式，一种是在有固定宽度的情况下，另一种是 width 为 100% 的情况下，核心都是通过给 label 元素
-    
-    </summary>
-    
-    
-      <category term="HTML" scheme="http://chenyixin.win/tags/HTML/"/>
     
   </entry>
   
