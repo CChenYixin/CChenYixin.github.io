@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://chenyixin.win/"/>
-  <updated>2017-08-31T09:47:00.311Z</updated>
+  <updated>2017-08-31T14:08:10.926Z</updated>
   <id>http://chenyixin.win/</id>
   
   <author>
@@ -16,17 +16,78 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>「专注概念 VOL.3」字符串与数组方法</title>
-    <link href="http://chenyixin.win/2017/08/31/title-%20%E3%80%8C%E4%B8%93%E6%B3%A8%E6%A6%82%E5%BF%B5%20VOL.3%E3%80%8D%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%8E%E6%95%B0%E7%BB%84%E6%96%B9%E6%B3%95/"/>
-    <id>http://chenyixin.win/2017/08/31/title- 「专注概念 VOL.3」字符串与数组方法/</id>
+    <title>「专注概念 VOL.3」数组方法</title>
+    <link href="http://chenyixin.win/2017/08/31/title-%20%E3%80%8C%E4%B8%93%E6%B3%A8%E6%A6%82%E5%BF%B5%20VOL.3%E3%80%8D%E6%95%B0%E7%BB%84%E6%96%B9%E6%B3%95/"/>
+    <id>http://chenyixin.win/2017/08/31/title- 「专注概念 VOL.3」数组方法/</id>
     <published>2017-08-31T09:43:31.075Z</published>
-    <updated>2017-08-31T09:47:00.311Z</updated>
+    <updated>2017-08-31T14:08:10.926Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>数组类型和字符床类型的一些基本概念和方法总结。</p>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="检测数组"><a href="#检测数组" class="headerlink" title="检测数组"></a>检测数组</h3><p>Array.isArray方法用来判断一个值是否为数组。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>];</div><div class="line"><span class="built_in">Array</span>.isArray(arr);</div><div class="line"><span class="comment">// =&gt; true</span></div><div class="line"></div><div class="line"><span class="keyword">if</span>(<span class="built_in">Array</span>.isArray(value))&#123;</div><div class="line">    <span class="comment">// 执行某种操作</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="转化方法"><a href="#转化方法" class="headerlink" title="转化方法"></a>转化方法</h3><p>valueOf方法返回数组本身。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>];</div><div class="line">arr.valueOf();</div><div class="line"><span class="comment">// =&gt; [1, 2, 3, 4, 5]</span></div></pre></td></tr></table></figure>
+<p>toString方法会返回由数组中的每个值的字符串形式拼接而成的一个以逗号分隔的字符串。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>];</div><div class="line">arr.toString();</div><div class="line"><span class="comment">// =&gt; "1,2,3,4,5"</span></div></pre></td></tr></table></figure>
+<p>join方法以参数作为分隔符，将所有数组成员组成一个字符串返回。如果不提供参数，默认用逗号分隔。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>];</div><div class="line">arr.join(<span class="string">'|'</span>);</div><div class="line"><span class="comment">// =&gt; "1|2|3|4|5"</span></div></pre></td></tr></table></figure>
+<p>数组的转化方法常常与字符串的方法结合起来使用，下面是一个判断字符串是否是回文的例子：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">isPalindrome</span> (<span class="params">str</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> ( !str || <span class="keyword">typeof</span> str !== <span class="string">'string'</span>) &#123;</div><div class="line">        alert(<span class="string">'请输入字符串'</span>);</div><div class="line">        <span class="keyword">return</span> ;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">var</span> reverseStr = str.split(<span class="string">''</span>).reverse().join(<span class="string">''</span>);</div><div class="line">    <span class="keyword">if</span> ( reverseStr === str) &#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'true'</span>);</div><div class="line">    &#125;<span class="keyword">else</span> &#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'false'</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> o1 = <span class="literal">null</span>;</div><div class="line"><span class="keyword">var</span> o2 = <span class="string">'heeeeee'</span>;</div><div class="line"><span class="keyword">var</span> o3 = <span class="string">'zxccxz'</span>;</div><div class="line"></div><div class="line">isPalindrome(o1);</div><div class="line"><span class="comment">// = &gt; alert 请输入字符串</span></div><div class="line">isPalindrome(o2);</div><div class="line"><span class="comment">// =&gt; flase</span></div><div class="line">isPalindrome(o3);</div><div class="line"><span class="comment">// =&gt; true;</span></div></pre></td></tr></table></figure>
+<h3 id="栈方法"><a href="#栈方法" class="headerlink" title="栈方法"></a>栈方法</h3><p>栈是一种遵循后进先出原则 LIFO 的数据结构。新添加的或者待删除的元素都保存在栈的末尾，称作栈顶，另一端就叫栈底，换句话说，最新添加的元素最先被溢出，而栈中项的推入和弹出都只发生在栈顶。JavaScript 中提供 push 和 pop 方法来实现类似栈的行为。</p>
+<p>push 方法可以接收任意数量的参数，把它们添加到数组末尾，并返回修改后数组的长度。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>];</div><div class="line">arr.push(<span class="number">6</span>,<span class="number">7</span>)</div><div class="line"><span class="comment">// 7</span></div><div class="line">arr</div><div class="line"><span class="comment">//  =&gt; [1, 2, 3, 4, 5, 6, 7]</span></div></pre></td></tr></table></figure>
+<p><img src="http://ww1.sinaimg.cn/mw690/75fcfef2ly1fj36hkby2zj20xo0bsjry.jpg" alt=""></p>
+<p>pop 方法则从数组的末尾移除最后一项，减少数组的 length 值，然后返回移除的项。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>];</div><div class="line">arr.pop();</div><div class="line"><span class="comment">// 5</span></div><div class="line">arr</div><div class="line"><span class="comment">//  =&gt; [1, 2, 3, 4]</span></div></pre></td></tr></table></figure>
+<p><img src="http://ww1.sinaimg.cn/mw690/75fcfef2ly1fj36huq5rlj210i0c1q3b.jpg" alt=""></p>
+<h3 id="队列方法"><a href="#队列方法" class="headerlink" title="队列方法"></a>队列方法</h3><p>队列是一种遵循先进先出原则 FIFO 的数据结构，队列在尾部添加新元素，并从顶部移除元素，现实中排队就是一个队列例子，先来的先服务。</p>
+<p>shift 方法能够移除数组中的第一个项并且返回该项，同时将数组长度减1，shift 和 push 方法可以象使用队列一样使用数组。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>];</div><div class="line">arr.shift();</div><div class="line"><span class="comment">// 1</span></div><div class="line">arr</div><div class="line"><span class="comment">// =&gt; [2, 3, 4, 5]</span></div></pre></td></tr></table></figure>
+<p>JavaScript 还提供了一个 unshift 方法可以在数组的前端添加任意数量的项并且返回新数组的长度。unshift 和 pop 方法可以模拟从相反的方向模拟队列。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>];</div><div class="line">arr.unshift(<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>);</div><div class="line"><span class="comment">// 8</span></div><div class="line">arr</div><div class="line"><span class="comment">// =&gt; [6, 7, 8, 1, 2, 3, 4, 5]</span></div></pre></td></tr></table></figure>
+<h3 id="操作方法"><a href="#操作方法" class="headerlink" title="操作方法"></a>操作方法</h3><h4 id="concat-方法"><a href="#concat-方法" class="headerlink" title="concat 方法"></a>concat 方法</h4><p>concat 方法可以基于当前的数组来创建一个新的数组，它可以接收值或着数组，假如是单纯的字符串或数值，concat会将它们简单的添加到结果数组的末尾，假如传递的是数组，则会把数组中的每一项都添加到结果数组中。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>];</div><div class="line"><span class="keyword">var</span> newArr = arr.concat(<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,[<span class="number">9</span>,<span class="number">10</span>,<span class="number">11</span>,<span class="number">12</span>])</div><div class="line">newArr</div><div class="line"><span class="comment">// =&gt; [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]</span></div><div class="line">arr</div><div class="line"><span class="comment">// =&gt; [1, 2, 3, 4, 5]</span></div></pre></td></tr></table></figure>
+<p>一个将多维数组转化为一维数组的例子：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">flatten</span>(<span class="params">arr</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> ret = [];</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</div><div class="line">        <span class="keyword">if</span>(<span class="built_in">Array</span>.isArray(arr[i])) &#123;</div><div class="line">            ret = ret.concat(flatten(arr[i]));</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            ret.push(arr[i]);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> ret;</div><div class="line">&#125;</div><div class="line"></div><div class="line">flatten([[[[[<span class="number">0</span>]], [<span class="number">1</span>]], [[[<span class="number">2</span>], [<span class="number">3</span>]]], [[<span class="number">4</span>], [<span class="number">5</span>]]]]) <span class="comment">// [0, 1, 2, 3, 4, 5]</span></div><div class="line"></div><div class="line"><span class="comment">// or</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">flatten</span>(<span class="params">ary</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> ary.reduce(<span class="function"><span class="keyword">function</span>(<span class="params">a, b</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (<span class="built_in">Array</span>.isArray(b)) &#123;</div><div class="line">      <span class="keyword">return</span> a.concat(flatten(b))</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> a.concat(b)</div><div class="line">  &#125;, [])</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// or</span></div><div class="line"></div><div class="line"><span class="keyword">const</span> flatten = <span class="function">(<span class="params">ary</span>) =&gt;</span> ary.reduce(<span class="function">(<span class="params">a, b</span>) =&gt;</span> a.concat(<span class="built_in">Array</span>.isArray(b) ? flatten(b) : b), [])</div></pre></td></tr></table></figure></p>
+<h4 id="slice-方法"><a href="#slice-方法" class="headerlink" title="slice 方法"></a>slice 方法</h4><p>slice 方法可以基于当前数组的一项或多项创建一个新数组。它接收一个或两个参数即返回项的起始位置和结束位置。该方法也不会影响原来的数组。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>];</div><div class="line"><span class="keyword">var</span> arr1 = arr.slice(<span class="number">1</span>,<span class="number">2</span>);</div><div class="line"><span class="keyword">var</span> arr2 = arr.slice(<span class="number">1</span>);</div><div class="line">arr1</div><div class="line"><span class="comment">// =&gt; [2]</span></div><div class="line">arr2</div><div class="line"><span class="comment">// =&gt; [2, 3, 4, 5]</span></div><div class="line">arr</div><div class="line"><span class="comment">// =&gt; [1, 2, 3, 4, 5]</span></div></pre></td></tr></table></figure></p>
+<h4 id="最强方法-splice"><a href="#最强方法-splice" class="headerlink" title="最强方法 splice"></a>最强方法 splice</h4><p>splice 是数组中最强大的方法，它有三个用途：</p>
+<ul>
+<li>删除：可以删除任意数量的项。指定2个参数，要删除的第一项的位置和要删除的项数。</li>
+<li>插入：向指定位置插入任意数量的项。指定3个参数，起始位置，0（要删除的项数为0），要插入的项。</li>
+<li>替换：在指定位置替换任意数量的项。指定3个参数，起始位置，要删除的项数，要插入的任意数量的项。<br><strong>注意1：splice方法始终会返回一个数组，该数组中包含从原始数组中删除的项，如果没有删除任何项则返回一个空数组。</strong><br><strong>注意2：当我们要用splice和for循环来过滤数组时，注意每次循环数组的长度都会发现变化，看下面的例子：</strong><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [<span class="number">3</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">-1</span>,<span class="number">-3</span>,<span class="number">2</span>,<span class="number">-5</span>]</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">filter</span>(<span class="params">arr</span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> len = arr.length<span class="number">-1</span>;</div><div class="line">    <span class="comment">// 从后往前可以避免这个问题</span></div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = len; i&gt;<span class="number">0</span>; i--) &#123;</div><div class="line">        <span class="keyword">if</span> (arr[i] &lt;= <span class="number">0</span>) &#123;</div><div class="line">            arr.splice(i,<span class="number">1</span>);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">filter(arr);</div><div class="line"><span class="built_in">console</span>.log(arr);</div><div class="line"></div><div class="line"><span class="comment">// or</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">filterPositive</span>(<span class="params">arr</span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> newArr= [];</div><div class="line">    newArr = arr.filter(<span class="function"><span class="keyword">function</span>(<span class="params">item,index,array</span>)</span>&#123;</div><div class="line">        <span class="keyword">return</span> (<span class="keyword">typeof</span> item === <span class="string">'number'</span> &amp;&amp; item &gt;<span class="number">0</span>);</div><div class="line">    &#125;);</div><div class="line">    <span class="keyword">return</span> newArr;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> arr = [<span class="number">3</span>, <span class="number">-1</span>,  <span class="number">2</span>,  <span class="string">'哈哈'</span>, <span class="literal">true</span>];</div><div class="line"><span class="keyword">var</span> newArr = filterPositive(arr);</div><div class="line"><span class="built_in">console</span>.log(newArr) ;</div><div class="line"><span class="comment">// =&gt; [3, 2]</span></div><div class="line"><span class="built_in">console</span>.log(arr);</div><div class="line"><span class="comment">// =&gt; [3, -1, 2, "哈哈", true]</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>我们可以用splice 来模拟栈方法和队列方法：</p>
+<p>模拟push<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">methodPush</span>(<span class="params">arr,item</span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span>(methodPush.length !==<span class="built_in">arguments</span> &amp;&amp; <span class="built_in">arguments</span>.length &gt;<span class="number">2</span> )&#123;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;<span class="built_in">arguments</span>.length<span class="number">-1</span>;i++)&#123;</div><div class="line">            arr.splice(arr.length,<span class="number">0</span>,<span class="built_in">arguments</span>[i+<span class="number">1</span>]);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> arr.length;</div><div class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(<span class="built_in">arguments</span>.length ===<span class="number">2</span>)&#123;</div><div class="line">        arr.splice(arr.length,<span class="number">0</span>,item);</div><div class="line">        <span class="keyword">return</span> arr.length;</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">        <span class="keyword">return</span> arr.length;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> arr1 = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">5</span>];</div><div class="line">methodPush(arr1,<span class="number">2</span>,<span class="number">6</span>,<span class="number">8</span>,<span class="number">5</span>);</div><div class="line"><span class="comment">//9</span></div><div class="line">arr1</div><div class="line"><span class="comment">// [1, 2, 2, 3, 5, 2, 6, 8, 5]</span></div></pre></td></tr></table></figure></p>
+<p>模拟pop<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">methodPop</span>(<span class="params">arr</span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> arr.splice(arr.length<span class="number">-1</span>,<span class="number">1</span>).toString();</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> arr2 = [<span class="number">1</span>,<span class="number">3</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">5</span>];</div><div class="line">methodPop(arr2);</div><div class="line"><span class="comment">//"5"</span></div></pre></td></tr></table></figure></p>
+<p>模拟shift<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">methodShift</span>(<span class="params">arr</span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> arr.splice(<span class="number">0</span>,<span class="number">1</span>).toString();</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> arr3 = [<span class="number">1</span>,<span class="number">3</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">5</span>];</div><div class="line">methodShift(arr3);</div><div class="line"><span class="comment">// "1"</span></div></pre></td></tr></table></figure></p>
+<p>模拟unshift<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">methodUnshift</span>(<span class="params">arr,item</span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span>( methodUnshift.length !==<span class="built_in">arguments</span> &amp;&amp; <span class="built_in">arguments</span>.length &gt;<span class="number">2</span> )&#123;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;<span class="built_in">arguments</span>.length<span class="number">-1</span>;i++)&#123;</div><div class="line">            arr.splice(<span class="number">0</span>,<span class="number">0</span>,<span class="built_in">arguments</span>[i+<span class="number">1</span>]);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> arr.length;</div><div class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span>(<span class="built_in">arguments</span>.length === <span class="number">2</span>)&#123;</div><div class="line">        arr.splice(<span class="number">0</span>,<span class="number">0</span>,item);</div><div class="line">        <span class="keyword">return</span> arr.length;</div><div class="line">    &#125; <span class="keyword">else</span>&#123;</div><div class="line">        <span class="keyword">return</span> arr.length;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> arr4 = [<span class="number">1</span>,<span class="number">3</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">5</span>];</div><div class="line">methodUnshift(arr4,<span class="number">2</span>,<span class="number">3</span>,<span class="number">45</span>,<span class="number">2</span>,<span class="number">1</span>);</div><div class="line"><span class="comment">//10</span></div><div class="line">arr4</div><div class="line"><span class="comment">//[1, 2, 45, 3, 2, 1, 3, 2, 3, 5]</span></div></pre></td></tr></table></figure></p>
+<h3 id="重排序方法"><a href="#重排序方法" class="headerlink" title="重排序方法"></a>重排序方法</h3><p>sort可以接收一个比较函数做参数，下面是一个对于数值类型排序的例子：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">compare</span>(<span class="params">a,b</span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> a - b;</div><div class="line">&#125;</div><div class="line"></div><div class="line">arr = [<span class="number">2</span>,<span class="number">1</span>,<span class="number">4</span>,<span class="number">6</span>,<span class="number">12</span>,<span class="number">6</span>,<span class="number">1</span>];</div><div class="line">arr.sort(compare);</div><div class="line"></div><div class="line"><span class="comment">// =&gt; [1, 1, 2, 4, 6, 6, 12]</span></div></pre></td></tr></table></figure>
+<p>对对象排序<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sortByProperty</span>(<span class="params">propertyName</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> sortFunction = <span class="function"><span class="keyword">function</span>(<span class="params">obj1,obj2</span>) </span>&#123;</div><div class="line">        <span class="keyword">if</span> (obj1[propertyName] &gt; obj2[propertyName] ) &#123;</div><div class="line">            <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span> (obj1[propertyName] == obj2[propertyName]) &#123;</div><div class="line">            <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">        &#125;<span class="keyword">else</span> &#123;</div><div class="line">            <span class="keyword">return</span> <span class="number">-1</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> sortFunction;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,age</span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.name = name;</div><div class="line">    <span class="keyword">this</span>.age = age;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> p1 = <span class="keyword">new</span> Person(<span class="string">'chen'</span>,<span class="number">20</span>);</div><div class="line"><span class="keyword">var</span> p2 = <span class="keyword">new</span> Person(<span class="string">'yi'</span>,<span class="number">60</span>);</div><div class="line"><span class="keyword">var</span> p3 = <span class="keyword">new</span> Person(<span class="string">'xin'</span>,<span class="number">100</span>);</div><div class="line"></div><div class="line"><span class="keyword">var</span> arrp = [p13,p1,p2];</div><div class="line">arrp.sort(sortByProperty(<span class="string">'age'</span>));</div></pre></td></tr></table></figure></p>
+<p><img src="http://ww1.sinaimg.cn/mw690/75fcfef2ly1fj37n1rutfj20x00cbq3r.jpg" alt=""></p>
+<p>reverse 方法将反转数组的顺序</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">arr = [<span class="number">2</span>,<span class="number">1</span>,<span class="number">4</span>,<span class="number">6</span>,<span class="number">12</span>,<span class="number">6</span>,<span class="number">1</span>];</div><div class="line">arr.reverse();</div><div class="line">arr</div><div class="line"><span class="comment">// =&gt; [1, 6, 12, 6, 4, 1, 2]</span></div></pre></td></tr></table></figure>
+<h3 id="迭代方法"><a href="#迭代方法" class="headerlink" title="迭代方法"></a>迭代方法</h3><ul>
+<li>every() 对数组中的每一项运行给定函数，如果该函数对每一项都返回 true 则返回 true。</li>
+<li>some() 对数组中的每一项运行给定函数，如果该函数中任一项返回 true 则返回 true。</li>
+<li>filter() 对数组中每一项运行给定函数，返回该函数会返回 true 的项数组成的数组。</li>
+<li>forEach() 对数组中的每一项都运行给定函数，这个方法没有返回值。</li>
+<li>map() 对数组中的每一项运行给定函数，返回每次函数调用的结果组成的数组。</li>
+</ul>
+<h3 id="归并方法"><a href="#归并方法" class="headerlink" title="归并方法"></a>归并方法</h3><p>reduce() 方法会遍历数组的所有项，然后构建一个最终的返回的值。接收2个参数：一个在每一项上调用的函数和（可选）作为归并基础的初始值。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>];</div><div class="line"></div><div class="line"><span class="comment">// 参数函数接收4个参数，前一个值，当前值，项的索引，数组对象</span></div><div class="line"><span class="keyword">var</span> sum = arr.reduce(<span class="function"><span class="keyword">function</span>(<span class="params">prev,cur,index,array</span>)</span>&#123;</div><div class="line">        <span class="keyword">return</span> prev + cur</div><div class="line">    &#125;);</div><div class="line">sum</div><div class="line"><span class="comment">// =&gt; 15</span></div></pre></td></tr></table></figure>
+<h3 id="位置方法"><a href="#位置方法" class="headerlink" title="位置方法"></a>位置方法</h3><p>indexOf() 和 lastIndexOf() 方法都接收2个参数：要查找的项和表示查找起点位置的索引。这两个方法都返回要查找的项在数组中的位置，<strong>在没有找到的情况下，返回-1</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>];</div><div class="line"></div><div class="line"><span class="keyword">var</span> num = arr.indexOf(<span class="number">3</span>);</div><div class="line">num</div><div class="line"><span class="comment">// = &gt;  2</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> num1 = arr.indexOf(<span class="string">'哈哈'</span>);</div><div class="line">num1</div><div class="line"><span class="comment">// = &gt; -1</span></div></pre></td></tr></table></figure>
+<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><p><a href="https://book.douban.com/subject/10546125/" target="_blank" rel="external">JavaScript 高级程序设计</a><br><a href="http://javascript.ruanyifeng.com/" target="_blank" rel="external">JavaScript 标准参考教程</a></p>
+]]></content>
     
     <summary type="html">
     
+      &lt;h2 id=&quot;摘要&quot;&gt;&lt;a href=&quot;#摘要&quot; class=&quot;headerlink&quot; title=&quot;摘要&quot;&gt;&lt;/a&gt;摘要&lt;/h2&gt;&lt;p&gt;数组类型和字符床类型的一些基本概念和方法总结。&lt;/p&gt;
+&lt;h2 id=&quot;正文&quot;&gt;&lt;a href=&quot;#正文&quot; class=&quot;headerlin
+    
     </summary>
     
-      <category term="JavaScript" scheme="http://chenyixin.win/categories/JavaScript/"/>
+      <category term="基础概念" scheme="http://chenyixin.win/categories/%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/"/>
     
     
       <category term="JavaScript" scheme="http://chenyixin.win/tags/JavaScript/"/>
@@ -38,7 +99,7 @@
     <link href="http://chenyixin.win/2017/08/23/title-%20JavaScript%20%E6%B5%85%E6%8B%B7%E8%B4%9D%E5%92%8C%E6%B7%B1%E6%8B%B7%E8%B4%9D/"/>
     <id>http://chenyixin.win/2017/08/23/title- JavaScript 浅拷贝和深拷贝/</id>
     <published>2017-08-23T13:40:15.873Z</published>
-    <updated>2017-08-31T09:52:31.520Z</updated>
+    <updated>2017-08-31T10:08:06.566Z</updated>
     
     <content type="html"><![CDATA[<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>JavaScrip 中如何实现浅拷贝和深拷贝。</p>
 <h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>在 JavaScript 中对象、数组、函数等都属于引用类型，引用类型指指的是那些保存在堆内存中的对象，变量中保存的实际上只是一个指针，这个指针执行内存中的另一个位置，由该位置保存对象。当我们拷贝引用类型的变量时，复制的其实只是一个指针，拷贝后的对象和原来的对象指向同一块内存地址，改变其中一个，另一个也会发生变化。这种拷贝原对象的引用，即为浅拷贝。而深拷贝，会开辟一块新的内存地址，拷贝后的新对象与原对象互不影响。</p>
@@ -67,7 +128,7 @@
     
     </summary>
     
-      <category term="JavaScript" scheme="http://chenyixin.win/categories/JavaScript/"/>
+      <category term="基础概念" scheme="http://chenyixin.win/categories/%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/"/>
     
     
       <category term="JavaScript" scheme="http://chenyixin.win/tags/JavaScript/"/>
@@ -83,7 +144,7 @@
     <link href="http://chenyixin.win/2017/08/22/title-%20%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%20JavaScript%20%E9%87%8D%E8%BD%BD/"/>
     <id>http://chenyixin.win/2017/08/22/title- 如何实现 JavaScript 重载/</id>
     <published>2017-08-22T11:12:29.460Z</published>
-    <updated>2017-08-31T09:49:29.327Z</updated>
+    <updated>2017-08-31T10:05:25.111Z</updated>
     
     <content type="html"><![CDATA[<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>文章主要讨论 JavaScript 中如何实现重载。</p>
 <h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="重载的含义"><a href="#重载的含义" class="headerlink" title="重载的含义"></a>重载的含义</h3><p>重载指的是不同的函数使用相同的函数名，但函数的参数个数或类型不同。调用的时候根据函数的参数来区别不同的函数。一个其他语言的重载例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">int sum(int num1, int num2)&#123;</div><div class="line">  return num1 + num2;</div><div class="line">&#125;</div><div class="line"></div><div class="line">float sum(float num1, float num2)&#123;</div><div class="line">  return num1 + num2;</div><div class="line">&#125;</div><div class="line"></div><div class="line">sum(1, 2);</div><div class="line">sum(1.5, 2.4);</div></pre></td></tr></table></figure></p>
@@ -104,7 +165,7 @@
     
     </summary>
     
-      <category term="JavaScript" scheme="http://chenyixin.win/categories/JavaScript/"/>
+      <category term="基础概念" scheme="http://chenyixin.win/categories/%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/"/>
     
     
       <category term="JavaScript" scheme="http://chenyixin.win/tags/JavaScript/"/>
@@ -120,7 +181,7 @@
     <link href="http://chenyixin.win/2017/08/10/title-%20%E6%B5%8F%E8%A7%88%E5%99%A8%E5%85%BC%E5%AE%B9%E6%80%9D%E8%B7%AF/"/>
     <id>http://chenyixin.win/2017/08/10/title- 浏览器兼容思路/</id>
     <published>2017-08-10T03:40:18.475Z</published>
-    <updated>2017-08-31T09:49:07.458Z</updated>
+    <updated>2017-08-31T10:05:20.203Z</updated>
     
     <content type="html"><![CDATA[<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>有关浏览器兼容的思路和一些常用的工具。</p>
 <h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>不同的浏览器有不同的标准不同的实现方式，同一个浏览器也有不同的版本不同的功能，版本越老的浏览器bug越多，在这样的差异背景下就产生了浏览器的兼容问：怎么样让同一份代码在所有的浏览器下都显示正常。</p>
@@ -181,7 +242,7 @@
     
     </summary>
     
-      <category term="浏览器兼容" scheme="http://chenyixin.win/categories/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%85%BC%E5%AE%B9/"/>
+      <category term="基础概念" scheme="http://chenyixin.win/categories/%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/"/>
     
     
       <category term="浏览器兼容" scheme="http://chenyixin.win/tags/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%85%BC%E5%AE%B9/"/>
@@ -193,7 +254,7 @@
     <link href="http://chenyixin.win/2017/08/06/title-%E3%80%8C%E4%B8%93%E6%B3%A8%E6%A6%82%E5%BF%B5%20VOL.2%E3%80%8D%E5%AE%9A%E4%BD%8D%E4%B8%8E%E6%B5%AE%E5%8A%A8/"/>
     <id>http://chenyixin.win/2017/08/06/title-「专注概念 VOL.2」定位与浮动/</id>
     <published>2017-08-06T05:40:07.138Z</published>
-    <updated>2017-08-31T09:53:05.279Z</updated>
+    <updated>2017-08-31T10:08:15.197Z</updated>
     
     <content type="html"><![CDATA[<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>文章第一部分关于浮动的概念、细节以及清楚浮动的方法，第二部分关于定位的概念、细节及相关的应用方式。</p>
 <h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="浮动"><a href="#浮动" class="headerlink" title="浮动"></a>浮动</h3><p>在 CSS 中我们用<code>float</code>属性来定义元素的浮动。浮动并不完全是定位的一种方式，但是它也不是正常流的布局，当元素设置为浮动后，会产生一些有意思的特征，可能会影响到布局。</p>
@@ -243,7 +304,7 @@
     
     </summary>
     
-      <category term="CSS" scheme="http://chenyixin.win/categories/CSS/"/>
+      <category term="基础概念" scheme="http://chenyixin.win/categories/%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/"/>
     
     
       <category term="CSS" scheme="http://chenyixin.win/tags/CSS/"/>
@@ -259,7 +320,7 @@
     <link href="http://chenyixin.win/2017/08/03/title-%20HTML%20%E8%A1%A8%E5%8D%95%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E7%BB%86%E8%8A%82/"/>
     <id>http://chenyixin.win/2017/08/03/title- HTML 表单需要注意的细节/</id>
     <published>2017-08-03T14:10:01.929Z</published>
-    <updated>2017-08-31T09:51:37.775Z</updated>
+    <updated>2017-08-31T10:07:25.303Z</updated>
     
     <content type="html"><![CDATA[<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>关于 HTML 表单的一些细节和需要注意的点。</p>
 <h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="name-属性"><a href="#name-属性" class="headerlink" title="name 属性"></a>name 属性</h3><h4 id="input-标签的-name-属性"><a href="#input-标签的-name-属性" class="headerlink" title="input 标签的 name 属性"></a>input 标签的 name 属性</h4><p><code>name</code> 属性规定 input 元素的名称。<strong>只有设置了 name 属性的表单元素才能在提交表单时传递它们的值。</strong> 可以说这是一个必须添加的属性，来用于对提交到服务器后的表单数据进行标识。</p>
@@ -311,7 +372,7 @@
     
     </summary>
     
-      <category term="HTML" scheme="http://chenyixin.win/categories/HTML/"/>
+      <category term="基础概念" scheme="http://chenyixin.win/categories/%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/"/>
     
     
       <category term="form" scheme="http://chenyixin.win/tags/form/"/>
@@ -325,7 +386,7 @@
     <link href="http://chenyixin.win/2017/07/26/title-%20%E3%80%8C%E7%BD%91%E9%A1%B5%E8%BF%90%E8%A1%8C%E5%8E%9F%E7%90%86%20VOL.1%E3%80%8D%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/"/>
     <id>http://chenyixin.win/2017/07/26/title- 「网页运行原理 VOL.1」域名解析/</id>
     <published>2017-07-26T12:54:48.964Z</published>
-    <updated>2017-08-31T09:47:08.958Z</updated>
+    <updated>2017-08-31T10:04:30.561Z</updated>
     
     <content type="html"><![CDATA[<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>主要记述DNS的运行原理以及DNS的解析过程。</p>
 <h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="网页运行流程"><a href="#网页运行流程" class="headerlink" title="网页运行流程"></a>网页运行流程</h3><p>当我们在浏览器输入一个URL地址时:</p>
@@ -359,7 +420,7 @@
     
     </summary>
     
-      <category term="HTTP" scheme="http://chenyixin.win/categories/HTTP/"/>
+      <category term="基础概念" scheme="http://chenyixin.win/categories/%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/"/>
     
     
       <category term="网页运行原理" scheme="http://chenyixin.win/tags/%E7%BD%91%E9%A1%B5%E8%BF%90%E8%A1%8C%E5%8E%9F%E7%90%86/"/>
@@ -373,7 +434,7 @@
     <link href="http://chenyixin.win/2017/07/23/title-%20Git%20%E5%91%BD%E4%BB%A4%E4%B8%AD%E7%9A%84%E5%8F%82%E6%95%B0%E9%97%AE%E9%A2%98/"/>
     <id>http://chenyixin.win/2017/07/23/title- Git 命令中的参数问题/</id>
     <published>2017-07-23T07:56:08.843Z</published>
-    <updated>2017-08-31T09:51:20.951Z</updated>
+    <updated>2017-08-31T10:07:17.340Z</updated>
     
     <content type="html"><![CDATA[<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>有关<code>git reset</code>命令的参数以及<code>git commit -a</code>的解释</p>
 <h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="Git-reset-命令的参数"><a href="#Git-reset-命令的参数" class="headerlink" title="Git reset 命令的参数"></a>Git reset 命令的参数</h3><p><code>git reset</code>是 Git 最常用的命令之一,主要用于版本的回退重置.它的一般写法为:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git reset 参数[--soft | --mixed | --hard] 版本号[&lt;commit id&gt;]</div></pre></td></tr></table></figure></p>
@@ -425,7 +486,7 @@
     
     </summary>
     
-      <category term="Git" scheme="http://chenyixin.win/categories/Git/"/>
+      <category term="基础概念" scheme="http://chenyixin.win/categories/%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/"/>
     
     
       <category term="Git" scheme="http://chenyixin.win/tags/Git/"/>
@@ -437,7 +498,7 @@
     <link href="http://chenyixin.win/2017/07/22/title-%20Git%20%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86%E5%92%8C%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
     <id>http://chenyixin.win/2017/07/22/title- Git 基本原理和常用命令/</id>
     <published>2017-07-22T13:36:11.091Z</published>
-    <updated>2017-08-31T09:53:12.683Z</updated>
+    <updated>2017-08-31T10:06:59.365Z</updated>
     
     <content type="html"><![CDATA[<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>介绍 Git 的基本原理以及一些常用的操作命令。</p>
 <h2 id="Git基本原理"><a href="#Git基本原理" class="headerlink" title="Git基本原理"></a>Git基本原理</h2><h3 id="Git文件改动提交的基本原理"><a href="#Git文件改动提交的基本原理" class="headerlink" title="Git文件改动提交的基本原理"></a>Git文件改动提交的基本原理</h3><p>Git 是一种分布式的版本控制工具。它的控制系统由两个部分组成:工作区（Working Directory） 和 版本库（Repository）。</p>
@@ -461,7 +522,7 @@
     
     </summary>
     
-      <category term="Git" scheme="http://chenyixin.win/categories/Git/"/>
+      <category term="基础概念" scheme="http://chenyixin.win/categories/%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/"/>
     
     
       <category term="Git" scheme="http://chenyixin.win/tags/Git/"/>
@@ -473,7 +534,7 @@
     <link href="http://chenyixin.win/2017/07/17/title-%20Linux%20%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%92%8C%20vim%20%E4%BD%BF%E7%94%A8%E7%9A%84%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/"/>
     <id>http://chenyixin.win/2017/07/17/title- Linux 命令行和 vim 使用的基础操作/</id>
     <published>2017-07-17T12:00:40.668Z</published>
-    <updated>2017-08-31T09:52:54.070Z</updated>
+    <updated>2017-08-31T10:08:11.255Z</updated>
     
     <content type="html"><![CDATA[<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>一些 linux 命令行和 vim 编辑器的基础操作</p>
 <h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="linux命令行基础操作"><a href="#linux命令行基础操作" class="headerlink" title="linux命令行基础操作"></a>linux命令行基础操作</h3><p>与 Windows 中磁盘分区的概念不同, Linux 中并没有类似C盘这样的说法,而是都以文件名来表示,所有的文件和目录都挂载在根目录「/」下面<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">//linux命令行</div><div class="line">$ 命令 -选项缩写 --选项 参数</div><div class="line">结果</div></pre></td></tr></table></figure></p>
@@ -491,7 +552,7 @@
     
     </summary>
     
-      <category term="Linux" scheme="http://chenyixin.win/categories/Linux/"/>
+      <category term="基础概念" scheme="http://chenyixin.win/categories/%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/"/>
     
     
       <category term="linux" scheme="http://chenyixin.win/tags/linux/"/>
@@ -505,7 +566,7 @@
     <link href="http://chenyixin.win/2017/03/05/title-%20%E3%80%8C%E4%B8%93%E6%B3%A8%E6%A6%82%E5%BF%B5%20VOL.1%E3%80%8DJavaScript%20%E8%AF%AD%E6%B3%95/"/>
     <id>http://chenyixin.win/2017/03/05/title- 「专注概念 VOL.1」JavaScript 语法/</id>
     <published>2017-03-05T15:29:39.860Z</published>
-    <updated>2017-08-31T09:47:05.173Z</updated>
+    <updated>2017-08-31T10:04:46.742Z</updated>
     
     <content type="html"><![CDATA[<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><blockquote>
 <p>“Focus on concepts, not syntax”<br>“把注意力放在对概念的理解，而不是语法上”</p>
@@ -604,7 +665,7 @@
     
     </summary>
     
-      <category term="JavaScript" scheme="http://chenyixin.win/categories/JavaScript/"/>
+      <category term="基础概念" scheme="http://chenyixin.win/categories/%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/"/>
     
     
       <category term="JavaScript" scheme="http://chenyixin.win/tags/JavaScript/"/>
@@ -616,7 +677,7 @@
     <link href="http://chenyixin.win/2017/02/27/title-%20JavaScript%20%E5%92%8C%20%E6%A0%91/"/>
     <id>http://chenyixin.win/2017/02/27/title- JavaScript 和 树/</id>
     <published>2017-02-27T06:51:52.077Z</published>
-    <updated>2017-08-31T09:52:23.209Z</updated>
+    <updated>2017-08-31T10:07:59.019Z</updated>
     
     <content type="html"><![CDATA[<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>百度 IFE 任务22到24的相关笔记，主要关于树的概念，遍历。</p>
 <h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="树与二叉树"><a href="#树与二叉树" class="headerlink" title="树与二叉树"></a>树与二叉树</h3><p>树形结构是一种重要的数据结构，我们常常用树来组织信息，描述遍历的行为过程。首先是树的概念：树是一个有 n 个结点的有限集。在任意一个非空的树中有且仅有一个特定的结点称为根，当结点大于1时，各个结点可以分为互不相交的有限集合，每个集合本身又是一棵树，称为根的子树。树是具有层次结构的，我们把根结点所在层称为第一层，其孩子为第二层，以此类推，树中结点的最大层次称为树的深度。</p>
@@ -667,7 +728,7 @@
     
     </summary>
     
-      <category term="JavaScript" scheme="http://chenyixin.win/categories/JavaScript/"/>
+      <category term="基础算法" scheme="http://chenyixin.win/categories/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/"/>
     
     
       <category term="JavaScript" scheme="http://chenyixin.win/tags/JavaScript/"/>
@@ -790,7 +851,7 @@
     <link href="http://chenyixin.win/2017/02/23/title-%20%E4%BD%BF%E7%94%A8%20jQuery%20%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E4%BB%BB%E5%8A%A1%E6%B8%85%E5%8D%95%E5%B0%8F%E5%BA%94%E7%94%A8%20/"/>
     <id>http://chenyixin.win/2017/02/23/title- 使用 jQuery 实现一个任务清单小应用 /</id>
     <published>2017-02-23T10:13:30.967Z</published>
-    <updated>2017-08-31T09:50:03.984Z</updated>
+    <updated>2017-08-31T10:05:52.905Z</updated>
     
     <content type="html"><![CDATA[<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>利用 jQuery 做了一个任务清单的网页小应用，实现了其中的一些基本功能。进一步熟悉了 jQuery 的一些基本的操作和方法。第一次使用了 local storage，不过使用了相关的库Store.js。对本地存储的数据保存方式以及JSON还得再抽个时间学一下，算是知其然不知其所以然。遇到了不小的困难，主要存在于下面两个方面：数据的存储和基本概念的理解。意外的收获是学会了利用console.log的检查代码bug。这篇文章主要记述过程和思路，以及一些写代码过程中的反思。</p>
 <h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p><img src="http://ohqryljkl.bkt.clouddn.com/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20170223144241.png" alt="脑图"></p>
@@ -847,7 +908,7 @@
     
     </summary>
     
-      <category term="jQuery" scheme="http://chenyixin.win/categories/jQuery/"/>
+      <category term="框架相关" scheme="http://chenyixin.win/categories/%E6%A1%86%E6%9E%B6%E7%9B%B8%E5%85%B3/"/>
     
     
       <category term="jQuery" scheme="http://chenyixin.win/tags/jQuery/"/>
@@ -859,7 +920,7 @@
     <link href="http://chenyixin.win/2017/01/18/title-%20%E7%AB%8B%E5%8D%B3%E6%89%A7%E8%A1%8C%E5%87%BD%E6%95%B0%20IIFE%20/"/>
     <id>http://chenyixin.win/2017/01/18/title- 立即执行函数 IIFE /</id>
     <published>2017-01-18T12:23:09.016Z</published>
-    <updated>2017-08-31T09:48:16.555Z</updated>
+    <updated>2017-08-31T10:05:15.439Z</updated>
     
     <content type="html"><![CDATA[<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>有半个月没有写文章，原因是作为一名前端新手 Javascript 中有太多太多的概念，最近大概开始对近段时间的学习一些知识的总结。本篇文章分为两个部分阐述常常会遇到和使用的立即执行函数 IIFE ，分别是立即执行函数是什么，以及为什么会使用这个函数。</p>
 <h2 id="立即执行函数-IIFE-是什么？"><a href="#立即执行函数-IIFE-是什么？" class="headerlink" title="立即执行函数 IIFE 是什么？"></a>立即执行函数 IIFE 是什么？</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>类似于下面这两种形式，当我们在定义了函数之后需要立即调用时，可以通过加 () 的方式来调用函数。但是，由于<code>function</code>这个关键字即可以被当做语句，也可以当做表达式。所以为了避免解析上的歧义，JavaScript引擎规定，如果function关键字出现在行首，一律解释成语句。所以我们不能在函数定义后直接加 () 来立即调用它，而最简单的办法就是将<code>function</code>放在一个()中让引擎将其理解成一个表达式。这种可以立即调用函数的方法被称作“立即调用的函数表达式”（Immediately-Invoked Function Expression），简称IIFE。</p>
@@ -895,7 +956,7 @@
     
     </summary>
     
-      <category term="JavaScript" scheme="http://chenyixin.win/categories/JavaScript/"/>
+      <category term="基础概念" scheme="http://chenyixin.win/categories/%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/"/>
     
     
       <category term="JavaScript" scheme="http://chenyixin.win/tags/JavaScript/"/>
@@ -909,7 +970,7 @@
     <link href="http://chenyixin.win/2017/01/03/title-%20%E5%88%86%E5%88%AB%E5%88%A9%E7%94%A8%20JavaScript%20%E5%92%8C%20CSS%20%E5%AE%9E%E7%8E%B0tab%E9%80%89%E9%A1%B9%E5%8D%A1%E5%88%87%E6%8D%A2/"/>
     <id>http://chenyixin.win/2017/01/03/title- 分别利用 JavaScript 和 CSS 实现tab选项卡切换/</id>
     <published>2017-01-03T12:46:08.933Z</published>
-    <updated>2017-08-31T09:47:23.372Z</updated>
+    <updated>2017-08-31T10:04:40.172Z</updated>
     
     <content type="html"><![CDATA[<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>大概是一次概念整理，原本这个是慕课进阶后面的编程练习，通过这个选项卡切换的小实例理清了原本对 JavaScript 概念的一些错误认识，顺便复习了一下利用 CSS 制作tab选项卡的过程，所以大概整理了一下写成文章。另外尽管如此，这个练习后还是存在一个问题：就是关于JavaScript中的 <code>this</code> 的使用问题，尽管了解了关键字 this 总是指向调用该方法的对象，但是这较为抽象的概念在实际运用和理解中还是有点问题，暂时还没有解决，特此记录下。可以这个需要大量的练习才可能摸清<code>this</code>的真正概念和使用方法吧。<strong>17年1月18号更新：文章写于刚开始学习JS时，文中方法二 Javascript 与 CSS 耦合是一种并不合适的写法。</strong></p>
 <h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="CSS-实现tab选项卡切换"><a href="#CSS-实现tab选项卡切换" class="headerlink" title="CSS 实现tab选项卡切换"></a>CSS 实现tab选项卡切换</h3><p>效果如下：</p>
@@ -946,9 +1007,7 @@
     
     </summary>
     
-      <category term="JavaScript" scheme="http://chenyixin.win/categories/JavaScript/"/>
-    
-      <category term="CSS" scheme="http://chenyixin.win/categories/JavaScript/CSS/"/>
+      <category term="基础概念" scheme="http://chenyixin.win/categories/%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/"/>
     
     
       <category term="JavaScript" scheme="http://chenyixin.win/tags/JavaScript/"/>
@@ -962,7 +1021,7 @@
     <link href="http://chenyixin.win/2016/12/27/title-%20%E7%A7%BB%E5%8A%A8%20Web%20%E5%BC%80%E5%8F%91%E5%B0%8F%E8%AE%B0%20/"/>
     <id>http://chenyixin.win/2016/12/27/title- 移动 Web 开发小记 /</id>
     <published>2016-12-27T14:25:33.692Z</published>
-    <updated>2017-08-31T09:50:23.748Z</updated>
+    <updated>2017-08-31T10:06:42.694Z</updated>
     
     <content type="html"><![CDATA[<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>大概记述了初次接触移动 Web 页面布局实践中遇到的一些问题和值得注意的地方。具体包括了移动前端开发基本的概念，移动页面开发相关的一些<code>meta</code>标签，相对单位 rem ，与响应式图片的一些总结。</p>
 <h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="移动前端开发的大体印象"><a href="#移动前端开发的大体印象" class="headerlink" title="移动前端开发的大体印象"></a>移动前端开发的大体印象</h3><p>移动前端开发是一个很大的概念，除了基本的前端知识外，还需要掌握一些PPI，像素，DPI等知识，对自己这种小白来说，学习过程中的一大体验就是概念多，还没有有个全局的印象首先被基础概念淹没了。所以个人感觉首先要对移动前端开发有个大体的印象。具体来说的移动前端开发包括了以下几种类型：</p>
@@ -1017,7 +1076,7 @@
     
     </summary>
     
-      <category term="Mobile Web" scheme="http://chenyixin.win/categories/Mobile-Web/"/>
+      <category term="基础概念" scheme="http://chenyixin.win/categories/%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/"/>
     
     
       <category term="Mobile Web" scheme="http://chenyixin.win/tags/Mobile-Web/"/>
@@ -1227,7 +1286,7 @@
     <link href="http://chenyixin.win/2016/12/12/title-%20CSS%20%E5%B1%85%E4%B8%AD%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97%EF%BC%88%E7%BF%BB%E8%AF%91%EF%BC%89/"/>
     <id>http://chenyixin.win/2016/12/12/title- CSS 居中完全指南（翻译）/</id>
     <published>2016-12-12T13:27:48.624Z</published>
-    <updated>2017-08-31T09:50:51.617Z</updated>
+    <updated>2017-08-31T10:07:10.584Z</updated>
     
     <content type="html"><![CDATA[<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>文章完整了讨论了 CSS 居中的各种情况。因为文章不是很难就做了一下翻译，由于自己英文水平并不在行，有可能出现错误，所以可以点击 <a href="https://css-tricks.com/centering-css-complete-guide/" target="_blank" rel="external">这条链接</a> 前往原文 Centering in CSS: A Complete Guide 。本文仅仅做了一些概念性的添加。</p>
 <h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="引"><a href="#引" class="headerlink" title="引"></a>引</h3><p>CSS 实现居中是个特别的让人头疼的问题，以至于让我们常问：为什么实现居中是如此困难？然而，事实上并非如此困难。只是在不同的情况下，我们需要依据不同的情境去解决问题，这让我们难以抉择。所以让我们来做一个决策树，让来选择变的更简单。</p>
@@ -1278,7 +1337,7 @@
     
     </summary>
     
-      <category term="CSS" scheme="http://chenyixin.win/categories/CSS/"/>
+      <category term="文章翻译" scheme="http://chenyixin.win/categories/%E6%96%87%E7%AB%A0%E7%BF%BB%E8%AF%91/"/>
     
     
       <category term="Centering in CSS" scheme="http://chenyixin.win/tags/Centering-in-CSS/"/>
