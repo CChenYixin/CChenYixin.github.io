@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://chenyixin.win/"/>
-  <updated>2017-09-07T11:01:37.892Z</updated>
+  <updated>2017-09-28T02:18:05.104Z</updated>
   <id>http://chenyixin.win/</id>
   
   <author>
@@ -14,6 +14,75 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>跨域解决方案</title>
+    <link href="http://chenyixin.win/2017/09/25/title-%20%E8%B7%A8%E5%9F%9F%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
+    <id>http://chenyixin.win/2017/09/25/title- 跨域解决方案/</id>
+    <published>2017-09-25T12:31:14.493Z</published>
+    <updated>2017-09-28T02:18:05.104Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>通过具体例子的简单演示跨域，及总结跨域产生的原因。</p>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="一个简单跨域例子"><a href="#一个简单跨域例子" class="headerlink" title="一个简单跨域例子"></a>一个简单跨域例子</h3><p>现在我们来模拟一个从后台获取数据情景，当我们点击页面上的换一组按钮时，会发送一个AJAX请求到后台获取数据，后台在处理之后返回数据。</p>
+<p>HTML 部分：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"news"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span>第11日前瞻：中国冲击4金 博尔特再战<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span>男双力争会师决赛 <span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span>女排将死磕巴西！<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"change"</span>&gt;</span>换一组<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"a.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>JS部分：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="string">'hello world'</span>);</div><div class="line"></div><div class="line">$(<span class="string">'.change'</span>).addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line"></div><div class="line">      <span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</div><div class="line">      xhr.open(<span class="string">'get'</span>, <span class="string">'http://b.chenyixin.com:8080/getNews'</span>, <span class="literal">true</span>);</div><div class="line">      xhr.send();</div><div class="line">      xhr.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="keyword">if</span>(xhr.readyState === <span class="number">4</span> &amp;&amp; xhr.status === <span class="number">200</span>)&#123;</div><div class="line">          appendHtml( <span class="built_in">JSON</span>.parse(xhr.responseText) );</div><div class="line">        &#125;</div><div class="line">    &#125;;</div><div class="line"></div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">appendHtml</span>(<span class="params">news</span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> html = <span class="string">''</span>;</div><div class="line">  <span class="keyword">for</span>( <span class="keyword">var</span> i=<span class="number">0</span>; i&lt;news.length; i++)&#123;</div><div class="line">    html += <span class="string">'&lt;li&gt;'</span> + news[i] + <span class="string">'&lt;/li&gt;'</span>;</div><div class="line">  &#125;</div><div class="line">  <span class="built_in">console</span>.log(html);</div><div class="line">  $(<span class="string">'.news'</span>).innerHTML = html;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">$</span>(<span class="params">id</span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="built_in">document</span>.querySelector(id);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>后台部分（这里用server-mock这个库对后台做了简单处理，可以用npm下载使用）：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">app.get(<span class="string">'/getNews'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> news = [</div><div class="line">        <span class="string">"第11日前瞻：中国冲击4金 博尔特再战200米羽球"</span>,</div><div class="line">        <span class="string">"正直播柴飚/洪炜出战 男双力争会师决赛"</span>,</div><div class="line">        <span class="string">"女排将死磕巴西！郎平安排男陪练模仿对方核心"</span>,</div><div class="line">        <span class="string">"没有中国选手和巨星的110米栏 我们还看吗？"</span>,</div><div class="line">        <span class="string">"中英上演奥运金牌大战"</span>,</div><div class="line">        <span class="string">"博彩赔率挺中国夺回第二纽约时报：中国因对手服禁药而丢失的奖牌最多"</span>,</div><div class="line">        <span class="string">"【边界】最“出柜”奥运？同性之爱闪耀里约"</span>,</div><div class="line">        <span class="string">"【特评】下跪拜谢与洪荒之力一样 都是真情流露"</span></div><div class="line">    ];</div><div class="line">    <span class="keyword">var</span> data = [];</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</div><div class="line">        <span class="keyword">var</span> index = <span class="built_in">parseInt</span>(<span class="built_in">Math</span>.random() * news.length);</div><div class="line">        data.push(news[index]);</div><div class="line">    &#125;</div><div class="line">    <span class="comment">// console.log(data);</span></div><div class="line">    res.send(data);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>提前修改 host 文件来模拟跨域，让浏览器的地址和请求地址不同：<br><img src="http://ww1.sinaimg.cn/large/75fcfef2ly1fjz12ohlxlj212y02ya9w.jpg" alt=""><br>此时我们命令行输入<code>server start</code>模拟服务器然后在浏览器打开网站，点击换一组按钮，然后打开浏览器会发现控制台报错：<br><img src="http://ww1.sinaimg.cn/large/75fcfef2ly1fjz172pniuj21h406ggme.jpg" alt=""></p>
+<blockquote>
+<p>a.chenyixin.com/:1 Failed to load <a href="http://b.chenyixin.com:8080/getNews" target="_blank" rel="external">http://b.chenyixin.com:8080/getNews</a>: No ‘Access-Control-Allow-Origin’ header is present on the requested resource. Origin ‘<a href="http://a.chenyixin.com:8080" target="_blank" rel="external">http://a.chenyixin.com:8080</a>‘ is therefore not allowed access.</p>
+</blockquote>
+<p>这就是浏览器对于跨域失败的报错提醒。</p>
+<h3 id="跨域的概念"><a href="#跨域的概念" class="headerlink" title="跨域的概念"></a>跨域的概念</h3><p>从上面的例子，我们可以看到，是不是跨域主要要看这两个方面。</p>
+<ul>
+<li><p>我们当前页面的URL是什么？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">//例子中当前页面的URL</div><div class="line">http://a.chenyixin.com:8080/</div></pre></td></tr></table></figure>
+</li>
+<li><p>我们发送的请求URL是什么？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">//例子中请求的的URL</div><div class="line">http://b.chenyixin.com:8080/</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>当这两个地址出现不同的时候就有可能发生跨域，那么判断的标准是什么呢？</p>
+<h3 id="常见的跨域场景"><a href="#常见的跨域场景" class="headerlink" title="常见的跨域场景"></a>常见的跨域场景</h3><p><img src="http://ww1.sinaimg.cn/large/75fcfef2ly1fjz1pa18oij20ms0ammy9.jpg" alt=""></p>
+<h3 id="跨域的原因"><a href="#跨域的原因" class="headerlink" title="跨域的原因"></a>跨域的原因</h3><p>为什么这些情况下需要跨域呢？这是由于浏览器的同源策略所限制的。注意 <strong>这是浏览器行为</strong>。</p>
+<blockquote>
+<p>浏览器出于安全方面的考虑，只允许与本域下的接口交互。不同源的客户端脚本在没有明确授权的情况下，不能读写对方的资源。它是浏览器最核心也最基本的安全功能，如果缺少了同源策略，浏览器很容易受到XSS、CSFR等攻击。</p>
+</blockquote>
+<p>同源策略限制以下几种行为：</p>
+<ul>
+<li>Cookie、LocalStorage 和 IndexDB 无法读取</li>
+<li>DOM 和 Js对象无法获得</li>
+<li>AJAX 请求不能发送</li>
+</ul>
+<h3 id="跨域的解决方案"><a href="#跨域的解决方案" class="headerlink" title="跨域的解决方案"></a>跨域的解决方案</h3><p>后面会有文章来详细介绍这些解决方案。</p>
+<ul>
+<li>通过jsonp跨域</li>
+<li>document.domain + iframe跨域</li>
+<li>location.hash + iframe</li>
+<li>window.name + iframe跨域</li>
+<li>postMessage跨域</li>
+<li>跨域资源共享（CORS）</li>
+<li>nginx代理跨域</li>
+<li>nodejs中间件代理跨域</li>
+<li>WebSocket协议跨域</li>
+</ul>
+<h2 id="摘要-1"><a href="#摘要-1" class="headerlink" title="摘要"></a>摘要</h2><p><a href="https://segmentfault.com/a/1190000011145364" target="_blank" rel="external">前端常见跨域解决方案（全）</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;摘要&quot;&gt;&lt;a href=&quot;#摘要&quot; class=&quot;headerlink&quot; title=&quot;摘要&quot;&gt;&lt;/a&gt;摘要&lt;/h2&gt;&lt;p&gt;通过具体例子的简单演示跨域，及总结跨域产生的原因。&lt;/p&gt;
+&lt;h2 id=&quot;正文&quot;&gt;&lt;a href=&quot;#正文&quot; class=&quot;headerl
+    
+    </summary>
+    
+      <category term="基础概念" scheme="http://chenyixin.win/categories/%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/"/>
+    
+    
+      <category term="跨域" scheme="http://chenyixin.win/tags/%E8%B7%A8%E5%9F%9F/"/>
+    
+      <category term="AJAX" scheme="http://chenyixin.win/tags/AJAX/"/>
+    
+  </entry>
   
   <entry>
     <title>「专注概念 VOL.4」字符串方法</title>
@@ -427,9 +496,9 @@
       <category term="基础概念" scheme="http://chenyixin.win/categories/%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/"/>
     
     
-      <category term="form" scheme="http://chenyixin.win/tags/form/"/>
-    
       <category term="HTML" scheme="http://chenyixin.win/tags/HTML/"/>
+    
+      <category term="form" scheme="http://chenyixin.win/tags/form/"/>
     
   </entry>
   
@@ -1226,106 +1295,9 @@
       <category term="IFE task" scheme="http://chenyixin.win/categories/IFE-task/"/>
     
     
-      <category term="HTML" scheme="http://chenyixin.win/tags/HTML/"/>
-    
       <category term="JavaScript" scheme="http://chenyixin.win/tags/JavaScript/"/>
     
-      <category term="CSS" scheme="http://chenyixin.win/tags/CSS/"/>
-    
-      <category term="IFE" scheme="http://chenyixin.win/tags/IFE/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>IFE task 1-7 笔记</title>
-    <link href="http://chenyixin.win/2016/12/16/title-%20IFE%20task%201-7%20%E7%AC%94%E8%AE%B0/"/>
-    <id>http://chenyixin.win/2016/12/16/title- IFE task 1-7 笔记/</id>
-    <published>2016-12-16T10:25:16.468Z</published>
-    <updated>2017-08-31T09:52:36.874Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>文章为百度前端技术学院2016年任务 1-7 的笔记，大概记述了学习和练习中需要注意的地方以及一点点笔记。大体上包括了以下几个方面：三栏布局、CSS 居中方式、CSS 选择器、<code>tansition</code>和CSS 伪类的应用、利用纯 CSS 实现 tab 的方法等等。 <strong>注意：</strong> 这篇文章写于学习前端不久，可能会出现错误或者概念理解不全面等等纰漏。</p>
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="三栏布局"><a href="#三栏布局" class="headerlink" title="三栏布局"></a>三栏布局</h3><p>下面的三个布局都是在 <strong>具体的情况</strong> 下讨论的，具体对应的是任务三。</p>
-<h4 id="绝对定位法"><a href="#绝对定位法" class="headerlink" title="绝对定位法"></a>绝对定位法</h4><p>绝对定位法左右两栏采用绝对定位固定，中间用margin值撑开距离。这种方法内部div顺序随意。 需要注意的是：</p>
-<ol>
-<li>如果中间栏含有最小宽度限制，或是含有宽度的内部元素，当浏览器宽度小到一定程度，会发生层重叠的情况。</li>
-<li>如<a href="http://chenyixin.win/practice/practice_03/practice_03_position.html">练习中所示</a>假如三栏外含有包含框，那么这种办法很难发生效果，原因是左右两栏采取绝对定位，脱离了文档流，当左右两栏高度大于中间时，会在视觉上突破包含框。另外，当浏览器宽度小到一定程度，主体可能溢出包含框。如果要求不是很严格，可以在中间添加个大于左右两栏的高度和 overflow。</li>
-</ol>
-<h4 id="外边距负值法-据说又叫圣杯布局"><a href="#外边距负值法-据说又叫圣杯布局" class="headerlink" title="外边距负值法(据说又叫圣杯布局)"></a>外边距负值法(据说又叫圣杯布局)</h4><p>首先，中间的主体要使用双层div。外层宽度100%并且浮动，内部div为真正的内容。 其次，左右栏浮动，且采用margin负值来定位。以左浮动为例，左栏用margin-left为-100%，右边为margin负值本身元素宽度。 需要注意的是：</p>
-<ol>
-<li>div顺序必须主体内容在前。</li>
-<li>另外，如<a href="http://chenyixin.win/practice/practice_03/practice_03_margin.html">练习中所示</a>假如三栏外含有包含框，那么这种办法也很难发生效果，原因是左右两栏浮动，脱离了文档流，当左右两栏高度大于中间时，会在视觉上突破包含框。另外，当当浏览器宽度小到一定程度，主体可能溢出包含框。如果要求不是很严格，同样在最外层的 container 加上 overflow。</li>
-</ol>
-<p>这种方法的好处是兼容性很好，几乎可以兼容各种现代浏览器，核心的思想是给自适应的部分设置宽度100%并且浮动，固定部分利用外边距负值来定位，两栏也是同样的道理。</p>
-<h4 id="浮动法"><a href="#浮动法" class="headerlink" title="浮动法"></a>浮动法</h4><p>最简单最好理解最好用的方法，左栏左浮动，右栏有浮动，中间自适应。 需要注意的是：</p>
-<ol>
-<li>主体div放在最后，左右两栏div顺序任意。</li>
-<li>最有效果的方式，如<a href="http://chenyixin.win/practice/practice_03/practice_03_float.html">练习中所示</a>即使三栏外面再有包含框，也只需在包含框上添加 overflow 即可。</li>
-</ol>
-<h3 id="CSS伪类-与-tansition"><a href="#CSS伪类-与-tansition" class="headerlink" title="CSS伪类 与 tansition"></a>CSS伪类 与 tansition</h3><p>CSS 的伪类真是好用，在一些小的练习中基本还不是很明显，稍微复杂一点的练习就突出其用处了。比较常用的有这个几个：</p>
-<ol>
-<li>:first-child 伪类,来选择作为第一个子元素的元素。</li>
-<li>:last-of-type伪类，选择其父元素的特定类型的最后一个子元素的每个元素。</li>
-<li>:nth-of-type(n) 选择器匹配属于父元素的特定类型的第 N 个子元素的每个元素，n 可以是数字、关键词或公式。</li>
-<li>:hover 锚伪类,些状态包括：活动状态，已被访问状态，未被访问状态，和鼠标悬停状态。注意这个是用顺序的：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">a:link &#123;color: #FF0000&#125;		/* 未访问的链接 */</div><div class="line">a:visited &#123;color: #00FF00&#125;	/* 已访问的链接 */</div><div class="line">a:hover &#123;color: #FF00FF&#125;	/* 鼠标移动到链接上 */</div><div class="line">a:active &#123;color: #0000FF&#125;	/* 选定的链接 */</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>举个比较实用的小例子做个说明：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;div&gt;</div><div class="line">&lt;p&gt; hello world&lt;/p&gt;</div><div class="line">&lt;span&gt;&lt;/span&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
-<p>现在我们给它添加CSS 和伪类：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">div&#123;</div><div class="line">    text-align:center;</div><div class="line">&#125;</div><div class="line">p&#123;</div><div class="line">	display:inline-block;</div><div class="line">	border-bottom:2px solid black; /* 底边框黑色 */</div><div class="line">&#125;</div><div class="line">p:hover&#123;</div><div class="line">	border-bottom:2px solid red; /* 当鼠标移到此，底边框变成红色 */</div><div class="line">&#125;</div><div class="line">span&#123;</div><div class="line">	color: #fff;</div><div class="line">    display: block;</div><div class="line">    width: 30px;</div><div class="line">    height: 20px;</div><div class="line">    margin: 0 auto;</div><div class="line">    border-top: 2px solid red; /* 视觉为宽30px的红色线段 */</div><div class="line">&#125;</div><div class="line">span:hover&#123;</div><div class="line">    width: 100px; /* 当鼠标移到此，视觉为宽200px的红色线段 */</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>我们可以通过这两种方式添加类似一种下划线的动画效果，不过这样的变化过于生硬，接下来我们就可以使用<code>transition</code>来做一点点小小的优化。transition 属性是一个简写属性，用于设置四个过渡属性:</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">值</th>
-<th style="text-align:left">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">transition-property</td>
-<td style="text-align:left">规定设置过渡效果的 CSS 属性的名称</td>
-</tr>
-<tr>
-<td style="text-align:left">transition-duration</td>
-<td style="text-align:left">规定完成过渡效果需要多少秒或毫秒</td>
-</tr>
-<tr>
-<td style="text-align:left">transition-timing-function</td>
-<td style="text-align:left">规定速度效果的速度曲线</td>
-</tr>
-<tr>
-<td style="text-align:left">transition-delay</td>
-<td style="text-align:left">定义过渡效果何时开始</td>
-</tr>
-</tbody>
-</table>
-<p>其中必须始终设置 transition-duration 属性，否则时长为 0，就不会产生过渡效果。</p>
-<p>我们继续完善上面的细节,以 span 为例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">span&#123;</div><div class="line">	color: #fff;</div><div class="line">    display: block;</div><div class="line">    width: 30px;</div><div class="line">    height: 20px;</div><div class="line">    margin: 0 auto;</div><div class="line">    border-top: 2px solid red; /* 视觉为宽30px的红色线段 */</div><div class="line">    transition: width 0.4s ease-in-out; /* ease-in-out 规定以慢速开始和结束的过渡效果 */</div><div class="line">&#125;</div><div class="line">span:hover&#123;</div><div class="line">    width: 100px; /* 当鼠标移到此，视觉为宽200px的红色线段 */</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h3 id="利用纯-CSS-实现-tab"><a href="#利用纯-CSS-实现-tab" class="headerlink" title="利用纯 CSS 实现 tab"></a>利用纯 CSS 实现 tab</h3><p>这个是在查看别人代码中发现，于是自己实现了一下，使用纯 CSS 制作 tab 切换效果。核心是利用： display:none 和 :checked 来实现。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line">&lt;html&gt;</div><div class="line">    &lt;head&gt;</div><div class="line">        &lt;meta charset=&quot;utf-8&quot;&gt;</div><div class="line">        &lt;title&gt;&lt;/title&gt;</div><div class="line">        &lt;style media=&quot;screen&quot;&gt;</div><div class="line">            .container&#123;</div><div class="line">				text-align: center;</div><div class="line">                width: 300px;</div><div class="line">                height: 200px;</div><div class="line">                border: 1px solid black;</div><div class="line">                position:relative;</div><div class="line">            &#125;</div><div class="line">            .con&#123;</div><div class="line">            	display:none; /*核心代码，使内容隐藏起来*/</div><div class="line">				position: absolute;</div><div class="line">  				top: 50%;</div><div class="line">  				left: 50%;</div><div class="line">  				transform: translate(-50%, -50%);</div><div class="line">            &#125;</div><div class="line">            .con1&#123;</div><div class="line">            &#125;</div><div class="line">            .container input[type=&quot;radio&quot;]:nth-of-type(1):checked~.con1&#123;</div><div class="line">                display: block;  /*核心代码，点击出现*/</div><div class="line">            &#125;</div><div class="line">            .container input[type=&quot;radio&quot;]:nth-of-type(2):checked~.con2&#123;</div><div class="line">                display: block;  /*核心代码，点击出现*/</div><div class="line">            &#125;</div><div class="line">            .container input[type=&quot;radio&quot;]:nth-of-type(3):checked~.con3&#123;</div><div class="line">                display: block;  /*核心代码，点击出现*/</div><div class="line">            &#125;</div><div class="line">        &lt;/style&gt;</div><div class="line">    &lt;/head&gt;</div><div class="line">    &lt;body&gt;</div><div class="line">        &lt;div class=&quot;container&quot;&gt;</div><div class="line">            &lt;input type=&quot;radio&quot; name=&quot;con&quot; value=&quot;con1&quot; checked&gt;</div><div class="line">            &lt;input type=&quot;radio&quot; name=&quot;con&quot; value=&quot;con2&quot;&gt;</div><div class="line">            &lt;input type=&quot;radio&quot; name=&quot;con&quot; value=&quot;con3&quot;&gt;</div><div class="line"></div><div class="line">            &lt;div class=&quot; con con1&quot;&gt;&lt;p&gt;hello world&lt;/p&gt;&lt;/div&gt;</div><div class="line">            &lt;div class=&quot; con con2&quot;&gt;&lt;p&gt;hello girl&lt;/p&gt;&lt;/div&gt;</div><div class="line">            &lt;div class=&quot; con con3&quot;&gt;&lt;p&gt;hello boby&lt;/p&gt;&lt;/div&gt;</div><div class="line">        &lt;/div&gt;</div><div class="line">    &lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></p>
-<p><img src="http://ohqryljkl.bkt.clouddn.com/GIF.gif" alt="图片演示"><br>不过用纯 CSS 实现 tab 切换的方式还有几种，暂时还在研究当中，这种相对来说比较简单。</p>
-<h3 id="CSS-居中方式"><a href="#CSS-居中方式" class="headerlink" title="CSS 居中方式"></a>CSS 居中方式</h3><p>虽然有这篇万能的文章<a href="http://chenyixin.win/2016/12/12/title-%20CSS%20%E5%B1%85%E4%B8%AD%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97%EF%BC%88%E7%BF%BB%E8%AF%91%EF%BC%89/"> Centering in CSS: A Complete Guide</a>，但是在实际应用过程中还是会有很多麻烦，还是基本的概念理解的不清楚。实际应用中来说水平居中用到的多一点，无论是对于行内元素还是块元素来说。垂直居中的话不是很常用，因为如果要求不是很严格的话，都会用到绝地定位来定位，比较常用的是利用行高和高度相等来垂直居中，尤其是在导航栏设置中。设置一个如 td 和 tr 那样的元素中，然后使用 vertical-align 来实现垂直居中偶尔会用到。因为 flex 布局暂时还没有细学。</p>
-<p>下面通过几个导航栏的设置来巩固一下，为什么是导航栏呢？因为这个看似简单却可以用到很多知识，定位，浮动，居中等这篇文章提到的所有概念。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">&lt;style&gt;</div><div class="line">header&#123;</div><div class="line">	position:relative;</div><div class="line">    &#125;</div><div class="line">ul &#123;</div><div class="line">    list-style-type: none;</div><div class="line">    margin: 0;</div><div class="line">    padding: 0;</div><div class="line">    overflow: hidden;/*必须*/</div><div class="line">    border: 1px solid #e7e7e7;</div><div class="line">    background-color: #f3f3f3;</div><div class="line">&#125;</div><div class="line"></div><div class="line">li &#123;</div><div class="line">    float: left; /*浮动到左侧*/</div><div class="line">&#125;</div><div class="line"></div><div class="line">li a &#123;</div><div class="line">    display: block; /* 整个区域都可以被鼠标触发*/</div><div class="line">    color: #666;</div><div class="line">    text-align: center; /* 让a元素水平居中*/</div><div class="line">    padding: 14px 16px; /*垂直居中定位*/</div><div class="line">    text-decoration: none;</div><div class="line">&#125;</div><div class="line"></div><div class="line">li a:hover:not(.active) &#123;</div><div class="line">    background-color: #ddd; /* 利用hover为鼠标悬浮提供样式*/</div><div class="line">&#125;</div><div class="line"></div><div class="line">li a.active &#123;</div><div class="line">    color: white;</div><div class="line">    background-color: #4CAF50;</div><div class="line">&#125;</div><div class="line">div&#123;</div><div class="line">position:absolute;</div><div class="line">top:0;</div><div class="line">right:10px;</div><div class="line">padding: 14px 16px; /*垂直居中*/</div><div class="line">font-size:15px;</div><div class="line">&#125;</div><div class="line">span&#123;</div><div class="line">cursor:pointer;</div><div class="line">&#125;</div><div class="line">span:hover&#123;</div><div class="line">color:red; /* 利用hover为鼠标悬浮提供样式*/</div><div class="line">&#125;</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">&lt;header&gt;</div><div class="line">&lt;ul&gt;</div><div class="line">  &lt;li&gt;&lt;a class=&quot;active&quot; href=&quot;#home&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;</div><div class="line">  &lt;li&gt;&lt;a href=&quot;#news&quot;&gt;News&lt;/a&gt;&lt;/li&gt;</div><div class="line">  &lt;li&gt;&lt;a href=&quot;#contact&quot;&gt;Contact&lt;/a&gt;&lt;/li&gt;</div><div class="line">  &lt;li&gt;&lt;a href=&quot;#about&quot;&gt;About&lt;/a&gt;&lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div><div class="line">&lt;div&gt;&lt;span&gt;登陆&lt;/span&gt;&lt;/div&gt;</div><div class="line">&lt;/header&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
-<p>这个例子大多参考 w3c 文档的教程，只是其中一种方法，具体在实际练习过程中的方式多种多样。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>写 CSS 简单，但写好了不简单。元素属性的设置和相互影响一不留心就可能需要调试，假如对基本概念熟悉的话不但写起来思路清晰容易上手，就算出错了也可以很快定位到问题所在，路漫漫要写出好的代码还得继续修炼。另外，属性的书写顺序也要值得注意并且养成习惯：</p>
-<blockquote>
-<p>应按功能进行分组，并以 Formatting Model（布局方式、位置） &gt; Box Model（尺寸） &gt; Typographic（文本相关） &gt; Visual（视觉效果） 的顺序书写，以提高代码的可读性。<br>解释：<br>Formatting Model 相关属性包括：position / top / right / bottom / left / float / display / overflow 等<br>Box Model 相关属性包括：border / margin / padding / width / height 等<br>Typographic 相关属性包括：font / line-height / text-align / word-wrap 等<br>Visual 相关属性包括：background / color / transition / list-style 等</p>
-</blockquote>
-<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><p><a href="http://www.w3school.com.cn/h.asp" target="_blank" rel="external">W3C中文文档</a><br><a href="http://www.w3schools.com/css/css_navbar.asp" target="_blank" rel="external">CSS Navigation Bar</a><br><a href="http://www.zhangxinxu.com/wordpress/2009/11/%E6%88%91%E7%86%9F%E7%9F%A5%E7%9A%84%E4%B8%89%E7%A7%8D%E4%B8%89%E6%A0%8F%E7%BD%91%E9%A1%B5%E5%AE%BD%E5%BA%A6%E8%87%AA%E9%80%82%E5%BA%94%E5%B8%83%E5%B1%80%E6%96%B9%E6%B3%95/" target="_blank" rel="external">三栏网页宽度自适应布局方法</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;摘要&quot;&gt;&lt;a href=&quot;#摘要&quot; class=&quot;headerlink&quot; title=&quot;摘要&quot;&gt;&lt;/a&gt;摘要&lt;/h2&gt;&lt;p&gt;文章为百度前端技术学院2016年任务 1-7 的笔记，大概记述了学习和练习中需要注意的地方以及一点点笔记。大体上包括了以下几个方面：三栏布局
-    
-    </summary>
-    
-      <category term="IFE task" scheme="http://chenyixin.win/categories/IFE-task/"/>
-    
-    
       <category term="HTML" scheme="http://chenyixin.win/tags/HTML/"/>
-    
-      <category term="JavaScript" scheme="http://chenyixin.win/tags/JavaScript/"/>
     
       <category term="CSS" scheme="http://chenyixin.win/tags/CSS/"/>
     
