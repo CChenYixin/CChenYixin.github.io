@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://chenyixin.win/"/>
-  <updated>2017-09-29T01:39:06.946Z</updated>
+  <updated>2017-09-29T01:42:36.666Z</updated>
   <id>http://chenyixin.win/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://chenyixin.win/2017/09/28/title-%20%E8%B7%A8%E5%9F%9F%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%EF%BC%9AJSONP/"/>
     <id>http://chenyixin.win/2017/09/28/title- 跨域解决方案：JSONP/</id>
     <published>2017-09-28T13:28:39.865Z</published>
-    <updated>2017-09-29T01:39:06.946Z</updated>
+    <updated>2017-09-29T01:42:36.666Z</updated>
     
     <content type="html"><![CDATA[<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>简单演示跨域的解决方案之一：JSON及原理。</p>
 <h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="src-属性的特性"><a href="#src-属性的特性" class="headerlink" title="src 属性的特性"></a>src 属性的特性</h3><p>一般来说，我们所谓的跨域是指，根据浏览器同源策略所限制的一类请求场景。但其实，广义的跨域包括很多情况，一个域下的文档或脚本试图请求另一个域下的资源都可以被称为跨域。比如：</p>
@@ -545,9 +545,9 @@
       <category term="基础概念" scheme="http://chenyixin.win/categories/%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/"/>
     
     
-      <category term="HTML" scheme="http://chenyixin.win/tags/HTML/"/>
-    
       <category term="form" scheme="http://chenyixin.win/tags/form/"/>
+    
+      <category term="HTML" scheme="http://chenyixin.win/tags/HTML/"/>
     
   </entry>
   
