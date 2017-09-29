@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://chenyixin.win/"/>
-  <updated>2017-09-28T02:18:05.104Z</updated>
+  <updated>2017-09-28T15:04:13.955Z</updated>
   <id>http://chenyixin.win/</id>
   
   <author>
@@ -17,10 +17,61 @@
   
   <entry>
     <title>跨域解决方案</title>
+    <link href="http://chenyixin.win/2017/09/28/title-%20%E8%B7%A8%E5%9F%9F%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%EF%BC%9AJSONP/"/>
+    <id>http://chenyixin.win/2017/09/28/title- 跨域解决方案：JSONP/</id>
+    <published>2017-09-28T13:28:39.865Z</published>
+    <updated>2017-09-28T15:04:13.955Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>简单演示跨域的解决方案之一：JSON及原理。</p>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="src-属性的特性"><a href="#src-属性的特性" class="headerlink" title="src 属性的特性"></a>src 属性的特性</h3><p>一般来说，我们所谓的跨域是指，根据浏览器同源策略所限制的一类请求场景。但其实，广义的跨域包括很多情况，一个域下的文档或脚本试图请求另一个域下的资源都可以被称为跨域。比如：</p>
+<ul>
+<li>资源跳转： A链接、重定向、表单提交</li>
+<li>资源嵌入： <link>、<script>、<img>、<frame>等dom标签，还有样式中background:url()、@font-face()等文件外链</li>
+<li>脚本请求： js发起的ajax请求、dom和js对象的跨域操作等</li>
+</ul>
+<p>这时我们发现拥有src属性的标签一般都拥有跨域的能力。举例来说我们常用的<code>script</code>标签，我们常常用它来引入一些库：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>那么，既然src天然拥有跨域的能力，那么我们就可以利用这种特性来跨域请求。</p>
+<h3 id="JSONP-的原理"><a href="#JSONP-的原理" class="headerlink" title="JSONP 的原理"></a>JSONP 的原理</h3><p>JSONP正是基于这种特性，我们只需要保证script标签加载的是合法的JS文件即可。</p>
+<ul>
+<li>在script标签的src属性中写入服务端HTTP的URL地址，这个URL地址中包含一个回调函数名。</li>
+<li>服务器接收到请求后，把准备好的JSON数据格式的对象填充到这个函数名中去。</li>
+<li>在前端提前写好这个回调函数，用来自动处理返回的数据。</li>
+</ul>
+<p>这样就完成了JSONP跨域，一句话来说：JSONP就是一段参数是JSON格式的JS代码。用具体的例子来演示：</p>
+<h3 id="具体实现"><a href="#具体实现" class="headerlink" title="具体实现"></a>具体实现</h3><p>HTML和JS部分：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"news"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>第11日前瞻：中国冲击4金 博尔特再战<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>男双力争会师决赛 <span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>女排将死磕巴西！<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"change"</span>&gt;</span>换一组<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></div><div class="line"></div><div class="line">$(<span class="string">'.change'</span>).addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> script = <span class="built_in">document</span>.createElement(<span class="string">'script'</span>);</div><div class="line">  <span class="comment">// 在script标签的src属性中写入服务端HTTP的URL地址，这个URL地址中包含一个回调函数名。</span></div><div class="line">  script.src = <span class="string">'http://127.0.0.1/getNews?callback=appendHtml'</span>;</div><div class="line">  <span class="built_in">document</span>.head.appendChild(script);</div><div class="line">  <span class="built_in">document</span>.head.removeChild(script);</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="comment">// 在前端提前写好这个回调函数，用来自动处理返回的数据。</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">appendHtml</span>(<span class="params">news</span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> html = <span class="string">''</span>;</div><div class="line">  <span class="keyword">for</span>( <span class="keyword">var</span> i=<span class="number">0</span>; i&lt;news.length; i++)&#123;</div><div class="line">    html += <span class="string">'&lt;li&gt;'</span> + news[i] + <span class="string">'&lt;/li&gt;'</span>;</div><div class="line">  &#125;</div><div class="line">  <span class="built_in">console</span>.log(html);</div><div class="line">  $(<span class="string">'.news'</span>).innerHTML = html;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">$</span>(<span class="params">id</span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="built_in">document</span>.querySelector(id);</div><div class="line">&#125;</div><div class="line"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>服务端过程：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">app.get(<span class="string">'/getNews'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>)</span>&#123;</div><div class="line"></div><div class="line">	<span class="keyword">var</span> news = [</div><div class="line">		<span class="string">"第11日前瞻：中国冲击4金 博尔特再战200米羽球"</span>,</div><div class="line">		<span class="string">"正直播柴飚/洪炜出战 男双力争会师决赛"</span>,</div><div class="line">		<span class="string">"女排将死磕巴西！郎平安排男陪练模仿对方核心"</span>,</div><div class="line">		<span class="string">"没有中国选手和巨星的110米栏 我们还看吗？"</span>,</div><div class="line">		<span class="string">"中英上演奥运金牌大战"</span>,</div><div class="line">		<span class="string">"博彩赔率挺中国夺回第二纽约时报：中国因对手服禁药而丢失的奖牌最多"</span>,</div><div class="line">		<span class="string">"最“出柜”奥运？同性之爱闪耀里约"</span>,</div><div class="line">		<span class="string">"下跪拜谢与洪荒之力一样 都是真情流露"</span></div><div class="line">	];</div><div class="line">	<span class="keyword">var</span> data = [];</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;<span class="number">3</span>; i++)&#123;</div><div class="line">		<span class="keyword">var</span> index = <span class="built_in">parseInt</span>(<span class="built_in">Math</span>.random()*news.length);</div><div class="line">		data.push(news[index]);</div><div class="line">		news.splice(index, <span class="number">1</span>);</div><div class="line">	&#125;</div><div class="line"></div><div class="line"></div><div class="line">	<span class="keyword">var</span> cb = req.query.callback;</div><div class="line"></div><div class="line">	<span class="keyword">if</span>(cb)&#123;</div><div class="line">    <span class="comment">// 服务器接收到请求后，把准备好的JSON数据格式的对象填充到这个函数名中去。</span></div><div class="line">		res.send(cb + <span class="string">'('</span>+ <span class="built_in">JSON</span>.stringify(data) + <span class="string">')'</span>);</div><div class="line">        <span class="built_in">console</span>.log(cb);</div><div class="line">	&#125;<span class="keyword">else</span>&#123;</div><div class="line">		res.send(data);</div><div class="line">	&#125;</div><div class="line"></div><div class="line"></div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>首先启动一个服务器来模拟这种情况：<br><img src="http://ww1.sinaimg.cn/large/75fcfef2ly1fjznylw061j21h50k2adb.jpg" alt=""></p>
+<p>图中我们可以看到，我们浏览器的URL是 <a href="http://a.chenyixin.com:8080/，但我们">http://a.chenyixin.com:8080/，但我们</a> src 写入的请求地址是 <a href="http://b.chenyixin.com:8080/getNews?callback=appendHtml，但当我们点击换一组时，成功请求到了数据。那么我们到底请求到的是什么呢？我们直接输入">http://b.chenyixin.com:8080/getNews?callback=appendHtml，但当我们点击换一组时，成功请求到了数据。那么我们到底请求到的是什么呢？我们直接输入</a> src 的地址：</p>
+<p><img src="http://ww1.sinaimg.cn/large/75fcfef2ly1fjzo1z8a8ij21ha057jrt.jpg" alt=""><br>我们接收到的是一个函数名包裹的JSON格式的数据，其实就是一个带了参数的函数名。这个函数本身是没什么作用的，但是我们提前在前端定义了这个函数，此时服务器返回这个函数名，相当于调用了我们前端提前写好的函数，这样就成功的处理了请求完成了一次JSONP跨域。我们甚至可以用file协议来访问，也没有任何问题：</p>
+<p><img src="http://ww1.sinaimg.cn/large/75fcfef2ly1fjzo535aczj21h806odh1.jpg" alt=""></p>
+<h3 id="JSONP-的优缺点"><a href="#JSONP-的优缺点" class="headerlink" title="JSONP 的优缺点"></a>JSONP 的优缺点</h3><ol>
+<li>优点<br>它的兼容性更好，在更加古老的浏览器中都可以运行。</li>
+<li>缺点<br>它只支持GET请求而不支持POST等其它类型的HTTP请求。<br>用AJAX请求JSONP时,如果如果服务器端的错误我们是不能通过AJAX原生的error属性来捕获到错误的。</li>
+</ol>
+<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><p><a href="https://www.zhihu.com/question/19966531">JSONP 的工作原理是什么？</a><br><a href="https://segmentfault.com/a/1190000011145364">前端常见跨域解决方案（全）</a></p>
+</script></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;摘要&quot;&gt;&lt;a href=&quot;#摘要&quot; class=&quot;headerlink&quot; title=&quot;摘要&quot;&gt;&lt;/a&gt;摘要&lt;/h2&gt;&lt;p&gt;简单演示跨域的解决方案之一：JSON及原理。&lt;/p&gt;
+&lt;h2 id=&quot;正文&quot;&gt;&lt;a href=&quot;#正文&quot; class=&quot;headerlink
+    
+    </summary>
+    
+      <category term="基础概念" scheme="http://chenyixin.win/categories/%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/"/>
+    
+    
+      <category term="跨域" scheme="http://chenyixin.win/tags/%E8%B7%A8%E5%9F%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>跨域解决方案</title>
     <link href="http://chenyixin.win/2017/09/25/title-%20%E8%B7%A8%E5%9F%9F%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
     <id>http://chenyixin.win/2017/09/25/title- 跨域解决方案/</id>
     <published>2017-09-25T12:31:14.493Z</published>
-    <updated>2017-09-28T02:18:05.104Z</updated>
+    <updated>2017-09-28T14:05:35.313Z</updated>
     
     <content type="html"><![CDATA[<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>通过具体例子的简单演示跨域，及总结跨域产生的原因。</p>
 <h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="一个简单跨域例子"><a href="#一个简单跨域例子" class="headerlink" title="一个简单跨域例子"></a>一个简单跨域例子</h3><p>现在我们来模拟一个从后台获取数据情景，当我们点击页面上的换一组按钮时，会发送一个AJAX请求到后台获取数据，后台在处理之后返回数据。</p>
@@ -65,7 +116,7 @@
 <li>nodejs中间件代理跨域</li>
 <li>WebSocket协议跨域</li>
 </ul>
-<h2 id="摘要-1"><a href="#摘要-1" class="headerlink" title="摘要"></a>摘要</h2><p><a href="https://segmentfault.com/a/1190000011145364" target="_blank" rel="external">前端常见跨域解决方案（全）</a></p>
+<h2 id="文章参考"><a href="#文章参考" class="headerlink" title="文章参考"></a>文章参考</h2><p><a href="https://segmentfault.com/a/1190000011145364" target="_blank" rel="external">前端常见跨域解决方案（全）</a><br><a href="http://www.ruanyifeng.com/blog/2016/04/same-origin-policy.html" target="_blank" rel="external">浏览器同源政策及其规避方法</a></p>
 ]]></content>
     
     <summary type="html">
@@ -79,8 +130,6 @@
     
     
       <category term="跨域" scheme="http://chenyixin.win/tags/%E8%B7%A8%E5%9F%9F/"/>
-    
-      <category term="AJAX" scheme="http://chenyixin.win/tags/AJAX/"/>
     
   </entry>
   
@@ -496,9 +545,9 @@
       <category term="基础概念" scheme="http://chenyixin.win/categories/%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/"/>
     
     
-      <category term="HTML" scheme="http://chenyixin.win/tags/HTML/"/>
-    
       <category term="form" scheme="http://chenyixin.win/tags/form/"/>
+    
+      <category term="HTML" scheme="http://chenyixin.win/tags/HTML/"/>
     
   </entry>
   
@@ -1201,107 +1250,6 @@
     
     
       <category term="Mobile Web" scheme="http://chenyixin.win/tags/Mobile-Web/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>IFE task 8-12 笔记</title>
-    <link href="http://chenyixin.win/2016/12/26/title-%20IFE%20task%208-12%20%E7%AC%94%E8%AE%B0/"/>
-    <id>http://chenyixin.win/2016/12/26/title- IFE task 8-12 笔记/</id>
-    <published>2016-12-26T14:07:05.030Z</published>
-    <updated>2017-08-31T09:52:10.577Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>文章为百度前端技术学院2016年任务 8-12 的笔记，CSS 部分基本结束。本文大概记述了后半部分任务中的栅格化布局与 Flexfox 布局的一些笔记和需要注意的地方。</p>
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="栅格化布局"><a href="#栅格化布局" class="headerlink" title="栅格化布局"></a>栅格化布局</h3><p>栅格化布局的核心是预设好的列宽和媒体查询。具体来说， 首先，我们可以根据需要创建一系列预设好宽度的列，其次，通过设置不同的类名引用它们，最后通过媒体查询来判断具体情况下需要引用哪种样式布局，最终实现不同终端下都能让布局完美展示的响应式设计。比较流行  <a href="http://v3.bootcss.com/css/#forms" target="_blank" rel="external">Bootstrap</a> 就是基于这种简单又实用的设计方式，通过 link 引入的方式可以快速的开发适用于不同设备的响应式 WEB 项目。这里以任务 8 为例结合这篇文章 <a href="http://j4n.co/blog/Creating-your-own-css-grid-system" target="_blank" rel="external">Creating Your Own CSS Grid System</a> 简单的回顾一下栅格化布局需要注意的部分。</p>
-<p>一个简单的栅格化布局包括以下部分：</p>
-<ol>
-<li>容器 - container</li>
-<li>行 - rows</li>
-<li>列 - columns</li>
-<li>间隙 - 列之间的空隙（gutters）</li>
-</ol>
-<h4 id="容器-container"><a href="#容器-container" class="headerlink" title="容器 - container"></a>容器 - container</h4><p>首先，栅格化布局的页面被包含在一个 .container 容器中，通常情况下宽度为100%，我们也可以通过 <code>max-width</code> 来设置最大的宽度。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">.container &#123;</div><div class="line">     width : 100%;</div><div class="line">     max-width : 1200px;</div><div class="line"> &#125;</div></pre></td></tr></table></figure>
-<h4 id="行-rows"><a href="#行-rows" class="headerlink" title="行 - rows"></a>行 - rows</h4><blockquote>
-<p>行设置的目的是保证列们在它的包裹中而不是溢出到其他行中去。为了达到这个目的，我们需要使用清除浮动的技巧来保证子列们仍旧在这一行中。</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">.row:before,</div><div class="line">.row:after&#123;</div><div class="line"> content: &quot;&quot;;</div><div class="line"> display: table;</div><div class="line"> clear: both;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h4 id="列-columns"><a href="#列-columns" class="headerlink" title="列 - columns"></a>列 - columns</h4><p>列的设置是栅格化布局中最核心的部分之一。首先要将宽度划分为等分的列，可以根据需要设置不同的宽度，在 Bootstrap 框架中预设的列数为12等分。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">.col-1 &#123;width: 8.33%;&#125;</div><div class="line">.col-2 &#123;width: 16.66%;&#125;</div><div class="line">.col-3 &#123;width: 25%;&#125;</div><div class="line">.col-4 &#123;width: 33.33%&#125;</div><div class="line">.col-5 &#123;width: 41.66%;&#125;</div><div class="line">.col-6 &#123;width: 50%&#125;</div><div class="line">.col-7 &#123;width: 58.33%;&#125;</div><div class="line">.col-8 &#123;width: 66.66%;&#125;</div><div class="line">.col-9 &#123;width: 75%;&#125;</div><div class="line">.col-10 &#123;width: 83.33%&#125;</div><div class="line">.col-11 &#123;width: 91.66%&#125;</div><div class="line">.col-12 &#123;width: 100%&#125;</div></pre></td></tr></table></figure>
-<p>设置好列的宽度后，利用 float 浮动的方式进行布局，如果我们不设置列的高度，那么这些浮动的列将会互相堆叠在前者的上面。为了避免出现这样的情况，我们需要在浮动列的同时给他们一个最小高度1px。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">[class*=&apos;col-&apos;]&#123;</div><div class="line"> float: left;</div><div class="line"> min-height: 1px;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>接下来我们已经可以引用并进行布局了。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;row&quot;&gt;</div><div class="line">    &lt;div class=&quot;col-6&quot;&gt;</div><div class="line">            &lt;span&gt;两栏&lt;/span&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">    &lt;div class=&quot;col-6&quot;&gt;</div><div class="line">            &lt;span&gt;两栏&lt;/span&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
-<h4 id="列之间的空隙（gutters）"><a href="#列之间的空隙（gutters）" class="headerlink" title="列之间的空隙（gutters）"></a>列之间的空隙（gutters）</h4><p>在一般的盒模型下，如果我们设置一个宽度为200px，而实际呈现的盒子的宽度可能会大于200px(除非没有左右边框和左右补白)。但是当我们使用了 <code>box-sizing:border-box</code>属性后，假如我们要设置一个宽度为200px的盒子，那么只需要直接设置宽度为200px，当再设置它的左右边框和左右补白后，它的内容区会自动调整。</p>
-<p>这就使得我们可以借助border-box模型，轻松设置列之间的空隙。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">/*-- setting border box on all elements inside the grid --*/</div><div class="line">.grid-container *&#123;</div><div class="line"> box-sizing: border-box;</div><div class="line">&#125;</div><div class="line"></div><div class="line">[class*=&apos;col-&apos;]&#123;</div><div class="line"> float: left;</div><div class="line"> min-height: 1px;</div><div class="line"> width: 16.66%;</div><div class="line"> /*-- our gutter --*/</div><div class="line"> padding: 12px;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h4 id="media媒体查询"><a href="#media媒体查询" class="headerlink" title="@media媒体查询"></a>@media媒体查询</h4><p>至此我们便可以通过媒体查询来设置不同设备或屏幕大小下的布局效果了。以任务 8 为例子：<br><img src="http://ohqryljkl.bkt.clouddn.com/1.gif" alt="图片"></p>
-<h3 id="Flexbox布局"><a href="#Flexbox布局" class="headerlink" title="Flexbox布局"></a>Flexbox布局</h3><p>不同于栅格化布局利用 CSS 属性实现响应式开发，Flexbox 布局本身是一个布局模块，它包含着父元素 flex container 和子元素 flex items 属性。优点是尤其适合移动端 WEB 网页开发，缺点是在PC端的兼容性上暂时不完全，而且由于本身是一个布局模块所以不需要额外书写CSS样式，相比栅格式布局需要额外书写样式可能带来的渲染时间延长的缺点，Flexbox 十分适合响应式开发。</p>
-<p>根据我个人的理解把 Flexbox布局分为两部分理解：轴相关和项目相关。</p>
-<h4 id="轴相关"><a href="#轴相关" class="headerlink" title="轴相关"></a>轴相关</h4><ol>
-<li><p>使用Flexbox 布局</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">section&#123;</div><div class="line">    display:flex;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-<li><p>轴方向 flex-direction<br>设定伸缩容器的主轴的方向，默认 row。</p>
-</li>
-</ol>
-<ul>
-<li>row(默认值)：在“ltr”排版方式下从左向右排列；在“rtl”排版方式下从右向左排列。</li>
-<li>row-reverse：与row排列方向相反，在“ltr”排版方式下从右向左排列；在“rtl”排版方式下从左向右排列.</li>
-<li>column：类似 于row，不过是从上到下排列.</li>
-<li>column-reverse：类似于row-reverse，不过是从下到上排列。</li>
-</ul>
-<ol>
-<li>换行 flex-wrap</li>
-</ol>
-<ul>
-<li>nowrap:flex-wrap的默认值，表示的是伸缩容器为单行。侧轴起点方向等同于当前书写模式的起点或前/头在侧轴的那一边，而侧轴终点方向是侧轴起点的相反方向。</li>
-<li>wrap：表示的是伸缩容器为多行。侧轴起点方向等同于当前书写模式的起眯或前/头在侧轴的那一边，而侧轴终点方向是侧轴起点的相反方向。</li>
-<li>wrap-reverse：除了侧轴起点与侧轴终点方向交换以外同wrap所起作用相同。</li>
-</ul>
-<ol>
-<li><p>主轴 justify-content<br>设置伸缩项目沿主轴的对齐方式，从而调整伸缩项目之间的间距。比较常用的 center 和 space-between。当我们需要让多个块元素在同一水平线上居中的时候，我们就可以用Flexbox 布局迅速让其居中:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">.flex-center &#123;</div><div class="line">  display: flex;</div><div class="line">  justify-content: center;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-<li><p>侧轴 align-items<br>类似与主轴，设置伸缩项目沿侧轴的对齐方式，比如当我们需要让元素水平垂直局居中时，就可以使用 Flexbox 布局：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">.parent &#123;</div><div class="line">  display: flex;</div><div class="line">  justify-content: center;</div><div class="line">  align-items: center;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<h4 id="项目相关"><a href="#项目相关" class="headerlink" title="项目相关"></a>项目相关</h4><ol>
-<li><p>项目顺序 order<br>默认情况之下，所有的伸缩项目的顺序组都是“0”。我们可以很容易的给每个伸缩项目设置不同的顺序值。更高的值会排在后面，而原来的HTML结构并不会有任何变化。比如我们可以通过以下代码让 .first 排在第一位：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.first &#123;</div><div class="line">  order: -1;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-<li><p>项目的弹性 flex</p>
-</li>
-</ol>
-<ul>
-<li>flex-grow 定义伸缩项目的扩展能力。比如我们给伸缩项目设置<code>flex-grow：1;</code>那么每个伸缩项目将设置为一个大小相等的剩余空间，相当于等比的方式分配空间。</li>
-<li>flex-shrink：定义伸缩项目收缩的能力。<strong>注意</strong>：负值同样生效。</li>
-<li>flex-basis: 设置伸缩基准值，剩余的空间按比率进行伸缩。</li>
-</ul>
-<p>这三个属性可以用<code>flex</code>简写，默认值为“0 1 auto”。</p>
-<h2 id="相关参考"><a href="#相关参考" class="headerlink" title="相关参考"></a>相关参考</h2><ul>
-<li><a href="http://j4n.co/blog/Creating-your-own-css-grid-system" target="_blank" rel="external">Creating Your Own CSS Grid System</a></li>
-<li><a href="https://segmentfault.com/a/1190000002910324" target="_blank" rel="external">Flexbox详解</a></li>
-<li><a href="http://www.w3cplus.com/css3/flexbox-basics.html" target="_blank" rel="external">Flexbox——快速布局神器</a></li>
-<li><a href="http://v3.bootcss.com/css/" target="_blank" rel="external">Bootstrap 全局 CSS 样式</a></li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;摘要&quot;&gt;&lt;a href=&quot;#摘要&quot; class=&quot;headerlink&quot; title=&quot;摘要&quot;&gt;&lt;/a&gt;摘要&lt;/h2&gt;&lt;p&gt;文章为百度前端技术学院2016年任务 8-12 的笔记，CSS 部分基本结束。本文大概记述了后半部分任务中的栅格化布局与 Flexfox 布
-    
-    </summary>
-    
-      <category term="IFE task" scheme="http://chenyixin.win/categories/IFE-task/"/>
-    
-    
-      <category term="JavaScript" scheme="http://chenyixin.win/tags/JavaScript/"/>
-    
-      <category term="HTML" scheme="http://chenyixin.win/tags/HTML/"/>
-    
-      <category term="CSS" scheme="http://chenyixin.win/tags/CSS/"/>
-    
-      <category term="IFE" scheme="http://chenyixin.win/tags/IFE/"/>
     
   </entry>
   
