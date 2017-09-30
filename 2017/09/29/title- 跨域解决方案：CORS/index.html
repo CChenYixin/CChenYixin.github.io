@@ -66,7 +66,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="浏览器兼容," />
+  <meta name="keywords" content="跨域," />
 
 
 
@@ -84,22 +84,24 @@
 
 
 
-<meta name="description" content="摘要有关浏览器兼容的思路和一些常用的工具。
-正文不同的浏览器有不同的标准不同的实现方式，同一个浏览器也有不同的版本不同的功能，版本越老的浏览器bug越多，在这样的差异背景下就产生了浏览器的兼容问：怎么样让同一份代码在所有的浏览器下都显示正常。
-处理浏览器兼容的基本思路要不要实现从产品的角度。考虑网站的受众是什么，受众的浏览器是什么，我们可以通过查询浏览器市场份额查询所需要兼容的浏览器的份额，结合受">
+<meta name="description" content="摘要简单演示跨域的解决方案之一：CORS及原理。
+正文CORS概念CORS是一个W3C标准，全称是”跨域资源共享”（Cross-origin resource sharing）。它是一种AJAX跨域请求资源的方式，对于开发者来说，CORS通信与AJAX通信没有差别。
+它的实现方式很简单，并且由浏览器自动处理，不需要做额外的工作。当我们使用 XMLHttpRequest 发送请求时，假如浏览器发现请">
 <meta property="og:type" content="article">
-<meta property="og:title" content="浏览器兼容的基本方法和思路">
-<meta property="og:url" content="http://chenyixin.win/2017/08/10/title- 浏览器兼容思路/index.html">
+<meta property="og:title" content="跨域解决方案：CORS">
+<meta property="og:url" content="http://chenyixin.win/2017/09/29/title- 跨域解决方案：CORS/index.html">
 <meta property="og:site_name" content="速去逮一只猫">
-<meta property="og:description" content="摘要有关浏览器兼容的思路和一些常用的工具。
-正文不同的浏览器有不同的标准不同的实现方式，同一个浏览器也有不同的版本不同的功能，版本越老的浏览器bug越多，在这样的差异背景下就产生了浏览器的兼容问：怎么样让同一份代码在所有的浏览器下都显示正常。
-处理浏览器兼容的基本思路要不要实现从产品的角度。考虑网站的受众是什么，受众的浏览器是什么，我们可以通过查询浏览器市场份额查询所需要兼容的浏览器的份额，结合受">
-<meta property="og:updated_time" content="2017-08-31T10:05:20.203Z">
+<meta property="og:description" content="摘要简单演示跨域的解决方案之一：CORS及原理。
+正文CORS概念CORS是一个W3C标准，全称是”跨域资源共享”（Cross-origin resource sharing）。它是一种AJAX跨域请求资源的方式，对于开发者来说，CORS通信与AJAX通信没有差别。
+它的实现方式很简单，并且由浏览器自动处理，不需要做额外的工作。当我们使用 XMLHttpRequest 发送请求时，假如浏览器发现请">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/75fcfef2ly1fk0f05djkaj21h20j841b.jpg">
+<meta property="og:updated_time" content="2017-09-29T06:41:26.592Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="浏览器兼容的基本方法和思路">
-<meta name="twitter:description" content="摘要有关浏览器兼容的思路和一些常用的工具。
-正文不同的浏览器有不同的标准不同的实现方式，同一个浏览器也有不同的版本不同的功能，版本越老的浏览器bug越多，在这样的差异背景下就产生了浏览器的兼容问：怎么样让同一份代码在所有的浏览器下都显示正常。
-处理浏览器兼容的基本思路要不要实现从产品的角度。考虑网站的受众是什么，受众的浏览器是什么，我们可以通过查询浏览器市场份额查询所需要兼容的浏览器的份额，结合受">
+<meta name="twitter:title" content="跨域解决方案：CORS">
+<meta name="twitter:description" content="摘要简单演示跨域的解决方案之一：CORS及原理。
+正文CORS概念CORS是一个W3C标准，全称是”跨域资源共享”（Cross-origin resource sharing）。它是一种AJAX跨域请求资源的方式，对于开发者来说，CORS通信与AJAX通信没有差别。
+它的实现方式很简单，并且由浏览器自动处理，不需要做额外的工作。当我们使用 XMLHttpRequest 发送请求时，假如浏览器发现请">
+<meta name="twitter:image" content="http://ww1.sinaimg.cn/large/75fcfef2ly1fk0f05djkaj21h20j841b.jpg">
 
 
 
@@ -127,13 +129,13 @@
 
 
 
-  <link rel="canonical" href="http://chenyixin.win/2017/08/10/title- 浏览器兼容思路/"/>
+  <link rel="canonical" href="http://chenyixin.win/2017/09/29/title- 跨域解决方案：CORS/"/>
 
 
 
 
 
-  <title> 浏览器兼容的基本方法和思路 | 速去逮一只猫 </title>
+  <title> 跨域解决方案：CORS | 速去逮一只猫 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -292,7 +294,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://chenyixin.win/2017/08/10/title- 浏览器兼容思路/">
+  <link itemprop="mainEntityOfPage" href="http://chenyixin.win/2017/09/29/title- 跨域解决方案：CORS/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Chen Yixin">
@@ -316,7 +318,7 @@
             
             
               
-                浏览器兼容的基本方法和思路
+                跨域解决方案：CORS
               
             
           </h1>
@@ -329,8 +331,8 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              <time title="post.created" itemprop="dateCreated datePublished" datetime="2017-08-10T11:40:18+08:00">
-                2017-08-10
+              <time title="post.created" itemprop="dateCreated datePublished" datetime="2017-09-29T09:47:29+08:00">
+                2017-09-29
               </time>
             
 
@@ -363,8 +365,8 @@
             
               <span class="post-comments-count">
                 <span class="post-meta-divider">|</span>
-                <a href="/2017/08/10/title- 浏览器兼容思路/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/08/10/title- 浏览器兼容思路/" itemprop="commentCount"></span>
+                <a href="/2017/09/29/title- 跨域解决方案：CORS/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/09/29/title- 跨域解决方案：CORS/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -374,7 +376,7 @@
 
           
           
-             <span id="/2017/08/10/title- 浏览器兼容思路/" class="leancloud_visitors" data-flag-title="浏览器兼容的基本方法和思路">
+             <span id="/2017/09/29/title- 跨域解决方案：CORS/" class="leancloud_visitors" data-flag-title="跨域解决方案：CORS">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -399,56 +401,19 @@
       
 
       
-        <h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>有关浏览器兼容的思路和一些常用的工具。</p>
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>不同的浏览器有不同的标准不同的实现方式，同一个浏览器也有不同的版本不同的功能，版本越老的浏览器bug越多，在这样的差异背景下就产生了浏览器的兼容问：怎么样让同一份代码在所有的浏览器下都显示正常。</p>
-<h3 id="处理浏览器兼容的基本思路"><a href="#处理浏览器兼容的基本思路" class="headerlink" title="处理浏览器兼容的基本思路"></a>处理浏览器兼容的基本思路</h3><h4 id="要不要实现"><a href="#要不要实现" class="headerlink" title="要不要实现"></a>要不要实现</h4><p>从产品的角度。考虑网站的受众是什么，受众的浏览器是什么，我们可以通过<a href="http://tongji.baidu.com/data/browser" target="_blank" rel="external">查询浏览器市场份额</a>查询所需要兼容的浏览器的份额，结合受众所使用浏览器的比例去考虑需要不要兼容。从成本的角度。某个效果的实际作用与需要实现其效果所花费的成本需要做个考量。</p>
-<h4 id="确认实现程度"><a href="#确认实现程度" class="headerlink" title="确认实现程度"></a>确认实现程度</h4><p>在确定需要做兼容后，再确认不同的浏览器需要实现到什么程度。</p>
-<h4 id="怎么实现"><a href="#怎么实现" class="headerlink" title="怎么实现"></a>怎么实现</h4><p>在确定实现到什么程度时，我们同时需要考虑用什么方式去实现，是渐进增强还是优雅降级。</p>
-<ul>
-<li>渐进增强(progressive enhancement): 针对低版本浏览器进行构建页面，保证最基本的功能，然后再针对高级浏览器进行效果、交互等改进和追加功能达到更好的用户体验。</li>
-<li>优雅降级 (graceful degradation): 一开始就构建完整的功能，然后再针对低版本浏览器进行兼容。</li>
-</ul>
-<p>最后我们再去考虑处理兼容问题的具体手段。</p>
-<h3 id="处理兼容的具体手段"><a href="#处理兼容的具体手段" class="headerlink" title="处理兼容的具体手段"></a>处理兼容的具体手段</h3><h4 id="选对合适的框架"><a href="#选对合适的框架" class="headerlink" title="选对合适的框架"></a>选对合适的框架</h4><blockquote>
-<p>Bootstrap (&gt;=ie8)<br>jQuery 1.~ (&gt;=ie6), jQuery 2.~ (&gt;=ie9)<br>Vue.js (&gt;= ie9)<br>React.js (&gt;= ie8)<br>Angluar.js 1.2 (&gt;=ie8),  Angluar.js 1.3 (&gt;=ie9) Angluar.js 2(&gt;=ie10)</p>
-<h4 id="条件注释"><a href="#条件注释" class="headerlink" title="条件注释"></a>条件注释</h4><p>条件注释 (conditional comment) 是于HTML源码中被IE有条件解释的语句。条件注释可被用来向IE提供及隐藏代码。</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;!--[if !IE]&gt;&lt;!--&gt; 除IE外都可识别 &lt;!--&lt;![endif]--&gt;</div><div class="line">&lt;!--[if IE]&gt; 所有的IE可识别 &lt;![endif]--&gt;</div><div class="line">&lt;!--[if IE 6]&gt; 仅IE6可识别 &lt;![endif]--&gt;</div><div class="line">&lt;!--[if lt IE 6]&gt; IE6以及IE6以下版本可识别 &lt;![endif]--&gt;</div><div class="line">&lt;!--[if gte IE 6]&gt; IE6以及IE6以上版本可识别 &lt;![endif]--&gt;</div><div class="line">&lt;!--[if IE 7]&gt; 仅IE7可识别 &lt;![endif]--&gt;</div><div class="line">&lt;!--[if lt IE 7]&gt; IE7以及IE7以下版本可识别 &lt;![endif]--&gt;</div><div class="line">&lt;!--[if gte IE 7]&gt; IE7以及IE7以上版本可识别 &lt;![endif]--&gt;</div><div class="line">&lt;!--[if IE 8]&gt; 仅IE8可识别 &lt;![endif]--&gt;</div><div class="line">&lt;!--[if IE 9]&gt; 仅IE9可识别 &lt;![endif]--&gt;</div></pre></td></tr></table></figure>
-<h4 id="CSS-hack"><a href="#CSS-hack" class="headerlink" title="CSS hack"></a>CSS hack</h4><p>由于不同厂商的浏览器或不同版本的浏览器对CSS的解析不经相同，导致页面的渲染效果不一样，这时就需要对不同的浏览器做针对性的代码编写让不同的浏览器都能得到我们想要的效果。CSS hack大致有三种形式。</p>
-<ol>
-<li><p>属性前缀法(即类内部Hack)。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">“-″减号是IE6专有的hack</div><div class="line">“\9″ IE6/IE7/IE8/IE9/IE10都生效</div><div class="line">“\0″ IE8/IE9/IE10都生效，是IE8/9/10的hack</div><div class="line">“\9\0″ 只对IE9/IE10生效，是IE9/10的hack</div><div class="line">firefox前述都不能认识</div></pre></td></tr></table></figure>
-</li>
-<li><p>选择器前缀法。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">*html *前缀只对IE6生效</div><div class="line">*+html *+前缀只对IE7生效</div><div class="line">@media screen\9&#123;...&#125;只对IE6/7生效</div><div class="line">@media \0screen &#123;body &#123; background: red; &#125;&#125;只对IE8有效</div><div class="line">@media \0screen\,screen\9&#123;body &#123; background: blue; &#125;&#125;只对IE6/7/8有效</div><div class="line">@media screen\0 &#123;body &#123; background: green; &#125;&#125; 只对IE8/9/10有效</div><div class="line">@media screen and (min-width:0\0) &#123;body &#123; background: gray; &#125;&#125; 只对IE9/10有效</div><div class="line">@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) &#123;body &#123; background: orange; &#125;&#125; 只对IE10有效</div></pre></td></tr></table></figure>
-</li>
-<li><p>IE条件注释法(即HTML条件注释Hack)。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries --&gt;</div><div class="line">&lt;!--[if lt IE 9]&gt;</div><div class="line">  &lt;script src=&quot;//cdn.bootcss.com/html5shiv/3.7.0/html5shiv.js&quot;&gt;&lt;/script&gt;</div><div class="line">  &lt;script src=&quot;//cdn.bootcss.com/respond.js/1.3.0/respond.min.js&quot;&gt;&lt;/script&gt;</div><div class="line">&lt;![endif]--&gt;</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>我们可以通过以下网站查询CSS属性的兼容和 Hack 的写法<br><a href="http://caniuse.com/" target="_blank" rel="external">caniuse</a><br><a href="http://browserhacks.com/" target="_blank" rel="external">browserhacks</a></p>
-<h4 id="常见的兼容工具"><a href="#常见的兼容工具" class="headerlink" title="常见的兼容工具"></a>常见的兼容工具</h4><h5 id="html5shiv-js"><a href="#html5shiv-js" class="headerlink" title="html5shiv.js"></a>html5shiv.js</h5><p>HTML5已经成为主流，但是还是有很多人在使用IE6等版本，这些版本并不支持HTML5的标签，这时我们就可以使用html5shiv.js来让那些不认识HTML5标签的浏览器识别元素。html5shiv.js的基本原理是:使用createElement方法，这包含document.createElement和document.createDocumentFragment，对当前页面的HTML5元素进行动态的调整，并且为这些元素提供最基本的样式。而他的使用方法也很简单：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;!--[if lt IE 9]&gt;</div><div class="line">&lt;script src=&quot;html5shiv.min.js&quot;&gt;&lt;/script&gt;</div><div class="line">&lt;![endif]--&gt;</div><div class="line">//or</div><div class="line">&lt;!--[if lt IE 9]&gt;</div><div class="line">&lt;script src=&quot;https://cdn.bootcss.com/html5shiv/r29/html5.min.js&quot;&gt;&lt;/script&gt;</div><div class="line">&lt;![endif]--&gt;</div></pre></td></tr></table></figure></p>
-<h5 id="js能力检测"><a href="#js能力检测" class="headerlink" title="js能力检测"></a>js能力检测</h5><p>能力检测的目标不是识别特定的浏览器，而是识别浏览器的能力。采用这种方式不必顾及特定的浏览器如何如何，只要确定浏览器支持特定的能力，就可以给出解决方案。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">//通过能力检测获取元素首先检测document对象是否有getElementById方法</div><div class="line">function getElement(id)&#123;</div><div class="line">    if(document.getElementById)&#123;</div><div class="line">    return document.getElementById(id);</div><div class="line">&#125;</div><div class="line">//然后检测是否有all对象</div><div class="line">else if(document.all)&#123;</div><div class="line">    return document.all[id];</div><div class="line">&#125;</div><div class="line">//如果上述都没检测到则抛出错误</div><div class="line">else&#123;</div><div class="line">    throw new Error(&apos;No way to retieve element&apos;);</div><div class="line">&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h5 id="respond-js"><a href="#respond-js" class="headerlink" title="respond.js"></a>respond.js</h5><p>Respond.js让不支持css3 Media Query的浏览器包括IE6-IE8等其他浏览器支持查询。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries --&gt;</div><div class="line">&lt;!--[if lt IE 9]&gt;</div><div class="line">  &lt;script src=&quot;//cdn.bootcss.com/html5shiv/3.7.0/html5shiv.js&quot;&gt;&lt;/script&gt;</div><div class="line">  &lt;script src=&quot;//cdn.bootcss.com/respond.js/1.3.0/respond.min.js&quot;&gt;&lt;/script&gt;</div><div class="line">&lt;![endif]--&gt;</div></pre></td></tr></table></figure></p>
-<h5 id="Modernizr"><a href="#Modernizr" class="headerlink" title="Modernizr"></a>Modernizr</h5><p>Modernizr让我们更加方便解决兼容性问题。</p>
-<ol>
-<li><p>首先在head中引入。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;script src=&quot;https://cdn.bootcss.com/modernizr/2010.07.06dev/modernizr.min.js&quot;&gt;&lt;/script&gt;</div></pre></td></tr></table></figure>
-</li>
-<li><p>向<html>元素添加“no-js”的类</html></p>
-<blockquote>
-<p>当Modernizr运行的时候，它会把这个“no-js”的类变为“js”来使你知道它已经运行。Modernizr并不仅仅只做这一件事情，它还会为 所有它检测过的特性添加class类，如果浏览器不支持某个特性，它就为该特性对应的类名加上“no-”的前缀。添加no-js class到html元素下，是告诉浏览器是否支持JavaScript，如果不支持就显示no-js，如果支持就把no-js删掉。</p>
-</blockquote>
-</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">//在支持shadow阴影的浏览器显示shadow</div><div class="line">.boxshadow #MyContainer &#123;</div><div class="line">    border: none;</div><div class="line">    -webkit-box-shadow: #666 1px 1px 1px;</div><div class="line">    -moz-box-shadow: #666 1px 1px 1px;</div><div class="line">&#125;</div><div class="line">//不支持的浏览器显示标准的边框</div><div class="line">.no-boxshadow #MyContainer &#123;</div><div class="line">    border: 2px solid black;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h5 id="normalize-css-and-CSS-reset"><a href="#normalize-css-and-CSS-reset" class="headerlink" title="normalize.css and CSS reset"></a>normalize.css and CSS reset</h5><p>最初的CSS reset的核心作用就是清零，强制所有标签的样式进行重置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">:link,:visited &#123; text-decoration:none &#125;</div><div class="line">ul,ol &#123; list-style:none &#125;</div><div class="line">h1,h2,h3,h4,h5,h6,pre,code &#123; font-size:1em; &#125;</div><div class="line">ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,body,html,p,blockquote,</div><div class="line">fieldset,input&#123; margin:0; padding:0 &#125;</div><div class="line">a img,:link img,:visited img &#123; border:none &#125;</div><div class="line">address &#123; font-style:normal &#125;</div></pre></td></tr></table></figure></p>
-<p>后来Normalize.css取代了css reset，相比之下，Normalize.css保护有用的浏览器默认样式而不是完全去掉它们，但又为为大部分HTML元素提供一般性的样式病保证浏览器的一致性。</p>
-<blockquote>
-<p>Normalize.css 只是一个很小的CSS文件，但它在默认的HTML元素样式上提供了跨浏览器的高度一致性。相比于传统的CSS Reset，Normalize.css是一种现代的、为HTML5准备的优质替代方案。Normalize.css现在已经被用于Twitter Bootstrap、HTML5 Boilerplate、GOV.UK、Rdio、CSS Tricks 以及许许多多其他框架、工具和网站上。</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;link href=&quot;https://cdn.bootcss.com/normalize/7.0.0/normalize.min.css&quot; rel=&quot;stylesheet&quot;&gt;</div></pre></td></tr></table></figure>
-<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><p><a href="https://segmentfault.com/a/1190000003021766" target="_blank" rel="external">关于CSS Reset 那些事</a><br><a href="https://segmentfault.com/a/1190000003820989" target="_blank" rel="external">前端的瑞士军刀Modernizr.js</a><br><a href="https://segmentfault.com/a/1190000003923461" target="_blank" rel="external">客户端能力检测</a></p>
+        <h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>简单演示跨域的解决方案之一：CORS及原理。</p>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="CORS概念"><a href="#CORS概念" class="headerlink" title="CORS概念"></a>CORS概念</h3><p>CORS是一个W3C标准，全称是”跨域资源共享”（Cross-origin resource sharing）。它是一种AJAX跨域请求资源的方式，对于开发者来说，CORS通信与AJAX通信没有差别。</p>
+<p>它的实现方式很简单，并且由浏览器自动处理，不需要做额外的工作。当我们使用 XMLHttpRequest 发送请求时，假如浏览器发现请求不符合同源策略，就会给该请求加一个请求头：Origin，后台在处理时，假如确定接收请求就会在返回结果中加一个响应头：Access-Control-Allow-Origin，再由浏览器自己判断响应头中有没有包含Origin的值，如果有浏览器就会处理响应，我们就可以拿到数据，如果不包含浏览器就会拒绝，此时我们就无法拿到响应数据。</p>
+<h3 id="CORS演示"><a href="#CORS演示" class="headerlink" title="CORS演示"></a>CORS演示</h3><p>HTML和JS部分：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"news"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>第11日前瞻：中国冲击4金 博尔特再战<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>男双力争会师决赛 <span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>女排将死磕巴西！<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"change"</span>&gt;</span>换一组<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line"></div><div class="line">$(<span class="string">'.change'</span>).addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line"></div><div class="line">  <span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</div><div class="line">  xhr.open(<span class="string">'get'</span>, <span class="string">'http://b.chenyixin.com:8080/getNews'</span>, <span class="literal">true</span>);</div><div class="line">  xhr.send();</div><div class="line">  xhr.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span>(xhr.readyState === <span class="number">4</span> &amp;&amp; xhr.status === <span class="number">200</span>)&#123;</div><div class="line">      appendHtml( <span class="built_in">JSON</span>.parse(xhr.responseText) )</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  <span class="built_in">window</span>.xhr = xhr</div><div class="line"></div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">appendHtml</span>(<span class="params">news</span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> html = <span class="string">''</span>;</div><div class="line">  <span class="keyword">for</span>( <span class="keyword">var</span> i=<span class="number">0</span>; i&lt;news.length; i++)&#123;</div><div class="line">    html += <span class="string">'&lt;li&gt;'</span> + news[i] + <span class="string">'&lt;/li&gt;'</span>;</div><div class="line">  &#125;</div><div class="line">  <span class="built_in">console</span>.log(html);</div><div class="line">  $(<span class="string">'.news'</span>).innerHTML = html;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">$</span>(<span class="params">id</span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="built_in">document</span>.querySelector(id);</div><div class="line">&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>后台部分：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line">app.get(<span class="string">'/getNews'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>)</span>&#123;</div><div class="line"></div><div class="line">	<span class="keyword">var</span> news = [</div><div class="line">		<span class="string">"第11日前瞻：中国冲击4金 博尔特再战200米羽球"</span>,</div><div class="line">		<span class="string">"正直播柴飚/洪炜出战 男双力争会师决赛"</span>,</div><div class="line">		<span class="string">"女排将死磕巴西！郎平安排男陪练模仿对方核心"</span>,</div><div class="line">		<span class="string">"没有中国选手和巨星的110米栏 我们还看吗？"</span>,</div><div class="line">		<span class="string">"中英上演奥运金牌大战"</span>,</div><div class="line">		<span class="string">"博彩赔率挺中国夺回第二纽约时报：中国因对手服禁药而丢失的奖牌最多"</span>,</div><div class="line">		<span class="string">"最“出柜”奥运？同性之爱闪耀里约"</span>,</div><div class="line">		<span class="string">"下跪拜谢与洪荒之力一样 都是真情流露"</span></div><div class="line">	]</div><div class="line">	<span class="keyword">var</span> data = [];</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;<span class="number">3</span>; i++)&#123;</div><div class="line">		<span class="keyword">var</span> index = <span class="built_in">parseInt</span>(<span class="built_in">Math</span>.random()*news.length);</div><div class="line">		data.push(news[index]);</div><div class="line">		news.splice(index, <span class="number">1</span>);</div><div class="line">	&#125;</div><div class="line">	res.header(<span class="string">"Access-Control-Allow-Origin"</span>, <span class="string">"http://a.chenyixin.com:8080"</span>);</div><div class="line">	<span class="comment">//res.header("Access-Control-Allow-Origin", "*");</span></div><div class="line">	res.send(data);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>我们开启一个服务器来演示：<br><img src="http://ww1.sinaimg.cn/large/75fcfef2ly1fk0f05djkaj21h20j841b.jpg" alt=""></p>
+<p>可以看到我们已经请求成功，我们的浏览器地址是 <a href="http://a.chenyixin.com:8080，请求URL地址是：http://b.chenyixin.com:8080/getNews；前端的JS代码我们可以看到和普通的AJAX代码没有什么区别。区别在于服务端：" target="_blank" rel="external">http://a.chenyixin.com:8080，请求URL地址是：http://b.chenyixin.com:8080/getNews；前端的JS代码我们可以看到和普通的AJAX代码没有什么区别。区别在于服务端：</a><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">res.header(<span class="string">"Access-Control-Allow-Origin"</span>, <span class="string">"http://a.chenyixin.com:8080"</span>);</div></pre></td></tr></table></figure></p>
+<p>我们在设置响应头给Access-Control-Allow-Origin添加了 <a href="http://a.chenyixin.com:8080，当浏览器收到响应的时候，自己判断响应头中有没有包含Origin的值，在例子中我们可以在Requst" target="_blank" rel="external">http://a.chenyixin.com:8080，当浏览器收到响应的时候，自己判断响应头中有没有包含Origin的值，在例子中我们可以在Requst</a> Hearder中的Origin中看到 <a href="http://a.chenyixin.com:8080，这和我们后台设置的是一样的，因此在例子中我们的浏览器跨域接收到了响应数据。" target="_blank" rel="external">http://a.chenyixin.com:8080，这和我们后台设置的是一样的，因此在例子中我们的浏览器跨域接收到了响应数据。</a></p>
+<p>我们可以把 Access-Control-Allow-Origin的值设为 * ，则表示谁都可以用，但一般我们不会这样使用。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Access-Control-Allow-Origin: *</div></pre></td></tr></table></figure>
+<h3 id="CORS优缺点"><a href="#CORS优缺点" class="headerlink" title="CORS优缺点"></a>CORS优缺点</h3><p>CORS的优点很明显，它可以处理GET、POST等所有HTTP请求，不像JSONP那样只支持GET请求。使用时简单，只要服务器实现了CORS接口，就可以跨源通信。应该说CORS是最好的处理跨域的方式，它是跨域处理方案未来的趋势。</p>
+<p>响应的它的兼容性较差，IE浏览器不能低于IE10。</p>
+<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><p><a href="https://segmentfault.com/a/1190000011145364" target="_blank" rel="external">前端常见跨域解决方案（全）</a><br><a href="http://www.ruanyifeng.com/blog/2016/04/cors.html" target="_blank" rel="external">跨域资源共享 CORS 详解</a><br><a href="https://code-ken.github.io/2016/07/13/jsonp-json-ajax/" target="_blank" rel="external">JSONP跨域问题的解决方法</a></p>
 
       
     </div>
@@ -488,7 +453,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/浏览器兼容/" rel="tag"># 浏览器兼容</a>
+            <a href="/tags/跨域/" rel="tag"># 跨域</a>
           
         </div>
       
@@ -497,8 +462,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/08/06/title-「专注概念 VOL.2」定位与浮动/" rel="next" title="「专注概念 VOL.2」定位与浮动">
-                <i class="fa fa-chevron-left"></i> 「专注概念 VOL.2」定位与浮动
+              <a href="/2017/09/28/title- 跨域解决方案：JSONP/" rel="next" title="跨域解决方案：JSONP">
+                <i class="fa fa-chevron-left"></i> 跨域解决方案：JSONP
               </a>
             
           </div>
@@ -506,10 +471,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/08/22/title- 如何实现 JavaScript 重载/" rel="prev" title="JavaScript 如何实现重载">
-                JavaScript 如何实现重载 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -670,7 +631,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#摘要"><span class="nav-number">1.</span> <span class="nav-text">摘要</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正文"><span class="nav-number">2.</span> <span class="nav-text">正文</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#处理浏览器兼容的基本思路"><span class="nav-number">2.1.</span> <span class="nav-text">处理浏览器兼容的基本思路</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#要不要实现"><span class="nav-number">2.1.1.</span> <span class="nav-text">要不要实现</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#确认实现程度"><span class="nav-number">2.1.2.</span> <span class="nav-text">确认实现程度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#怎么实现"><span class="nav-number">2.1.3.</span> <span class="nav-text">怎么实现</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#处理兼容的具体手段"><span class="nav-number">2.2.</span> <span class="nav-text">处理兼容的具体手段</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#选对合适的框架"><span class="nav-number">2.2.1.</span> <span class="nav-text">选对合适的框架</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#条件注释"><span class="nav-number">2.2.2.</span> <span class="nav-text">条件注释</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CSS-hack"><span class="nav-number">2.2.3.</span> <span class="nav-text">CSS hack</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#常见的兼容工具"><span class="nav-number">2.2.4.</span> <span class="nav-text">常见的兼容工具</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#html5shiv-js"><span class="nav-number">2.2.4.1.</span> <span class="nav-text">html5shiv.js</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#js能力检测"><span class="nav-number">2.2.4.2.</span> <span class="nav-text">js能力检测</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#respond-js"><span class="nav-number">2.2.4.3.</span> <span class="nav-text">respond.js</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Modernizr"><span class="nav-number">2.2.4.4.</span> <span class="nav-text">Modernizr</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#normalize-css-and-CSS-reset"><span class="nav-number">2.2.4.5.</span> <span class="nav-text">normalize.css and CSS reset</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考文章"><span class="nav-number">3.</span> <span class="nav-text">参考文章</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#摘要"><span class="nav-number">1.</span> <span class="nav-text">摘要</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正文"><span class="nav-number">2.</span> <span class="nav-text">正文</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CORS概念"><span class="nav-number">2.1.</span> <span class="nav-text">CORS概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CORS演示"><span class="nav-number">2.2.</span> <span class="nav-text">CORS演示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CORS优缺点"><span class="nav-number">2.3.</span> <span class="nav-text">CORS优缺点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考文章"><span class="nav-number">3.</span> <span class="nav-text">参考文章</span></a></li></ol></div>
             
           </div>
         </section>
@@ -776,9 +737,9 @@
 
     <script type="text/javascript">
       var disqus_shortname = 'onepiececee';
-      var disqus_identifier = '2017/08/10/title- 浏览器兼容思路/';
-      var disqus_title = "浏览器兼容的基本方法和思路";
-      var disqus_url = 'http://chenyixin.win/2017/08/10/title- 浏览器兼容思路/';
+      var disqus_identifier = '2017/09/29/title- 跨域解决方案：CORS/';
+      var disqus_title = "跨域解决方案：CORS";
+      var disqus_url = 'http://chenyixin.win/2017/09/29/title- 跨域解决方案：CORS/';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');
