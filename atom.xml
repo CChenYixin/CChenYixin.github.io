@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://chenyixin.win/"/>
-  <updated>2017-09-30T11:50:48.151Z</updated>
+  <updated>2017-10-01T06:13:13.303Z</updated>
   <id>http://chenyixin.win/</id>
   
   <author>
@@ -14,6 +14,50 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>跨域解决方案：postMessage</title>
+    <link href="http://chenyixin.win/2017/10/01/title-%20%E8%B7%A8%E5%9F%9F%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%EF%BC%9ApostMessage/"/>
+    <id>http://chenyixin.win/2017/10/01/title- 跨域解决方案：postMessage/</id>
+    <published>2017-10-01T04:31:39.587Z</published>
+    <updated>2017-10-01T06:13:13.303Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>简单演示跨域的解决方案之一：postMessage及原理。</p>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="postMessage-概念"><a href="#postMessage-概念" class="headerlink" title="postMessage 概念"></a>postMessage 概念</h3><p>postMessage()是HTML5引入的新API，主要被用来解决跨域和跨窗口消息传递等问题，它的应用场景相对广泛，可以被用于解决以下问题：</p>
+<ul>
+<li>页面和其打开的新窗口的数据传递</li>
+<li>多窗口之间消息传递</li>
+<li>页面与嵌套的iframe消息传递</li>
+<li>上面三个问题的跨域数据传递</li>
+</ul>
+<h3 id="postMessage-原理"><a href="#postMessage-原理" class="headerlink" title="postMessage 原理"></a>postMessage 原理</h3><p>我们通过给postMessage()方法设置参数来允许来自不同源的脚本采用异步方式进行有限的通信，可以实现跨文本档、多窗口、跨域消息传递。postMessage有两个参数。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">otherWindow.postMessage(message, targetOrigin, [transfer]);</div></pre></td></tr></table></figure>
+<p>message，将要发送到其他 window的数据。<br>targetOrigin，通过窗口的origin属性来指定哪些窗口能接收到消息事件，其值可以是字符串“*”（表示无限制）或者一个URI。<strong>注意：在发送消息的时候，如果目标窗口的协议、主机地址或端口这三者的任意一项不匹配targetOrigin提供的值，那么消息就不会被发送；只有三者完全匹配，消息才会被发送。</strong></p>
+<h3 id="postMessage-演示"><a href="#postMessage-演示" class="headerlink" title="postMessage 演示"></a>postMessage 演示</h3><p>a页面HTML部分：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"ct"</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">h1</span>&gt;</span>使用postMessage实现跨域<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"main"</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">placeholder</span>=<span class="string">"http://a.chenyixin.com:8080/a.html"</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line">	<span class="tag">&lt;<span class="name">iframe</span> <span class="attr">src</span>=<span class="string">"http://b.chenyixin.com:8080/b.html"</span> <span class="attr">frameborder</span>=<span class="string">"0"</span> &gt;</span><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line"><span class="comment">//URL: http://a.chenyixin.com:8080/a.html</span></div><div class="line"></div><div class="line">$(<span class="string">'.main input'</span>).addEventListener(<span class="string">'input'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(<span class="keyword">this</span>.value);</div><div class="line">	<span class="built_in">window</span>.frames[<span class="number">0</span>].postMessage(<span class="keyword">this</span>.value,<span class="string">'http://b.chenyixin.com:8080'</span>);</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'message'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">		$(<span class="string">'.main input'</span>).value = e.data</div><div class="line">    <span class="built_in">console</span>.log(e.data);</div><div class="line">&#125;);</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">$</span>(<span class="params">id</span>)</span>&#123;</div><div class="line">	<span class="keyword">return</span> <span class="built_in">document</span>.querySelector(id);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>b页面HTML部分：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">id</span>=<span class="string">"input"</span> <span class="attr">type</span>=<span class="string">"text"</span>  <span class="attr">placeholder</span>=<span class="string">"http://b.chenyixin.com:8080/b.html"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line"></div><div class="line"><span class="comment">// URL: http://b.chenyixin.com:8080/b.html</span></div><div class="line"></div><div class="line">$(<span class="string">'#input'</span>).addEventListener(<span class="string">'input'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="built_in">window</span>.parent.postMessage(<span class="keyword">this</span>.value, <span class="string">'http://a.chenyixin.com:8080'</span>);</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'message'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">		$(<span class="string">'#input'</span>).value = e.data</div><div class="line">    <span class="built_in">console</span>.log(e.data);</div><div class="line">	<span class="built_in">console</span>.log(e);</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">$</span>(<span class="params">id</span>)</span>&#123;</div><div class="line">	<span class="keyword">return</span> <span class="built_in">document</span>.querySelector(id);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>如图所以当我们在a页面输入时，b页面获得了a页面input的值，它们之间实现了跨域。<br><img src="http://image.jiantuku.com/17-10-1/16059138.jpg?e=1506838810&amp;token=el7kgPgYzpJoB23jrChWJ2gV3HpRl0VCzFn8rKKv:33AF_-69Db2qL4eCe6-Uzcty7wk=" alt="GIF"></p>
+<p>具体的工作机制如下：当我们在 <a href="http://a.chenyixin.com:8080/a.html" target="_blank" rel="external">http://a.chenyixin.com:8080/a.html</a> 给 <a href="http://b.chenyixin.com:8080" target="_blank" rel="external">http://b.chenyixin.com:8080</a> 发送消息时，我们的b页面只需要监听message事件就可以，这样我们就可以接收任何窗口传递来的消息了，我们可以用 MessageEvent 来查看消息源：</p>
+<p><img src="http://ww1.sinaimg.cn/large/75fcfef2ly1fk2pq3ax45j21ha0cxwgo.jpg" alt=""></p>
+<blockquote>
+<p>window.postMessage() 方法被调用时，会在所有页面脚本执行完毕之后（e.g., 在该方法之后设置的事件、之前设置的timeout 事件,etc.）向目标窗口派发一个  MessageEvent 消息。 该MessageEvent消息有四个属性需要注意： message 属性表示该message 的类型； data 属性为 window.postMessage 的第一个参数；origin 属性表示调用window.postMessage() 方法时调用页面的当前状态； source 属性记录调用 window.postMessage() 方法的窗口信息。</p>
+</blockquote>
+<p>我们可以指定postMessage的第二个参数为*， 表示我们可以将数据发送到任何窗口，但是意网站可以在您不知情的情况下更改窗口的位置，因此它可以拦截使用postMessage发送的数据。，所以最好设置成精准的目标URL，来避免可能出现的安全问题。</p>
+<h2 id="文章参考"><a href="#文章参考" class="headerlink" title="文章参考"></a>文章参考</h2><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Window/postMessage" target="_blank" rel="external">MDN window.postMessage</a><br><a href="https://segmentfault.com/a/1190000011145364" target="_blank" rel="external">前端常见跨域解决方案（全）</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;摘要&quot;&gt;&lt;a href=&quot;#摘要&quot; class=&quot;headerlink&quot; title=&quot;摘要&quot;&gt;&lt;/a&gt;摘要&lt;/h2&gt;&lt;p&gt;简单演示跨域的解决方案之一：postMessage及原理。&lt;/p&gt;
+&lt;h2 id=&quot;正文&quot;&gt;&lt;a href=&quot;#正文&quot; class=&quot;hea
+    
+    </summary>
+    
+      <category term="基础概念" scheme="http://chenyixin.win/categories/%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/"/>
+    
+    
+      <category term="跨域" scheme="http://chenyixin.win/tags/%E8%B7%A8%E5%9F%9F/"/>
+    
+  </entry>
   
   <entry>
     <title>跨域解决方案：降域</title>
@@ -1151,56 +1195,6 @@
     
     
       <category term="jQuery" scheme="http://chenyixin.win/tags/jQuery/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>立即执行函数表达式 IIFE</title>
-    <link href="http://chenyixin.win/2017/01/18/title-%20%E7%AB%8B%E5%8D%B3%E6%89%A7%E8%A1%8C%E5%87%BD%E6%95%B0%20IIFE%20/"/>
-    <id>http://chenyixin.win/2017/01/18/title- 立即执行函数 IIFE /</id>
-    <published>2017-01-18T12:23:09.016Z</published>
-    <updated>2017-08-31T10:05:15.439Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>有半个月没有写文章，原因是作为一名前端新手 Javascript 中有太多太多的概念，最近大概开始对近段时间的学习一些知识的总结。本篇文章分为两个部分阐述常常会遇到和使用的立即执行函数 IIFE ，分别是立即执行函数是什么，以及为什么会使用这个函数。</p>
-<h2 id="立即执行函数-IIFE-是什么？"><a href="#立即执行函数-IIFE-是什么？" class="headerlink" title="立即执行函数 IIFE 是什么？"></a>立即执行函数 IIFE 是什么？</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>类似于下面这两种形式，当我们在定义了函数之后需要立即调用时，可以通过加 () 的方式来调用函数。但是，由于<code>function</code>这个关键字即可以被当做语句，也可以当做表达式。所以为了避免解析上的歧义，JavaScript引擎规定，如果function关键字出现在行首，一律解释成语句。所以我们不能在函数定义后直接加 () 来立即调用它，而最简单的办法就是将<code>function</code>放在一个()中让引擎将其理解成一个表达式。这种可以立即调用函数的方法被称作“立即调用的函数表达式”（Immediately-Invoked Function Expression），简称IIFE。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">// 函数声明</div><div class="line">function f() &#123;&#125;</div><div class="line"></div><div class="line">// 函数表达式</div><div class="line">var f = function f() &#123;&#125;</div><div class="line"></div><div class="line">// SyntaxError: Unexpected token (</div><div class="line">function()&#123; /* code */ &#125;();</div><div class="line"></div><div class="line">//IIFE</div><div class="line">(function()&#123; /* code */ &#125;());</div><div class="line">(function()&#123; /* code */ &#125;)();</div></pre></td></tr></table></figure>
-<h3 id="具体分析"><a href="#具体分析" class="headerlink" title="具体分析"></a>具体分析</h3><p>首先，我们分析普通的函数声明和调用方式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">// 声明函数f1</div><div class="line">function f1() &#123;</div><div class="line">    console.log(&quot;f1&quot;);</div><div class="line">&#125;</div><div class="line"></div><div class="line">// 通过()来调用此函数</div><div class="line">f1();</div><div class="line"></div><div class="line">// 或者</div><div class="line">// 建立匿名函数并赋予变量f2</div><div class="line">var f2 = function() &#123;</div><div class="line">    console.log(&quot;f2&quot;);</div><div class="line">&#125;</div><div class="line"></div><div class="line">// 通过()来调用此函数</div><div class="line">f2();</div></pre></td></tr></table></figure></p>
-<p>这两种方式都是用显示的方式声明函数，然后在函数名之后通过 () 来调用，自然而然，我们回想是不是可以类似直接调用匿名函数呢？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">function()&#123; /* code */ &#125;();</div><div class="line">// SyntaxError: Unexpected token (</div></pre></td></tr></table></figure></p>
-<p>浏览器会报错：<code>SyntaxError: Unexpected token (</code>，正如在定义部分说过，原因是由于<code>function</code>这个关键字即可以被当做语句，也可以当做表达式。JavaScript 的解释器会默认的将遇到的<code>function</code>关键字当做函数声明语句来进行解释。但是，函数声明的语句是这样的：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">function name([param] [, param] [..., param]) &#123;</div><div class="line">   statements</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>所以在匿名函数后面直接加 ()的调用方式是用语法错误的。那么我们就需要通过将<code>function</code>放在一个()中的形式让解释器把()中的内容当作表达式去执行这样就能避免错误，其中我们最常见最常使用的方式有下面两种：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">//方法一</div><div class="line">(function()&#123; /* code */ &#125;)();</div></pre></td></tr></table></figure>
-<p>由于把函数的声明写在了()之中，所以解释器以表达式（expression）来解析其中代码而不会抛出错误，<strong>当我们直接向 () 中传入声明函数会直接返回此函数</strong>：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">// 如果传入字面量（literal），则返回表达式（expression）</div><div class="line">(1) // 1    </div><div class="line">(function()&#123;console.log(&quot;f&quot;);&#125;) // function () &#123;console.log(&quot;f&quot;)&#125;</div></pre></td></tr></table></figure></p>
-<p>所以方法一其实就是我们调用函数的通用方式。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">//方法二</div><div class="line">(function()&#123; /* code */ &#125;());</div></pre></td></tr></table></figure></p>
-<p>方法二就更容易理解直接把()中的内容当作表达式来进行解释。和方法一在结果上没有什么区别。以上便是具体分析的过程。</p>
-<h2 id="为什么使用立即执行函数表达式-IIFE？"><a href="#为什么使用立即执行函数表达式-IIFE？" class="headerlink" title="为什么使用立即执行函数表达式 IIFE？"></a>为什么使用立即执行函数表达式 IIFE？</h2><ul>
-<li>传统的方法比较，定义和执行分开写</li>
-<li>传统的方法直接污染全局命名空间（浏览器里的 global 对象，如 window）</li>
-</ul>
-<p>在JavaScript没有块作用域（block），只有函数作用域，在同时调用多个库的情况下，很容易造成对象或者变量的覆盖，而在IIFE内部会形成一个单独的作用域，可以封装一些外部无法读取的私有变量。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">// 创建一个立即调用的匿名函数表达式</div><div class="line">// return一个变量，其中这个变量里包含你要暴露的东西</div><div class="line">// 返回的这个变量将赋值给counter，而不是外面声明的function自身</div><div class="line"></div><div class="line">var counter = (function () &#123;</div><div class="line">    var i = 0;</div><div class="line"></div><div class="line">    return &#123;</div><div class="line">        get: function () &#123;</div><div class="line">            return i;</div><div class="line">        &#125;,</div><div class="line">        set: function (val) &#123;</div><div class="line">            i = val;</div><div class="line">        &#125;,</div><div class="line">        increment: function () &#123;</div><div class="line">            return ++i;</div><div class="line">        &#125;</div><div class="line">    &#125;;</div><div class="line">&#125; ());</div><div class="line"></div><div class="line">// counter是一个带有多个属性的对象，上面的代码对于属性的体现其实是方法</div><div class="line"></div><div class="line">counter.get(); // 0</div><div class="line">counter.set(3);</div><div class="line">counter.increment(); // 4</div><div class="line">counter.increment(); // 5</div><div class="line"></div><div class="line">counter.i; // undefined 因为i不是返回对象的属性</div><div class="line">i; // 引用错误: i 没有定义（因为i只存在于闭包）</div></pre></td></tr></table></figure></p>
-<h2 id="函数声明和函数表达式"><a href="#函数声明和函数表达式" class="headerlink" title="函数声明和函数表达式"></a>函数声明和函数表达式</h2><p>要理解立即执行函数，最关键的是需要理解函数声明、函数表达式的基本概念和区别。</p>
-<p>函数声明 (function 语句):<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">function name([param[, param[, ... param]]]) &#123;</div><div class="line">   statements</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>name：函数名；<br>param：被传入函数的参数的名称,一个函数最多可以有255个参数；<br>statements：这些语句组成了函数的函数体。</p>
-<p>函数表达式 (function expression):<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">function [name]([param] [, param] [..., param]) &#123;</div><div class="line">   statements</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>name：函数名,<strong>可以省略,省略函数名的话,该函数就成为了匿名函数；</strong><br>param：被传入函数的参数的名称,一个函数最多可以有255个参数；<br>statements：这些语句组成了函数的函数体。</p>
-<p>虽然都可以定义函数，但最大的区别在于：<br>解析器会率先读取函数声明，使其在执行任何代码之前就可以访问（也就是 函数声明提升）；<br>而函数表达式则需要解析器执行到它所在的代码行才会被解释执行。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">function test() &#123;</div><div class="line">    foo();</div><div class="line"></div><div class="line">    function foo() &#123;</div><div class="line">        alert(&quot;我是会出现的啦……&quot;);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">test();</div></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">function test() &#123;</div><div class="line">    foo();</div><div class="line"></div><div class="line">    var foo = function() &#123;</div><div class="line">        alert(&quot;我不会出现的哦……&quot;);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">test();</div><div class="line">`</div></pre></td></tr></table></figure>
-<p>在上面的第一个例子中foo()是一个声明，函数声明会被提升，函数声明会连通命名和函数体一起被提升至作用域顶部，在执行 foo() 之前，作用域就知道函数 foo 的存在了。随意例子中的 alert 会被显示出来。而在例子二中由于foo()是函数表达式， 在执行 foo() 之前，作用域只知道 foo 的命名，不知道它到底是什么，所以执行会报错：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&quot;TypeError: foo is not a function</div></pre></td></tr></table></figure></p>
-<p>函数表达式只有命名会被提升，定义的函数体则不会。</p>
-<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><p><a href="https://segmentfault.com/a/1190000000327820" target="_blank" rel="external">JavaScript中的立即执行函数表达式</a><br><a href="http://javascript.ruanyifeng.com/grammar/function.html#toc24" target="_blank" rel="external">JavaScript标准教程参考 —— 阮一峰</a><br><a href="https://segmentfault.com/a/1190000003746581" target="_blank" rel="external">函数声明与定义，作用域，函数声明与表达式的区别</a><br><a href="https://segmentfault.com/a/1190000005039150" target="_blank" rel="external">深入浅出JavaScript：定义函数（函数声明&amp;函数表达式）</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;摘要&quot;&gt;&lt;a href=&quot;#摘要&quot; class=&quot;headerlink&quot; title=&quot;摘要&quot;&gt;&lt;/a&gt;摘要&lt;/h2&gt;&lt;p&gt;有半个月没有写文章，原因是作为一名前端新手 Javascript 中有太多太多的概念，最近大概开始对近段时间的学习一些知识的总结。本篇文章分
-    
-    </summary>
-    
-      <category term="基础概念" scheme="http://chenyixin.win/categories/%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/"/>
-    
-    
-      <category term="JavaScript" scheme="http://chenyixin.win/tags/JavaScript/"/>
-    
-      <category term="IIFE" scheme="http://chenyixin.win/tags/IIFE/"/>
     
   </entry>
   
