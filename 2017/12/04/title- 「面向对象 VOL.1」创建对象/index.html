@@ -66,7 +66,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="跨域," />
+  <meta name="keywords" content="JavaScript,面向对象," />
 
 
 
@@ -84,45 +84,29 @@
 
 
 
-<meta name="description" content="摘要简单演示跨域的解决方案之一：CORS及原理。
-合集
-演示源码地址
-跨域解决方案
-跨域解决方案：JSONP
-跨域解决方案：CORS
-跨域解决方案：降域
-跨域解决方案：postMessage
-
-正文CORS概念CORS是一个W3C标准，全称是”跨域资源共享”（Cross-origin resource sharing）。它是一种AJAX跨域请求资源的方式，对于开发者来说，CORS通信与AJAX通信">
+<meta name="description" content="摘要高程第六章的总结，创建对象方式的演变极其原因。
+正文工厂模式简单来说工厂模式就是返回值为对象的函数，这种模式抽象了创建对象的过程，可以用来创建多个相似对象。
+1234567891011121314function createPerson(name,age,job)&amp;#123;    var o = new Object();    o.name = name;    o.age = age">
 <meta property="og:type" content="article">
-<meta property="og:title" content="跨域解决方案：CORS">
-<meta property="og:url" content="http://chenyixin.win/2017/09/29/title- 跨域解决方案：CORS/index.html">
+<meta property="og:title" content="「面向对象 VOL.1」创建对象">
+<meta property="og:url" content="http://chenyixin.win/2017/12/04/title- 「面向对象 VOL.1」创建对象/index.html">
 <meta property="og:site_name" content="速去逮一只猫">
-<meta property="og:description" content="摘要简单演示跨域的解决方案之一：CORS及原理。
-合集
-演示源码地址
-跨域解决方案
-跨域解决方案：JSONP
-跨域解决方案：CORS
-跨域解决方案：降域
-跨域解决方案：postMessage
-
-正文CORS概念CORS是一个W3C标准，全称是”跨域资源共享”（Cross-origin resource sharing）。它是一种AJAX跨域请求资源的方式，对于开发者来说，CORS通信与AJAX通信">
-<meta property="og:image" content="http://ww1.sinaimg.cn/large/75fcfef2ly1fk0f05djkaj21h20j841b.jpg">
-<meta property="og:updated_time" content="2017-10-01T06:20:34.008Z">
+<meta property="og:description" content="摘要高程第六章的总结，创建对象方式的演变极其原因。
+正文工厂模式简单来说工厂模式就是返回值为对象的函数，这种模式抽象了创建对象的过程，可以用来创建多个相似对象。
+1234567891011121314function createPerson(name,age,job)&amp;#123;    var o = new Object();    o.name = name;    o.age = age">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/75fcfef2ly1fm4eia5zmrj20x608v416.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/75fcfef2ly1fm6z932tcjj20rs03xmx6.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/75fcfef2ly1fm6zyoqvt0j20rs02zweg.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/75fcfef2ly1fm70c24upkj20rs030mx6.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/75fcfef2ly1fm71y7l8ykj20rs06gdg2.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/75fcfef2ly1fm72b0syf2j20rs02tmx3.jpg">
+<meta property="og:updated_time" content="2017-12-06T07:15:26.302Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="跨域解决方案：CORS">
-<meta name="twitter:description" content="摘要简单演示跨域的解决方案之一：CORS及原理。
-合集
-演示源码地址
-跨域解决方案
-跨域解决方案：JSONP
-跨域解决方案：CORS
-跨域解决方案：降域
-跨域解决方案：postMessage
-
-正文CORS概念CORS是一个W3C标准，全称是”跨域资源共享”（Cross-origin resource sharing）。它是一种AJAX跨域请求资源的方式，对于开发者来说，CORS通信与AJAX通信">
-<meta name="twitter:image" content="http://ww1.sinaimg.cn/large/75fcfef2ly1fk0f05djkaj21h20j841b.jpg">
+<meta name="twitter:title" content="「面向对象 VOL.1」创建对象">
+<meta name="twitter:description" content="摘要高程第六章的总结，创建对象方式的演变极其原因。
+正文工厂模式简单来说工厂模式就是返回值为对象的函数，这种模式抽象了创建对象的过程，可以用来创建多个相似对象。
+1234567891011121314function createPerson(name,age,job)&amp;#123;    var o = new Object();    o.name = name;    o.age = age">
+<meta name="twitter:image" content="http://ww1.sinaimg.cn/large/75fcfef2ly1fm4eia5zmrj20x608v416.jpg">
 
 
 
@@ -150,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="http://chenyixin.win/2017/09/29/title- 跨域解决方案：CORS/"/>
+  <link rel="canonical" href="http://chenyixin.win/2017/12/04/title- 「面向对象 VOL.1」创建对象/"/>
 
 
 
 
 
-  <title> 跨域解决方案：CORS | 速去逮一只猫 </title>
+  <title> 「面向对象 VOL.1」创建对象 | 速去逮一只猫 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -315,7 +299,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://chenyixin.win/2017/09/29/title- 跨域解决方案：CORS/">
+  <link itemprop="mainEntityOfPage" href="http://chenyixin.win/2017/12/04/title- 「面向对象 VOL.1」创建对象/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Chen Yixin">
@@ -339,7 +323,7 @@
             
             
               
-                跨域解决方案：CORS
+                「面向对象 VOL.1」创建对象
               
             
           </h1>
@@ -352,8 +336,8 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              <time title="post.created" itemprop="dateCreated datePublished" datetime="2017-09-29T09:47:29+08:00">
-                2017-09-29
+              <time title="post.created" itemprop="dateCreated datePublished" datetime="2017-12-04T07:41:42+08:00">
+                2017-12-04
               </time>
             
 
@@ -386,8 +370,8 @@
             
               <span class="post-comments-count">
                 <span class="post-meta-divider">|</span>
-                <a href="/2017/09/29/title- 跨域解决方案：CORS/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/09/29/title- 跨域解决方案：CORS/" itemprop="commentCount"></span>
+                <a href="/2017/12/04/title- 「面向对象 VOL.1」创建对象/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/12/04/title- 「面向对象 VOL.1」创建对象/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -397,7 +381,7 @@
 
           
           
-             <span id="/2017/09/29/title- 跨域解决方案：CORS/" class="leancloud_visitors" data-flag-title="跨域解决方案：CORS">
+             <span id="/2017/12/04/title- 「面向对象 VOL.1」创建对象/" class="leancloud_visitors" data-flag-title="「面向对象 VOL.1」创建对象">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -422,27 +406,32 @@
       
 
       
-        <h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>简单演示跨域的解决方案之一：CORS及原理。</p>
-<h2 id="合集"><a href="#合集" class="headerlink" title="合集"></a>合集</h2><ul>
-<li><a href="https://github.com/CChenYixin/git_task/tree/master/task/task15" target="_blank" rel="external">演示源码地址</a></li>
-<li><a href="http://chenyixin.win/2017/09/25/title-%20%E8%B7%A8%E5%9F%9F%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">跨域解决方案</a></li>
-<li><a href="http://chenyixin.win/2017/09/28/title-%20%E8%B7%A8%E5%9F%9F%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%EF%BC%9AJSONP/">跨域解决方案：JSONP</a></li>
-<li><a href="http://chenyixin.win/2017/09/29/title-%20%E8%B7%A8%E5%9F%9F%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%EF%BC%9ACORS/">跨域解决方案：CORS</a></li>
-<li><a href="http://chenyixin.win/2017/09/30/title-%20%E8%B7%A8%E5%9F%9F%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%EF%BC%9A%E9%99%8D%E5%9F%9F/">跨域解决方案：降域</a></li>
-<li><a href="http://chenyixin.win/2017/10/01/title-%20%E8%B7%A8%E5%9F%9F%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%EF%BC%9ApostMessage/">跨域解决方案：postMessage</a></li>
+        <p><img src="http://ww1.sinaimg.cn/large/75fcfef2ly1fm4eia5zmrj20x608v416.jpg" alt=""></p>
+<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>高程第六章的总结，创建对象方式的演变极其原因。</p>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="工厂模式"><a href="#工厂模式" class="headerlink" title="工厂模式"></a>工厂模式</h3><p>简单来说工厂模式就是返回值为对象的函数，这种模式抽象了创建对象的过程，可以用来创建多个相似对象。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">createPerson</span>(<span class="params">name,age,job</span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> o = <span class="keyword">new</span> <span class="built_in">Object</span>();</div><div class="line">    o.name = name;</div><div class="line">    o.age = age;</div><div class="line">    o.job = job;</div><div class="line"></div><div class="line">    o.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</div><div class="line">    &#125;;</div><div class="line"></div><div class="line">    <span class="keyword">return</span> o;    </div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> person1 = createPerson(<span class="string">'chen'</span>,<span class="number">23</span>,<span class="string">'teacher'</span>);</div></pre></td></tr></table></figure>
+<p>如代码所示，每次我们调用 createPerson() 都会返回一个包含三个属性一个方法的对象。但问题是工厂模式没办法解决对象识别问题。<br><img src="http://ww1.sinaimg.cn/large/75fcfef2ly1fm6z932tcjj20rs03xmx6.jpg" alt=""></p>
+<p>可看到，我们创建新的对象，如果使用 typeof 方法只能识别出 person1 是Object的实例，假如我们使用 instanceof 会发现返回 false。</p>
+<h3 id="构造函数模式"><a href="#构造函数模式" class="headerlink" title="构造函数模式"></a>构造函数模式</h3><p>构造函数模式可以解决工厂模式的问题，我们可以使用构造函数来创建特定类型的对象。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,age,job</span>)</span>&#123;</div><div class="line">    <span class="keyword">this</span>.name = name;</div><div class="line">    <span class="keyword">this</span>.age = age;</div><div class="line">    <span class="keyword">this</span>.job = job;</div><div class="line"></div><div class="line">    <span class="keyword">this</span>.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</div><div class="line">    &#125;;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> person1 = <span class="keyword">new</span> Person(<span class="string">'chen'</span>,<span class="number">23</span>,<span class="string">'job'</span>);</div></pre></td></tr></table></figure>
+<p>构造函数和普通的函数没有多大的区别，只是它采用操作符 new 来调用，当我们使用 new 来调用构造函数时会发生：</p>
+<ul>
+<li>创建一个新对象</li>
+<li>将构造函数的作用域赋给新对象（this 即指向这个对象）</li>
+<li>将执行构造函数中的代码</li>
+<li>返回新对象<br>所以我们可以看到使用的构造函数模式我们不用显式的创建对象，同时也没有 return 语句。同时也解决了工厂模式的问题。<br><img src="http://ww1.sinaimg.cn/large/75fcfef2ly1fm6zyoqvt0j20rs02zweg.jpg" alt=""></li>
 </ul>
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="CORS概念"><a href="#CORS概念" class="headerlink" title="CORS概念"></a>CORS概念</h3><p>CORS是一个W3C标准，全称是”跨域资源共享”（Cross-origin resource sharing）。它是一种AJAX跨域请求资源的方式，对于开发者来说，CORS通信与AJAX通信没有差别。</p>
-<p>它的实现方式很简单，并且由浏览器自动处理，不需要做额外的工作。当我们使用 XMLHttpRequest 发送请求时，假如浏览器发现请求不符合同源策略，就会给该请求加一个请求头：Origin，后台在处理时，假如确定接收请求就会在返回结果中加一个响应头：Access-Control-Allow-Origin，再由浏览器自己判断响应头中有没有包含Origin的值，如果有浏览器就会处理响应，我们就可以拿到数据，如果不包含浏览器就会拒绝，此时我们就无法拿到响应数据。</p>
-<h3 id="CORS演示"><a href="#CORS演示" class="headerlink" title="CORS演示"></a>CORS演示</h3><p>HTML和JS部分：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"news"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>第11日前瞻：中国冲击4金 博尔特再战<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>男双力争会师决赛 <span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>女排将死磕巴西！<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"change"</span>&gt;</span>换一组<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line"></div><div class="line">$(<span class="string">'.change'</span>).addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line"></div><div class="line">  <span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</div><div class="line">  xhr.open(<span class="string">'get'</span>, <span class="string">'http://b.chenyixin.com:8080/getNews'</span>, <span class="literal">true</span>);</div><div class="line">  xhr.send();</div><div class="line">  xhr.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span>(xhr.readyState === <span class="number">4</span> &amp;&amp; xhr.status === <span class="number">200</span>)&#123;</div><div class="line">      appendHtml( <span class="built_in">JSON</span>.parse(xhr.responseText) )</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  <span class="built_in">window</span>.xhr = xhr</div><div class="line"></div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">appendHtml</span>(<span class="params">news</span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> html = <span class="string">''</span>;</div><div class="line">  <span class="keyword">for</span>( <span class="keyword">var</span> i=<span class="number">0</span>; i&lt;news.length; i++)&#123;</div><div class="line">    html += <span class="string">'&lt;li&gt;'</span> + news[i] + <span class="string">'&lt;/li&gt;'</span>;</div><div class="line">  &#125;</div><div class="line">  <span class="built_in">console</span>.log(html);</div><div class="line">  $(<span class="string">'.news'</span>).innerHTML = html;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">$</span>(<span class="params">id</span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="built_in">document</span>.querySelector(id);</div><div class="line">&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<p>后台部分：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line">app.get(<span class="string">'/getNews'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>)</span>&#123;</div><div class="line"></div><div class="line">	<span class="keyword">var</span> news = [</div><div class="line">		<span class="string">"第11日前瞻：中国冲击4金 博尔特再战200米羽球"</span>,</div><div class="line">		<span class="string">"正直播柴飚/洪炜出战 男双力争会师决赛"</span>,</div><div class="line">		<span class="string">"女排将死磕巴西！郎平安排男陪练模仿对方核心"</span>,</div><div class="line">		<span class="string">"没有中国选手和巨星的110米栏 我们还看吗？"</span>,</div><div class="line">		<span class="string">"中英上演奥运金牌大战"</span>,</div><div class="line">		<span class="string">"博彩赔率挺中国夺回第二纽约时报：中国因对手服禁药而丢失的奖牌最多"</span>,</div><div class="line">		<span class="string">"最“出柜”奥运？同性之爱闪耀里约"</span>,</div><div class="line">		<span class="string">"下跪拜谢与洪荒之力一样 都是真情流露"</span></div><div class="line">	]</div><div class="line">	<span class="keyword">var</span> data = [];</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;<span class="number">3</span>; i++)&#123;</div><div class="line">		<span class="keyword">var</span> index = <span class="built_in">parseInt</span>(<span class="built_in">Math</span>.random()*news.length);</div><div class="line">		data.push(news[index]);</div><div class="line">		news.splice(index, <span class="number">1</span>);</div><div class="line">	&#125;</div><div class="line">	res.header(<span class="string">"Access-Control-Allow-Origin"</span>, <span class="string">"http://a.chenyixin.com:8080"</span>);</div><div class="line">	<span class="comment">//res.header("Access-Control-Allow-Origin", "*");</span></div><div class="line">	res.send(data);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<p>我们开启一个服务器来演示：<br><img src="http://ww1.sinaimg.cn/large/75fcfef2ly1fk0f05djkaj21h20j841b.jpg" alt=""></p>
-<p>可以看到我们已经请求成功，我们的浏览器地址是 <a href="http://a.chenyixin.com:8080，请求URL地址是：http://b.chenyixin.com:8080/getNews；前端的JS代码我们可以看到和普通的AJAX代码没有什么区别。区别在于服务端：" target="_blank" rel="external">http://a.chenyixin.com:8080，请求URL地址是：http://b.chenyixin.com:8080/getNews；前端的JS代码我们可以看到和普通的AJAX代码没有什么区别。区别在于服务端：</a><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">res.header(<span class="string">"Access-Control-Allow-Origin"</span>, <span class="string">"http://a.chenyixin.com:8080"</span>);</div></pre></td></tr></table></figure></p>
-<p>我们在设置响应头给Access-Control-Allow-Origin添加了 <a href="http://a.chenyixin.com:8080，当浏览器收到响应的时候，自己判断响应头中有没有包含Origin的值，在例子中我们可以在Requst" target="_blank" rel="external">http://a.chenyixin.com:8080，当浏览器收到响应的时候，自己判断响应头中有没有包含Origin的值，在例子中我们可以在Requst</a> Hearder中的Origin中看到 <a href="http://a.chenyixin.com:8080，这和我们后台设置的是一样的，因此在例子中我们的浏览器跨域接收到了响应数据。" target="_blank" rel="external">http://a.chenyixin.com:8080，这和我们后台设置的是一样的，因此在例子中我们的浏览器跨域接收到了响应数据。</a></p>
-<p>我们可以把 Access-Control-Allow-Origin的值设为 * ，则表示谁都可以用，但一般我们不会这样使用。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Access-Control-Allow-Origin: *</div></pre></td></tr></table></figure>
-<h3 id="CORS优缺点"><a href="#CORS优缺点" class="headerlink" title="CORS优缺点"></a>CORS优缺点</h3><p>CORS的优点很明显，它可以处理GET、POST等所有HTTP请求，不像JSONP那样只支持GET请求。使用时简单，只要服务器实现了CORS接口，就可以跨源通信。应该说CORS是最好的处理跨域的方式，它是跨域处理方案未来的趋势。</p>
-<p>响应的它的兼容性较差，IE浏览器不能低于IE10。</p>
-<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><p><a href="https://segmentfault.com/a/1190000011145364" target="_blank" rel="external">前端常见跨域解决方案（全）</a><br><a href="http://www.ruanyifeng.com/blog/2016/04/cors.html" target="_blank" rel="external">跨域资源共享 CORS 详解</a><br><a href="https://code-ken.github.io/2016/07/13/jsonp-json-ajax/" target="_blank" rel="external">JSONP跨域问题的解决方法</a></p>
+<h4 id="构造函数的问题"><a href="#构造函数的问题" class="headerlink" title="构造函数的问题"></a>构造函数的问题</h4><p>构造函数也有自己的问题：每个方法都要在实例上重新创建一份。<br><img src="http://ww1.sinaimg.cn/large/75fcfef2ly1fm70c24upkj20rs030mx6.jpg" alt=""><br>原因在于我们使用new来实例一个对象，在执行构造函数中的代码时，每次都会重新创建函数，即每个Person实例都会包含一个不同Function实例。为了解决这个问题我们可以把函数体移到函数外部来解决，此时，函数内部只是一个指向外部函数的指针，这样便解决了函数重复创建的问题<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,age,job</span>)</span>&#123;</div><div class="line">    ...</div><div class="line"></div><div class="line">    this.sayName = sayName;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayName</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>但此时新的问题又出现了，我们这个自定义的类型没有封装性可言了，尤其当需要定义很多方法时。</p>
+<h3 id="原型模式"><a href="#原型模式" class="headerlink" title="原型模式"></a>原型模式</h3><p>原型模式是我们不必在函数中定义对象的实例信息，可以直接把这些信息添加到原型对象中：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;&#125;</div><div class="line"></div><div class="line">Person.prototype.name = <span class="string">'chen'</span>;</div><div class="line">Person.prototype.age = <span class="number">23</span>;</div><div class="line">Person.prototype.job = <span class="string">'teacher'</span>;</div><div class="line">person.prototype.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> person1 = <span class="keyword">new</span> Person();</div><div class="line"><span class="keyword">var</span> person2 = <span class="keyword">new</span> Person();</div></pre></td></tr></table></figure>
+<p>对于上面的例子来说，实例所访问的都是同一组属性和函数，我们可以看到实例 person1 和 person2的 sayName是同一个函数。<br><img src="http://ww1.sinaimg.cn/large/75fcfef2ly1fm71y7l8ykj20rs06gdg2.jpg" alt=""></p>
+<p>简单来说，实例化的 person1 和 person2 中有一个<strong>proto</strong>属性指向了原型对象，所以我们在查找对象实例的属性或方法时，会首先在实例中查找，如果没有则会搜索指针指向的原型对象，如果找到了所需的属性或方法，则返回该属性的值或者函数。（关于<strong>proto</strong>和prototype的关系会重新写一篇文章）。</p>
+<h4 id="原型模型的问题"><a href="#原型模型的问题" class="headerlink" title="原型模型的问题"></a>原型模型的问题</h4><p>原型对象解决了构造函数模式的问题，但原型对象本身也有缺点。首先是省略为构造函数传递参数这一环节导致所有实例都将去的相同的属性值。另外一个突出问题是，当包含引用类型值的属性时。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;&#125;</div><div class="line"></div><div class="line">Person.prototype.friends = [<span class="string">'chen'</span>,<span class="string">'yi'</span>];</div><div class="line"></div><div class="line"><span class="keyword">var</span> person1 = <span class="keyword">new</span> Person();</div><div class="line"><span class="keyword">var</span> person2 = <span class="keyword">new</span> Person();</div><div class="line"></div><div class="line">person1.friends.push(<span class="string">'xin'</span>);</div></pre></td></tr></table></figure></p>
+<p><img src="http://ww1.sinaimg.cn/large/75fcfef2ly1fm72b0syf2j20rs02tmx3.jpg" alt=""><br>可以看到当我们改变person1.friens时，由于friends数组存在与Person.prototype中，所以修改也会影响到实例person2。实例一般需要自己的属性，所以我们很少使用单独原型模式。</p>
+<h3 id="组合使用构造函数模式和原型模式。"><a href="#组合使用构造函数模式和原型模式。" class="headerlink" title="组合使用构造函数模式和原型模式。"></a>组合使用构造函数模式和原型模式。</h3><p>构造函数用于定义实例属性，而原型模式用于定义实例共享的方法和属性。这样实例即会有一份属于自己的实例属性的副本也会共享着某种方法的引用，最大限度的节省了内存。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,age,job</span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.name = name;</div><div class="line">    <span class="keyword">this</span>.age = age;</div><div class="line">    <span class="keyword">this</span>.job = job;</div><div class="line">    <span class="keyword">this</span>. friends = [<span class="string">'yi'</span>,<span class="string">'xin'</span>];</div><div class="line">&#125;</div><div class="line">Person.prototype.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>这钟构造函数和原型混合的模式是使用最广泛的一种创建自定义类型的方法，是用来定义引用类型的默认方法。</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://book.douban.com/subject/10546125/" target="_blank" rel="external">JavaScript高级程序设计</a></p>
 
       
     </div>
@@ -482,7 +471,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/跨域/" rel="tag"># 跨域</a>
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          
+            <a href="/tags/面向对象/" rel="tag"># 面向对象</a>
           
         </div>
       
@@ -491,8 +482,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/09/28/title- 跨域解决方案：JSONP/" rel="next" title="跨域解决方案：JSONP">
-                <i class="fa fa-chevron-left"></i> 跨域解决方案：JSONP
+              <a href="/2017/10/01/title- 跨域解决方案：postMessage/" rel="next" title="跨域解决方案：postMessage">
+                <i class="fa fa-chevron-left"></i> 跨域解决方案：postMessage
               </a>
             
           </div>
@@ -500,10 +491,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/09/30/title- 跨域解决方案：降域/" rel="prev" title="跨域解决方案：降域">
-                跨域解决方案：降域 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -664,7 +651,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#摘要"><span class="nav-number">1.</span> <span class="nav-text">摘要</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#合集"><span class="nav-number">2.</span> <span class="nav-text">合集</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正文"><span class="nav-number">3.</span> <span class="nav-text">正文</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CORS概念"><span class="nav-number">3.1.</span> <span class="nav-text">CORS概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CORS演示"><span class="nav-number">3.2.</span> <span class="nav-text">CORS演示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CORS优缺点"><span class="nav-number">3.3.</span> <span class="nav-text">CORS优缺点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考文章"><span class="nav-number">4.</span> <span class="nav-text">参考文章</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#摘要"><span class="nav-number">1.</span> <span class="nav-text">摘要</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正文"><span class="nav-number">2.</span> <span class="nav-text">正文</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#工厂模式"><span class="nav-number">2.1.</span> <span class="nav-text">工厂模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#构造函数模式"><span class="nav-number">2.2.</span> <span class="nav-text">构造函数模式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#构造函数的问题"><span class="nav-number">2.2.1.</span> <span class="nav-text">构造函数的问题</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原型模式"><span class="nav-number">2.3.</span> <span class="nav-text">原型模式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#原型模型的问题"><span class="nav-number">2.3.1.</span> <span class="nav-text">原型模型的问题</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#组合使用构造函数模式和原型模式。"><span class="nav-number">2.4.</span> <span class="nav-text">组合使用构造函数模式和原型模式。</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">3.</span> <span class="nav-text">参考</span></a></li></ol></div>
             
           </div>
         </section>
@@ -770,9 +757,9 @@
 
     <script type="text/javascript">
       var disqus_shortname = 'onepiececee';
-      var disqus_identifier = '2017/09/29/title- 跨域解决方案：CORS/';
-      var disqus_title = "跨域解决方案：CORS";
-      var disqus_url = 'http://chenyixin.win/2017/09/29/title- 跨域解决方案：CORS/';
+      var disqus_identifier = '2017/12/04/title- 「面向对象 VOL.1」创建对象/';
+      var disqus_title = "「面向对象 VOL.1」创建对象";
+      var disqus_url = 'http://chenyixin.win/2017/12/04/title- 「面向对象 VOL.1」创建对象/';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');

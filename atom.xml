@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://chenyixin.win/"/>
-  <updated>2017-10-01T06:20:27.880Z</updated>
+  <updated>2017-12-06T07:15:26.302Z</updated>
   <id>http://chenyixin.win/</id>
   
   <author>
@@ -14,6 +14,57 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>「面向对象 VOL.1」创建对象</title>
+    <link href="http://chenyixin.win/2017/12/04/title-%20%E3%80%8C%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%20VOL.1%E3%80%8D%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1/"/>
+    <id>http://chenyixin.win/2017/12/04/title- 「面向对象 VOL.1」创建对象/</id>
+    <published>2017-12-03T23:41:42.475Z</published>
+    <updated>2017-12-06T07:15:26.302Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://ww1.sinaimg.cn/large/75fcfef2ly1fm4eia5zmrj20x608v416.jpg" alt=""></p>
+<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>高程第六章的总结，创建对象方式的演变极其原因。</p>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="工厂模式"><a href="#工厂模式" class="headerlink" title="工厂模式"></a>工厂模式</h3><p>简单来说工厂模式就是返回值为对象的函数，这种模式抽象了创建对象的过程，可以用来创建多个相似对象。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">createPerson</span>(<span class="params">name,age,job</span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> o = <span class="keyword">new</span> <span class="built_in">Object</span>();</div><div class="line">    o.name = name;</div><div class="line">    o.age = age;</div><div class="line">    o.job = job;</div><div class="line"></div><div class="line">    o.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</div><div class="line">    &#125;;</div><div class="line"></div><div class="line">    <span class="keyword">return</span> o;    </div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> person1 = createPerson(<span class="string">'chen'</span>,<span class="number">23</span>,<span class="string">'teacher'</span>);</div></pre></td></tr></table></figure>
+<p>如代码所示，每次我们调用 createPerson() 都会返回一个包含三个属性一个方法的对象。但问题是工厂模式没办法解决对象识别问题。<br><img src="http://ww1.sinaimg.cn/large/75fcfef2ly1fm6z932tcjj20rs03xmx6.jpg" alt=""></p>
+<p>可看到，我们创建新的对象，如果使用 typeof 方法只能识别出 person1 是Object的实例，假如我们使用 instanceof 会发现返回 false。</p>
+<h3 id="构造函数模式"><a href="#构造函数模式" class="headerlink" title="构造函数模式"></a>构造函数模式</h3><p>构造函数模式可以解决工厂模式的问题，我们可以使用构造函数来创建特定类型的对象。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,age,job</span>)</span>&#123;</div><div class="line">    <span class="keyword">this</span>.name = name;</div><div class="line">    <span class="keyword">this</span>.age = age;</div><div class="line">    <span class="keyword">this</span>.job = job;</div><div class="line"></div><div class="line">    <span class="keyword">this</span>.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</div><div class="line">    &#125;;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> person1 = <span class="keyword">new</span> Person(<span class="string">'chen'</span>,<span class="number">23</span>,<span class="string">'job'</span>);</div></pre></td></tr></table></figure>
+<p>构造函数和普通的函数没有多大的区别，只是它采用操作符 new 来调用，当我们使用 new 来调用构造函数时会发生：</p>
+<ul>
+<li>创建一个新对象</li>
+<li>将构造函数的作用域赋给新对象（this 即指向这个对象）</li>
+<li>将执行构造函数中的代码</li>
+<li>返回新对象<br>所以我们可以看到使用的构造函数模式我们不用显式的创建对象，同时也没有 return 语句。同时也解决了工厂模式的问题。<br><img src="http://ww1.sinaimg.cn/large/75fcfef2ly1fm6zyoqvt0j20rs02zweg.jpg" alt=""></li>
+</ul>
+<h4 id="构造函数的问题"><a href="#构造函数的问题" class="headerlink" title="构造函数的问题"></a>构造函数的问题</h4><p>构造函数也有自己的问题：每个方法都要在实例上重新创建一份。<br><img src="http://ww1.sinaimg.cn/large/75fcfef2ly1fm70c24upkj20rs030mx6.jpg" alt=""><br>原因在于我们使用new来实例一个对象，在执行构造函数中的代码时，每次都会重新创建函数，即每个Person实例都会包含一个不同Function实例。为了解决这个问题我们可以把函数体移到函数外部来解决，此时，函数内部只是一个指向外部函数的指针，这样便解决了函数重复创建的问题<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,age,job</span>)</span>&#123;</div><div class="line">    ...</div><div class="line"></div><div class="line">    this.sayName = sayName;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayName</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>但此时新的问题又出现了，我们这个自定义的类型没有封装性可言了，尤其当需要定义很多方法时。</p>
+<h3 id="原型模式"><a href="#原型模式" class="headerlink" title="原型模式"></a>原型模式</h3><p>原型模式是我们不必在函数中定义对象的实例信息，可以直接把这些信息添加到原型对象中：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;&#125;</div><div class="line"></div><div class="line">Person.prototype.name = <span class="string">'chen'</span>;</div><div class="line">Person.prototype.age = <span class="number">23</span>;</div><div class="line">Person.prototype.job = <span class="string">'teacher'</span>;</div><div class="line">person.prototype.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> person1 = <span class="keyword">new</span> Person();</div><div class="line"><span class="keyword">var</span> person2 = <span class="keyword">new</span> Person();</div></pre></td></tr></table></figure>
+<p>对于上面的例子来说，实例所访问的都是同一组属性和函数，我们可以看到实例 person1 和 person2的 sayName是同一个函数。<br><img src="http://ww1.sinaimg.cn/large/75fcfef2ly1fm71y7l8ykj20rs06gdg2.jpg" alt=""></p>
+<p>简单来说，实例化的 person1 和 person2 中有一个<strong>proto</strong>属性指向了原型对象，所以我们在查找对象实例的属性或方法时，会首先在实例中查找，如果没有则会搜索指针指向的原型对象，如果找到了所需的属性或方法，则返回该属性的值或者函数。（关于<strong>proto</strong>和prototype的关系会重新写一篇文章）。</p>
+<h4 id="原型模型的问题"><a href="#原型模型的问题" class="headerlink" title="原型模型的问题"></a>原型模型的问题</h4><p>原型对象解决了构造函数模式的问题，但原型对象本身也有缺点。首先是省略为构造函数传递参数这一环节导致所有实例都将去的相同的属性值。另外一个突出问题是，当包含引用类型值的属性时。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;&#125;</div><div class="line"></div><div class="line">Person.prototype.friends = [<span class="string">'chen'</span>,<span class="string">'yi'</span>];</div><div class="line"></div><div class="line"><span class="keyword">var</span> person1 = <span class="keyword">new</span> Person();</div><div class="line"><span class="keyword">var</span> person2 = <span class="keyword">new</span> Person();</div><div class="line"></div><div class="line">person1.friends.push(<span class="string">'xin'</span>);</div></pre></td></tr></table></figure></p>
+<p><img src="http://ww1.sinaimg.cn/large/75fcfef2ly1fm72b0syf2j20rs02tmx3.jpg" alt=""><br>可以看到当我们改变person1.friens时，由于friends数组存在与Person.prototype中，所以修改也会影响到实例person2。实例一般需要自己的属性，所以我们很少使用单独原型模式。</p>
+<h3 id="组合使用构造函数模式和原型模式。"><a href="#组合使用构造函数模式和原型模式。" class="headerlink" title="组合使用构造函数模式和原型模式。"></a>组合使用构造函数模式和原型模式。</h3><p>构造函数用于定义实例属性，而原型模式用于定义实例共享的方法和属性。这样实例即会有一份属于自己的实例属性的副本也会共享着某种方法的引用，最大限度的节省了内存。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,age,job</span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.name = name;</div><div class="line">    <span class="keyword">this</span>.age = age;</div><div class="line">    <span class="keyword">this</span>.job = job;</div><div class="line">    <span class="keyword">this</span>. friends = [<span class="string">'yi'</span>,<span class="string">'xin'</span>];</div><div class="line">&#125;</div><div class="line">Person.prototype.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>这钟构造函数和原型混合的模式是使用最广泛的一种创建自定义类型的方法，是用来定义引用类型的默认方法。</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://book.douban.com/subject/10546125/" target="_blank" rel="external">JavaScript高级程序设计</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://ww1.sinaimg.cn/large/75fcfef2ly1fm4eia5zmrj20x608v416.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;摘要&quot;&gt;&lt;a href=&quot;#摘要&quot; class=&quot;headerlink&quot; titl
+    
+    </summary>
+    
+      <category term="基础概念" scheme="http://chenyixin.win/categories/%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/"/>
+    
+    
+      <category term="JavaScript" scheme="http://chenyixin.win/tags/JavaScript/"/>
+    
+      <category term="面向对象" scheme="http://chenyixin.win/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"/>
+    
+  </entry>
   
   <entry>
     <title>跨域解决方案：postMessage</title>
@@ -1158,75 +1209,6 @@
       <category term="JavaScript" scheme="http://chenyixin.win/tags/JavaScript/"/>
     
       <category term="IFE" scheme="http://chenyixin.win/tags/IFE/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>利用 jQuery 实现一个清单列表小应用</title>
-    <link href="http://chenyixin.win/2017/02/23/title-%20%E4%BD%BF%E7%94%A8%20jQuery%20%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E4%BB%BB%E5%8A%A1%E6%B8%85%E5%8D%95%E5%B0%8F%E5%BA%94%E7%94%A8%20/"/>
-    <id>http://chenyixin.win/2017/02/23/title- 使用 jQuery 实现一个任务清单小应用 /</id>
-    <published>2017-02-23T10:13:30.967Z</published>
-    <updated>2017-08-31T10:05:52.905Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>利用 jQuery 做了一个任务清单的网页小应用，实现了其中的一些基本功能。进一步熟悉了 jQuery 的一些基本的操作和方法。第一次使用了 local storage，不过使用了相关的库Store.js。对本地存储的数据保存方式以及JSON还得再抽个时间学一下，算是知其然不知其所以然。遇到了不小的困难，主要存在于下面两个方面：数据的存储和基本概念的理解。意外的收获是学会了利用console.log的检查代码bug。这篇文章主要记述过程和思路，以及一些写代码过程中的反思。</p>
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p><img src="http://ohqryljkl.bkt.clouddn.com/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20170223144241.png" alt="脑图"></p>
-<h3 id="困难与反思"><a href="#困难与反思" class="headerlink" title="困难与反思"></a>困难与反思</h3><p>假如我在写这篇文章之前先画出一个脑图整理思路的话 (上面这个图是后面整理的 )，我想遇到的问题可能会少很多。假如一上来对要实现的功能的逻辑没有清晰的思路，我发现时间大多数都用来修复函数调用等等所出现的 bug 上面了。而且，假如逻辑清晰，思路很明了的话修复bug的也会变的很快。我想下次再写，一定先要把逻辑搞清楚。比如要实现其中的提交Task功能。</p>
-<ul>
-<li>首先我们需要监听提交按钮，是否输入了内容</li>
-<li>假如没有或为空则返回，否则</li>
-<li>将输入的值推入 Task 列表</li>
-<li>然后更新数据</li>
-<li>渲染 Task 列表</li>
-<li>在渲染的过程中用循环去遍历每个Task</li>
-<li>判断单个Task是否已经完成</li>
-<li>已完成的渲染已完成的CSS样式</li>
-<li>未完成的渲染未完成的结构和样式</li>
-<li>监听其他操作</li>
-</ul>
-<p>有个清晰的逻辑我们就可以利用Jquery来去实现这个功能了。</p>
-<ul>
-<li>我们需要监听提交按钮，我们可以用jquery 的<code>.on()</code>来添加点击事件，将点击触发的函数可以单独来写</li>
-<li>我们可以利用<code>.find()</code>来查找input按钮，将val()得到的值复制给变量</li>
-<li>将新得到的Task利用<code>.push()</code>给需要渲染的任务列表</li>
-<li>写一个刷新数据的函数，将Task列表传入随后再调用我们的渲染函数</li>
-<li>渲染函数中我们利用<code>for</code>循环来首先判断每个Task的状态分别来渲染</li>
-<li>将渲染好的内容利用<code>prepend</code>或者<code>append</code>结构中区</li>
-<li>监听其他事件</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div></pre></td><td class="code"><pre><div class="line">//部分代码，点击 [TODO](https://github.com/CChenYixin/JavaScript_demo/tree/master/demo_MY%20TODO) 访问完整代码。</div><div class="line"></div><div class="line"></div><div class="line">$form_add_task.on(&apos;submit&apos;,on_add_task_form_submit);</div><div class="line"></div><div class="line">//监听提交按钮并添加事件</div><div class="line">function on_add_task_form_submit(e)&#123;</div><div class="line">    var new_task=&#123;&#125;,$input;</div><div class="line">    //禁用默认行为</div><div class="line">    e.preventDefault();</div><div class="line">    //获取新task的值</div><div class="line">    $input = $(this).find(&apos;input[name=content]&apos;);</div><div class="line">    new_task.content =  $input.val();</div><div class="line">    //如果新task的值为空则返回，否则继续执行</div><div class="line">    if(!new_task.content) return;</div><div class="line">    // 存入新task</div><div class="line">    task_list.push(new_task);</div><div class="line">    if(add_task(new_task))&#123;</div><div class="line">        // render_task_list();</div><div class="line">        $input.val(null);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">//添加task</div><div class="line">function add_task(new_task)&#123;</div><div class="line">    //更新localstrage</div><div class="line">    refresh_task_list();</div><div class="line">    // console.log(&apos;task_list&apos;,task_list);</div><div class="line">    return true;</div><div class="line">&#125;</div><div class="line"></div><div class="line">//更新localstroage并刷新</div><div class="line">function refresh_task_list () &#123;</div><div class="line">      store.set(&apos;task_list&apos;, task_list);</div><div class="line">      render_task_list();</div><div class="line">  &#125;</div><div class="line"></div><div class="line">//渲染task列表</div><div class="line">function render_task_list()&#123;</div><div class="line">  // console.log(&apos;1&apos;,1);</div><div class="line">  // console.log(&apos;task_list&apos;,task_list);</div><div class="line">  var $task_list=$(&apos;.task-list&apos;);</div><div class="line">  $task_list.html(&apos;&apos;);</div><div class="line">  var complete_items =[];</div><div class="line"></div><div class="line">  for(var i = 0;i&lt;task_list.length;i++)&#123;</div><div class="line">      var item = task_list[i];</div><div class="line">      if(item &amp;&amp; item.complete)&#123;</div><div class="line">          complete_items.push(item);</div><div class="line">          var $complete_task = render_task_item(item,i);</div><div class="line">          if(!$complete_task) continue;</div><div class="line">          $complete_task.addClass(&quot;completed&quot;);</div><div class="line">          $task_list.append($complete_task);</div><div class="line">      &#125;else&#123;</div><div class="line">          $task = render_task_item(item,i);</div><div class="line">          $task_list.prepend($task);</div><div class="line">      &#125;</div><div class="line">  &#125;</div><div class="line">  $task_delete_trigger = $(&apos;.action.delete&apos;);</div><div class="line">  $task_detail_trigger= $(&apos;.action.detail&apos;);</div><div class="line">  $checkbox_complete = $(&apos;.complete&apos;);</div><div class="line">  listen_task_delete();</div><div class="line">  listen_task_detail();</div><div class="line">  listen_checkbox_complete();</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">  function render_task_item(data,index)&#123;</div><div class="line">      if(!data||!index) return;</div><div class="line">      var list_item_item = &apos;&lt;div class=&quot;task-item&quot; data-index=&quot;&apos;+ index +&apos;&quot;&gt;&apos;+</div><div class="line">              &apos;&lt;span&gt;&lt;input class=&quot;complete&quot;&apos; + ( data.complete ? &apos;checked&apos;:&apos;&apos;) +&apos; type=&quot;checkbox&quot;&gt;&lt;/span&gt;&apos;+</div><div class="line">              &apos;&lt;span class=&quot;text-content&quot;&gt;&apos;+ data.content + &apos;&lt;/span&gt;&apos;+</div><div class="line">              &apos;&lt;span class=&quot;action delete&quot;&gt;删除&lt;/span&gt;&apos;+</div><div class="line">              &apos;&lt;span class=&quot;action detail&quot;&gt;详细&lt;/span&gt;&apos;+</div><div class="line">          &apos;&lt;/div&gt;&apos;;</div><div class="line">      return $(list_item_item);</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
-<h3 id="bug-和反思"><a href="#bug-和反思" class="headerlink" title="bug 和反思"></a>bug 和反思</h3><p>逻辑清晰的找bug也会快一点。尤其是可以利用<code>console.log()</code>的方式。除去那些依靠JShint就可以排查的bug，首先我们可以先确定bug产生的大体范围，根据逻辑顺序，来打印<code>console.log()</code>;一步步的来测试就可以精准的确定bug产生的原因。不过暂时不知道那些动辄上万行代码是如何debug的，查找资料的时候发现chrome自带断点测试，也要抽时间来学习一下。</p>
-<h3 id="npm的使用"><a href="#npm的使用" class="headerlink" title="npm的使用"></a>npm的使用</h3><p>npm 是 Node 的模块管理器，功能极其强大。我们根据一行命令，就能安装别人写好的模块。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ npm install &lt;packageName&gt;</div><div class="line">//卸载</div><div class="line">$ npm uninstall express</div></pre></td></tr></table></figure>
-<p>模块的安装过程如下：</p>
-<ul>
-<li>发出npm install命令</li>
-<li>npm 向 registry 查询模块压缩包的网址</li>
-<li>下载压缩包，存放在~/.npm目录</li>
-<li>解压压缩包到当前项目的node_modules目录</li>
-</ul>
-<p>我们可以在安装的时候加上<code>--save-dev</code>：</p>
-<blockquote>
-<p>当你为你的模块安装一个依赖模块时，正常情况下你得先安装他们（在模块根目录下npm install module-name），然后连同版本号手动将他们添加到模块配置文件package.json中的依赖里（dependencies）。<br>-save和save-dev可以省掉你手动修改package.json文件的步骤。<br>spm install module-name -save 自动把模块和版本号添加到dependencies部分<br>spm install module-name -save-dve 自动把模块和版本号添加到devdependencies部分</p>
-</blockquote>
-<p>在使用npm感觉很方便，另外想到的还是必须要学习git，虽然再学习初期为了节省时间用了github的客户端来上传代码，但是最终用的还是git，而且用git会更加节省时间。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
-<li>写代码前有一个清晰的逻辑。</li>
-<li>基础概念的掌握和理解是最重要的没有之一。</li>
-<li>要抽时间深度掌握 git,JSON,以及是改学学后端的一些知识了，至少要熟悉借口之类的。</li>
-</ul>
-<p>感觉最近的学习有点懈怠了，要加油。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;摘要&quot;&gt;&lt;a href=&quot;#摘要&quot; class=&quot;headerlink&quot; title=&quot;摘要&quot;&gt;&lt;/a&gt;摘要&lt;/h2&gt;&lt;p&gt;利用 jQuery 做了一个任务清单的网页小应用，实现了其中的一些基本功能。进一步熟悉了 jQuery 的一些基本的操作和方法。第一次使用了
-    
-    </summary>
-    
-      <category term="框架相关" scheme="http://chenyixin.win/categories/%E6%A1%86%E6%9E%B6%E7%9B%B8%E5%85%B3/"/>
-    
-    
-      <category term="jQuery" scheme="http://chenyixin.win/tags/jQuery/"/>
     
   </entry>
   
