@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://chenyixin.win/"/>
-  <updated>2017-12-06T07:15:26.302Z</updated>
+  <updated>2018-01-01T13:10:02.724Z</updated>
   <id>http://chenyixin.win/</id>
   
   <author>
@@ -14,6 +14,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>新年的几个愿望 2018</title>
+    <link href="http://chenyixin.win/2018/01/01/title-%20%E6%96%B0%E5%B9%B4%E7%9A%84%E5%87%A0%E4%B8%AA%E6%84%BF%E6%9C%9B%202018/"/>
+    <id>http://chenyixin.win/2018/01/01/title- 新年的几个愿望 2018/</id>
+    <published>2018-01-01T13:10:02.718Z</published>
+    <updated>2018-01-01T13:10:02.724Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="修正自己恶劣的性格。"><a href="#修正自己恶劣的性格。" class="headerlink" title="修正自己恶劣的性格。"></a>修正自己恶劣的性格。</h3><p>二十几年来的因为自己性格遭受的痛苦在去年达到了顶峰。近乎自虐的自我反省，让我在发生冲突遇到麻烦的时候遭受双倍的痛苦：在别人的质疑和责难到来之前，我已经自己把自己发配地狱审判一番了。对自己过于苛责这让我感受到无比痛苦，来自自己的压力远远大于现实的压力，我希望在今年让自己活得大气一点，轻松一点。</p>
+<h3 id="找到喜欢的工作。"><a href="#找到喜欢的工作。" class="headerlink" title="找到喜欢的工作。"></a>找到喜欢的工作。</h3><h3 id="学好日语。"><a href="#学好日语。" class="headerlink" title="学好日语。"></a>学好日语。</h3><p>中断了一段时间的学习后察觉到，某些动画和歌曲还是衷心的很喜欢，有必要继续学习日语。希望今年过后能达到N2的水平。</p>
+<h3 id="重拾写作。"><a href="#重拾写作。" class="headerlink" title="重拾写作。"></a>重拾写作。</h3><p>发现自己还是很喜欢写一些东西，也发现只要想到就立马开始写下来是最好的选择。以前总觉的自己的安利心过重，写的东西总感觉太过自嗨。现在觉得也没什么不好，憋在心里不但容易忘记，也会导致人自闭。写作的过程就是与自己沟通的过程，写作的结果就是自己思考的证明与回忆的凭证。不管自嗨不自嗨，不管有没有人看，开始写作吧。</p>
+<p>去年总感觉的过的没有实感，回想起来也想不到什么东西。可能是缺乏记述的原因，离朋友过远也是原因，靠手机维持的关系总感觉不可靠没有痕迹也没办法回忆。有段时间在朋友中完全蒸发，后来意识到这种做法危害极大，完全错误。对自己好一点，对朋友也好一点也算是今年的小目标吧。</p>
+<p>不知道一年后看到今天写的会怎么样，总之加油吧。</p>
+<p><img src="http://ww1.sinaimg.cn/mw690/75fcfef2ly1fn1ewha66aj21z4140ad1.jpg" alt=""></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;修正自己恶劣的性格。&quot;&gt;&lt;a href=&quot;#修正自己恶劣的性格。&quot; class=&quot;headerlink&quot; title=&quot;修正自己恶劣的性格。&quot;&gt;&lt;/a&gt;修正自己恶劣的性格。&lt;/h3&gt;&lt;p&gt;二十几年来的因为自己性格遭受的痛苦在去年达到了顶峰。近乎自虐的自我反省，让我
+    
+    </summary>
+    
+      <category term="感想杂念" scheme="http://chenyixin.win/categories/%E6%84%9F%E6%83%B3%E6%9D%82%E5%BF%B5/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>「面向对象 VOL.1」创建对象</title>
@@ -1100,115 +1126,6 @@
       <category term="JavaScript" scheme="http://chenyixin.win/tags/JavaScript/"/>
     
       <category term="tree" scheme="http://chenyixin.win/tags/tree/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>IFE task 13-21 笔记</title>
-    <link href="http://chenyixin.win/2017/02/26/title-%20IFE%20task%2013-21%20%E7%AC%94%E8%AE%B0/"/>
-    <id>http://chenyixin.win/2017/02/26/title- IFE task 13-21 笔记/</id>
-    <published>2017-02-26T08:13:39.646Z</published>
-    <updated>2017-08-31T09:52:15.501Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>文章为百度前端技术学院2016年任务 13-21 的笔记，大概是 Jvascript 基础部分。总结了一些收获，记述了其中遇到的问题和困难，以及一点感想。因为内容稍微多一点，文章的结构就按照各个任务来划分。</p>
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="任务-13"><a href="#任务-13" class="headerlink" title="任务 13"></a>任务 13</h3><p>假设我们要获取某个输入域中的数值，我们可能需要<code>value</code>属性和’parseInt()’。首先，我们需要注意在HTML中<code>value</code>是<code>input</code>的设定值，对于不同的输入类型，<code>value</code>属性的用法也有区别：</p>
-<blockquote>
-<p>type=”button”, “reset”, “submit” - 定义按钮上的显示的文本<br>type=”text”, “password”, “hidden” - 定义输入字段的初始值<br>type=”checkbox”, “radio”, “image” - 定义与输入相关联的值</p>
-</blockquote>
-<p>正如任务13中一样我们要获取’id=”aqi-input”‘的value值，我们可以用：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var inputValue = document.getElementById(&apos;aqi-input&apos;).value;</div></pre></td></tr></table></figure></p>
-<p>这样我们就获得了<code>input</code>中的输入值，当然此时获得的是字符串。我们在用<code>parseInt()</code>来将给定的字符串解析成整数(如果被解析参数的第一个字符无法被转化成数值类型，则返回 NaN。另外可以给其传入第二个参数，用于指定转换的基数)。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var num = parseInt(inputValue);</div></pre></td></tr></table></figure></p>
-<p>在实际应用过程中我们可能需要判断得到的值。这时我们可以用<code>isNaN</code>来判断是否是一个NaN值，具体操作中我们往往需要在前面加个<code>!</code>(非)来表示判断该值是否符合条件：if(!isNaN(num))，假如num是一个数值的话。</p>
-<h3 id="任务14"><a href="#任务14" class="headerlink" title="任务14"></a>任务14</h3><p>对数据的操作是个人认为学习的难点，数据可能保存在一个数组中或对象里。所以对数组进行的操作是也需要重点的关注。比如在任务中我们需要对数组进行重排序。就需要用到<code>sort()</code>方法，’sort()’方法在适当的位置对数组的元素进行排序，并返回数组，默认的排序可能会按照字符串的Unicode，所以排序的顺序不是很稳定，方法接受一个参数，为某种顺序进行排列的函数。</p>
-<blockquote>
-<p>如果 compareFunction(a, b) 小于 0 ，那么 a 会被排列到 b 之前；<br>如果 compareFunction(a, b) 等于 0 ， a 和 b 的相对位置不变。<br>如果 compareFunction(a, b) 大于 0 ， b 会被排列到 a 之前。</p>
-</blockquote>
-<p>所以我们可以这个来进行排序：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">aqiData.sort(function(a,b)&#123;</div><div class="line">    return b[1] - a[1];</div></pre></td></tr></table></figure></p>
-<p>按照上面的写法，aqiData会按照自大到小的顺序来排列。除了<code>sort()</code>还有’reverse()’的方法反转数组来进行重排序。除了排序，有些时候我们还要对数组进行迭代，找出合适或者不合适的对象比如：</p>
-<ul>
-<li><p>filter()方法。filter方法的参数是一个函数，所有数组成员依次执行该函数，返回结果为true的成员组成一个新数组返回。该方法不会改变原数组。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">[1, 2, 3, 4, 5].filter(function (elem) &#123;</div><div class="line">  return (elem &gt; 3);</div><div class="line">&#125;)</div><div class="line">// [4, 5]</div></pre></td></tr></table></figure>
-</li>
-<li><p>map()方法。map方法对数组的所有成员依次调用一个函数，根据函数结果返回一个新数组。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">var numbers = [1, 2, 3];</div><div class="line">numbers.map(function (n) &#123;</div><div class="line">  return n + 1;</div><div class="line">&#125;);</div><div class="line">// [2, 3, 4]</div><div class="line">numbers</div><div class="line">// [1, 2, 3]</div></pre></td></tr></table></figure>
-</li>
-<li><p>every()方法：对数组每一项运行给定函数，如果每一项返回true，则返回true some()方法：对数组每一项运行给定函数，如果任意一项返回true，则返回true forEach()方法：对数组每一项运行给定函数，无返回值，相当于遍历数组。<br>除过数组的操作，有关<code>document</code>节点的操作也很重要。<code>document</code>是文档的根节点，只要浏览器开始载入HTML文档，这个节点对象就存在了，可以直接调用。最常用比如查找节点的方法以及生成节点的方法。</p>
-</li>
-</ul>
-<ol>
-<li>查找节点</li>
-</ol>
-<ul>
-<li>document.querySelector()，可以接受一个CSS选择器作为参数，返回匹配改选择器的元素节点，如果有多个满足条件的元素节点，则返回第一个匹配的节点。</li>
-<li>document.getElementsByTagName()，返回所有指定的HTML标签的元素，返回值是一个元素的集合。</li>
-<li>document.getElementsByClassName(),返回所有CLASS符合指定条件的元素，返回值一个元素的集合。</li>
-<li>document.getElementsByName()，选择拥有name属性的HTML元素.</li>
-<li>document.getElementById(),返回匹配指定id属性的元素节点。</li>
-</ul>
-<ol>
-<li>生成节点</li>
-</ol>
-<ul>
-<li>document.createElement()，用来生成网页元素节点。</li>
-<li>document.createTextNode()，方法用来生成文本节点，参数为所要生成的文本节点的内容。</li>
-</ul>
-<p>除了作为根节点的<code>document</code>，DOM 文本对象模型中的每个组成单位都可以看作成为一个节点(node),所有节点对象都是浏览器内置的Node对象的实例，继承了Node属性和方法。比如：</p>
-<ol>
-<li>节点的相关属性</li>
-</ol>
-<ul>
-<li>Node.parentNode，属性返回当前节点的父节点。</li>
-<li>Node.childNodes，返回一个NodeList集合，成员包括当前节点的所有子节点。</li>
-<li>Node.firstChild，Node.lastChild，firstChild属性返回当前节点的第一个子节点，lastChild属性返回当前节点的最后一个子节点。</li>
-</ul>
-<ol>
-<li>节点对象的方法</li>
-</ol>
-<ul>
-<li><p>Node.appendChild()方法接受一个节点对象作为参数，将其作为最后一个子节点，插入当前节点。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var p = document.createElement(&apos;p&apos;);</div><div class="line">document.body.appendChild(p);</div></pre></td></tr></table></figure>
-</li>
-<li><p>Node.removeChild()方法接受一个 <strong>子节点</strong> 作为参数，用于从当前节点移除该子节点。<strong>它返回被移除的子节点。</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var divA = document.getElementById(&apos;A&apos;);</div><div class="line">divA.parentNode.removeChild(divA);</div><div class="line">//注意：是在其父节点上调用，而不是被移除的节点。</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="任务15-和-任务20"><a href="#任务15-和-任务20" class="headerlink" title="任务15 和 任务20"></a>任务15 和 任务20</h3><p>当开始遇到较为复杂一点的功能，首先要做的就是理清逻辑，比如任务15我们需要：得到数据；对数据排序；对数据渲染；给按钮绑定函数；初始化。<br>在处理数据时我们常常对字符串进行操作，主要有这些属性和方法：</p>
-<ul>
-<li>length属性，返回字符串的长度。</li>
-<li>concat()方法，用于合并两个字符串，返回一个新的字符串，不改变原字符串。</li>
-<li>slice()方法，用于从原字符串中取出子字符串，接受两个参数，一个是起始位置，一个结束位置(不含该位置)，这个方法不会改变原字符串。</li>
-<li>substr()方法，用于从原字符串中取出子字符串，接受两个参数，一个是起始位置，一个是子字符串的长度，不改变原字符串。</li>
-<li>trim()方法，用于去除字符串 <strong>两端</strong> 的空格，返回一个新的字符串。</li>
-<li>match()方法，用于确定原字符串是否匹配某个字符串，如果有则返回一个数组，成员为匹配的第一个字符串。可接受正则表达式。</li>
-<li>replace()方法，用于替换匹配的字符串。</li>
-<li>split()方法，按照给定的规则来分割字符串，返回一个有分割出来的子字符串组成的数组。</li>
-</ul>
-<h3 id="任务16-和-任务18"><a href="#任务16-和-任务18" class="headerlink" title="任务16 和 任务18"></a>任务16 和 任务18</h3><p>除了字符串，也常常要对Array对象进行操作。最常用的有：</p>
-<ul>
-<li>toString()方法返回数组的字符串形式。</li>
-<li>push()方法用于在数组的末端添加一个或者多个元素，并且返回 <strong>添加新元素后的数组长度</strong>，这个方法会改变原数组。</li>
-<li>pop()方法用于删除数组的最后一个元素，并且 <strong>返回该元素</strong>，这个方法会改变原数组。</li>
-<li>shift()方法删除数组的第一个元素，并且 <strong>返回该元素</strong> ，这个方法会改变数组。</li>
-<li>unshift()方法给数组的第一位置添加元素并且返回添加新元素的数组长度，这个方法会改变数组。</li>
-<li>jion()方法以参数作为分隔符，将所有数组成员组成一个字符串返回，如果不提供参数，默认用逗号。</li>
-</ul>
-<p>当取得某个<code>input</code>的值后我们需要通过正则表达式来判断是否符合我们的限定，比如在任务16中，用户输入的城市名必须为中英文字符，空气质量指数必须为整数，就可以通过如下来匹配：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">function addAqiData()&#123;</div><div class="line">    var cityStr = document.getElementById(&apos;aqi-city-input&apos;).value.trim();</div><div class="line">    var numStr = document.getElementById(&apos;aqi-value-input&apos;).value.trim();</div><div class="line"></div><div class="line">    if(!cityStr.match(/^[A-Za-z\u4E00-\u9FA5]+$/))&#123;</div><div class="line">        alert(&apos;城市名称必须为汉字或英文字符！&apos;);</div><div class="line">        return;</div><div class="line">    &#125;</div><div class="line">    if(!numStr.match(/^\d+$/))&#123;</div><div class="line">        alert(&apos;空气质量指数必须是整数&apos;);</div><div class="line">        return;</div><div class="line">    &#125;</div><div class="line">    aqiData[cityStr]  = numStr;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>在任务16中我们需要为每一个项绑定删除事件。这时，我们要用到事件代理，由于事件会在冒泡阶段向上传播到父节点，因此可以把子节点的监听函数定义在父节点上，由父节点的监听函数统一处理多个子元素的事件。这种方法叫做事件的代理（delegation）。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var table =document.getElementById(&apos;aqi-table&apos;);</div><div class="line">table.addEventListener(&apos;click&apos;,function(event)&#123;</div><div class="line">    if(event.target &amp;&amp; event.target.nodeName === &apos;BUTTON&apos;)&#123;</div><div class="line">        delBtnHandle(event.target);</div></pre></td></tr></table></figure></p>
-<p>上面代码的click事件的监听函数定义在<table>节点，但是实际上，它处理的是子节点<td>的click事件。这样做的好处是，只要定义一个监听函数，就能处理多个子节点的事件，而且以后再添加子节点，监听函数依然有效。</td></table></p>
-<h2 id="文章参考"><a href="#文章参考" class="headerlink" title="文章参考"></a>文章参考</h2><p><a href="http://javascript.ruanyifeng.com/" target="_blank" rel="external">JavaScript 标准参考教程（alpha）</a><br><a href="https://developer.mozilla.org/zh-CN/" target="_blank" rel="external">MDN javascript</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;摘要&quot;&gt;&lt;a href=&quot;#摘要&quot; class=&quot;headerlink&quot; title=&quot;摘要&quot;&gt;&lt;/a&gt;摘要&lt;/h2&gt;&lt;p&gt;文章为百度前端技术学院2016年任务 13-21 的笔记，大概是 Jvascript 基础部分。总结了一些收获，记述了其中遇到的问题和困难，
-    
-    </summary>
-    
-      <category term="IFE task" scheme="http://chenyixin.win/categories/IFE-task/"/>
-    
-    
-      <category term="JavaScript" scheme="http://chenyixin.win/tags/JavaScript/"/>
-    
-      <category term="IFE" scheme="http://chenyixin.win/tags/IFE/"/>
     
   </entry>
   
