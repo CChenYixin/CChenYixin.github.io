@@ -3,9 +3,9 @@
   
     
     <entry>
-      <title><![CDATA[踩坑记录「持续更新」]]></title>
+      <title><![CDATA[踩坑记录]]></title>
       <url>%2F2018%2F01%2F02%2Ftitle-%20%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95%E3%80%8C%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E3%80%8D%2F</url>
-      <content type="text"><![CDATA[摘要对遇到的问题的简单记录，以及解决办法记录 正文Git的.gitignore规则不生效的解决办法[2018/1/19] 不小心将node_modules上传到github，随后添加 .gitignore 发现并push并没有生效，原因是：.gitignore只能忽略那些原来没有被 track 的文件，如果某些文件已经被纳入了版本管理中，则修改.gitignore是无效的。解决办法：把本地缓存删除（改变成未track状态），然后再提交：123git rm -r --cached .git add .git commit -m &apos;update .gitignore&apos; 另，假如希望用代码库中的文件完全覆盖本地工作版本，方法如下：12git reset --hardgit pull 有坑就继续添加…]]></content>
+      <content type="text"><![CDATA[摘要对遇到的问题的简单记录，以及解决办法记录 正文Git的.gitignore规则不生效的解决办法[2018/1/19] 不小心将node_modules上传到github，随后添加 .gitignore 发现并push并没有生效，原因是：.gitignore只能忽略那些原来没有被 track 的文件，如果某些文件已经被纳入了版本管理中，则修改.gitignore是无效的。解决办法：把本地缓存删除（改变成未track状态），然后再提交：123git rm -r --cached .git add .git commit -m &apos;update .gitignore&apos; 另，假如希望用代码库中的文件完全覆盖本地工作版本，方法如下：12git reset --hardgit pull Git对文件名大小不敏感[2018/2/8] 今天修改文件名将大写改为小写上传到github发现无法找到资源，原来Git默认对文件大小写不敏感，解决办法是我们需要修改Git的默认设置：1git config core.ignorecase false 有坑就继续添加…]]></content>
     </entry>
 
     

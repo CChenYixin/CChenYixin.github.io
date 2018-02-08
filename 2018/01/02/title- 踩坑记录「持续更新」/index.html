@@ -88,15 +88,15 @@
 正文Git的.gitignore规则不生效的解决办法[2018/1/19]
 不小心将node_modules上传到github，随后添加 .gitignore 发现并push并没有生效，原因是：.gitignore只能忽略那些原来没有被 track 的文件，如果某些文件已经被纳入了版本管理中，则修改.gitignore是无效的。解决办法：把本地缓存删除">
 <meta property="og:type" content="article">
-<meta property="og:title" content="踩坑记录「持续更新」">
+<meta property="og:title" content="踩坑记录">
 <meta property="og:url" content="http://chenyixin.win/2018/01/02/title- 踩坑记录「持续更新」/index.html">
 <meta property="og:site_name" content="速去逮一只猫">
 <meta property="og:description" content="摘要对遇到的问题的简单记录，以及解决办法记录
 正文Git的.gitignore规则不生效的解决办法[2018/1/19]
 不小心将node_modules上传到github，随后添加 .gitignore 发现并push并没有生效，原因是：.gitignore只能忽略那些原来没有被 track 的文件，如果某些文件已经被纳入了版本管理中，则修改.gitignore是无效的。解决办法：把本地缓存删除">
-<meta property="og:updated_time" content="2018-01-19T13:21:18.249Z">
+<meta property="og:updated_time" content="2018-02-08T14:10:45.773Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="踩坑记录「持续更新」">
+<meta name="twitter:title" content="踩坑记录">
 <meta name="twitter:description" content="摘要对遇到的问题的简单记录，以及解决办法记录
 正文Git的.gitignore规则不生效的解决办法[2018/1/19]
 不小心将node_modules上传到github，随后添加 .gitignore 发现并push并没有生效，原因是：.gitignore只能忽略那些原来没有被 track 的文件，如果某些文件已经被纳入了版本管理中，则修改.gitignore是无效的。解决办法：把本地缓存删除">
@@ -133,7 +133,7 @@
 
 
 
-  <title> 踩坑记录「持续更新」 | 速去逮一只猫 </title>
+  <title> 踩坑记录 | 速去逮一只猫 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -316,7 +316,7 @@
             
             
               
-                踩坑记录「持续更新」
+                踩坑记录
               
             
           </h1>
@@ -374,7 +374,7 @@
 
           
           
-             <span id="/2018/01/02/title- 踩坑记录「持续更新」/" class="leancloud_visitors" data-flag-title="踩坑记录「持续更新」">
+             <span id="/2018/01/02/title- 踩坑记录「持续更新」/" class="leancloud_visitors" data-flag-title="踩坑记录">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -403,6 +403,8 @@
 <h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="Git的-gitignore规则不生效的解决办法"><a href="#Git的-gitignore规则不生效的解决办法" class="headerlink" title="Git的.gitignore规则不生效的解决办法"></a>Git的.gitignore规则不生效的解决办法</h3><p>[2018/1/19]</p>
 <p>不小心将node_modules上传到github，随后添加 <code>.gitignore</code> 发现并<code>push</code>并没有生效，原因是：<code>.gitignore</code>只能忽略那些原来没有被 track 的文件，如果某些文件已经被纳入了版本管理中，则修改.gitignore是无效的。解决办法：把本地缓存删除（改变成未track状态），然后再提交：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git rm -r --cached .</div><div class="line">git add .</div><div class="line">git commit -m &apos;update .gitignore&apos;</div></pre></td></tr></table></figure></p>
 <p>另，假如希望用代码库中的文件完全覆盖本地工作版本，方法如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git reset --hard</div><div class="line">git pull</div></pre></td></tr></table></figure></p>
+<h3 id="Git对文件名大小不敏感"><a href="#Git对文件名大小不敏感" class="headerlink" title="Git对文件名大小不敏感"></a>Git对文件名大小不敏感</h3><p>[2018/2/8]</p>
+<p>今天修改文件名将大写改为小写上传到github发现无法找到资源，原来Git默认对文件大小写不敏感，解决办法是我们需要修改Git的默认设置：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git config core.ignorecase false</div></pre></td></tr></table></figure></p>
 <h2 id="有坑就继续添加…"><a href="#有坑就继续添加…" class="headerlink" title="有坑就继续添加…"></a>有坑就继续添加…</h2>
       
     </div>
@@ -614,7 +616,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#摘要"><span class="nav-number">1.</span> <span class="nav-text">摘要</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正文"><span class="nav-number">2.</span> <span class="nav-text">正文</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Git的-gitignore规则不生效的解决办法"><span class="nav-number">2.1.</span> <span class="nav-text">Git的.gitignore规则不生效的解决办法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#有坑就继续添加…"><span class="nav-number">3.</span> <span class="nav-text">有坑就继续添加…</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#摘要"><span class="nav-number">1.</span> <span class="nav-text">摘要</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正文"><span class="nav-number">2.</span> <span class="nav-text">正文</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Git的-gitignore规则不生效的解决办法"><span class="nav-number">2.1.</span> <span class="nav-text">Git的.gitignore规则不生效的解决办法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Git对文件名大小不敏感"><span class="nav-number">2.2.</span> <span class="nav-text">Git对文件名大小不敏感</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#有坑就继续添加…"><span class="nav-number">3.</span> <span class="nav-text">有坑就继续添加…</span></a></li></ol></div>
             
           </div>
         </section>
@@ -721,7 +723,7 @@
     <script type="text/javascript">
       var disqus_shortname = 'onepiececee';
       var disqus_identifier = '2018/01/02/title- 踩坑记录「持续更新」/';
-      var disqus_title = "踩坑记录「持续更新」";
+      var disqus_title = "踩坑记录";
       var disqus_url = 'http://chenyixin.win/2018/01/02/title- 踩坑记录「持续更新」/';
 
       function run_disqus_script(disqus_script){
